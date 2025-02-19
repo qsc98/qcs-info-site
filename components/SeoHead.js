@@ -4,12 +4,12 @@ import { useRouter } from "next/router";
 
 // Default value for some meta data
 const defaultMeta = {
-  title: 'LaslesVPN',
-  siteName: 'LaslesVPN',
+  title: 'Quality Senior Care',
+  siteName: 'Quality Senior Care',
   description:
-    'Landing page VPN LaslesVPN Best VPN For Privacy, Country and Cheapest',
+    'Quality services to elevate the daily lives of seniors/adults',
   // change base url of your web (without '/' at the end)
-  url: 'https://next-landing-vpn.vercel.app',
+  url: 'https://qualityseniorcare.org',
   type: 'website',
   robots: 'follow, index',
   // change with url of your image (recommended dimension = 1.91:1)
@@ -71,7 +71,7 @@ const SeoHead = (props) => {
         <>
           <meta property='article:published_time' content={meta.date} />
           <meta
-            name='publish_date'
+            name='publish_datee'
             property='og:publish_date'
             content={meta.date}
           />
@@ -83,17 +83,17 @@ const SeoHead = (props) => {
         </>
       )}
       {/* Favicons */}
-      {favicons.map((linkProps) => (
+      {/* {favicons.map((linkProps) => (
         <link key={linkProps.href} {...linkProps} />
-      ))}
+      ))} */}
       {/* Windows 8 app icon */}
-      <meta name='msapplication-TileColor' content='#F53838' />
+      {/* <meta name='msapplication-TileColor' content='#F53838' />
       <meta
         name='msapplication-TileImage'
         content='/favicon/ms-icon-144x144.png'
-      />
+      /> */}
       {/* Accent color on supported browser */}
-      <meta name='theme-color' content='#F53838' />
+      {/* <meta name='theme-color' content='#F53838' /> */}
     </Head>
   );
 };
