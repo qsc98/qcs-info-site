@@ -24,23 +24,28 @@ const Header = () => {
       >
         <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
           <div className="col-start-1 col-end-2 flex items-center">
-          <Image src={LogoVPN} alt="Logo" width={150} height={150} className="h-8 w-auto"/>
+            <Image
+              src={LogoVPN}
+              alt="Logo"
+              width={75}
+              height={75}
+            />
           </div>
           <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500  items-center">
             <LinkScroll
               activeClass="active"
-              to="feature"
+              to="offerings"
               spy={true}
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("feature");
+                setActiveLink("offerings");
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "feature"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
+                (activeLink === "offerings"
+                  ? " text-green-500 animation-active "
+                  : " text-black-500 hover:text-green-500 ")
               }
             >
               Services
@@ -57,8 +62,8 @@ const Header = () => {
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
                 (activeLink === "about"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 a")
+                  ? " text-green-500 animation-active "
+                  : " text-black-500 hover:text-green-500 a")
               }
             >
               FAQ
@@ -75,8 +80,8 @@ const Header = () => {
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
                 (activeLink === "pricing"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
+                  ? " text-green-500 animation-active "
+                  : " text-black-500 hover:text-green-500 ")
               }
             >
               Contact
@@ -93,8 +98,8 @@ const Header = () => {
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
                 (activeLink === "testimoni"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
+                  ? " text-green-500 animation-active "
+                  : " text-black-500 hover:text-green-500 ")
               }
             >
               About
@@ -122,7 +127,7 @@ const Header = () => {
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
                 (activeLink === "about"
-                  ? "  border-orange-500 text-orange-500"
+                  ? "  border-green-500 text-green-500"
                   : " border-transparent")
               }
             >
@@ -154,7 +159,7 @@ const Header = () => {
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
                 (activeLink === "feature"
-                  ? "  border-orange-500 text-orange-500"
+                  ? "  border-green-500 text-green-500"
                   : " border-transparent ")
               }
             >
@@ -186,7 +191,7 @@ const Header = () => {
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
                 (activeLink === "pricing"
-                  ? "  border-orange-500 text-orange-500"
+                  ? "  border-green-500 text-green-500"
                   : " border-transparent ")
               }
             >
@@ -218,7 +223,7 @@ const Header = () => {
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
                 (activeLink === "testimoni"
-                  ? "  border-orange-500 text-orange-500"
+                  ? "  border-green-500 text-green-500"
                   : " border-transparent ")
               }
             >

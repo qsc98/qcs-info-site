@@ -82,6 +82,10 @@ const SeoHead = (props) => {
           />
         </>
       )}
+      {/* DaisyUI */}
+      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      
       {/* Favicons */}
       {/* {favicons.map((linkProps) => (
         <link key={linkProps.href} {...linkProps} />
