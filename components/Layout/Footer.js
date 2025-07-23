@@ -1,91 +1,93 @@
 import React from "react";
-import LogoVPN from "../../public/assets/Logo.svg";
+import Image from "next/image";
+import Logo from "../../public/assets/Logo-Transparent.png";
 import Facebook from "../../public/assets/Icon/facebook.svg";
-import Twitter from "../../public/assets/Icon/twitter.svg";
 import Instagram from "../../public/assets/Icon/instagram.svg";
+
 const Footer = () => {
   return (
-    <div className="bg-white-300 pt-44 pb-24">
-      <div className="max-w-screen-xl w-full mx-auto px-6 sm:px-8 lg:px-16 grid grid-rows-6 sm:grid-rows-1 grid-flow-row sm:grid-flow-col grid-cols-3 sm:grid-cols-12 gap-4">
-        <div className="row-span-2 sm:col-span-4 col-start-1 col-end-4 sm:col-end-5 flex flex-col items-start ">
-          <LogoVPN className="h-8 w-auto mb-6" />
-          <p className="mb-4">
-            <strong className="font-medium">LaslesVPN</strong> is a private
-            virtual network that has unique features and has high security.
+    <footer className="bg-gray-50 border-t border-gray-200 py-16 px-6 sm:px-12">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        {/* Left: Company Info */}
+        <div className="text-left">
+          <Image
+            src={Logo}
+            alt="Logo"
+            width={75}
+            height={75}
+          />
+          <p className="text-gray-600 text-sm leading-relaxed">
+            We provide compassionate adult day care and in-home support services for families in
+            Louisville, KY. Helping individuals live safely, socially, and independently.
           </p>
-          <div className="flex w-full mt-2 mb-8 -mx-2">
-            <div className="mx-2 bg-white-500 rounded-full items-center justify-center flex p-2 shadow-md">
-              <Facebook className="h-6 w-6" />
-            </div>
-            <div className="mx-2 bg-white-500 rounded-full items-center justify-center flex p-2 shadow-md">
-              <Twitter className="h-6 w-6" />
-            </div>
-            <div className="mx-2 bg-white-500 rounded-full items-center justify-center flex p-2 shadow-md">
-              <Instagram className="h-6 w-6" />
-            </div>
-          </div>
-          <p className="text-gray-400">©{new Date().getFullYear()} - LaslesVPN</p>
+          <p className="text-gray-400 text-xs mt-6">
+            &copy; {new Date().getFullYear()} Quality Senior Health Care. All rights reserved.
+          </p>
         </div>
-        <div className=" row-span-2 sm:col-span-2 sm:col-start-7 sm:col-end-9 flex flex-col">
-          <p className="text-black-600 mb-4 font-medium text-lg">Product</p>
-          <ul className="text-black-500 ">
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Download{" "}
-            </li>
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Pricing{" "}
-            </li>
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Locations{" "}
-            </li>
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Server{" "}
-            </li>
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Countries{" "}
-            </li>
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Blog{" "}
-            </li>
+
+        {/* Middle: Learn More */}
+        <div className="flex flex-col items-center text-center">
+          <h4 className="text-lg font-semibold text-gray-800 mb-4">Explore Our Services</h4>
+          <ul className="space-y-2 text-sm text-gray-600">
+            {[
+              "Adult Day Health Care",
+              "Medical Transportation",
+              "Nutritious Meals",
+              "In-Home Care Support",
+              "Activities & Engagement",
+              "Our Approach to Safety",
+            ].map((item) => (
+              <li key={item} className="hover:text-emerald-600 cursor-pointer transition">
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
-        <div className="row-span-2 sm:col-span-2 sm:col-start-9 sm:col-end-11 flex flex-col">
-          <p className="text-black-600 mb-4 font-medium text-lg">Engage</p>
-          <ul className="text-black-500">
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              LaslesVPN ?{" "}
+
+        {/* Right: Contact & Policies */}
+        <div className="flex flex-col items-center text-center">
+          <h4 className="text-lg font-semibold text-gray-800 mb-4">Contact & Policies</h4>
+          <ul className="text-sm text-gray-600 space-y-2">
+            <li>
+              <strong>Phone:</strong>{" "}
+              <a href="tel:+11234567890" className="hover:text-emerald-600">
+                (502) 821-0283
+              </a>
             </li>
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              FAQ{" "}
+            <li>
+              <strong>Email:</strong>{" "}
+              <a href="mailto:admin@qualityseniorcare.org" className="hover:text-emerald-600">
+                admin@qualityseniorcare.org
+              </a>
             </li>
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Tutorials{" "}
+            <li>
+              <strong>Address:</strong>
+              <p>
+                811 Mount Holly Rd.<br />
+                Fairdale, KY 40118
+              </p>
             </li>
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              About Us{" "}
+            <li className="pt-4 border-t border-gray-100">
+              <a href="/privacy-policy" className="hover:text-emerald-600">
+                Privacy Policy
+              </a>
             </li>
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Privacy Policy{" "}
+            <li>
+              <a href="/terms-of-service" className="hover:text-emerald-600">
+                Terms of Service
+              </a>
             </li>
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Terms of Service{" "}
-            </li>
-          </ul>
-        </div>
-        <div className="row-span-2 sm:col-span-2 sm:col-start-11 sm:col-end-13 flex flex-col">
-          <p className="text-black-600 mb-4 font-medium text-lg">Earn Money</p>
-          <ul className="text-black-500">
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Affiliate{" "}
-            </li>
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Become Partner{" "}
+            <li>
+              <a href="/disclaimer" className="hover:text-emerald-600">
+                Disclaimer
+              </a>
             </li>
           </ul>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
 export default Footer;
+
