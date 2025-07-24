@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    unoptimized: true, // Keep your existing static export setup
+    unoptimized: true,
   },
   webpack(config) {
     config.module.rules.push({
