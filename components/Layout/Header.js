@@ -5,6 +5,7 @@ import { Link as LinkScroll } from "react-scroll";
 import ButtonOutline from "../misc/ButtonOutline.";
 import Image from "next/image";
 import LogoVPN from "../../public/assets/Logo-Transparent.png";
+import NotificationBar from "./NotificationBar";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
@@ -16,10 +17,13 @@ const Header = () => {
   }, []);
   return (
     <>
+      <NotificationBar/>
       <header
         className={
-          "fixed top-0 w-full  z-30 bg-white-500 transition-all " +
-          (scrollActive ? " shadow-md pt-0" : " pt-4")
+          "fixed w-full z-30 bg-white-500 transition-all " +
+          (scrollActive
+            ? " top-0 shadow-md pt-0"
+            : " lg:top-[2.5rem]")
         }
       >
         <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">

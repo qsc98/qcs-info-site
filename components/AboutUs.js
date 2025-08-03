@@ -10,17 +10,22 @@ const AboutUs = () => {
 
   return (
     <div
-      className="max-w-screen-xl px-6 sm:px-6 lg:px-16 mx-auto items-center"
+      className="max-w-screen-xl px-6 sm:px-6 lg:px-16 pt-10 mx-auto items-center"
       id="about"
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:pt-12 pb-20 items-center">
+      <ScrollAnimationWrapper>
+        <motion.div variants={scrollAnimation} className="flex justify-center mb-8">
+          <span className="badge badge-neutral p-2">About Us</span>
+        </motion.div>
+      </ScrollAnimationWrapper>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:pt-10 pb-20 items-center">
         {/* Left: Card with Image + Button */}
         <ScrollAnimationWrapper className="flex flex-col items-center sm:items-start">
           <motion.div
             variants={scrollAnimation}
             className="card bg-base-100"
           >
-            <span className="badge badge-neutral mb-4 p-2 mx-auto">About Us</span>
             <div className=" ">
               <Image
                 src={AboutImage}
@@ -39,7 +44,7 @@ const AboutUs = () => {
             variants={scrollAnimation}
             className="text-center sm:text-left"
           >
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-success-content">
+            <h2 className="text-4xl sm:text-5xl font-extrabold">
               Rooted in Care,<br /> Built for Community
             </h2>
             <p className="text-base-content text-lg mt-6 leading-relaxed">

@@ -1,40 +1,30 @@
-# [Tailwind VPN Landingpage](https://next-landing-vpn.vercel.app/) - Free Landingpage Template Apps
+# ADHC Website – Static Site
 
-Tailwind VPN Landingpage is an open source, apps landing page template for [Tailwind CSS](https://tailwindcss.com/) and[ NextJS](nextjs.org/) coded by [Faldi](twitter.com/f2aldi) and design from [Didi](https://twitter.com/didiikurniawann).
+This is the marketing and informational site for our Adult Day Health Care (ADHC) services, built with **Next.js**, **Tailwind CSS** and **DaisyUI**. It is deployed statically on **Netlify**, powered by GitHub's automatic CI/CD workflow.
 
-![Landing Page](./landingpage.png)
 
-## Getting Started
+## Tech Stack
 
-Choose one of the following options to get started:
+- **Next.js 13**
+- **Tailwind CSS** – Utility-first responsive styling
+- **DaisyUI** – Tailwind-based UI components (e.g., buttons, badges, cards)
+- **Framer Motion** – Scroll and page animations
+- **Netlify** – Static site hosting with GitHub integration
 
-- [Download the latest release](https://github.com/naufaldi/next-landing-vpn/archive/main.zip)
-- Clone the repo: `git clone https://github.com/naufaldi/next-landing-vpn.git`
-- Fork the repo
 
-## About the Template
+## Installation
 
-- Template building using NextJS Version 10
-- Tailwind v2.0
+```
+git clone https://github.com/qsc98/qcs-info-site.git
+cd adhc-site
+npm install
+```
 
-## Feature Template
+## Local Development
 
-- Using [NextJS Image](https://nextjs.org/docs/api-reference/next/image) for Image Optimization
-- Slider using [React Slick](https://react-slick.neostack.com/docs/api)
-- Smooth Scrolling and Active menu using [React Scroll](https://www.npmjs.com/package/react-scroll)
+`npm run dev` - Runs the development server at http://localhost:3000
 
-## Bugs and Issues
-
-Have a bug or an issue with this template? [Open a new issue](https://github.com/naufaldi/next-landing-vpn/issues/new) here on GitHub.
-
-## Creator
-
-[Tailwind VPN Landingpage](https://next-landing-vpn.vercel.app/) was coded and modified by and is maintained by **[me](https://github.com/naufaldi/)**, and dekstop design by [Didi Kurniawan](https://twitter.com/didiikurniawann)
-
-## Copyright and License
-
-Code released under the MIT license.
-
-## To Do List Add Feature
-
-- [ ] Animation using Framer Motion
+Before pushing changes, verify the build & your changes:
+- npm run export
+- npx serve out
+ 
