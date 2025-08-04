@@ -38,11 +38,14 @@ const MedicalTransportation = () => {
                 <h3 className="text-2xl font-bold text-emerald-800 mb-3 flex items-center gap-2">
                     Medical Transportation
                 </h3>
-                <p className="text-black-500 text-md leading-relaxed">
+                <p className="text-black-500 text-md leading-relaxed mb-4">
                     We offer dependable, non-emergency transportation tailored to individuals with mobility or health-related needs. 
                     Whether it's routine doctor visits, outpatient therapy, pharmacy pickups, or adult day center transportation, our drivers ensure punctual, safe, and courteous service. 
                     All vehicles are wheelchair accessible and operated by professionals trained to assist passengers with care and dignity.
                 </p>
+                <button className="float-right font-medium tracking-wide py-4 px-5 sm:px-8 border border-green-500 text-green-500 bg-white-500 outline-none rounded-l-full rounded-r-full capitalize hover:bg-green-500 hover:text-white-500 transition-all hover:shadow-green ">
+                    Learn More
+                </button>
             </motion.div>
         </ScrollAnimationWrapper>
 

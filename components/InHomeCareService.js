@@ -37,12 +37,12 @@ const InHomeCare = () => {
             <h3 className="text-2xl font-bold text-emerald-800 mb-3 flex items-center gap-2">
               In-Home Care
             </h3>
-            <p className="text-black-500 text-md leading-relaxed">
+            <p className="text-black-500 text-md leading-relaxed mb-4">
               Our in-home care service allows individuals to age in place comfortably while receiving the support they need for daily living. 
               We offer a range of assistance including personal hygiene, mobility, light housekeeping, medication reminders, and emotional companionship. 
               Each care plan is customized based on the client’s needs, and services are delivered by trained, vetted caregivers who prioritize dignity, respect, and safety.
             </p>
-            <button className="font-medium tracking-wide py-2 px-5 sm:px-8 border border-green-500 text-green-500 bg-white-500 outline-none rounded-l-full rounded-r-full capitalize hover:bg-green-500 hover:text-white-500 transition-all hover:shadow-green ">
+            <button className="float-right font-medium tracking-wide py-4 px-5 sm:px-8 border border-green-500 text-green-500 bg-white-500 outline-none rounded-l-full rounded-r-full capitalize hover:bg-green-500 hover:text-white-500 transition-all hover:shadow-green ">
                 Learn More
             </button>
           </motion.div>

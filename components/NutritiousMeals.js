@@ -39,11 +39,14 @@ const faqs = [
         <h3 className="text-2xl font-bold text-emerald-800 mb-3 flex items-center gap-2">
               Nutritious Meals
             </h3>
-            <p className="text-black-500 text-md leading-relaxed">
+            <p className="text-black-500 text-md leading-relaxed mb-4">
               Our meal program is focused on delivering balanced, flavorful, and health-conscious meals that meet the unique dietary needs of seniors and individuals with medical conditions. 
               We provide daily offerings that include breakfast, lunch, and snacks, with accommodations for diabetic, low-sodium, vegetarian, and allergy-sensitive diets. 
               Meals are served fresh and designed in consultation with licensed nutritionists to ensure both taste and nutritional value.
             </p>
+            <button className="float-right font-medium tracking-wide py-4 px-5 sm:px-8 border border-green-500 text-green-500 bg-white-500 outline-none rounded-l-full rounded-r-full capitalize hover:bg-green-500 hover:text-white-500 transition-all hover:shadow-green ">
+                Learn More
+            </button>
           </motion.div>
         </ScrollAnimationWrapper>
 
