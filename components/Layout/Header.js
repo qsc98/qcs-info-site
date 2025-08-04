@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 // Import react scroll
 import { Link as LinkScroll } from "react-scroll";
-import ButtonOutline from "../misc/ButtonOutline.";
 import Image from "next/image";
 import LogoVPN from "../../public/assets/Logo-Transparent.png";
 import NotificationBar from "./NotificationBar";
@@ -23,7 +22,7 @@ const Header = () => {
           "fixed w-full z-30 bg-white-500 transition-all " +
           (scrollActive
             ? " top-0 shadow-md pt-0"
-            : " lg:top-[2.5rem]")
+            : " top-0 lg:top-[2.5rem]")
         }
       >
         <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
@@ -38,21 +37,40 @@ const Header = () => {
           <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500  items-center">
             <LinkScroll
               activeClass="active"
-              to="offerings"
+              to="services"
               spy={true}
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("offerings");
+                setActiveLink("services");
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "offerings"
+                (activeLink === "services"
                   ? " text-green-500 animation-active "
                   : " text-black-500 hover:text-green-500 ")
               }
             >
               Services
+            </LinkScroll>
+            
+            <LinkScroll
+              activeClass="active"
+              to="contact"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("contact");
+              }}
+              className={
+                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                (activeLink === "contact"
+                  ? " text-green-500 animation-active "
+                  : " text-black-500 hover:text-green-500 ")
+              }
+            >
+              Contact
             </LinkScroll>
             <LinkScroll
               activeClass="active"
@@ -67,42 +85,6 @@ const Header = () => {
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
                 (activeLink === "about"
                   ? " text-green-500 animation-active "
-                  : " text-black-500 hover:text-green-500 a")
-              }
-            >
-              FAQ
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="pricing"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("pricing");
-              }}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "pricing"
-                  ? " text-green-500 animation-active "
-                  : " text-black-500 hover:text-green-500 ")
-              }
-            >
-              Contact
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="testimoni"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("testimoni");
-              }}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "testimoni"
-                  ? " text-green-500 animation-active "
                   : " text-black-500 hover:text-green-500 ")
               }
             >
@@ -110,7 +92,11 @@ const Header = () => {
             </LinkScroll>
           </ul>
           <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
-            <ButtonOutline>Schedule a Visit</ButtonOutline>
+            <LinkScroll to='contact'>
+              <button className="font-medium tracking-wide py-2 px-5 sm:px-8 border border-green-500 text-green-500 bg-white-500 outline-none rounded-l-full rounded-r-full capitalize hover:bg-green-500 hover:text-white-500 transition-all hover:shadow-green ">
+                Schedule a Visit
+              </button>
+            </LinkScroll>
           </div>
         </nav>
       </header>
@@ -121,16 +107,16 @@ const Header = () => {
           <ul className="flex w-full justify-between items-center text-black-500">
             <LinkScroll
               activeClass="active"
-              to="about"
+              to="services"
               spy={true}
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("about");
+                setActiveLink("services");
               }}
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "about"
+                (activeLink === "services"
                   ? "  border-green-500 text-green-500"
                   : " border-transparent")
               }
@@ -153,16 +139,16 @@ const Header = () => {
             </LinkScroll>
             <LinkScroll
               activeClass="active"
-              to="feature"
+              to="about"
               spy={true}
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("feature");
+                setActiveLink("about");
               }}
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "feature"
+                (activeLink === "about"
                   ? "  border-green-500 text-green-500"
                   : " border-transparent ")
               }
@@ -185,48 +171,16 @@ const Header = () => {
             </LinkScroll>
             <LinkScroll
               activeClass="active"
-              to="pricing"
+              to="contact"
               spy={true}
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("pricing");
+                setActiveLink("contact");
               }}
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "pricing"
-                  ? "  border-green-500 text-green-500"
-                  : " border-transparent ")
-              }
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              FAQ
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="testimoni"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("testimoni");
-              }}
-              className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "testimoni"
+                (activeLink === "contact"
                   ? "  border-green-500 text-green-500"
                   : " border-transparent ")
               }

@@ -3,14 +3,14 @@ import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
-import AboutImage from "../public/assets/aboutus.jpg"; // Replace with your actual image
+import AboutImage from "../public/assets/aboutus.jpg";
 
 const AboutUs = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 
   return (
     <div
-      className="max-w-screen-xl px-6 sm:px-6 lg:px-16 pt-10 mx-auto items-center"
+      className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto py-12"
       id="about"
     >
       <ScrollAnimationWrapper>
@@ -56,7 +56,7 @@ const AboutUs = () => {
             </p>
                         <div className="card-actions justify-center mt-6">
               <a className="btn btn-success btn-wide " href="">
-                Meet Our Team
+                Meet Our Team ╰┈┈➤
               </a>
             </div>
           </motion.div>

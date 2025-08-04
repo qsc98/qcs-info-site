@@ -8,7 +8,8 @@ const features = [
   "Comprehensive Adult Day Care Services",
   "Reliable Medical Transportation",
   "Wholesome, Nutritious Meals",
-  "Compassionate In-Home Care Support",
+  "Compassionate In-Home Care Services",
+  "Tailored Case Management",
 ]
 
 const ServiceOfferings = () => {
@@ -16,16 +17,20 @@ const ServiceOfferings = () => {
 
   return (
     <div
-      className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto items-center"
+      className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto items-center mt-10"
       id="services"
     >
       <ScrollAnimationWrapper>
-        <motion.div variants={scrollAnimation} className="flex justify-center lg:mt-10">
-          <span className="badge badge-neutral p-2">Services</span>
+        <motion.div 
+          variants={scrollAnimation} 
+          className="text-center max-w-2xl mx-auto"
+        >
+          <span className="badge badge-neutral p-2 mb-10">Services</span>
+          <h2 className="text-4xl sm:text-5xl font-extrabold">Care You Can Count On.</h2>
         </motion.div>
       </ScrollAnimationWrapper>
 
-      <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-2 gap-8 p  y-8 my-12 mt-0">  
+      <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-2 gap-8 mb-12 ">  
         <ScrollAnimationWrapper className="flex w-full justify-end">
           <motion.div className="h-full w-full p-1" variants={scrollAnimation}>
             <Image

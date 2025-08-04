@@ -17,7 +17,7 @@ const NotificationBar = () => {
             🎉 Now enrolling new clients!
           </span>
           <a
-            href="/contact"
+            href="#contact"
             className="btn btn-xs btn-accent normal-case text-white"
           >
             Contact Us
@@ -26,15 +26,15 @@ const NotificationBar = () => {
 
         {/* Right: Social Icons */}
         <div className="flex items-center justify-end gap-4 flex-1">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <FaFacebookF className="h-4 w-4 hover:text-base-200" />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <FaLinkedinIn className="h-4 w-4 hover:text-base-200" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="h-4 w-4 hover:text-base-200" />
-          </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <FaFacebookF className="h-5 w-5 text-[#1877F2] hover:scale-110 transition-transform duration-200" />
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <FaInstagram className="h-5 w-5 text-[#E1306C] hover:scale-110 transition-transform duration-200" />
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <FaLinkedinIn className="h-5 w-5 text-[#0A66C2] hover:scale-110 transition-transform duration-200" />
+        </a>
         </div>
       </div>
     </div>
