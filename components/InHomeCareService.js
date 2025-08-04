@@ -42,6 +42,9 @@ const InHomeCare = () => {
               We offer a range of assistance including personal hygiene, mobility, light housekeeping, medication reminders, and emotional companionship. 
               Each care plan is customized based on the client’s needs, and services are delivered by trained, vetted caregivers who prioritize dignity, respect, and safety.
             </p>
+            <button className="font-medium tracking-wide py-2 px-5 sm:px-8 border border-green-500 text-green-500 bg-white-500 outline-none rounded-l-full rounded-r-full capitalize hover:bg-green-500 hover:text-white-500 transition-all hover:shadow-green ">
+                Learn More
+            </button>
           </motion.div>
         </ScrollAnimationWrapper>
 

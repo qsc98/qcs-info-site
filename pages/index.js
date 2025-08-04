@@ -7,6 +7,7 @@ import NutritiousMeals from "../components/NutritiousMeals";
 import InHomeCare from "../components/InHomeCareService.js";
 import MedicalTransportation from "../components/MedicalTransportation";
 import AboutUs from "../components/AboutUs";
+import ContactUs from "../components/ContactUs";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <NutritiousMeals />
         <InHomeCare />
         <MedicalTransportation />
+        <ContactUs />
         <AboutUs />
      </Layout>
     </>
