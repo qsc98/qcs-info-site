@@ -30,22 +30,23 @@ const InHomeCare = () => {
     <div className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto my-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <ScrollAnimationWrapper>
-          <motion.div
-            variants={scrollAnimation}
-            className="bg-white shadow-lg rounded-xl p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300"
-          >
-            <h3 className="text-2xl font-bold text-emerald-800 mb-3 flex items-center gap-2">
-              In-Home Care
-            </h3>
-            <p className="text-black-500 text-md leading-relaxed mb-4">
-              Our in-home care service allows individuals to age in place comfortably while receiving the support they need for daily living. 
-              We offer a range of assistance including personal hygiene, mobility, light housekeeping, medication reminders, and emotional companionship. 
-              Each care plan is customized based on the client’s needs, and services are delivered by trained, vetted caregivers who prioritize dignity, respect, and safety.
-            </p>
-            <button className="float-right font-medium tracking-wide py-4 px-5 sm:px-8 border border-green-500 text-green-500 bg-white-500 outline-none rounded-l-full rounded-r-full capitalize hover:bg-green-500 hover:text-white-500 transition-all hover:shadow-green ">
-                Learn More
-            </button>
-          </motion.div>
+        <motion.div
+          variants={scrollAnimation}
+className="relative bg-white shadow-lg rounded-xl p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300 min-h-[auto]"
+        >
+          <h3 className="text-2xl font-bold text-emerald-800 mb-3 flex items-center gap-2">
+            In-Home Care
+          </h3>
+            <p className="text-black-500 text-md leading-relaxed mb-14">
+            Our in-home care service allows individuals to age in place comfortably while receiving the support they need for daily living. 
+            We offer a range of assistance including personal hygiene, mobility, light housekeeping, medication reminders, and emotional companionship. 
+            Each care plan is customized based on the client’s needs, and services are delivered by trained, vetted caregivers who prioritize dignity, respect, and safety.
+          </p>
+
+          <button className="absolute bottom-6 left-1/2 transform -translate-x-1/2 font-medium tracking-wide py-2 px-4 border border-green-500 text-green-500 bg-white outline-none rounded-full capitalize hover:bg-green-500 hover:text-white transition-all shadow hover:shadow-green">
+            Learn More
+          </button>
+        </motion.div>
         </ScrollAnimationWrapper>
 
         <ScrollAnimationWrapper>
