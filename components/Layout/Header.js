@@ -102,7 +102,7 @@ const Header = () => {
         </nav>
       </header>
       
-        <MobileFloatingNav activeLink={activeLink} setActiveLink={setActiveLink} />
+      <MobileFloatingNav activeLink={activeLink} setActiveLink={setActiveLink} />
     </>
   );
 };
