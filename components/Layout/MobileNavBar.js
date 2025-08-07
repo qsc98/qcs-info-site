@@ -5,8 +5,8 @@ import { Link as LinkScroll } from "react-scroll";
 
 const MobileFloatingNav = ({ activeLink, setActiveLink }) => {
   return (
-<nav className="lg:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[92vw] max-w-md bg-white">
-<div className="bg-white border border-gray-200 shadow-xl rounded-full px-8 py-3 flex justify-around items-center space-x-6">
+<nav className="lg:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[92vw] max-w-md">
+<div className="bg-white-500 border border-white-500 shadow-xl rounded-full px-8 py-3 flex justify-around items-center space-x-6">
     <LinkScroll
       to="services"
       spy={true}

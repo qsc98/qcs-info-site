@@ -4,28 +4,28 @@ import LogoVPN from "../../public/assets/Logo-Transparent.png";
 
 const Footer = () => {
   return (
-<footer className="bg-primary text-primary-content">
+<footer className="bg-white text-primary-content">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Newsletter */} 
         <div className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 ">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Get the latest news!</h2>
-            <p className="mt-4 text-sm text-white-800">
+            <h2 className="text-2xl font-bold text-black-700 text-center lg:text-left">Get the latest news!</h2>
+            <p className="mt-4 text-sm text-primary-800">
               Subscribe to stay informed about updates, services, and upcoming events.
             </p>
           </div>
 
           <form className="w-full lg:flex lg:items-end">
             <label htmlFor="UserEmail" className="sr-only">Email</label>
-            <div className="border p-2 focus-within:ring-3 sm:flex sm:items-center sm:gap-4 w-full">
+            <div className="w-full rounded-xl border border-gray-500 bg-gray-700/50 px-4 py-3 focus-within:ring-2 focus-within:ring-green-500 transition-shadow sm:flex sm:items-center sm:gap-4 shadow-md">
               <input
                 type="email"
                 id="UserEmail"
                 placeholder="you@example.com"
-                className="border-none bg-gray-600 focus:border-transparent focus:ring-transparent sm:text-sm text-white w-full"
+                className="text-black-600 placeholder-gray-400 focus:outline-none sm:text-sm w-full"
               />
               <button
-                className="mt-1 w-full bg-neutral px-6 py-3 text-sm font-bold tracking-wide text-white uppercase transition hover:bg-primary sm:mt-0 sm:w-auto sm:shrink-0"
+                className="mt-2 sm:mt-0 w-full sm:w-auto shrink-0 rounded-lg bg-green-600 px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-400"
               >
                 Sign Up
               </button>
@@ -34,11 +34,11 @@ const Footer = () => {
         </div>
 
         {/* Main Grid: Contact - Logo/Social - Services */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 border-t border-gray-100 pt-8">
           {/* Explore Our Services */}
           <div className="lg:text-left text-center ">
-            <h4 className="text-lg font-semibold text-gray-700 mb-4">Explore Our Services</h4>
-            <ul className="space-y-2 text-sm text-gray-400 dark:text-gray-300">
+            <h4 className="text-lg font-semibold text-black-500 mb-4">Explore Our Services</h4>
+            <ul className="space-y-2 text-sm text-black-500">
               {[
                 "Adult Day Health Care",
                 "Medical Transportation",
@@ -47,7 +47,7 @@ const Footer = () => {
                 "Activities & Engagement",
                 "Our Approach to Safety",
               ].map((item) => (
-                <li key={item} className="hover:text-emerald-600 cursor-pointer transition">
+                <li key={item} className="hover:text-black-500 cursor-pointer transition">
                   {item}
                 </li>
               ))}
@@ -56,7 +56,7 @@ const Footer = () => {
 
           {/* Contact & Policies */}
           <div className="text-center">
-            <span className="text-sm text-gray-400">811 Mt Holly Rd, Fairdale KY, 40118</span>
+            <span className="text-sm text-black-500">811 Mt Holly Rd, Fairdale KY, 40118</span>
             <div className="mt-2">
               <iframe
                 title="Google Map"
@@ -74,7 +74,7 @@ const Footer = () => {
           {/* Center: Logo, tagline, socials */}
           <div className="text-center">
             <Image src={LogoVPN} alt="Logo" width={75} height={75} className="mx-auto" />
-            <span className="text-sm text-gray-400">
+            <span className="text-sm text-black-500">
               We provide compassionate adult day care and in-home support services for families in
               Louisville, KY. Helping individuals live safely, socially, and independently.
             </span>
@@ -93,17 +93,17 @@ const Footer = () => {
         </div>
 
         {/* Bottom Row */}
-        <div className="text-center border-t border-gray-100 pt-8 dark:border-gray-800 sm:flex sm:justify-between text-sm text-gray-500 dark:text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Quality Senior Health Care. All rights reserved.</p>
+        <div className="text-center sm:flex sm:justify-between text-sm text-gray-400">
+          <span>&copy; {new Date().getFullYear()} Quality Senior Health Care. All rights reserved.</span>
           <ul className="mt-4 sm:mt-0 flex flex-wrap justify-center gap-4 sm:justify-end">
             <li>
-              <a href="/privacy-policy" className="hover:text-emerald-600">Privacy Policy</a>
+              <a href="/privacy-policy" className="hover:text-green-500">Privacy Policy</a>
             </li>
             <li>
-              <a href="/terms-of-service" className="hover:text-emerald-600">Terms of Service</a>
+              <a href="/terms-of-service" className="hover:text-green-500">Terms of Service</a>
             </li>
             <li>
-              <a href="/disclaimer" className="hover:text-emerald-600">Disclaimer</a>
+              <a href="/disclaimer" className="hover:text-green-500">Disclaimer</a>
             </li>
           </ul>
         </div>
