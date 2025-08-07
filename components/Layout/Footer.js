@@ -5,6 +5,7 @@ import LogoVPN from '../../public/assets/Logo-Transparent.png'
 const Footer = () => {
   return (
     <footer className="bg-white text-primary-content">
+      <h3 className="sr-only">Our Care can Make a Difference</h3>
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Newsletter */}
         <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-2">

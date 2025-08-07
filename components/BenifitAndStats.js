@@ -1,16 +1,19 @@
-import { FaUsers, FaSmileBeam, FaDollarSign, FaHome } from "react-icons/fa";
-import CountUp from "react-countup";
+import { FaUsers, FaSmileBeam, FaDollarSign, FaHome } from 'react-icons/fa'
+import CountUp from 'react-countup'
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper'
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
 import getScrollAnimation from '../utils/getScrollAnimation'
 import { useMemo } from 'react'
 
 const BenefitStatsSection = () => {
-      const scrollAnimation = useMemo(() => getScrollAnimation(), [])
-    
+  const scrollAnimation = useMemo(() => getScrollAnimation(), [])
+
   return (
-    <div className="mx-auto mt-10 pb-10 max-w-screen-xl items-center px-6 sm:px-8 lg:px-16" id="benefits">
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+    <div
+      className="mx-auto mt-10 max-w-screen-xl items-center px-6 pb-12 sm:px-8 lg:px-16"
+      id="benefits"
+    >
+      <div className="mt-12 grid grid-cols-1 gap-10 text-center sm:grid-cols-2 lg:grid-cols-4">
         <ScrollAnimationWrapper>
           <motion.div
             className="space-y-4"
@@ -59,11 +62,9 @@ const BenefitStatsSection = () => {
             }}
           >
             <FaDollarSign className="mx-auto text-green-500" size={40} />
-            <h3 className="text-5xl font-bold text-green-500">
-              <CountUp end={100} prefix="$" duration={2.5} />
-            </h3>
+            <h3 className="text-5xl font-bold text-green-500">5x</h3>
             <p className="text-gray-300">
-              Less than the cost of nursing care per day—offering comfort and savings.
+              Less expensive than full-time nursing homes—with equal compassion.
             </p>
           </motion.div>
         </ScrollAnimationWrapper>
@@ -88,7 +89,7 @@ const BenefitStatsSection = () => {
         </ScrollAnimationWrapper>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BenefitStatsSection;
+export default BenefitStatsSection
