@@ -1,29 +1,11 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import Image from 'next/image'
-import ButtonPrimary from './misc/ButtonPrimary'
 import { motion } from 'framer-motion'
 import getScrollAnimation from '../utils/getScrollAnimation'
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper'
+import Link from 'next/link'
 
-const Hero = ({
-  listUser = [
-    {
-      name: 'Users',
-      number: '390',
-      icon: '/assets/Icon/heroicons_sm-user.svg',
-    },
-    {
-      name: 'Locations',
-      number: '20',
-      icon: '/assets/Icon/gridicons_location.svg',
-    },
-    {
-      name: 'Server',
-      number: '50',
-      icon: '/assets/Icon/bx_bxs-server.svg',
-    },
-  ],
-}) => {
+const Hero = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
 
   return (
@@ -42,7 +24,23 @@ const Hero = ({
               From daytime care and engaging activities to nutritous meals and safe transportation —
               we’re here to support you in every step of the way.
             </p>
+            <Link
+              href="/our-center"
+              className="group mt-2 inline-flex items-center font-semibold text-green-600 hover:underline"
+            >
+              Learn about our center
+              <svg
+                className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
+
           <div className="flex w-full">
             <motion.div className="h-full w-full" variants={scrollAnimation}>
               <Image

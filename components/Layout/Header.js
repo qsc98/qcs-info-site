@@ -28,7 +28,7 @@ const Header = () => {
           <div className="col-start-1 col-end-2 flex items-center">
             <Image src={LogoVPN} alt="Logo" width={75} height={75} />
           </div>
-          <ul className="col-start-4 col-end-8 hidden items-center text-black-500 lg:flex">
+          <ul className="col-start-6 col-end-8 hidden items-center text-black-500 lg:flex">
             <LinkScroll
               activeClass="active"
               to="services"
