@@ -1,31 +1,25 @@
 // components/FAQList.js
-import { useState } from "react";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { useState } from 'react'
+import { ChevronDownIcon } from '@heroicons/react/24/solid'
 
 const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="border border-gray-200 rounded-lg">
+    <div className="border-gray-200 rounded-lg border">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center p-4 text-left focus:outline-none"
+        className="flex w-full items-center justify-between p-4 text-left focus:outline-none"
       >
-        <span className="font-medium text-black-800">{question}</span>
+        <span className="text-black-800 font-medium">{question}</span>
         <ChevronDownIcon
-          className={`w-5 h-5 transition-transform ${
-            isOpen ? "rotate-180" : "rotate-0"
-          }`}
+          className={`h-5 w-5 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
         />
       </button>
-      {isOpen && (
-        <div className="px-4 pb-4 text-black-600 text-sm">
-          {answer}
-        </div>
-      )}
+      {isOpen && <div className="px-4 pb-4 text-sm text-black-600">{answer}</div>}
     </div>
-  );
-};
+  )
+}
 
 const FAQList = ({ faqs = [] }) => {
   return (
@@ -34,7 +28,7 @@ const FAQList = ({ faqs = [] }) => {
         <FAQItem key={index} question={faq.question} answer={faq.answer} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default FAQList;
+export default FAQList

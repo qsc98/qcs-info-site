@@ -8,7 +8,7 @@ module.exports = {
       test: /\.svg$/,
       issuer: /\.[jt]sx?$/,
       use: ['@svgr/webpack'],
-    });
-    return config;
+    })
+    return config
   },
-};
+}
