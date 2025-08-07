@@ -1,41 +1,34 @@
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
 // Import react scroll
-import { Link as LinkScroll } from "react-scroll";
-import Image from "next/image";
-import LogoVPN from "../../public/assets/Logo-Transparent.png";
-import NotificationBar from "./NotificationBar";
-import MobileFloatingNav from "./MobileNavBar";
+import { Link as LinkScroll } from 'react-scroll'
+import Image from 'next/image'
+import LogoVPN from '../../public/assets/Logo-Transparent.png'
+import NotificationBar from './NotificationBar'
+import MobileFloatingNav from './MobileNavBar'
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState(null);
-  const [scrollActive, setScrollActive] = useState(false);
+  const [activeLink, setActiveLink] = useState(null)
+  const [scrollActive, setScrollActive] = useState(false)
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScrollActive(window.scrollY > 20);
-    });
-  }, []);
+    window.addEventListener('scroll', () => {
+      setScrollActive(window.scrollY > 20)
+    })
+  }, [])
   return (
     <>
-      <NotificationBar/>
+      <NotificationBar />
       <header
         className={
-          "fixed w-full z-30 bg-white-500 transition-all " +
-          (scrollActive
-            ? " top-0 shadow-md pt-0"
-            : " top-0 lg:top-[2.5rem]")
+          'fixed z-30 w-full bg-white-500 transition-all ' +
+          (scrollActive ? ' top-0 pt-0 shadow-md' : ' top-0 lg:top-[2.5rem]')
         }
       >
-        <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
+        <nav className="mx-auto grid max-w-screen-xl grid-flow-col px-6 py-3 sm:px-8 sm:py-4 lg:px-16">
           <div className="col-start-1 col-end-2 flex items-center">
-            <Image
-              src={LogoVPN}
-              alt="Logo"
-              width={75}
-              height={75}
-            />
+            <Image src={LogoVPN} alt="Logo" width={75} height={75} />
           </div>
-          <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500  items-center">
+          <ul className="col-start-4 col-end-8 hidden items-center text-black-500 lg:flex">
             <LinkScroll
               activeClass="active"
               to="services"
@@ -43,18 +36,18 @@ const Header = () => {
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("services");
+                setActiveLink('services')
               }}
               className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "services"
-                  ? " text-green-500 animation-active "
-                  : " text-black-500 hover:text-green-500 ")
+                'animation-hover relative mx-2 inline-block cursor-pointer px-4 py-2' +
+                (activeLink === 'services'
+                  ? ' animation-active text-green-500'
+                  : ' text-black-500 hover:text-green-500')
               }
             >
               Services
             </LinkScroll>
-            
+
             <LinkScroll
               activeClass="active"
               to="contact"
@@ -62,13 +55,13 @@ const Header = () => {
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("contact");
+                setActiveLink('contact')
               }}
               className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "contact"
-                  ? " text-green-500 animation-active "
-                  : " text-black-500 hover:text-green-500 ")
+                'animation-hover relative mx-2 inline-block cursor-pointer px-4 py-2' +
+                (activeLink === 'contact'
+                  ? ' animation-active text-green-500'
+                  : ' text-black-500 hover:text-green-500')
               }
             >
               Contact
@@ -80,31 +73,31 @@ const Header = () => {
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("about");
+                setActiveLink('about')
               }}
               className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "about"
-                  ? " text-green-500 animation-active "
-                  : " text-black-500 hover:text-green-500 ")
+                'animation-hover relative mx-2 inline-block cursor-pointer px-4 py-2' +
+                (activeLink === 'about'
+                  ? ' animation-active text-green-500'
+                  : ' text-black-500 hover:text-green-500')
               }
             >
               About
             </LinkScroll>
           </ul>
-          <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
-            <LinkScroll to='contact'>
-              <button className="font-medium tracking-wide py-2 px-5 sm:px-8 border border-green-500 text-green-500 bg-white-500 outline-none rounded-l-full rounded-r-full capitalize hover:bg-green-500 hover:text-white-500 transition-all hover:shadow-green ">
+          <div className="col-start-10 col-end-12 flex items-center justify-end font-medium">
+            <LinkScroll to="contact">
+              <button className="hover:shadow-green rounded-l-full rounded-r-full border border-green-500 bg-white-500 px-5 py-2 font-medium capitalize tracking-wide text-green-500 outline-none transition-all hover:bg-green-500 hover:text-white-500 sm:px-8">
                 Schedule a Visit
               </button>
             </LinkScroll>
           </div>
         </nav>
       </header>
-      
+
       <MobileFloatingNav activeLink={activeLink} setActiveLink={setActiveLink} />
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
