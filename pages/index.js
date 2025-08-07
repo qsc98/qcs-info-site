@@ -9,6 +9,7 @@ import MedicalTransportation from '../components/MedicalTransportation'
 import AboutUs from '../components/AboutUs'
 import ContactUs from '../components/ContactUs'
 import BenefitStatsSection from '../components/BenifitAndStats.js'
+import PaymentLocationsSection from '../components/PaymentLocations.js'
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <MedicalTransportation />
         <ContactUs />
         <AboutUs />
+        <PaymentLocationsSection />
       </Layout>
     </>
   )
