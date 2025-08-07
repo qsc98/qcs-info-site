@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React, { useMemo } from 'react'
 import { motion } from 'framer-motion'
-import getScrollAnimation from '../utils/getScrollAnimation'
-import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper'
+import getScrollAnimation from '../../utils/getScrollAnimation'
+import ScrollAnimationWrapper from '../Layout/ScrollAnimationWrapper'
 
 const features = [
   'Comprehensive Adult Day Care Services',
@@ -20,7 +20,7 @@ const ServiceOfferings = () => {
       <ScrollAnimationWrapper>
         <motion.div variants={scrollAnimation} className="mx-auto max-w-2xl text-center">
           <span className="badge badge-neutral mb-10 p-2">Services</span>
-          <h2 className="text-4xl font-extrabold sm:text-5xl">Care You Can Count On.</h2>
+          <h2 className="text-4xl font-extrabold sm:text-5xl">Care You Can Count On</h2>
         </motion.div>
       </ScrollAnimationWrapper>
 

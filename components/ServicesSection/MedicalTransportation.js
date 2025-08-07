@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
 import { motion } from 'framer-motion'
-import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper'
-import getScrollAnimation from '../utils/getScrollAnimation'
-import FAQList from './FaqList'
+import ScrollAnimationWrapper from '../Layout/ScrollAnimationWrapper'
+import getScrollAnimation from '../../utils/getScrollAnimation'
+import FAQList from '../FaqList'
 
 const MedicalTransportation = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
@@ -49,7 +49,7 @@ const MedicalTransportation = () => {
               operated by professionals trained to assist passengers with care and dignity.
             </p>
 
-            <button className="bg-white hover:text-white hover:shadow-green absolute bottom-6 left-1/2 -translate-x-1/2 transform rounded-full border border-green-500 px-4 py-2 font-medium capitalize tracking-wide text-green-500 shadow outline-none transition-all hover:bg-green-500">
+            <button className="bg-white hover:text-white-500 hover:shadow-green absolute bottom-6 left-1/2 -translate-x-1/2 transform rounded-full border border-green-500 px-4 py-2 font-medium capitalize tracking-wide text-green-500 shadow outline-none transition-all hover:bg-green-500">
               Learn More
             </button>
           </motion.div>
