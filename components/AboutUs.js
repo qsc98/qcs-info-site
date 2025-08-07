@@ -9,14 +9,14 @@ const AboutUs = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
 
   return (
-    <div className="mx-auto max-w-screen-xl px-6 py-12 sm:px-8 lg:px-16" id="about">
+    <div className="mx-auto max-w-screen-xl px-6 py-16 sm:px-8 lg:px-16" id="about">
       <ScrollAnimationWrapper>
         <motion.div variants={scrollAnimation} className="mb-8 flex justify-center">
           <span className="badge badge-neutral p-2">About Us</span>
         </motion.div>
       </ScrollAnimationWrapper>
 
-      <div className="grid grid-cols-1 items-center gap-12 pb-20 sm:grid-cols-2 sm:pt-10">
+      <div className="grid grid-cols-1 items-center gap-12 sm:grid-cols-2 sm:pt-10">
         {/* Left: Card with Image + Button */}
         <ScrollAnimationWrapper className="flex flex-col items-center sm:items-start">
           <motion.div variants={scrollAnimation} className="card bg-base-100">

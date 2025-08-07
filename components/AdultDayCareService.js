@@ -32,7 +32,7 @@ const AdultDayCareService = () => {
   ]
 
   return (
-    <div className="mx-auto my-12 max-w-screen-xl px-6 sm:px-8 lg:px-16">
+    <div className="mx-auto py-16 max-w-screen-xl px-6 sm:px-8 lg:px-16">
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         <ScrollAnimationWrapper>
           <motion.div
