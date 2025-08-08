@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import ScrollAnimationWrapper from '../Layout/ScrollAnimationWrapper'
 import getScrollAnimation from '../../utils/getScrollAnimation'
 import FAQList from '../FaqList'
+import Link from 'next/link'
 
 const NutritiousMeals = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
@@ -31,7 +32,7 @@ const NutritiousMeals = () => {
   ]
 
   return (
-    <div className="mx-auto my-12 max-w-screen-xl px-6 sm:px-8 lg:px-16">
+    <div id="nutritious-meals" className="mx-auto my-12 max-w-screen-xl px-6 sm:px-8 lg:px-16">
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         <ScrollAnimationWrapper>
           <motion.div
@@ -50,9 +51,12 @@ const NutritiousMeals = () => {
               ensure both taste and nutritional value.
             </p>
 
-            <button className="bg-white hover:text-white-500 hover:shadow-green absolute bottom-6 left-1/2 -translate-x-1/2 transform rounded-full border border-green-500 px-4 py-2 font-medium capitalize tracking-wide text-green-500 shadow outline-none transition-all hover:bg-green-500">
+            <Link
+              href={{ pathname: '/nutritious-meals', query: { from: 'nutritious-meals' } }}
+              className="bg-white hover:shadow-green absolute bottom-6 left-1/2 -translate-x-1/2 transform rounded-full border border-green-500 px-4 py-2 font-medium capitalize tracking-wide text-green-500 shadow outline-none transition-all hover:bg-green-500 hover:text-white-500"
+            >
               Learn More
-            </button>
+            </Link>
           </motion.div>
         </ScrollAnimationWrapper>
 

@@ -45,11 +45,10 @@ const Hero = () => {
             <motion.div className="h-full w-full" variants={scrollAnimation}>
               <Image
                 src="/assets/main_hero_section.jpg"
-                alt="VPN Illustrasi"
+                alt="Seniors enjoying"
                 quality={100}
                 width={612}
                 height={383}
-                layout="responsive"
               />
             </motion.div>
           </div>

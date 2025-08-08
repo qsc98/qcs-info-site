@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import ScrollAnimationWrapper from '../Layout/ScrollAnimationWrapper'
 import getScrollAnimation from '../../utils/getScrollAnimation'
 import FAQList from '../FaqList'
+import Link from 'next/link'
 
 const MedicalTransportation = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
@@ -31,7 +32,10 @@ const MedicalTransportation = () => {
   ]
 
   return (
-    <div className="mx-auto my-12 max-w-screen-xl px-6 sm:px-8 lg:px-16">
+    <div
+      id="medical-transportation"
+      className="mx-auto my-12 max-w-screen-xl px-6 sm:px-8 lg:px-16"
+    >
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         <ScrollAnimationWrapper>
           <motion.div
@@ -48,10 +52,15 @@ const MedicalTransportation = () => {
               punctual, safe, and courteous service. All vehicles are wheelchair accessible and
               operated by professionals trained to assist passengers with care and dignity.
             </p>
-
-            <button className="bg-white hover:text-white-500 hover:shadow-green absolute bottom-6 left-1/2 -translate-x-1/2 transform rounded-full border border-green-500 px-4 py-2 font-medium capitalize tracking-wide text-green-500 shadow outline-none transition-all hover:bg-green-500">
+            <Link
+              href={{
+                pathname: '/medical-transportation',
+                query: { from: 'medical-transportation' },
+              }}
+              className="bg-white hover:shadow-green absolute bottom-6 left-1/2 -translate-x-1/2 transform rounded-full border border-green-500 px-4 py-2 font-medium capitalize tracking-wide text-green-500 shadow outline-none transition-all hover:bg-green-500 hover:text-white-500"
+            >
               Learn More
-            </button>
+            </Link>
           </motion.div>
         </ScrollAnimationWrapper>
 

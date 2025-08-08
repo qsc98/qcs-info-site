@@ -79,7 +79,7 @@ const PaymentLocationsSection = () => {
               <strong>Veteran Benefits</strong>.
             </p>
           </motion.div>
-          
+
           <motion.div
             variants={scrollAnimation}
             whileHover={{ scale: 1.05 }}

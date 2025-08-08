@@ -1,18 +1,15 @@
 import Image from 'next/image'
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
-import LogoVPN from '../../public/assets/Logo-Transparent.png'
+import Logo from '../../public/assets/Logo-Transparent.png'
 
 const Footer = () => {
   return (
     <footer className="bg-primary text-white-500">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-        
         {/* Newsletter */}
         <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
           <div>
-            <h2 className="text-center text-2xl font-bold lg:text-left">
-              Get the latest news!
-            </h2>
+            <h2 className="text-center text-2xl font-bold lg:text-left">Get the latest news!</h2>
             <p className="mt-4 text-sm text-gray-400">
               Subscribe to stay informed about updates, services, and upcoming events.
             </p>
@@ -22,14 +19,14 @@ const Footer = () => {
             <label htmlFor="UserEmail" className="sr-only">
               Email
             </label>
-            <div className="bg-black-600 w-full rounded-xl border border-gray-500 px-4 py-3 shadow-md focus-within:ring-2 focus-within:ring-green-500 sm:flex sm:items-center sm:gap-4">
+            <div className="w-full rounded-xl border border-gray-500 bg-black-600 px-4 py-3 shadow-md focus-within:ring-2 focus-within:ring-green-500 sm:flex sm:items-center sm:gap-4">
               <input
                 type="email"
                 id="UserEmail"
                 placeholder="you@example.com"
                 className="w-full bg-transparent text-white-500 placeholder-gray-400 focus:outline-none sm:text-sm"
               />
-              <button className="mt-2 w-full shrink-0 rounded-lg bg-green-500 px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-white-500 transition hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 sm:mt-0 sm:w-auto">
+              <button className="focus:ring-green-400 mt-2 w-full shrink-0 rounded-lg bg-green-500 px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-white-500 transition hover:bg-green-600 focus:outline-none focus:ring-2 sm:mt-0 sm:w-auto">
                 Sign Up
               </button>
             </div>
@@ -38,12 +35,9 @@ const Footer = () => {
 
         {/* Main Grid */}
         <div className="mb-12 grid grid-cols-1 gap-12 border-t pt-8 md:grid-cols-3">
-          
           {/* Services */}
           <div className="text-center lg:text-left">
-            <h4 className="mb-4 text-lg font-semibold text-white-500">
-              Explore Our Services
-            </h4>
+            <h4 className="mb-4 text-lg font-semibold text-white-500">Explore Our Services</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               {[
                 'Adult Day Health Care',
@@ -72,22 +66,35 @@ const Footer = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="rounded-md border border-gray-600"
+                className="border-gray-600 rounded-md border"
               ></iframe>
             </div>
           </div>
 
           {/* Logo & Social */}
           <div className="text-center">
-            <Image src={LogoVPN} alt="Logo" width={75} height={75} className="mx-auto" />
+            <Image src={Logo} alt="Logo" width={75} height={75} className="mx-auto" />
             <p className="mt-4 text-sm text-gray-400">
-              We provide compassionate adult day care and in-home support services for families in Louisville, KY. Helping individuals live safely, socially, and independently.
+              We provide compassionate adult day care and in-home support services for families in
+              Louisville, KY. Helping individuals live safely, socially, and independently.
             </p>
             <div className="mt-6 flex justify-center gap-4">
               {[
-                { icon: <FaFacebookF />, url: 'https://facebook.com', color: 'hover:text-[#1877F2]' },
-                { icon: <FaInstagram />, url: 'https://instagram.com', color: 'hover:text-[#E1306C]' },
-                { icon: <FaLinkedinIn />, url: 'https://linkedin.com', color: 'hover:text-[#0A66C2]' },
+                {
+                  icon: <FaFacebookF />,
+                  url: 'https://facebook.com',
+                  color: 'hover:text-[#1877F2]',
+                },
+                {
+                  icon: <FaInstagram />,
+                  url: 'https://instagram.com',
+                  color: 'hover:text-[#E1306C]',
+                },
+                {
+                  icon: <FaLinkedinIn />,
+                  url: 'https://linkedin.com',
+                  color: 'hover:text-[#0A66C2]',
+                },
               ].map((s, idx) => (
                 <a
                   key={idx}
@@ -104,14 +111,17 @@ const Footer = () => {
         </div>
 
         {/* Bottom Row */}
-        <div className="border-t border-gray-600 pt-6 text-center text-sm text-gray-500 sm:flex sm:justify-between">
+        <div className="border-gray-600 border-t pt-6 text-center text-sm text-gray-500 sm:flex sm:justify-between">
           <span>
             &copy; {new Date().getFullYear()} Quality Senior Health Care. All rights reserved.
           </span>
           <ul className="mt-4 flex flex-wrap justify-center gap-4 sm:mt-0 sm:justify-end">
             {['Privacy Policy', 'Terms of Service', 'Disclaimer'].map((link) => (
               <li key={link}>
-                <a href={`/${link.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-green-500">
+                <a
+                  href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="hover:text-green-500"
+                >
                   {link}
                 </a>
               </li>

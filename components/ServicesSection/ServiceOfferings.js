@@ -30,7 +30,6 @@ const ServiceOfferings = () => {
             <Image
               src="/assets/service_offerings_section.jpg"
               alt="Service Offerings"
-              layout="responsive"
               quality={100}
               height={414}
               width={508}
