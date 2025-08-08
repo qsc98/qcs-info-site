@@ -1,11 +1,11 @@
-import ServiceOfferings from '../components/ServiceOfferings'
+import ServiceOfferings from '../components/ServicesSection/ServiceOfferings.js'
 import Hero from '../components/Hero'
 import Layout from '../components/Layout/Layout'
 import SeoHead from '../components/SeoHead'
-import AdultDayCareService from '../components/AdultDayCareService'
-import NutritiousMeals from '../components/NutritiousMeals'
-import InHomeCare from '../components/InHomeCareService.js'
-import MedicalTransportation from '../components/MedicalTransportation'
+import AdultDayCareService from '../components/ServicesSection/AdultDayCareService.js'
+import NutritiousMeals from '../components/ServicesSection/NutritiousMeals.js'
+import InHomeCare from '../components/ServicesSection/InHomeCareService.js'
+import MedicalTransportation from '../components/ServicesSection/MedicalTransportation.js'
 import AboutUs from '../components/AboutUs'
 import ContactUs from '../components/ContactUs'
 import BenefitStatsSection from '../components/BenifitAndStats.js'
@@ -23,9 +23,9 @@ export default function Home() {
         <NutritiousMeals />
         <InHomeCare />
         <MedicalTransportation />
-        <ContactUs />
-        <AboutUs />
         <PaymentLocationsSection />
+        <AboutUs />
+        <ContactUs />
       </Layout>
     </>
   )

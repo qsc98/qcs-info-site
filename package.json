@@ -1,5 +1,5 @@
 {
-  "name": "next-landing-vpn",
+  "name": "quality-senior-care",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,8 @@
     "start": "next start",
     "export": "next build && next export",
     "format": "prettier --write .",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+      "clean": "rm -rf .next out node_modules package-lock.json yarn.lock && npm cache clean --force"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

@@ -1,9 +1,12 @@
+// components/AboutUs.js
 import Image from 'next/image'
 import React, { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import getScrollAnimation from '../utils/getScrollAnimation'
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper'
 import AboutImage from '../public/assets/aboutus.jpg'
+import Link from 'next/link'
+import { FaArrowRight } from 'react-icons/fa'
 
 const AboutUs = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
@@ -17,22 +20,21 @@ const AboutUs = () => {
       </ScrollAnimationWrapper>
 
       <div className="grid grid-cols-1 items-center gap-12 sm:grid-cols-2 sm:pt-10">
-        {/* Left: Card with Image + Button */}
+        {/* Left: Image */}
         <ScrollAnimationWrapper className="flex flex-col items-center sm:items-start">
           <motion.div variants={scrollAnimation} className="card bg-base-100">
-            <div className=" ">
-              <Image
-                src={AboutImage}
-                alt="About our caregiving team"
-                width={384}
-                height={384}
-                className="h-full w-full object-cover"
-              />
-            </div>
+            <Image
+              src={AboutImage}
+              alt="About our caregiving team"
+              width={384}
+              height={384}
+              className="h-full w-full rounded-lg object-cover"
+              priority
+            />
           </motion.div>
         </ScrollAnimationWrapper>
 
-        {/* Right: Clean Text Content */}
+        {/* Right: Text + Premium CTA */}
         <ScrollAnimationWrapper>
           <motion.div variants={scrollAnimation} className="text-center sm:text-left">
             <h2 className="text-4xl font-extrabold sm:text-5xl">
@@ -49,10 +51,16 @@ const AboutUs = () => {
               Our team proudly partners with local religious organizations, community centers, and
               families to make compassionate care both personal and accessible.
             </p>
-            <div className="card-actions mt-6 justify-center">
-              <a className="btn btn-success btn-wide" href="">
-                Meet Our Team ╰┈┈➤
-              </a>
+
+            <div className="mx-auto mt-6 flex w-max">
+              <Link
+                href={{ pathname: '/about-us', query: { from: 'about-us' } }}
+                aria-label="Meet our team"
+                className="bg-white hover:text-white inline-flex items-center gap-2 rounded-full border border-green-500 px-6 py-3 font-semibold text-green-600 shadow transition hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500"
+              >
+                Meet Our Team
+                <FaArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </motion.div>
         </ScrollAnimationWrapper>
