@@ -31,8 +31,7 @@ const AboutPage = () => {
 
         {/* Hero Banner — constrained height + gradient */}
         <section className="relative mt-10 overflow-hidden rounded-2xl border border-gray-500 shadow-lg">
-    <div className="mx-auto my-8 max-w-lg">
-
+          <div className="mx-auto my-8 max-w-lg">
             <Image
               src="/assets/image-placeholder.png"
               alt="Our team"
@@ -40,14 +39,17 @@ const AboutPage = () => {
               height={500}
               className="rounded-lg shadow"
             />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black-700/80 via-black-700/30 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10">
-              <h1 className="text-3xl font-bold text-white-500 sm:text-4xl">About Quality Senior Health Care</h1>
-              <p className="mt-3 max-w-3xl text-white-500/90">
-                A mission‑driven team delivering safe, social, and dignified care—centered on people and community.
-              </p>
-            </div>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black-700/80 via-black-700/30 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10">
+            <h1 className="text-3xl font-bold text-white-500 sm:text-4xl">
+              About Quality Senior Health Care
+            </h1>
+            <p className="mt-3 max-w-3xl text-white-500/90">
+              A mission‑driven team delivering safe, social, and dignified care—centered on people
+              and community.
+            </p>
+          </div>
         </section>
 
         {/* Quick Facts */}
@@ -77,8 +79,8 @@ const AboutPage = () => {
             <h2 className="text-2xl font-semibold text-green-500">Our Mission</h2>
           </div>
           <p className="text-black-500">
-            To help adults live safely, socially, and independently through purposeful daytime programs and
-            trusted in‑home support—delivered with dignity and compassion.
+            To help adults live safely, socially, and independently through purposeful daytime
+            programs and trusted in‑home support—delivered with dignity and compassion.
           </p>
         </section>
 
@@ -87,9 +89,21 @@ const AboutPage = () => {
           <h2 className="mb-4 text-2xl font-semibold text-green-500">Our Values</h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {[
-              { icon: <FaHandshake className="h-5 w-5 text-green-600" />, title: 'Trust', text: 'Transparent communication and dependable care.' },
-              { icon: <FaUsers className="h-5 w-5 text-green-600" />, title: 'Community', text: 'Partnerships with families and local orgs.' },
-              { icon: <FaShieldAlt className="h-5 w-5 text-green-600" />, title: 'Safety', text: 'Trained staff, clear protocols, continuous oversight.' },
+              {
+                icon: <FaHandshake className="h-5 w-5 text-green-600" />,
+                title: 'Trust',
+                text: 'Transparent communication and dependable care.',
+              },
+              {
+                icon: <FaUsers className="h-5 w-5 text-green-600" />,
+                title: 'Community',
+                text: 'Partnerships with families and local orgs.',
+              },
+              {
+                icon: <FaShieldAlt className="h-5 w-5 text-green-600" />,
+                title: 'Safety',
+                text: 'Trained staff, clear protocols, continuous oversight.',
+              },
             ].map(({ icon, title, text }) => (
               <div key={title} className="rounded-xl border border-gray-500 bg-white p-6 shadow">
                 <div className="mb-2 flex items-center gap-3">

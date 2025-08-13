@@ -6,7 +6,7 @@ const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="border-gray-200 rounded-lg border">
+    <div className="rounded-lg border border-gray-200">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full items-center justify-between p-4 text-left focus:outline-none"

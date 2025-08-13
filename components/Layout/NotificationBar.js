@@ -1,9 +1,10 @@
+// components/NotificationBar.js
 import MapPinIcon from '@heroicons/react/24/solid/MapPinIcon'
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa'
 
 const NotificationBar = () => {
   return (
-    <div className="text-primary-content hidden w-full bg-primary px-4 py-2 text-sm lg:flex">
+    <div className="hidden w-full bg-black px-4 py-2 text-sm text-white lg:flex">
       <div className="mx-auto flex w-full max-w-screen-xl items-center justify-between gap-6">
         {/* Left: Address */}
         <div className="flex flex-1 items-center gap-1">
@@ -14,7 +15,10 @@ const NotificationBar = () => {
         {/* Center: Message + Contact Button */}
         <div className="flex flex-1 items-center justify-center gap-3 text-center">
           <span className="whitespace-nowrap font-semibold">🎉 Now enrolling new clients!</span>
-          <a href="#contact" className="btn btn-xs btn-accent text-white normal-case">
+          <a
+            href="#contact"
+            className="inline-flex items-center rounded-full bg-white px-3 py-1 text-xs font-semibold text-black shadow transition hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-white"
+          >
             Contact Us
           </a>
         </div>

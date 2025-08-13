@@ -14,7 +14,7 @@ const OurCenter = () => {
         <div className="sticky top-4 z-50 mb-6 flex justify-start">
           <button
             onClick={() => router.push('/')}
-            className="text-white focus:ring-green-400 inline-flex items-center gap-2 rounded-md bg-green-500 px-4 py-2 text-sm font-semibold shadow-lg transition hover:bg-green-600 focus:outline-none focus:ring-2"
+            className="inline-flex items-center gap-2 rounded-md bg-green-500 px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400"
           >
             <FaArrowLeft /> Back to Main Page
           </button>
@@ -23,7 +23,7 @@ const OurCenter = () => {
         <h1 className="mb-8 text-center text-4xl font-bold text-green-600">
           Welcome to Our Center
         </h1>
-        <p className="text-gray-700 mx-auto mb-12 max-w-2xl text-center">
+        <p className="mx-auto mb-12 max-w-2xl text-center text-gray-700">
           Our adult day care center is designed with comfort, safety, and enrichment in mind. Take a
           look inside and discover the space where compassionate care meets meaningful connection.
         </p>
@@ -46,12 +46,7 @@ const OurCenter = () => {
             />
           </div>
           <div className="overflow-hidden rounded-lg shadow-md">
-            <Image
-              src="/assets/Image-placeholder.png"
-              alt="Dining Area"
-              width={600}
-              height={400}
-            />
+            <Image src="/assets/Image-placeholder.png" alt="Dining Area" width={600} height={400} />
           </div>
         </div>
 

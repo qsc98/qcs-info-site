@@ -26,7 +26,7 @@ const Footer = () => {
                 placeholder="you@example.com"
                 className="w-full bg-transparent text-white-500 placeholder-gray-400 focus:outline-none sm:text-sm"
               />
-              <button className="focus:ring-green-400 mt-2 w-full shrink-0 rounded-lg bg-green-500 px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-white-500 transition hover:bg-green-600 focus:outline-none focus:ring-2 sm:mt-0 sm:w-auto">
+              <button className="mt-2 w-full shrink-0 rounded-lg bg-green-500 px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-white-500 transition hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 sm:mt-0 sm:w-auto">
                 Sign Up
               </button>
             </div>
@@ -66,7 +66,7 @@ const Footer = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="border-gray-600 rounded-md border"
+                className="rounded-md border border-gray-600"
               ></iframe>
             </div>
           </div>
@@ -111,7 +111,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Row */}
-        <div className="border-gray-600 border-t pt-6 text-center text-sm text-gray-500 sm:flex sm:justify-between">
+        <div className="border-t border-gray-600 pt-6 text-center text-sm text-gray-500 sm:flex sm:justify-between">
           <span>
             &copy; {new Date().getFullYear()} Quality Senior Health Care. All rights reserved.
           </span>

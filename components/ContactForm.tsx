@@ -66,7 +66,7 @@ const ContactForm = () => {
 
       {/* Checkbox */}
       <label className="mt-4 flex items-center gap-2">
-        <input type="checkbox" className="checkbox border-gray-300 border" required />
+        <input type="checkbox" className="checkbox border border-gray-300" required />
         <span className="text-sm">
           I agree with{' '}
           <a href="#" className="font-medium italic">

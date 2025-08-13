@@ -16,7 +16,7 @@ const Hero = () => {
           variants={scrollAnimation}
         >
           <div className="row-start-2 flex flex-col items-start justify-center sm:row-start-1">
-            <h1 className="text-3xl font-medium leading-normal text-black-600 lg:text-4xl xl:text-5xl">
+            <h1 className="text-center text-3xl font-medium leading-normal text-black-600 sm:text-center lg:text-left lg:text-4xl xl:text-5xl">
               <strong>Quality</strong> You Can <strong>Trust</strong>.<br></br>
               <strong>Care</strong> You <strong>Deserve</strong>.
             </h1>
