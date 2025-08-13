@@ -36,9 +36,9 @@ const InHomeCare = () => {
         <ScrollAnimationWrapper>
           <motion.div
             variants={scrollAnimation}
-            className="bg-white relative min-h-[auto] rounded-xl border border-gray-100 p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl"
+            className="relative min-h-[auto] rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl"
           >
-            <h3 className="text-emerald-800 mb-3 flex items-center gap-2 text-2xl font-bold">
+            <h3 className="mb-3 flex items-center gap-2 text-2xl font-bold text-emerald-800">
               In-Home Care
             </h3>
             <p className="text-md mb-14 leading-relaxed text-black-500">
@@ -51,7 +51,7 @@ const InHomeCare = () => {
             </p>
             <Link
               href={{ pathname: '/in-home-care', query: { from: 'in-home-care' } }}
-              className="bg-white hover:shadow-green absolute bottom-6 left-1/2 -translate-x-1/2 transform rounded-full border border-green-500 px-4 py-2 font-medium capitalize tracking-wide text-green-500 shadow outline-none transition-all hover:bg-green-500 hover:text-white-500"
+              className="hover:shadow-green absolute bottom-6 left-1/2 -translate-x-1/2 transform rounded-full border border-green-500 bg-white px-4 py-2 font-medium capitalize tracking-wide text-green-500 shadow outline-none transition-all hover:bg-green-500 hover:text-white-500"
             >
               Learn More
             </Link>

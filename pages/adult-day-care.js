@@ -24,7 +24,7 @@ const AdultDayCarePage = () => {
         <div className="sticky top-4 z-50 flex justify-start">
           <button
             onClick={() => router.push(`/#${sectionId}`)}
-            className="bg-white/80 inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold text-black-600 shadow-lg backdrop-blur transition hover:bg-white-500 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="inline-flex items-center gap-2 rounded-md bg-white/80 px-4 py-2 text-sm font-semibold text-black-600 shadow-lg backdrop-blur transition hover:bg-white-500 focus:outline-none focus:ring-2 focus:ring-green-500"
           >
             <FaArrowLeft /> Services Overview
           </button>

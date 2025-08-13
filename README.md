@@ -6,7 +6,6 @@ This is the marketing and informational site for our Adult Day Health Care (ADHC
 
 - **Next.js 13**
 - **Tailwind CSS** – Utility-first responsive styling
-- **DaisyUI** – Tailwind-based UI components (e.g., buttons, badges, cards)
 - **Framer Motion** – Scroll and page animations
 - **Netlify** – Static site hosting with GitHub integration
 

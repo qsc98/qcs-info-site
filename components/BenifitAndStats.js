@@ -9,6 +9,24 @@ import getScrollAnimation from '../utils/getScrollAnimation'
 const BenefitStatsSection = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
 
+  const Card = ({ icon: Icon, label, value, suffix = '', children }) => (
+    <motion.div
+      variants={scrollAnimation}
+      whileHover={{ y: -4 }}
+      className="group space-y-3 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-lg"
+    >
+      <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-green-50 ring-1 ring-green-100">
+        <Icon className="text-green-600" size={22} aria-hidden />
+      </div>
+      <p className="text-xs uppercase tracking-wide text-gray-600">{label}</p>
+      <h3 className="text-5xl font-extrabold text-gray-900">
+        {typeof value === 'number' ? <CountUp end={value} suffix={suffix} duration={1.8} /> : value}
+      </h3>
+      <div className="mx-auto h-1 w-10 rounded-full bg-gradient-to-r from-green-500 to-green-600" />
+      <p className="text-sm leading-relaxed text-gray-700">{children}</p>
+    </motion.div>
+  )
+
   return (
     <div
       className="mx-auto mt-10 max-w-screen-xl items-center px-6 pb-16 sm:px-8 lg:px-16"
@@ -16,96 +34,40 @@ const BenefitStatsSection = () => {
     >
       {/* Section header */}
       <ScrollAnimationWrapper>
-        <motion.div variants={scrollAnimation} className="mx-auto mb-6 max-w-2xl text-center">
-          <h2 className="text-2xl font-extrabold tracking-tight text-black-500">
+        <motion.div variants={scrollAnimation} className="mx-auto mb-8 max-w-2xl text-center">
+          <h2 className="text-3xl font-extrabold tracking-tight text-black-600 sm:text-4xl">
             Our Care Can Make A Difference
           </h2>
-          <p className="mt-2 text-sm text-gray-400">Research-backed outcomes families care about</p>
+          <p className="mt-3 text-sm text-black-500">
+            Research‑backed outcomes families care about
+          </p>
         </motion.div>
       </ScrollAnimationWrapper>
 
       {/* Stats grid */}
       <div className="mt-8 grid grid-cols-1 gap-6 text-center sm:grid-cols-2 lg:grid-cols-4">
-        {/* Card 1 */}
         <ScrollAnimationWrapper>
-          <motion.div
-            className="border-white/10 bg-white/5 ring-white/5 hover:shadow-2xl group space-y-3 rounded-2xl border p-6 ring-1 backdrop-blur-xl transition-all hover:-translate-y-1"
-            variants={scrollAnimation}
-            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-          >
-            <div className="bg-emerald-500/10 ring-emerald-400/30 mx-auto grid h-12 w-12 place-items-center rounded-full ring-1">
-              <FaUsers className="text-emerald-400" size={22} aria-hidden />
-            </div>
-            <p className="text-xs uppercase tracking-wide text-gray-400">Social Connection</p>
-            <h3 className="text-emerald-400 text-5xl font-extrabold">
-              <CountUp end={33} suffix="%" duration={2.5} />
-            </h3>
-            <div className="from-emerald-400/70 to-green-400/70 mx-auto h-1 w-10 rounded-full bg-gradient-to-r" />
-            <p className="text-gray-300 text-sm">
-              Adults 45+ report feeling lonely—our programs foster real connection.
-            </p>
-          </motion.div>
+          <Card icon={FaUsers} label="Social Connection" value={33} suffix="%">
+            Adults 45+ report feeling lonely—our programs foster real connection.
+          </Card>
         </ScrollAnimationWrapper>
 
-        {/* Card 2 */}
         <ScrollAnimationWrapper>
-          <motion.div
-            className="border-white/10 bg-white/5 ring-white/5 hover:shadow-2xl group space-y-3 rounded-2xl border p-6 ring-1 backdrop-blur-xl transition-all hover:-translate-y-1"
-            variants={scrollAnimation}
-            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-          >
-            <div className="bg-emerald-500/10 ring-emerald-400/30 mx-auto grid h-12 w-12 place-items-center rounded-full ring-1">
-              <FaSmileBeam className="text-emerald-400" size={22} aria-hidden />
-            </div>
-            <p className="text-xs uppercase tracking-wide text-gray-400">Caregiver Relief</p>
-            <h3 className="text-emerald-400 text-5xl font-extrabold">
-              <CountUp end={78} suffix="%" duration={2.5} />
-            </h3>
-            <div className="from-emerald-400/70 to-green-400/70 mx-auto h-1 w-10 rounded-full bg-gradient-to-r" />
-            <p className="text-gray-300 text-sm">
-              Caregivers feel emotionally better with just 4 hours/week of respite care.
-            </p>
-          </motion.div>
+          <Card icon={FaSmileBeam} label="Caregiver Relief" value={78} suffix="%">
+            Caregivers feel emotionally better with just 4 hours/week of respite care.
+          </Card>
         </ScrollAnimationWrapper>
 
-        {/* Card 3 */}
         <ScrollAnimationWrapper>
-          <motion.div
-            className="border-white/10 bg-white/5 ring-white/5 hover:shadow-2xl group space-y-3 rounded-2xl border p-6 ring-1 backdrop-blur-xl transition-all hover:-translate-y-1"
-            variants={scrollAnimation}
-            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-          >
-            <div className="bg-emerald-500/10 ring-emerald-400/30 mx-auto grid h-12 w-12 place-items-center rounded-full ring-1">
-              <FaDollarSign className="text-emerald-400" size={22} aria-hidden />
-            </div>
-            <p className="text-xs uppercase tracking-wide text-gray-400">Cost Advantage</p>
-            <h3 className="text-emerald-400 text-5xl font-extrabold">5x</h3>
-            <div className="from-emerald-400/70 to-green-400/70 mx-auto h-1 w-10 rounded-full bg-gradient-to-r" />
-            <p className="text-gray-300 text-sm">
-              Less expensive than full-time nursing homes—with equal compassion.
-            </p>
-          </motion.div>
+          <Card icon={FaDollarSign} label="Cost Advantage" value={'5x'}>
+            Less expensive than full‑time nursing homes—with equal compassion.
+          </Card>
         </ScrollAnimationWrapper>
 
-        {/* Card 4 */}
         <ScrollAnimationWrapper>
-          <motion.div
-            className="border-white/10 bg-white/5 ring-white/5 hover:shadow-2xl group space-y-3 rounded-2xl border p-6 ring-1 backdrop-blur-xl transition-all hover:-translate-y-1"
-            variants={scrollAnimation}
-            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-          >
-            <div className="bg-emerald-500/10 ring-emerald-400/30 mx-auto grid h-12 w-12 place-items-center rounded-full ring-1">
-              <FaHome className="text-emerald-400" size={22} aria-hidden />
-            </div>
-            <p className="text-xs uppercase tracking-wide text-gray-400">Age in Place</p>
-            <h3 className="text-emerald-400 text-5xl font-extrabold">
-              <CountUp end={74} suffix="%" duration={2.5} />
-            </h3>
-            <div className="from-emerald-400/70 to-green-400/70 mx-auto h-1 w-10 rounded-full bg-gradient-to-r" />
-            <p className="text-gray-300 text-sm">
-              Of seniors remain living at home with the support of adult day services.
-            </p>
-          </motion.div>
+          <Card icon={FaHome} label="Age in Place" value={74} suffix="%">
+            Of seniors remain living at home with the support of adult day services.
+          </Card>
         </ScrollAnimationWrapper>
       </div>
     </div>

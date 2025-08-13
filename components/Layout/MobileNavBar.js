@@ -18,7 +18,7 @@ const MobileFloatingNav = ({ activeLink, setActiveLink }) => {
             (activeLink === 'services' ? 'text-green-500' : 'text-gray-600')
           }
         >
-          <div className="bg-white rounded-full p-2 shadow-md">
+          <div className="rounded-full bg-white p-2 shadow-md">
             <MdLocalHospital className="h-5 w-5" />
           </div>
           <span className="mt-1">Services</span>
@@ -35,8 +35,8 @@ const MobileFloatingNav = ({ activeLink, setActiveLink }) => {
             (activeLink === 'contact' ? 'text-green-500' : 'text-gray-600')
           }
         >
-          <div className="bg-white rounded-full p-2 shadow-md">
-            <HiOutlineMail className="text-black h-5 w-5" />
+          <div className="rounded-full bg-white p-2 shadow-md">
+            <HiOutlineMail className="h-5 w-5 text-black" />
           </div>
           <span className="mt-1">Contact</span>
         </LinkScroll>
@@ -52,7 +52,7 @@ const MobileFloatingNav = ({ activeLink, setActiveLink }) => {
             (activeLink === 'about' ? 'text-green-500' : 'text-gray-600')
           }
         >
-          <div className="bg-white rounded-full p-2 shadow-md">
+          <div className="rounded-full bg-white p-2 shadow-md">
             <FaUsers className="h-5 w-5" />
           </div>
           <span className="mt-1">About</span>

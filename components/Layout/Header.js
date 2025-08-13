@@ -24,7 +24,7 @@ const Header = () => {
       >
         <nav className="mx-auto grid max-w-screen-xl grid-flow-col px-6 py-3 sm:px-8 sm:py-4 lg:px-16">
           <div className="col-start-1 col-end-2 flex items-center">
-            <Image src={LogoVPN} alt="Logo" width={75} height={75} />
+            <Image src={LogoVPN} alt="Logo" href="/" width={75} height={75} />
           </div>
           <ul className="col-start-8 col-end-8 hidden items-center text-black-500 lg:flex">
             <LinkScroll

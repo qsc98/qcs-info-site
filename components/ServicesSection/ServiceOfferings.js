@@ -19,7 +19,9 @@ const ServiceOfferings = () => {
     <div className="mx-auto mt-10 max-w-screen-xl items-center px-6 sm:px-8 lg:px-16" id="services">
       <ScrollAnimationWrapper>
         <motion.div variants={scrollAnimation} className="mx-auto max-w-2xl text-center">
-          <span className="badge badge-neutral mb-10 p-2">Services</span>
+          <span className="mb-10 inline-flex items-center rounded-full bg-black px-3 py-1 text-sm font-semibold text-white shadow">
+            Services
+          </span>
           <h2 className="text-4xl font-extrabold sm:text-5xl">Care You Can Count On</h2>
         </motion.div>
       </ScrollAnimationWrapper>

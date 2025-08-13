@@ -1,7 +1,11 @@
 // tailwind.config.js
 module.exports = {
   darkMode: ['class'],
-  content: ['./pages/*.js', './pages/**/*.js', './components/*.js', './components/**/*.js'],
+  content: [
+    './pages/**/*.{js,jsx,ts,tsx}',
+    './components/**/*.{js,jsx,ts,tsx}',
+    './app/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
     boxShadow: {
       sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
@@ -14,38 +18,40 @@ module.exports = {
       'orange-md': '0px 20px 40px -15px rgba(245,56,56,0.81)',
       none: 'none',
     },
-    colors: {
-      transparent: 'transparent',
-      black: {
-        500: '#4F5665',
-        600: '#0B132A',
-        700: '#1C2541',
-      },
-      orange: {
-        100: '#FFECEC',
-        500: '#F53855',
-      },
-      green: {
-        500: '#2FAB73',
-        600: '#1A7A4D',
-      },
-      white: {
-        300: '#F8F8F8',
-        500: '#fff',
-      },
-      gray: {
-        100: '#EEEFF2',
-        400: '#AFB5C0',
-        500: '#DDDDDD',
-      },
-    },
     extend: {
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
       colors: {
+        transparent: 'transparent',
+
+        // IMPORTANT: provide DEFAULT so bg-black / text-black exist
+        black: {
+          DEFAULT: '#000000',
+          500: '#4F5665',
+          600: '#0B132A',
+          700: '#1C2541',
+        },
+
+        // Same for white so bg-white / text-white exist
+        white: {
+          DEFAULT: '#FFFFFF',
+          300: '#F8F8F8',
+          500: '#FFFFFF',
+        },
+
+        orange: {
+          100: '#FFECEC',
+          500: '#F53855',
+        },
+        green: {
+          500: '#2FAB73',
+          600: '#1A7A4D',
+        },
+        gray: {
+          100: '#EEEFF2',
+          400: '#AFB5C0',
+          500: '#DDDDDD',
+        },
+
+        // CSS variable-driven scheme
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -87,6 +93,13 @@ module.exports = {
           5: 'hsl(var(--chart-5))',
         },
       },
+
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
@@ -103,8 +116,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('daisyui')],
-  daisyui: {
-    themes: ['light'],
-  },
+  plugins: [],
 }
