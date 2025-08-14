@@ -25,23 +25,6 @@ const MobileFloatingNav = ({ activeLink, setActiveLink }) => {
         </LinkScroll>
 
         <LinkScroll
-          to="contact"
-          spy={true}
-          smooth={true}
-          duration={500}
-          onSetActive={() => setActiveLink('contact')}
-          className={
-            'flex cursor-pointer flex-col items-center text-xs ' +
-            (activeLink === 'contact' ? 'text-green-500' : 'text-gray-600')
-          }
-        >
-          <div className="rounded-full bg-white p-2 shadow-md">
-            <HiOutlineMail className="h-5 w-5 text-black" />
-          </div>
-          <span className="mt-1">Contact</span>
-        </LinkScroll>
-
-        <LinkScroll
           to="about"
           spy={true}
           smooth={true}
@@ -56,6 +39,23 @@ const MobileFloatingNav = ({ activeLink, setActiveLink }) => {
             <FaUsers className="h-5 w-5" />
           </div>
           <span className="mt-1">About</span>
+        </LinkScroll>
+
+        <LinkScroll
+          to="contact"
+          spy={true}
+          smooth={true}
+          duration={500}
+          onSetActive={() => setActiveLink('contact')}
+          className={
+            'flex cursor-pointer flex-col items-center text-xs ' +
+            (activeLink === 'contact' ? 'text-green-500' : 'text-gray-600')
+          }
+        >
+          <div className="rounded-full bg-white p-2 shadow-md">
+            <HiOutlineMail className="h-5 w-5 text-black" />
+          </div>
+          <span className="mt-1">Contact</span>
         </LinkScroll>
       </div>
     </nav>
