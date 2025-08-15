@@ -48,25 +48,6 @@ const Header = () => {
             >
               Services
             </LinkScroll>
-
-            <LinkScroll
-              activeClass="active"
-              to="contact"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink('contact')
-              }}
-              className={
-                'animation-hover relative mx-2 inline-block cursor-pointer px-4 py-2' +
-                (activeLink === 'contact'
-                  ? ' animation-active text-green-500'
-                  : ' text-black-500 hover:text-green-500')
-              }
-            >
-              Contact
-            </LinkScroll>
             <LinkScroll
               activeClass="active"
               to="about"
@@ -84,6 +65,24 @@ const Header = () => {
               }
             >
               About
+            </LinkScroll>
+            <LinkScroll
+              activeClass="active"
+              to="contact"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink('contact')
+              }}
+              className={
+                'animation-hover relative mx-2 inline-block cursor-pointer px-4 py-2' +
+                (activeLink === 'contact'
+                  ? ' animation-active text-green-500'
+                  : ' text-black-500 hover:text-green-500')
+              }
+            >
+              Contact
             </LinkScroll>
           </ul>
           <div className="col-start-10 col-end-12 flex items-center justify-end font-medium">

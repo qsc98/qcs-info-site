@@ -9,17 +9,16 @@ import {
   FaMusic,
   FaDumbbell,
   FaBusAlt,
-  FaComments,
   FaMapMarkedAlt,
   FaClock,
   FaWheelchair,
   FaPhoneAlt,
   FaMedkit,
-  FaHandsHelping,
   FaUserNurse,
 } from 'react-icons/fa'
 import Footer from '../components/Layout/Footer'
 import GallerySection from '../components/OurCenterGallery'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
 const OurCenter = () => {
   const router = useRouter()
@@ -38,7 +37,7 @@ const OurCenter = () => {
         <div className="sticky top-4 z-50 mb-6 flex justify-start">
           <button
             onClick={() => router.push('/')}
-            className="inline-flex items-center gap-2 rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white shadow-lg ring-1 ring-emerald-600/60 transition hover:-translate-y-0.5 hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+            className="inline-flex items-center gap-2 rounded-xl bg-white/80 px-4 py-2 text-sm font-semibold text-gray-900 shadow-lg ring-1 ring-gray-200 backdrop-blur transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-400"
           >
             <FaArrowLeft aria-hidden /> Back to Main Page
           </button>
@@ -94,15 +93,8 @@ const OurCenter = () => {
             </div>
           </div>
 
-          <div className="relative aspect-[3/3] w-full overflow-hidden rounded-[22px] ring-1 ring-emerald-900/10">
-            <Image
-              src="/assets/Image-placeholder.png"
-              alt="Bright, welcoming common area in our center"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="pointer-events-none absolute inset-0 rounded-[22px] ring-1 ring-white/40" />
+          <div className="relative aspect-[3/3] w-full overflow-hidden rounded-2xl shadow-xl">
+            <DotLottieReact src="/assets/OurCenter.lottie" autoplay />
           </div>
         </section>
 
