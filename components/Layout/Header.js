@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link as LinkScroll } from 'react-scroll'
 import Image from 'next/image'
-import LogoVPN from '../../public/assets/Logo-Transparent.png'
+import Logo from '../../public/assets/Logo.png'
 import NotificationBar from './NotificationBar'
 import MobileFloatingNav from './MobileNavBar'
 import Link from 'next/link'
@@ -26,7 +26,7 @@ const Header = () => {
         <nav className="mx-auto grid max-w-screen-xl grid-flow-col px-6 py-3 sm:px-8 sm:py-4 lg:px-16">
           <div className="col-start-1 col-end-2 flex items-center">
             <Link href="/" aria-label="Go to homepage">
-              <Image src={LogoVPN} alt="Logo" width={75} height={75} priority />
+              <Image src={Logo} alt="Logo" width={75} height={75} priority />
             </Link>
           </div>
           <ul className="col-start-8 col-end-8 hidden items-center text-black-500 lg:flex">
