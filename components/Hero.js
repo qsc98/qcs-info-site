@@ -21,7 +21,7 @@ const Hero = () => {
               <strong>Care</strong> You <strong>Deserve</strong>.
             </h1>
             <p className="mb-6 mt-4 text-black-500">
-              From daytime care and engaging activities to nutritous meals and safe transportation —
+              From daytime care and engaging activities to nutritious meals and safe transportation —
               we’re here to support you in every step of the way.
             </p>
             <Link

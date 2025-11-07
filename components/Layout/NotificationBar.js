@@ -14,7 +14,9 @@ const NotificationBar = () => {
 
         {/* Center: Message + Contact Button */}
         <div className="flex flex-1 items-center justify-center gap-3 text-center">
-          <span className="whitespace-nowrap font-semibold">🎉 Now enrolling new clients!</span>
+          <span className="whitespace-nowrap font-semibold">
+            Opening soon—pending state licensure.
+          </span>
           <a
             href="#contact"
             className="inline-flex items-center rounded-full bg-white px-3 py-1 text-xs font-semibold text-black shadow transition hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-white"
