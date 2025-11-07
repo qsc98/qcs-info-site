@@ -40,7 +40,7 @@ const PaymentLocationsSection = () => {
       {...cardMotionProps}
       className="flex flex-col items-center rounded-lg bg-white p-6 shadow-md"
     >
-      <Icon className="mb-3 text-green-500" size={40} aria-hidden="true" />
+      <Icon className="mb-3 text-emerald-800" size={40} aria-hidden="true" />
       <h3 className="mb-2 text-xl font-semibold text-gray-700">{title}</h3>
       <p className="text-center text-gray-600">{children}</p>
     </motion.div>
@@ -54,7 +54,7 @@ const PaymentLocationsSection = () => {
       viewport={{ once: true, amount: 0.2 }}
       className="bg-white px-6 py-16 text-center"
     >
-      <h2 className="mb-10 text-3xl font-bold text-gray-800">Why Families Trust Us</h2>
+      <h2 className="mb-10 text-3xl sm:text-5xl">Why Families Trust Us</h2>
 
       <motion.div
         variants={container}

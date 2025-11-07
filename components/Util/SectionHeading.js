@@ -8,8 +8,8 @@ export default function SectionHeading({ eyebrow, title, description }) {
           </span>
         </div>
       ) : null}
-      <h2 className="mt-3 text-3xl font-semibold text-gray-900">{title}</h2>
-      {description ? <p className="mx-auto mt-2 max-w-3xl text-gray-700">{description}</p> : null}
+  <h2 className="mt-3 text-3xl font-jakarta font-bold text-navy leading-[1.2]">{title}</h2>
+  {description ? <p className="mx-auto mt-2 max-w-3xl font-inter font-normal text-neutraltext leading-[1.6] mt-2 max-w-3xl">{description}</p> : null}
     </div>
   )
 }

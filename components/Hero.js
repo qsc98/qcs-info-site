@@ -16,12 +16,12 @@ const Hero = () => {
           variants={scrollAnimation}
         >
           <div className="row-start-2 flex flex-col items-start justify-center sm:row-start-1">
-            <h1 className="text-center text-3xl font-medium leading-normal text-black-600 sm:text-center lg:text-left lg:text-4xl xl:text-5xl">
+            <h1 className="text-center font-jakarta font-bold text-navy leading-[1.15] sm:text-center lg:text-left text-3xl lg:text-4xl xl:text-5xl">
               <strong>Quality</strong> You Can <strong>Trust</strong>.<br></br>
               <strong>Care</strong> You <strong>Deserve</strong>.
             </h1>
-            <p className="mb-6 mt-4 text-black-500">
-              From daytime care and engaging activities to nutritous meals and safe transportation —
+            <p className="mb-6 mt-4 font-inter font-normal text-neutraltext leading-[1.6]">
+              From daytime care and engaging activities to nutritious meals and safe transportation —
               we’re here to support you in every step of the way.
             </p>
             <Link

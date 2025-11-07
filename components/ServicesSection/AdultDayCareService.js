@@ -56,7 +56,7 @@ const AdultDayCareService = () => {
               href={{ pathname: '/adult-day-care', query: { from: 'adult-day-care' } }}
               className="hover:shadow-green absolute bottom-6 left-1/2 -translate-x-1/2 transform rounded-full border border-green-500 bg-white px-4 py-2 font-medium capitalize tracking-wide text-green-500 shadow outline-none transition-all hover:bg-green-500 hover:text-white-500"
             >
-              Learn More
+              Learn About Day Care
             </Link>
           </motion.div>
         </ScrollAnimationWrapper>
