@@ -19,6 +19,11 @@ module.exports = {
       none: 'none',
     },
     extend: {
+      fontFamily: {
+        'jakarta': ['Plus Jakarta Sans', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
+        'rubik': ['Rubik', 'sans-serif'],
+      },
       colors: {
         transparent: 'transparent',
 
@@ -42,13 +47,25 @@ module.exports = {
           500: '#F53855',
         },
         green: {
-          500: '#2FAB73',
+          500: '#0B3D2E',
           600: '#1A7A4D',
         },
         gray: {
           100: '#EEEFF2',
           400: '#AFB5C0',
           500: '#DDDDDD',
+        },
+        navy: {
+          DEFAULT: '#1a4566', // For h1, h2, h3
+        },
+        deepnavy:{
+          DEFAULT: '#132C4A', // For nav bar
+        },
+        darkneutral: {
+          DEFAULT: '#0A3D35', 
+        },
+        neutraltext: {
+          DEFAULT: '#0F172A',
         },
 
         // CSS variable-driven scheme
@@ -92,7 +109,7 @@ module.exports = {
           4: 'hsl(var(--chart-4))',
           5: 'hsl(var(--chart-5))',
         },
-      },
+  },
 
       borderRadius: {
         lg: 'var(--radius)',

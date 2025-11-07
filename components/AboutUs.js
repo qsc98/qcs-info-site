@@ -39,18 +39,18 @@ const AboutUs = () => {
         {/* Right: Text + Premium CTA */}
         <ScrollAnimationWrapper>
           <motion.div variants={scrollAnimation} className="text-center sm:text-left">
-            <h2 className="text-4xl font-extrabold sm:text-5xl">
+            <h2 className="font-jakarta font-bold text-navy leading-[1.2] text-4xl sm:text-5xl">
               Rooted in Care,
               <br /> Built for Community
             </h2>
             {/* Replaces DaisyUI `text-base-content` */}
-            <p className="mt-6 text-lg leading-relaxed text-black-500">
+            <p className="mt-6 text-lg font-inter font-normal text-neutraltext leading-[1.6]">
               We’re a diverse team of caregivers, technologists, and local advocates committed to
               providing meaningful, trustworthy care for adults and seniors in Louisville. From
               social workers and church volunteers to IT professionals and family caregivers — we
               bring experience, heart, and innovation to everything we do.
             </p>
-            <p className="mt-4 text-lg text-black-500">
+            <p className="mt-4 text-lg font-inter font-normal text-neutraltext leading-[1.6]">
               Our team proudly partners with local religious organizations, community centers, and
               families to make compassionate care both personal and accessible.
             </p>

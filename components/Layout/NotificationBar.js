@@ -4,7 +4,7 @@ import { FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa'
 
 const NotificationBar = () => {
   return (
-    <div className="hidden w-full bg-black px-4 py-2 text-sm text-white lg:flex">
+  <div className="hidden w-full bg-deepnavy px-4 py-2 text-sm text-white lg:flex">
       <div className="mx-auto flex w-full max-w-screen-xl items-center justify-between gap-6">
         {/* Left: Address */}
         <div className="flex flex-1 items-center gap-1">

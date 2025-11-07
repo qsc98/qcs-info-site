@@ -15,11 +15,11 @@ const BenefitStatsSection = () => {
       whileHover={{ y: -4 }}
       className="group space-y-3 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-lg"
     >
-      <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-green-50 ring-1 ring-green-100">
-        <Icon className="text-green-600" size={22} aria-hidden />
+      <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-green-50 ring-1 ring-darkneutral-100">
+        <Icon className="text-darkneutral-600" size={22} aria-hidden />
       </div>
       <p className="text-xs uppercase tracking-wide text-gray-600">{label}</p>
-      <h3 className="text-5xl font-extrabold text-gray-900">
+      <h3 className="text-5xl text-navy">
         {typeof value === 'number' ? <CountUp end={value} suffix={suffix} duration={1.8} /> : value}
       </h3>
       <div className="mx-auto h-1 w-10 rounded-full bg-gradient-to-r from-green-500 to-green-600" />
@@ -34,8 +34,8 @@ const BenefitStatsSection = () => {
     >
       {/* Section header */}
       <ScrollAnimationWrapper>
-        <motion.div variants={scrollAnimation} className="mx-auto mb-8 max-w-2xl text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-black-600 sm:text-4xl">
+        <motion.div variants={scrollAnimation} className="mx-auto mb-8 max-w-3xl text-center">
+          <h2 className="text-3xl sm:text-5xl">
             Our Care Can Make A Difference
           </h2>
           <p className="mt-3 text-sm text-black-500">
