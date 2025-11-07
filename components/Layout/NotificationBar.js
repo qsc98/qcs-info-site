@@ -1,6 +1,5 @@
 // components/NotificationBar.js
 import MapPinIcon from '@heroicons/react/24/solid/MapPinIcon'
-import { FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa'
 
 const NotificationBar = () => {
   return (
@@ -12,9 +11,14 @@ const NotificationBar = () => {
           <span>811 Mt Holly Rd, Fairdale, KY 40118</span>
         </div>
 
-        {/* Center: Message + Contact Button */}
-        <div className="flex flex-1 items-center justify-center gap-3 text-center">
-          <span className="whitespace-nowrap font-semibold">
+        {/* Center: Welcome message */}
+        <div className="flex flex-1 items-center justify-center text-center">
+          <span className="text-base">Welcome! 🙂</span>
+        </div>
+
+        {/* Right: Opening notice */}
+        <div className="flex flex-1 items-center justify-end gap-3">
+          <span className="whitespace-nowrap">
             Opening soon—pending state licensure.
           </span>
           <a
@@ -22,19 +26,6 @@ const NotificationBar = () => {
             className="inline-flex items-center rounded-full bg-white px-3 py-1 text-xs font-semibold text-black shadow transition hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-white"
           >
             Contact Us
-          </a>
-        </div>
-
-        {/* Right: Social Icons */}
-        <div className="flex flex-1 items-center justify-end gap-4">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <FaFacebookF className="h-5 w-5 text-[#1877F2] transition-transform duration-200 hover:scale-110" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="h-5 w-5 text-[#E1306C] transition-transform duration-200 hover:scale-110" />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <FaLinkedinIn className="h-5 w-5 text-[#0A66C2] transition-transform duration-200 hover:scale-110" />
           </a>
         </div>
       </div>
