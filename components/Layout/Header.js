@@ -5,6 +5,7 @@ import Logo from '../../public/assets/Logo.png'
 import NotificationBar from './NotificationBar'
 import MobileFloatingNav from './MobileNavBar'
 import Link from 'next/link'
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null)
@@ -85,12 +86,16 @@ const Header = () => {
               Contact
             </LinkScroll>
           </ul>
-          <div className="col-start-10 col-end-12 flex items-center justify-end font-medium">
-            <LinkScroll to="contact">
-              <button className="hover:shadow-green rounded-l-full rounded-r-full border border-green-500 bg-white-500 px-5 py-2 font-medium capitalize tracking-wide text-green-500 outline-none transition-all hover:bg-green-500 hover:text-white-500 sm:px-8">
-                Schedule a Visit
-              </button>
-            </LinkScroll>
+          <div className="col-start-10 col-end-12 flex items-center justify-end gap-4">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FaFacebookF className="h-5 w-5 text-[#1877F2] transition-transform duration-200 hover:scale-110" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FaInstagram className="h-5 w-5 text-[#E1306C] transition-transform duration-200 hover:scale-110" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedinIn className="h-5 w-5 text-[#0A66C2] transition-transform duration-200 hover:scale-110" />
+            </a>
           </div>
         </nav>
       </header>
