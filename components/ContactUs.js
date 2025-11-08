@@ -9,11 +9,11 @@ const ContactSection = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
 
   return (
-    <div className="mx-auto max-w-screen-xl px-6 py-12 sm:px-8 lg:px-16" id="contact">
+    <div className="mx-auto max-w-screen-xl px-6 pt-12 pb-24 sm:px-8 lg:px-16" id="contact">
       {/* Heading */}
       <ScrollAnimationWrapper>
         <motion.div variants={scrollAnimation} className="mx-auto mb-12 max-w-2xl text-center">
-          <span className="mb-10 inline-flex items-center rounded-full bg-black px-3 py-1 text-sm font-semibold text-white shadow">
+          <span className="mb-10 inline-flex items-center rounded-full bg-navy px-3 py-1 text-sm font-semibold text-white shadow">
             Support
           </span>
           <h2 className="text-4xl font-extrabold sm:text-5xl">Let’s Connect!</h2>

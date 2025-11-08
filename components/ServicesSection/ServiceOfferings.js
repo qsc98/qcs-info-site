@@ -4,68 +4,34 @@ import { motion } from 'framer-motion'
 import getScrollAnimation from '../../utils/getScrollAnimation'
 import ScrollAnimationWrapper from '../Layout/ScrollAnimationWrapper'
 
-const features = [
-  'Comprehensive Adult Day Care Services',
-  'Reliable Medical Transportation',
-  'Wholesome, Nutritious Meals',
-  'Compassionate In-Home Care Services',
-  'Tailored Case Management',
-]
-
 const ServiceOfferings = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
 
   return (
-    <div className="mx-auto mt-10 max-w-screen-xl items-center px-6 sm:px-8 lg:px-16" id="services">
+    <div className="mx-auto max-w-screen-xl items-center px-6 py-10 sm:px-8 lg:px-16" id="services">
       <ScrollAnimationWrapper>
         <motion.div variants={scrollAnimation} className="mx-auto max-w-2xl text-center">
-          <span className="mb-10 inline-flex items-center rounded-full bg-black px-3 py-1 text-sm font-semibold text-white shadow">
+          <span className="mb-10 inline-flex items-center rounded-full bg-navy px-3 py-1 text-sm font-semibold text-white shadow">
             Services
           </span>
           <h2 className="text-4xl font-extrabold sm:text-5xl">Care You Can Count On</h2>
+            <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-black-500">
+              Enhancing life with care, convenience, and compassion.
+            </p>
         </motion.div>
       </ScrollAnimationWrapper>
 
-      <div className="mb-12 grid grid-flow-row grid-cols-1 gap-8 sm:grid-flow-col sm:grid-cols-2">
-        <ScrollAnimationWrapper className="flex w-full justify-end">
-          <motion.div className="h-full w-full p-1" variants={scrollAnimation}>
+      <div className="mt-12 flex justify-center">
+        <ScrollAnimationWrapper className="w-full max-w-2xl">
+          <motion.div className="w-full overflow-hidden rounded-2xl bg-white shadow" variants={scrollAnimation}>
             <Image
               src="/assets/service_offerings_section.jpg"
               alt="Service Offerings"
               quality={100}
               height={414}
               width={508}
+              className="h-auto w-full object-cover"
             />
-          </motion.div>
-        </ScrollAnimationWrapper>
-
-        <ScrollAnimationWrapper className="content-center">
-          <motion.div
-            className="ml-auto flex w-full flex-col items-end items-center justify-center lg:px-10"
-            variants={scrollAnimation}
-          >
-            <p className="my-2 text-black-600">
-              Discover our range of services designed to enhance quality of life with care,
-              convenience, and compassion - for you or someone you love.
-            </p>
-            <ul className="ml-8 list-inside self-start text-black-500">
-              {features.map((feature, index) => (
-                <motion.li
-                  className="circle-check custom-list relative"
-                  custom={{ duration: 2 + index }}
-                  variants={scrollAnimation}
-                  key={feature}
-                  whileHover={{
-                    scale: 1.1,
-                    transition: {
-                      duration: 0.2,
-                    },
-                  }}
-                >
-                  {feature}
-                </motion.li>
-              ))}
-            </ul>
           </motion.div>
         </ScrollAnimationWrapper>
       </div>
