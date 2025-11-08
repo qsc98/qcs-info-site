@@ -18,11 +18,13 @@ export default function Home() {
       <Layout>
         <Hero />
         <BenefitStatsSection />
-        <ServiceOfferings />
-        <AdultDayCareService />
-        <NutritiousMeals />
-        <InHomeCare />
-        <MedicalTransportation />
+        <section className="section-shell mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-10 lg:py-16 space-y-12">
+          <ServiceOfferings />
+          <AdultDayCareService />
+          <NutritiousMeals />
+          <InHomeCare />
+          <MedicalTransportation />
+        </section>
         <PaymentLocationsSection />
         <AboutUs />
         <ContactUs />

@@ -59,7 +59,7 @@ module.exports = {
           DEFAULT: '#1a4566', // For h1, h2, h3
         },
         deepnavy:{
-          DEFAULT: '#132C4A', // For nav bar
+          DEFAULT: '#143b58ff', // For nav bar
         },
         darkneutral: {
           DEFAULT: '#0A3D35', 

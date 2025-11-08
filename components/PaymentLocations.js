@@ -1,14 +1,18 @@
 // components/PaymentLocationsSection.js
 import React, { useEffect, useState } from 'react'
+
 import {
-  FaMoneyCheckAlt,
-  FaMapMarkerAlt,
-  FaClock,
-  FaUserNurse,
-  FaClipboardList,
-  FaUtensils,
-} from 'react-icons/fa'
+  MapIcon,
+  ClockIcon,
+  UserIcon,
+  ClipboardDocumentCheckIcon,
+  CurrencyDollarIcon,
+  BeakerIcon,
+} from '@heroicons/react/24/outline'
+
 import { motion } from 'framer-motion'
+import InsightCard from './Util/InsightCard'
+import { IoNutritionOutline } from "react-icons/io5";
 
 const container = {
   hidden: { opacity: 0 },
@@ -32,17 +36,9 @@ const PaymentLocationsSection = () => {
     }
   }, [])
 
-  const cardMotionProps = hoverable ? { whileHover: { scale: 1.03 } } : {}
-
   const Card = ({ icon: Icon, title, children }) => (
-    <motion.div
-      variants={item}
-      {...cardMotionProps}
-      className="flex flex-col items-center rounded-lg bg-white p-6 shadow-md"
-    >
-      <Icon className="mb-3 text-emerald-800" size={40} aria-hidden="true" />
-      <h3 className="mb-2 text-xl font-semibold text-gray-700">{title}</h3>
-      <p className="text-center text-gray-600">{children}</p>
+    <motion.div variants={item} {...(hoverable ? { whileHover: { scale: 1.03 } } : {})}>
+      <InsightCard icon={Icon} iconSize={56} title={title} description={children} />
     </motion.div>
   )
 
@@ -54,35 +50,38 @@ const PaymentLocationsSection = () => {
       viewport={{ once: true, amount: 0.2 }}
       className="bg-white px-6 py-16 text-center"
     >
-      <h2 className="mb-10 text-3xl sm:text-5xl">Why Families Trust Us</h2>
+      <h2 className="text-3xl font-extrabold sm:text-5xl">Why Families Trust Us</h2>
+      <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-black-500">
+        A trusted partner for families seeking dependable adult day care.
+      </p>
 
       <motion.div
         variants={container}
-        className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+        className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
       >
-        <Card icon={FaMapMarkerAlt} title="Serving Our Community">
+        <Card icon={MapIcon} title="Serving Our Community">
           Proudly supporting families in <strong>Louisville</strong>, <strong>Fairdale</strong>, and
           nearby areas.
         </Card>
 
-        <Card icon={FaClock} title="Convenient Hours">
+        <Card icon={ClockIcon} title="Convenient Hours">
           Open Monday–Saturday, 7 AM – 7 PM to fit your family&apos;s schedule.
         </Card>
 
-        <Card icon={FaUserNurse} title="Compassionate Staff">
+        <Card icon={UserIcon} title="Compassionate Staff">
           Every team member is trained, background‑checked, and passionate about care.
         </Card>
 
-        <Card icon={FaClipboardList} title="Personalized Plans">
+        <Card icon={ClipboardDocumentCheckIcon} title="Personalized Plans">
           Each client receives a care plan tailored to their needs and personality.
         </Card>
 
-        <Card icon={FaMoneyCheckAlt} title="Flexible Payment Options">
+        <Card icon={CurrencyDollarIcon} title="Flexible Payment Options">
           We accept <strong>Medicaid</strong>, <strong>Private Pay</strong>, and{' '}
           <strong>Veteran Benefits</strong>.
         </Card>
 
-        <Card icon={FaUtensils} title="Nutritious Meals">
+        <Card icon={IoNutritionOutline} title="Nutritious Meals">
           We serve three fresh meals daily — balanced, comforting, and healthy.
         </Card>
       </motion.div>

@@ -5,11 +5,11 @@ import Logo from '../../public/assets/Logo-Transparent.png'
 const Footer = () => {
   return (
     <footer className="bg-primary text-white-500">
-      <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-xl px-4 pb-16 pt-24 sm:px-6 lg:px-8">
         {/* Newsletter */}
         <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
           <div>
-            <h2 className="text-center text-2xl font-bold lg:text-left">Get the latest news!</h2>
+            <h2 className="text-center text-white text-2xl font-bold lg:text-left">Get the latest news!</h2>
             <p className="mt-4 text-sm text-gray-400">
               Subscribe to stay informed about updates, services, and upcoming events.
             </p>

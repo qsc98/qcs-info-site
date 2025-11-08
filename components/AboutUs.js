@@ -4,17 +4,17 @@ import { motion } from 'framer-motion'
 import getScrollAnimation from '../utils/getScrollAnimation'
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper'
 import AboutImage from '../public/assets/aboutus.jpg'
-import Link from 'next/link'
 import { FaArrowRight } from 'react-icons/fa'
+import PrimaryCta from './misc/PrimaryCta'
 
 const AboutUs = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
 
   return (
-    <div className="mx-auto max-w-screen-xl px-6 py-16 sm:px-8 lg:px-16" id="about">
+    <div className="section-shell mx-auto max-w-screen-xl px-6 py-16 sm:px-8 lg:px-16" id="about">
       <ScrollAnimationWrapper>
         <motion.div variants={scrollAnimation} className="mb-8 flex justify-center">
-          <span className="inline-flex items-center rounded-full bg-black px-3 py-1 text-sm font-semibold text-white shadow">
+          <span className="inline-flex items-center rounded-full bg-navy px-3 py-1 text-sm font-semibold text-white shadow">
             About Us
           </span>
         </motion.div>
@@ -44,26 +44,26 @@ const AboutUs = () => {
               <br /> Built for Community
             </h2>
             {/* Replaces DaisyUI `text-base-content` */}
-            <p className="mt-6 text-lg font-inter font-normal text-neutraltext leading-[1.6]">
+            <p className="mt-6 text-black-500">
               We’re a diverse team of caregivers, technologists, and local advocates committed to
               providing meaningful, trustworthy care for adults and seniors in Louisville. From
               social workers and church volunteers to IT professionals and family caregivers — we
               bring experience, heart, and innovation to everything we do.
             </p>
-            <p className="mt-4 text-lg font-inter font-normal text-neutraltext leading-[1.6]">
+            <p className="mt-4 text-black-500">
               Our team proudly partners with local religious organizations, community centers, and
               families to make compassionate care both personal and accessible.
             </p>
 
             <div className="mx-auto mt-6 flex w-max">
-              <Link
+              <PrimaryCta
                 href={{ pathname: '/about-us', query: { from: 'about-us' } }}
                 aria-label="Meet our team"
-                className="inline-flex items-center gap-2 rounded-full border border-green-500 bg-white px-6 py-3 font-semibold text-green-600 shadow transition hover:bg-green-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="gap-2"
               >
                 Meet Our Team
                 <FaArrowRight className="h-4 w-4" />
-              </Link>
+              </PrimaryCta>
             </div>
           </motion.div>
         </ScrollAnimationWrapper>
