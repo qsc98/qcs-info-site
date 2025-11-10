@@ -61,11 +61,9 @@ const AdultDayCareService = () => {
           </motion.div>
         </ScrollAnimationWrapper>
 
-        <ScrollAnimationWrapper>
           <motion.div variants={scrollAnimation}>
             <FAQList faqs={faqs} />
           </motion.div>
-        </ScrollAnimationWrapper>
       </div>
     </div>
   )

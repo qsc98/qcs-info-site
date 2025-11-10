@@ -13,10 +13,13 @@ const AboutUs = () => {
   return (
     <div className="section-shell mx-auto max-w-screen-xl px-6 py-16 sm:px-8 lg:px-16" id="about">
       <ScrollAnimationWrapper>
-        <motion.div variants={scrollAnimation} className="mb-8 flex justify-center">
+        <motion.div variants={scrollAnimation} className="mb-8 flex flex-col items-center gap-2 text-center">
           <span className="inline-flex items-center rounded-full bg-navy px-3 py-1 text-sm font-semibold text-white shadow">
             About Us
           </span>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black-500">
+            A Diverse Team Making Care Personal
+          </p>
         </motion.div>
       </ScrollAnimationWrapper>
 
