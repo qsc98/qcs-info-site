@@ -40,10 +40,14 @@ const Hero = () => {
           className="grid grid-flow-row grid-rows-2 gap-8 py-6 sm:grid-flow-col sm:grid-cols-2 md:grid-rows-1"
           variants={scrollAnimation}
         >
-          <div className="max-w-full">
+          <div className="max-w-full">    
             <h1 className="font-jakarta text-4xl font-extrabold leading-tight sm:text-5xl">
-              <span className="font-black">QUALITY</span> You Can <span className="font-black">Trust</span>.<br />
-              <span className="font-black">CARE</span> You <span className="font-black">Deserve</span>.
+              <span className="block whitespace-nowrap">
+                <span className="font-black">QUALITY</span> You Can <span className="font-black">Trust</span>.
+              </span>
+              <span className="block whitespace-nowrap">
+                <span className="font-black">CARE</span> You <span className="font-black">Deserve</span>.
+              </span>
             </h1>
 
             <p className="mt-8 max-w-xl font-inter text-base leading-relaxed text-slate-700 sm:text-lg">
@@ -59,16 +63,13 @@ const Hero = () => {
                 </svg>
               </PrimaryCta>
 
-              <a
-                href="tel:+1502XXXXXXX"
-                className="inline-flex items-center justify-center rounded-xl bg-[#116768] px-5 py-3 text-white shadow-[0_8px_20px_rgba(17,103,104,0.3)] transition hover:bg-[#0d5556] focus:outline-none focus:ring-2 focus:ring-[#116768]/50"
-                aria-label="Call our center"
-              >
-                <PhoneIcon className="h-5 w-5" />
-              </a>
+              <PrimaryCta href="tel:+1502XXXXXXX" className="justify-center" aria-label="Call our center">
+                Call our center
+                <PhoneIcon className="ml-2 h-5 w-5" />
+              </PrimaryCta>
             </div>
 
-            <div className="mt-12 flex flex-col items-start gap-2 text-xs text-slate-500 sm:flex-row sm:items-center sm:gap-3">
+            <div className="mt-12 flex items-center gap-2 text-xs text-slate-500 sm:gap-3">
               <span>Medicaid & private pay accepted • Services offered</span>
               <span
                 className="group relative flex h-4 w-4 items-center justify-center rounded-full bg-[#116768] text-[10px] font-bold text-white"
