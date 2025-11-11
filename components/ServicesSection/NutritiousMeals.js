@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import ScrollAnimationWrapper from '../Layout/ScrollAnimationWrapper'
 import getScrollAnimation from '../../utils/getScrollAnimation'
 import FAQList from '../FaqList'
-import Link from 'next/link'
+import PrimaryCta from '../misc/PrimaryCta'
 
 const NutritiousMeals = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
@@ -37,12 +37,10 @@ const NutritiousMeals = () => {
         <ScrollAnimationWrapper>
           <motion.div
             variants={scrollAnimation}
-            className="relative min-h-[auto] rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl"
+            className="flex h-full flex-col rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl"
           >
-            <h3 className="mb-3 flex items-center gap-2 text-2xl font-bold">
-              Nutritious Meals
-            </h3>
-            <p className="text-md mb-14 leading-relaxed text-black-500">
+            <h3 className="mb-3 flex items-center gap-2 text-2xl font-bold">Nutritious Meals</h3>
+            <p className="text-md flex-1 leading-relaxed text-black-500">
               Our meal program is focused on delivering balanced, flavorful, and health-conscious
               meals that meet the unique dietary needs of seniors and individuals with medical
               conditions. We provide daily offerings that include breakfast, lunch, and snacks, with
@@ -51,12 +49,12 @@ const NutritiousMeals = () => {
               ensure both taste and nutritional value.
             </p>
 
-            <Link
-              href={{ pathname: '/nutritious-meals', query: { from: 'nutritious-meals' } }}
-              className="absolute bottom-6 left-1/2 -translate-x-1/2 transform rounded-xl bg-[#4c6d8f] px-8 py-3 font-semibold text-white shadow-[0_8px_20px_rgba(15,34,71,0.25)] transition hover:bg-[#3f5d7b] focus:outline-none focus:ring-2 focus:ring-[#4c6d8f]/50"
+            <PrimaryCta
+              href="/nutritious-meals?from=nutritious-meals"
+              className="mt-6 w-full justify-center bg-[#4c6d8f] hover:bg-[#3f5d7b] focus:ring-[#4c6d8f]/50 sm:w-auto"
             >
               See What We Offer
-            </Link>
+            </PrimaryCta>
           </motion.div>
         </ScrollAnimationWrapper>
 

@@ -171,3 +171,6 @@ li.check:before {
     @apply bg-background text-foreground;
   }
 }
+/* main {
+  overflow-x: hidden;
+} */
