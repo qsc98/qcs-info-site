@@ -34,19 +34,19 @@ const Hero = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
 
   return (
-    <div className="section-shell mx-auto max-w-screen-xl px-8 pt-16 pb-16 sm:pt-16 sm:pb-20 lg:pt-18 lg:pb-24 xl:px-16">
+    <div className="section-shell mx-auto max-w-screen-xl px-8 pt-8 pb-16 sm:pt-16 sm:pb-20 lg:pt-18 lg:pb-24 xl:px-16">
       <ScrollAnimationWrapper>
         <motion.div
-          className="grid grid-flow-row grid-rows-2 gap-8 py-6 sm:grid-flow-col sm:grid-cols-2 md:grid-rows-1"
+          className="grid grid-cols-1 gap-4 py-6 sm:grid-cols-2 sm:gap-8"
           variants={scrollAnimation}
         >
-          <div className="max-w-full">    
-            <h1 className="font-jakarta text-4xl font-extrabold leading-tight sm:text-5xl">
-              <span className="block whitespace-nowrap">
-                <span className="font-black">QUALITY</span> You Can <span className="font-black">Trust</span>.
+          <div className="order-2 max-w-full sm:order-1 text-center sm:text-left">    
+            <h1 className="font-jakarta text-3xl font-extrabold leading-tight sm:text-5xl">
+              <span className="block">
+                <span>Quality You Can Trust</span>.
               </span>
-              <span className="block whitespace-nowrap">
-                <span className="font-black">CARE</span> You <span className="font-black">Deserve</span>.
+              <span className="block mt-2">
+                <span>Care You Deserve</span>.
               </span>
             </h1>
 
@@ -77,7 +77,7 @@ const Hero = () => {
               >
                 i
                 <span
-                  className="invisible absolute bottom-full left-1/2 z-10 w-64 -translate-x-1/2 rounded-md bg-slate-900 px-3 py-2 text-center text-[11px] text-white opacity-0 transition group-hover:visible group-hover:opacity-100"
+                  className="invisible absolute bottom-full left-1/2 z-10 w-full -translate-x-1/2 rounded-md bg-slate-900 px-3 py-2 text-center text-[11px] text-white opacity-0 transition group-hover:visible group-hover:opacity-100"
                 >
                   Coverage eligibility and service availability can change. Please call ahead to confirm Medicaid/private pay acceptance and specific offerings.
                 </span>
@@ -85,7 +85,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex w-full">
+          <div className="order-1 flex w-full sm:order-2">
             <motion.div className="h-full w-full" variants={scrollAnimation}>
               <Image
                 src="/assets/main_hero_section.jpg"
