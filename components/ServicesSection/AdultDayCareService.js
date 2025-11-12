@@ -33,7 +33,7 @@ const AdultDayCareService = () => {
   ]
 
   return (
-    <div id="adult-day-care" className="mx-auto max-w-screen-xl px-6 pb-12 sm:px-8 lg:px-16">
+    <div id="adult-day-care" className="mx-auto max-w-screen-xl px-6 sm:pb-12 sm:px-8 lg:px-16">
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         <ScrollAnimationWrapper>
           <motion.div

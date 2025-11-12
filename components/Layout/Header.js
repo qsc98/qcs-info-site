@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link as LinkScroll } from 'react-scroll'
 import Image from 'next/image'
 import Logo from '../../public/assets/Logo.png'
@@ -10,15 +10,29 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null)
   const [scrollActive, setScrollActive] = useState(false)
+  const [scrollOffset, setScrollOffset] = useState(0)
+  const headerRef = useRef(null)
+
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      setScrollActive(window.scrollY > 20)
-    })
+    const handleScroll = () => setScrollActive(window.scrollY > 20)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const updateOffset = () => {
+      const headerHeight = headerRef.current ? headerRef.current.offsetHeight : 0
+      setScrollOffset(headerHeight + 16)
+    }
+    updateOffset()
+    window.addEventListener('resize', updateOffset)
+    return () => window.removeEventListener('resize', updateOffset)
   }, [])
   return (
     <>
       <NotificationBar />
       <header
+        ref={headerRef}
         className={
           'fixed z-30 w-full bg-white-500 transition-all ' +
           (scrollActive ? ' top-0 pt-0 shadow-md' : ' top-0 lg:top-[2.5rem]')
@@ -37,6 +51,7 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={1000}
+              offset={-scrollOffset}
               onSetActive={() => {
                 setActiveLink('services')
               }}
@@ -55,6 +70,7 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={1000}
+              offset={-scrollOffset}
               onSetActive={() => {
                 setActiveLink('about')
               }}
@@ -73,6 +89,7 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={1000}
+              offset={-scrollOffset}
               onSetActive={() => {
                 setActiveLink('contact')
               }}
@@ -100,7 +117,7 @@ const Header = () => {
         </nav>
       </header>
 
-      <MobileFloatingNav activeLink={activeLink} setActiveLink={setActiveLink} />
+      <MobileFloatingNav activeLink={activeLink} setActiveLink={setActiveLink} scrollOffset={scrollOffset} />
     </>
   )
 }

@@ -32,7 +32,7 @@ const NutritiousMeals = () => {
   ]
 
   return (
-    <div id="nutritious-meals" className="mx-auto max-w-screen-xl px-6 py-12 sm:px-8 lg:px-16">
+    <div id="nutritious-meals" className="mx-auto max-w-screen-xl px-6 sm:py-12 sm:px-8 lg:px-16">
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         <ScrollAnimationWrapper>
           <motion.div

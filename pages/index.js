@@ -18,12 +18,27 @@ export default function Home() {
       <Layout>
         <Hero />
         <BenefitStatsSection />
-        <section className="section-shell mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-10 lg:py-16 space-y-12">
-          <ServiceOfferings />
-          <AdultDayCareService />
-          <NutritiousMeals />
-          <InHomeCare />
-          <MedicalTransportation />
+        <section
+          id="services"
+          className="relative section-shell mx-auto max-w-screen-xl overflow-hidden rounded-3xl px-4 py-12 sm:px-6 lg:px-10 lg:py-16"
+        >
+          <div
+            className="pointer-events-none absolute inset-0 opacity-30"
+            style={{
+              backgroundImage: "url('/assets/background-2.jpg')",
+              backgroundSize: '480px auto',
+              backgroundRepeat: 'repeat',
+              backgroundPosition: 'top left',
+            }}
+            aria-hidden="true"
+          />
+          <div className="relative space-y-12">
+            <ServiceOfferings />
+            <AdultDayCareService />
+            <NutritiousMeals />
+            <InHomeCare />
+            <MedicalTransportation />
+          </div>
         </section>
         <PaymentLocationsSection />
         <AboutUs />

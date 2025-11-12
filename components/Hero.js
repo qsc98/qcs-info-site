@@ -34,13 +34,19 @@ const Hero = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
 
   return (
-    <div className="section-shell mx-auto max-w-screen-xl px-8 pt-8 pb-16 sm:pt-16 sm:pb-20 lg:pt-18 lg:pb-24 xl:px-16">
-      <ScrollAnimationWrapper>
-        <motion.div
-          className="grid grid-cols-1 gap-4 py-6 sm:grid-cols-2 sm:gap-8"
-          variants={scrollAnimation}
-        >
-          <div className="order-2 max-w-full sm:order-1 text-center sm:text-left">    
+      <div className="relative mx-auto max-w-screen-xl px-4 section-shell rounded-3xl pt-8 pb-16 sm:px-8 sm:pt-16 sm:pb-20 lg:pt-18 lg:pb-24 xl:px-16 overflow-hidden">
+        <div
+          className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-40"
+          style={{ backgroundImage: "url('/assets/background.jpg')" }}
+          aria-hidden="true"
+        />
+        <div className="relative">
+        <ScrollAnimationWrapper>
+          <motion.div
+            className="grid grid-cols-1 gap-4 py-6 sm:grid-cols-2 sm:gap-8"
+            variants={scrollAnimation}
+          >
+            <div className="order-2 max-w-full sm:order-1 text-center sm:text-left">    
             <h1 className="font-jakarta text-3xl font-extrabold leading-tight sm:text-5xl">
               <span className="block">
                 <span>Quality You Can Trust</span>.
@@ -85,37 +91,38 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="order-1 flex w-full sm:order-2">
-            <motion.div className="h-full w-full" variants={scrollAnimation}>
-              <Image
-                src="/assets/main_hero_section.jpg"
-                alt="Seniors enjoying"
-                quality={100}
-                width={612}
-                height={383}
-              />
-            </motion.div>
-          </div>
-        </motion.div>
-      </ScrollAnimationWrapper>
+            <div className="order-1 flex w-full sm:order-2">
+              <motion.div className="h-full w-full" variants={scrollAnimation}>
+                <Image
+                  src="/assets/main_hero_section.svg"
+                  alt="Seniors enjoying"
+                  quality={100}
+                  width={612}
+                  height={383}
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+        </ScrollAnimationWrapper>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {highlights.map(({ title, description, Icon }) => (
-          <ScrollAnimationWrapper key={title}>
-            <motion.div
-              variants={scrollAnimation}
-              className="flex items-center gap-4 rounded-lg border border-slate-100 bg-white p-5 shadow-[0_12px_24px_rgba(15,34,71,0.05)]"
-            >
-              <Icon className="h-20 w-20 text-navy" />
-              <div>
-                <p className="text-lg font-semibold text-navy">{title}</p>
-                <p className="text-sm text-slate-600">{description}</p>
-              </div>
-            </motion.div>
-          </ScrollAnimationWrapper>
-        ))}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {highlights.map(({ title, description, Icon }) => (
+            <ScrollAnimationWrapper key={title}>
+              <motion.div
+                variants={scrollAnimation}
+                className="flex items-center gap-4 rounded-lg border border-slate-100 bg-white p-5 shadow-[0_12px_24px_rgba(15,34,71,0.05)]"
+              >
+                <Icon className="h-20 w-20 text-navy" />
+                <div>
+                  <p className="text-lg font-semibold text-navy">{title}</p>
+                  <p className="text-sm text-slate-600">{description}</p>
+                </div>
+              </motion.div>
+            </ScrollAnimationWrapper>
+          ))}
+        </div>
+        </div>
       </div>
-    </div>
   )
 }
 

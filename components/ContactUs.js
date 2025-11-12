@@ -16,7 +16,7 @@ const ContactSection = () => {
           <span className="mb-10 inline-flex items-center rounded-full bg-navy px-3 py-1 text-sm font-semibold text-white shadow">
             Support
           </span>
-          <h2 className="text-4xl font-extrabold sm:text-5xl">Let’s Connect!</h2>
+          <h2 className="text-3xl font-extrabold sm:text-5xl">Let’s Connect!</h2>
           <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-black-500">
             Have questions or need support? Reach out and we’ll respond ASAP.
           </p>
