@@ -3,6 +3,7 @@ import React, { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import getScrollAnimation from '../../utils/getScrollAnimation'
 import ScrollAnimationWrapper from '../Layout/ScrollAnimationWrapper'
+import SectionEyebrow from '../misc/SectionEyebrow'
 
 const ServiceOfferings = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
@@ -11,9 +12,7 @@ const ServiceOfferings = () => {
     <div className="mx-auto max-w-screen-xl items-center px-6 py-10 sm:px-8 lg:px-16">
       <ScrollAnimationWrapper>
         <motion.div variants={scrollAnimation} className="mx-auto max-w-2xl text-center">
-          <span className="mb-10 inline-flex items-center rounded-full bg-navy px-3 py-1 text-sm font-semibold text-white shadow">
-            Services
-          </span>
+          <SectionEyebrow>Services</SectionEyebrow>
           <h2 className="text-3xl font-extrabold sm:text-5xl">Care You Can Count On</h2>
             <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-black-500">
               Enhancing life with care, convenience, and compassion.

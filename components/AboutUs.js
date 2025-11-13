@@ -6,6 +6,7 @@ import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper'
 import AboutImage from '../public/assets/aboutus.jpg'
 import { FaArrowRight } from 'react-icons/fa'
 import PrimaryCta from './misc/PrimaryCta'
+import SectionEyebrow from './misc/SectionEyebrow'
 
 const AboutUs = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
@@ -21,14 +22,12 @@ const AboutUs = () => {
         backgroundPosition: 'center',
       }}
     >
-      <div className="absolute inset-0 bg-white/60" aria-hidden="true" />
+      <div className="absolute inset-0 bg-white/50" aria-hidden="true" />
       <div className="relative">
         <ScrollAnimationWrapper>
           <motion.div variants={scrollAnimation} className="mb-8 flex flex-col items-center gap-2 text-center">
-            <span className="inline-flex items-center rounded-full bg-navy px-3 py-1 text-sm font-semibold text-white shadow">
-              About Us
-            </span>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black-500 mt-6">
+            <SectionEyebrow className='mb-4'>About Us</SectionEyebrow>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black-500">
               A Diverse Team Making Care Personal
             </p>
           </motion.div>
@@ -72,7 +71,7 @@ const AboutUs = () => {
                 <PrimaryCta
                   href={{ pathname: '/about-us', query: { from: 'about-us' } }}
                   aria-label="Meet our team"
-                  className="mt-6 w-full justify-center bg-[#4c6d8f] hover:bg-[#3f5d7b] focus:ring-[#4c6d8f]/50 sm:w-full"
+                  className="mt-6 w-full justify-center sm:w-full"
                 >
                   Meet Our Team
                   <FaArrowRight className="h-4 w-4" />

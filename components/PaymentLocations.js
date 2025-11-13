@@ -11,8 +11,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import { motion } from 'framer-motion'
-import InsightCard from './Util/InsightCard'
-import { IoNutritionOutline } from "react-icons/io5";
+import { IoNutritionOutline } from 'react-icons/io5'
 
 const container = {
   hidden: { opacity: 0 },
@@ -37,8 +36,14 @@ const PaymentLocationsSection = () => {
   }, [])
 
   const Card = ({ icon: Icon, title, children }) => (
-    <motion.div variants={item} {...(hoverable ? { whileHover: { scale: 1.03 } } : {})}>
-      <InsightCard icon={Icon} iconSize={56} title={title} description={children} />
+    <motion.div variants={item} {...(hoverable ? { whileHover: { y: -6 } } : {})}>
+      <article className="group relative h-full overflow-hidden rounded-3xl border border-white/50 bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat shadow-[0_24px_40px_-32px_rgba(15,34,71,0.55)]">
+        <div className="flex h-full flex-col rounded-[28px] bg-white/50 p-6 text-left backdrop-blur-[2px] transition group-hover:-translate-y-1">
+          <Icon className="text-navy" style={{ width: 56, height: 56 }} aria-hidden />
+          <h3 className="mt-4 font-jakarta text-xl font-semibold text-navy">{title}</h3>
+          <p className="mt-2 text-slate-600">{children}</p>
+        </div>
+      </article>
     </motion.div>
   )
 
@@ -48,7 +53,7 @@ const PaymentLocationsSection = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="bg-white px-6 py-16 text-center"
+      className="px-6 py-16 text-center"
     >
       <h2 className="text-3xl font-extrabold sm:text-5xl">Why Families Trust Us</h2>
       <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-black-500">

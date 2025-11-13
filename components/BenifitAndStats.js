@@ -22,7 +22,7 @@ const BenefitStatsSection = () => {
           typeof value === 'number' ? <CountUp end={value} suffix={suffix} duration={1.8} /> : value
         }
         description={children}
-        className="text-center"
+        className="text-center bg-[url('/assets/background-card.jpg')] bg-cover bg-center bg-no-repeat bg-white/60 bg-blend-lighten"
       />
     </motion.div>
   )

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useMemo } from 'react'
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 import ContactForm from './ContactForm'
+import SectionEyebrow from './misc/SectionEyebrow'
 
 const ContactSection = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
@@ -13,9 +14,7 @@ const ContactSection = () => {
       {/* Heading */}
       <ScrollAnimationWrapper>
         <motion.div variants={scrollAnimation} className="mx-auto mb-12 max-w-2xl text-center">
-          <span className="mb-10 inline-flex items-center rounded-full bg-navy px-3 py-1 text-sm font-semibold text-white shadow">
-            Support
-          </span>
+          <SectionEyebrow>Support</SectionEyebrow>
           <h2 className="text-3xl font-extrabold sm:text-5xl">Let’s Connect!</h2>
           <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-black-500">
             Have questions or need support? Reach out and we’ll respond ASAP.

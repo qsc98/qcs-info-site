@@ -26,7 +26,7 @@ export default function Home() {
             className="pointer-events-none absolute inset-0 opacity-30"
             style={{
               backgroundImage: "url('/assets/background-2.jpg')",
-              backgroundSize: '480px auto',
+              backgroundSize: '1000px auto',
               backgroundRepeat: 'repeat',
               backgroundPosition: 'top left',
             }}

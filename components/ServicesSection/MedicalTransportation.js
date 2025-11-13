@@ -53,7 +53,7 @@ const MedicalTransportation = () => {
 
             <PrimaryCta
               href="/medical-transportation?from=medical-transportation"
-              className="mt-6 w-full justify-center bg-[#4c6d8f] hover:bg-[#3f5d7b] focus:ring-[#4c6d8f]/50 sm:w-auto"
+              className="mt-6 w-full justify-center sm:w-auto"
             >
               View Transport Services
             </PrimaryCta>

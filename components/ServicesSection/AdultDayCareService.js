@@ -52,7 +52,7 @@ const AdultDayCareService = () => {
 
             <PrimaryCta
               href="/adult-day-care?from=adult-day-care"
-              className="mt-6 w-full justify-center bg-[#4c6d8f] hover:bg-[#3f5d7b] focus:ring-[#4c6d8f]/50 sm:w-auto"
+              className="mt-6 w-full justify-center sm:w-auto"
             >
               Learn About Day Care
             </PrimaryCta>
