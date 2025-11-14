@@ -4,6 +4,8 @@ import Footer from '../components/Layout/Footer'
 import SectionHeading from '../components/misc/SectionHeading'
 import Bullet from '../components/misc/Bullet'
 import InfoStat from '../components/misc/InfoStat'
+import PrimaryCta from '../components/misc/PrimaryCta'
+import SectionEyebrow from '../components/misc/SectionEyebrow'
 import {
   FaArrowLeft,
   FaHandshake,
@@ -16,6 +18,8 @@ import {
   FaChurch,
   FaClipboardList,
   FaLaptopCode,
+  FaUserMd,
+  FaLightbulb,
 } from 'react-icons/fa'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
@@ -26,23 +30,25 @@ const quickStats = [
   { icon: FaShieldAlt, label: 'Team', value: 'Licensed, trained professionals' },
 ]
 
-function Card({ title, icon, children, className = '' }) {
+function Card({ title, icon, children, className = '', innerClassName = '' }) {
   return (
-    <div
-      className={`rounded-2xl bg-white/80 p-6 shadow-[0_14px_40px_-20px_rgba(16,185,129,0.35)] ring-1 ring-emerald-900/5 backdrop-blur ${className}`}
+    <article
+      className={`group relative overflow-hidden rounded-3xl border border-white/25 bg-[url('/assets/background-card.jpg')] bg-cover p-[1px] ${className}`}
     >
-      {(title || icon) && (
-        <div className="mb-4 flex items-center gap-3">
-          {icon ? (
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200">
-              {icon}
-            </span>
-          ) : null}
-          {title ? <h3 className="text-lg font-semibold text-gray-900">{title}</h3> : null}
-        </div>
-      )}
-      {children}
-    </div>
+      <div className={`h-full rounded-[28px] bg-white/40 p-6 shadow-[0_20px_35px_-28px_rgba(15,34,71,0.65)] transition group-hover:-translate-y-1 ${innerClassName}`}>
+        {(title || icon) && (
+          <div className="mb-4 flex items-center gap-3">
+            {icon ? (
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-navy text-white shadow-[0_12px_24px_rgba(15,34,71,0.25)]">
+                {icon}
+              </span>
+            ) : null}
+            {title ? <h3 className="text-lg font-semibold text-navy">{title}</h3> : null}
+          </div>
+        )}
+        {children}
+      </div>
+    </article>
   )
 }
 
@@ -53,12 +59,6 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* Ambient gradient background */}
-      <div className="pointer-events-none fixed inset-0 -z-10 opacity-60">
-        <div className="absolute -top-36 left-1/2 h-80 w-[36rem] -translate-x-1/2 rounded-full bg-gradient-to-br from-emerald-200 via-emerald-100 to-transparent blur-3xl" />
-        <div className="absolute -bottom-36 right-1/2 h-80 w-[32rem] translate-x-1/3 rounded-full bg-gradient-to-tr from-amber-100 via-white to-transparent blur-3xl" />
-      </div>
-
       <div className="mx-auto mb-24 mt-6 max-w-screen-xl px-4 sm:px-6 lg:px-10">
         {/* Back button */}
         <div className="sticky top-4 z-50 flex justify-start">
@@ -70,227 +70,206 @@ export default function AboutPage() {
           </button>
         </div>
 
-        {/* HERO */}
-        <section className="mt-6 grid items-center gap-8 rounded-3xl bg-gradient-to-b from-emerald-50 to-white p-6 shadow-sm sm:grid-cols-2 sm:p-10">
-          {/* Text column */}
-          <div>
-            <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight text-gray-900 sm:text-left sm:text-5xl">
-              Rooted in Care, Built for Community
-            </h1>
-            <p className="mt-4 max-w-xl text-center text-gray-700 sm:text-left">
-              We’re a diverse team of caregivers, technologists, and local advocates committed to
-              meaningful, trustworthy care for adults and seniors in Louisville. From social workers
-              and church volunteers to IT professionals and family caregivers — we bring experience,
-              heart, and innovation to everything we do.
-            </p>
-            <p className="mt-3 max-w-xl text-center text-gray-700 sm:text-left">
-              Our team proudly partners with local religious organizations, community centers, and
-              families to make compassionate care both personal and accessible.
-            </p>
-
-            {/* Trust Strip */}
-            <div className="mt-8 grid grid-cols-1 gap-4 rounded-2xl bg-white/80 p-4 shadow-sm ring-1 ring-gray-100 sm:grid-cols-3">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200">
-                  <FaMapMarkerAlt className="text-lg" />
-                </span>
-                <span className="text-sm font-medium text-gray-800">Louisville, Kentucky</span>
+        <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
+          {/* HERO */}
+          <section className="section-shell relative overflow-hidden px-6 py-6 sm:px-12">
+            <div
+              className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-40"
+              style={{ backgroundImage: "url('/assets/background.jpg')" }}
+              aria-hidden="true"
+            />
+            <div className="relative grid gap-10 sm:grid-cols-[1.1fr,0.9fr]">
+              <div className="text-center sm:text-left">
+                <SectionEyebrow className="mb-12">About Us</SectionEyebrow>
+                <h1 className="font-jakarta text-4xl font-extrabold leading-tight text-navy sm:text-5xl">
+                  Rooted in Care, Built for Community
+                </h1>
+                <p className="mt-12 text-base text-slate-600 sm:text-lg">
+                  We’re a caring team of caregivers, technologists, and community advocates providing meaningful, trustworthy support for adults and seniors in Louisville.
+                  With social workers, volunteers, and IT professionals working together, we bring compassion and purpose to every day.
+                </p>
+                <p className="mt-4 text-base text-slate-600 sm:text-lg">
+                  In partnership with local faith groups, community centers, and families, we make care personal, familiar, and close to home.
+                </p>
+                <div className="mt-6 block sm:hidden">
+                  <div className="relative aspect-[3/3] w-full overflow-hidden rounded-3xl bg-white/30 backdrop-blur">
+                    <DotLottieReact src="/assets/AboutUs.lottie" autoplay style={{ opacity: 0.85 }} />
+                    <div className="pointer-events-none absolute inset-0 rounded-3xl border border-white/40" />
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-amber-50 text-amber-700 ring-1 ring-amber-200">
-                  <FaClock className="text-lg" />
-                </span>
-                <span className="text-sm font-medium text-gray-800">Mon–Sat • 7 AM–7 PM</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sky-50 text-sky-700 ring-1 ring-sky-200">
-                  <FaShieldAlt className="text-lg" />
-                </span>
-                <span className="text-sm font-medium text-gray-800">Trained & screened staff</span>
+              <div className="relative hidden aspect-[3/3] w-full overflow-hidden rounded-3xl bg-white/25 backdrop-blur sm:block">
+                <DotLottieReact src="/assets/AboutUs.lottie" autoplay style={{ opacity: 0.85 }} />
+                <div className="pointer-events-none absolute inset-0 rounded-3xl border border-white/40" />
               </div>
             </div>
-          </div>
+            <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {quickStats.map((stat) => (
+                <InfoStat key={stat.label} {...stat} />
+              ))}
+            </div>
+          </section>
 
-          {/* Image column */}
-          <div className="relative aspect-[3/3] w-full overflow-hidden rounded-2xl shadow-xl">
-            <DotLottieReact src="/assets/AboutUs.lottie" autoplay />
-          </div>
-        </section>
+          {/* MISSION + VALUES */}
+          <section className="mt-14 grid gap-10 lg:grid-cols-[1.1fr,0.9fr]">
+            <div className="space-y-8 pt-8">
+              <SectionHeading
+                eyebrow="Why We Exist"
+                title="Mission & Pillars"
+                description="Empowering adults to live safely, socially, and independently."
+              />
+              <Card>
+                  Our mission is rooted in the belief that every person deserves respect, meaningful engagement, and the opportunity to thrive within their own community.
+                  We co-create individualized care experiences that honor culture, promote wellness, and keep families in the loop.
+              </Card>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                <Card
+                  title="Trust"
+                  icon={<FaHandshake />}
+                >
+                  Transparent communication, dependable schedules, and clear accountability.
+                </Card>
+                <Card
+                  title="Community"
+                  icon={<FaUsers />}
+                >
+                  Partnerships with families, churches, and neighborhood centers to surround each person with support.
+                </Card>
+                <Card
+                  title="Safety"
+                  icon={<FaShieldAlt />}
+                >
+                  Licensed clinicians, written protocols, and on-call leadership for every program.
+                </Card>
+              </div>
+            </div>
+            <div className="relative rounded-[32px] border border-white/25 bg-white/85 p-6 shadow-[0_20px_45px_-30px_rgba(15,34,71,0.5)] backdrop-blur">
+              <div
+                className="pointer-events-none absolute inset-0 -z-10 rounded-[32px] opacity-45"
+                style={{ backgroundImage: "url('/assets/background-2.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+              <SectionHeading
+                eyebrow="Community Impact"
+                title="Partnerships & Programs"
+                description="Our care is personal & responsive."
+              />
+              <div className="mt-7 space-y-4">
+                <div className="rounded-2xl border border-slate-100 bg-white/80 p-4">
+                  <p className="text-sm font-semibold text-navy">Faith-Based Outreach</p>
+                  <p className="text-sm text-slate-600">
+                    Respite days, transportation, and bilingual volunteers coordinated with church partners.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-slate-100 bg-white/80 p-4">
+                  <p className="text-sm font-semibold text-navy">Neighborhood Centers</p>
+                  <p className="text-sm text-slate-600">
+                    Shared programs, referrals, and safe multipurpose rooms for social connection.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-slate-100 bg-white/80 p-4">
+                  <p className="text-sm font-semibold text-navy">Technology & Ops</p>
+                  <p className="text-sm text-slate-600">
+                    Secure care notes, family dashboards, and real-time updates keep everyone aligned.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
 
-        {/* QUICK FACTS (compact) */}
-        <section className="mt-8">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {quickStats.map((stat) => (
-              <InfoStat key={stat.label} {...stat} />
-            ))}
-          </div>
-        </section>
-
-        {/* MISSION */}
-        <section className="mt-14">
-          <SectionHeading
-            eyebrow="Why We Exist"
-            title="Our Mission"
-            description="To help adults live safely, socially, and independently through purposeful daytime programs and trusted in‑home support—delivered with dignity and compassion."
+        {/* TEAM SNAPSHOT */}
+        <section id="team" className="section-shell relative overflow-hidden mt-14 px-6 py-10 sm:px-12">
+          <div
+            className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-50"
+            style={{ backgroundImage: "url('/assets/honeycomb-background.jpg')" }}
+            aria-hidden="true"
           />
-          <div className="mx-auto mt-6 max-w-4xl">
-            <Card>
-              <p className="text-black-500">
-                Our mission is rooted in the belief that every person deserves respect, meaningful
-                engagement, and the opportunity to thrive within their own community. We work
-                closely with families, healthcare providers, and local partners to create
-                individualized care experiences that honor cultural backgrounds, promote wellness,
-                and foster emotional connection. Through continuous learning, transparent
-                communication, and a commitment to safety, we aim to not only meet today’s needs but
-                also inspire a stronger, more compassionate future for senior and adult care in
-                Louisville, Fairdale & neighboring areas.
-              </p>
-            </Card>
-          </div>
-        </section>
-
-        {/* VALUES */}
-        <section className="mt-14">
-          <SectionHeading title="Our Values" />
-          <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
-            <Card title="Trust" icon={<FaHandshake />}>
-              Transparent communication, dependable schedules, and clear accountability.
-            </Card>
-            <Card title="Community" icon={<FaUsers />}>
-              We partner with families and local organizations to surround each person with support.
-            </Card>
-            <Card title="Safety" icon={<FaShieldAlt />}>
-              Trained staff, written protocols, and continuous oversight on every service.
-            </Card>
-          </div>
-        </section>
-
-        {/* PARTNERSHIPS */}
-        <section className="mt-14">
+          <div className="relative">
           <SectionHeading
-            eyebrow="Stronger Together"
-            title="Community Partnerships"
-            description="We collaborate with local faith communities, neighborhood centers, and advocates to make care more personal and accessible."
-          />
-          <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-3">
-            <Card title="Faith‑Based Orgs" icon={<FaChurch />}>
-              Outreach, transportation support, and culturally familiar volunteers.
-            </Card>
-            <Card title="Community Centers" icon={<FaHandsHelping />}>
-              Shared programs, referrals, and safe spaces for social connection.
-            </Card>
-            <Card title="Technology & Ops" icon={<FaLaptopCode />}>
-              Scheduling, communication, and care notes that keep families informed.
-            </Card>
-          </div>
-        </section>
-
-        {/* TEAM SNAPSHOT (placeholders) */}
-        <section className="mt-14">
-          <SectionHeading
+            eyebrow="People Who Care"
             title="Meet the Team"
-            description="A few of the people behind the care."
+            description="A peek at the leadership and frontline caregivers who make each day feel personal."
           />
           <div className="mx-auto mt-6 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3].map((n) => (
-              <div key={n} className="rounded-2xl bg-white/80 p-4 shadow-sm ring-1 ring-gray-100">
-                <div className="relative h-48 w-full overflow-hidden rounded-xl">
-                  <Image
-                    src="/assets/image-placeholder.png"
-                    alt={`Team member ${n}`}
-                    fill
-                    className="object-cover"
-                  />
+              <div
+                key={n}
+                className="rounded-[28px] border border-slate-100 bg-white/95 p-6 text-center shadow-[0_15px_35px_-25px_rgba(15,34,71,0.35)]"
+              >
+                <div className="relative mx-auto flex h-48 w-full max-w-[260px] items-center justify-center rounded-3xl border border-dashed border-slate-300 bg-slate-50">
+                  <div className="text-slate-400">
+                    <svg width="64" height="64" fill="none" viewBox="0 0 64 64" className="mx-auto">
+                      <rect x="8" y="16" width="48" height="32" rx="6" stroke="currentColor" strokeWidth="2" />
+                      <circle cx="32" cy="32" r="10" stroke="currentColor" strokeWidth="2" />
+                      <rect x="24" y="12" width="16" height="6" rx="2" stroke="currentColor" strokeWidth="2" />
+                    </svg>
+                    <p className="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+                      Image Coming Soon
+                    </p>
+                  </div>
                 </div>
-                <div className="mt-3">
-                  <h3 className="font-semibold text-gray-900">Team Member {n}</h3>
-                  <p className="text-sm text-gray-600">Role • Credentials</p>
+                <div className="mt-4 text-left">
+                  <p className="text-lg font-semibold text-navy">Team Member {n}</p>
+                  <p className="text-sm text-slate-600">Role • Credentials</p>
                 </div>
               </div>
             ))}
           </div>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-sm text-gray-600">
-            Interested in partnering or volunteering? Reach out—we’d love to connect.
+          <p className="mx-auto mt-4 max-w-3xl text-center text-sm text-slate-600">
+            Interested in joining or partnering? Reach out — we’re growing a team that reflects the communities we serve.
           </p>
+          </div>
         </section>
 
-        {/* WHAT FAMILIES CAN EXPECT */}
+        {/* EXPERIENCE + LEADERSHIP */}
         <section className="mt-14">
           <SectionHeading
-            eyebrow="Clarity • Safety • Follow‑through"
-            title="What Families Can Expect"
-            description="We combine dependable routines with transparent communication and compassionate, culturally aware care."
+            eyebrow="Clarity • Safety • Follow-through"
+            title="How Leadership Supports Every Family"
+            description="Clinical oversight & clear routines ensure you always know who’s caring for your loved one."
           />
-
-          <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 items-stretch gap-6 md:grid-cols-2">
-            {/* Core expectations */}
-            <Card title="You Can Expect" className="h-full">
-              <div className="flex min-h-full flex-col">
-                <ul className="space-y-2">
-                  <Bullet>Personalized care plans co-created with your family</Bullet>
-                  <Bullet>Clear schedules and tasks confirmed before start date</Bullet>
-                  <Bullet>Consistent caregivers whenever possible</Bullet>
-                  <Bullet>Visit notes and optional text/phone updates</Bullet>
-                  <Bullet>Respect for culture, faith, and language preferences</Bullet>
-                  <Bullet>Safe transfers & home-safety-minded routines</Bullet>
-                  <Bullet>Medication reminders and wellness check-ins per plan</Bullet>
-                  <Bullet>Flexible adjustments and quick resolution when needs change</Bullet>
-                </ul>
-
-                {/* Anchored note at the bottom */}
-                <p className="mt-4 border-t border-gray-200 pt-3 text-xs leading-relaxed text-gray-600">
-                  <span className="font-semibold">Note:</span> We tailor specific protocols to each
-                  service and care plan so safety and comfort always come first.
-                </p>
-              </div>
+          <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 gap-6 lg:grid-cols-2">
+            <Card title="What Families Experience">
+              <ul className="space-y-2">
+                <Bullet>Personalized care plans co-created with your family</Bullet>
+                <Bullet>Consistent caregivers whenever possible</Bullet>
+                <Bullet>Visit notes and optional text/phone updates</Bullet>
+                <Bullet>Safe transfers and home-safety-minded routines</Bullet>
+                <Bullet>Dedicated point of contact and simple feedback loop</Bullet>
+              </ul>
             </Card>
-
-            {/* Trust & assurance stack */}
-            <div className="grid grid-cols-1 gap-6">
-              <Card title="Communication & Transparency" icon={<FaClipboardList />}>
-                <ul className="space-y-2">
-                  <Bullet>Dedicated point of contact for questions or changes</Bullet>
-                  <Bullet>Written care plan with goals, preferences, and boundaries</Bullet>
-                  <Bullet>Simple feedback loop for concerns or compliments</Bullet>
-                  <Bullet>Incident reporting with documented follow‑up</Bullet>
-                </ul>
-              </Card>
-
-              <Card title="Safety & Standards" icon={<FaShieldAlt />}>
-                <ul className="space-y-2">
-                  <Bullet>Background‑checked, trained, and supervised caregivers</Bullet>
-                  <Bullet>Hygiene practices and clean‑equipment routines</Bullet>
-                  <Bullet>Privacy and confidentiality for personal information</Bullet>
-                  <Bullet>Backup coverage planning for reliability</Bullet>
-                </ul>
-              </Card>
-            </div>
+            <Card title="Clinical + Operations Team" icon={<FaClipboardList />}>
+              <ul className="space-y-2">
+                <Bullet>RN-led oversight, medication and vitals protocols</Bullet>
+                <Bullet>Care dashboards, real-time family updates, secure notes</Bullet>
+                <Bullet>Background-checked, trained, supervised caregivers</Bullet>
+                <Bullet>Backup coverage and hygiene protocols</Bullet>
+                <Bullet>Care conferences with families and providers</Bullet>
+              </ul>
+            </Card>
           </div>
         </section>
 
-        {/* FINAL CTA */}
-        <section className="mt-14 rounded-[28px] bg-gradient-to-r from-emerald-700 to-emerald-600 p-6 text-white shadow-[0_20px_50px_-25px_rgba(16,185,129,0.5)] ring-1 ring-emerald-600/60">
-          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-            <div>
-              <h3 className="text-xl font-semibold">Want to learn more or tour?</h3>
-              <p className="text-white/90">Call us or send a note—we’re happy to help.</p>
+          {/* FINAL CTA */}
+          <section className="section-shell relative overflow-hidden px-6 py-10 sm:px-12">
+            <div className="pointer-events-none absolute inset-0 opacity-35">
+              <div className="h-full w-full bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat" />
             </div>
-            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-              <a
-                href="tel:+1-000-000-0000"
-                className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow md:min-w-[130px]"
-              >
-                Call Now
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-xl border border-white/80 bg-transparent px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-gray-900 md:min-w-[130px]"
-              >
-                Contact Us
-              </a>
+            <div className="relative flex flex-col items-start justify-between gap-5 text-left md:flex-row md:items-center">
+              <div>
+                <h3 className="text-2xl font-semibold text-navy">Want to learn more about us or our mission & values?</h3>
+                <p className="mt-1 text-slate-600">Call us or send a note—we’re happy to tell you about us!</p>
+              </div>
+              <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+                <PrimaryCta href="tel:+1-000-000-0000" className="w-full justify-center sm:w-auto">
+                  Call Now
+                </PrimaryCta>
+                <PrimaryCta href="#contact" className="w-full justify-center sm:w-auto">
+                  Contact Us
+                </PrimaryCta>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
 
       <Footer />

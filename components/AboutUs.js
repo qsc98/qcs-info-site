@@ -72,7 +72,7 @@ const AboutUs = () => {
               </p>
 
               <PrimaryCta
-                href={{ pathname: '/about-us', query: { from: 'about-us' } }}
+                href='/about-us'
                 aria-label="Meet our team"
                 className="mt-6 w-full justify-center sm:w-full"
               >
