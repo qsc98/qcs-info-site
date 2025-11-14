@@ -16,6 +16,8 @@ import Image from 'next/image'
 export default function GallerySection({
   title = 'Take a Look Inside',
   description = 'Bright, accessible spaces designed for comfort and community. We’re adding new photos as we complete finishing touches—come see it in person!',
+  hideHeading = false,
+  className = '',
   slides = [
     { alt: 'Center exterior', src: '/assets/Image-placeholder.png' },
     { alt: 'Open activity room', src: '/assets/Image-placeholder.png' },
@@ -109,9 +111,13 @@ export default function GallerySection({
   }
 
   return (
-    <section className="mt-20" aria-label="Gallery">
-      <h2 className="mb-6 text-center text-3xl font-semibold text-gray-900">{title}</h2>
-      <p className="mx-auto mb-10 max-w-3xl text-center text-gray-700">{description}</p>
+    <section className={`mt-20 ${className}`.trim()} aria-label="Gallery">
+      {!hideHeading ? (
+        <>
+          <h2 className="mb-6 text-center text-3xl font-semibold text-gray-900">{title}</h2>
+          <p className="mx-auto mb-10 max-w-3xl text-center text-gray-700">{description}</p>
+        </>
+      ) : null}
 
       <div
         className="relative overflow-hidden"

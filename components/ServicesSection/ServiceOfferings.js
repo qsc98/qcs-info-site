@@ -14,9 +14,9 @@ const ServiceOfferings = () => {
         <motion.div variants={scrollAnimation} className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>Services</SectionEyebrow>
           <h2 className="text-3xl font-extrabold sm:text-5xl">Care You Can Count On</h2>
-            <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-black-500">
-              Enhancing life with care, convenience, and compassion.
-            </p>
+          <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-black-500">
+            Enhancing life with care, convenience, and compassion.
+          </p>
         </motion.div>
       </ScrollAnimationWrapper>
 

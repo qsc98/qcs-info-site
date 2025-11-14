@@ -34,7 +34,7 @@ const MedicalTransportation = () => {
   return (
     <div
       id="medical-transportation"
-      className="mx-auto max-w-screen-xl px-6 sm:py-12 sm:px-8 lg:px-16"
+      className="mx-auto max-w-screen-xl px-6 sm:px-8 sm:py-12 lg:px-16"
     >
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         <ScrollAnimationWrapper>
@@ -42,7 +42,9 @@ const MedicalTransportation = () => {
             variants={scrollAnimation}
             className="flex h-full flex-col rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl"
           >
-            <h3 className="mb-3 flex items-center gap-2 text-2xl font-bold">Medical Transportation</h3>
+            <h3 className="mb-3 flex items-center gap-2 text-2xl font-bold">
+              Medical Transportation
+            </h3>
             <p className="text-md flex-1 leading-relaxed text-black-500">
               We offer dependable, non-emergency transportation tailored to individuals with
               mobility or health-related needs. Whether it's routine doctor visits, outpatient

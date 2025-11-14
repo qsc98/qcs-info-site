@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link as LinkScroll } from 'react-scroll'
 import Image from 'next/image'
-import Logo from '../../public/assets/quality-adhc-logo.svg'
+import Logo from '../../public/assets/logo.png'
 import NotificationBar from './NotificationBar'
 import MobileFloatingNav from './MobileNavBar'
 import Link from 'next/link'
@@ -104,20 +104,39 @@ const Header = () => {
             </LinkScroll>
           </ul>
           <div className="col-start-10 col-end-12 flex items-center justify-end gap-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
               <FaFacebookF className="h-5 w-5 text-[#1877F2] transition-transform duration-200 hover:scale-110" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
               <FaInstagram className="h-5 w-5 text-[#E1306C] transition-transform duration-200 hover:scale-110" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
               <FaLinkedinIn className="h-5 w-5 text-[#0A66C2] transition-transform duration-200 hover:scale-110" />
             </a>
           </div>
         </nav>
       </header>
 
-      <MobileFloatingNav activeLink={activeLink} setActiveLink={setActiveLink} scrollOffset={scrollOffset} />
+      <MobileFloatingNav
+        activeLink={activeLink}
+        setActiveLink={setActiveLink}
+        scrollOffset={scrollOffset}
+      />
     </>
   )
 }

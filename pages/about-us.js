@@ -1,13 +1,15 @@
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Footer from '../components/Layout/Footer'
+import SectionHeading from '../components/misc/SectionHeading'
+import Bullet from '../components/misc/Bullet'
+import InfoStat from '../components/misc/InfoStat'
 import {
   FaArrowLeft,
   FaHandshake,
   FaHeart,
   FaUsers,
   FaShieldAlt,
-  FaCheckCircle,
   FaMapMarkerAlt,
   FaClock,
   FaHandsHelping,
@@ -17,36 +19,12 @@ import {
 } from 'react-icons/fa'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
-/* ---------- UI Atoms (shared look/feel) ---------- */
-const Stat = ({ icon, text }) => (
-  <div className="flex items-center gap-3 rounded-xl bg-white/80 px-3 py-2 shadow-sm ring-1 ring-gray-100">
-    <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200">
-      {icon}
-    </span>
-    <span className="text-sm text-gray-700">{text}</span>
-  </div>
-)
-
-const Bullet = ({ children }) => (
-  <li className="flex items-start gap-2 text-gray-700">
-    <FaCheckCircle className="mt-0.5 h-4 w-4 flex-none text-emerald-600" />
-    <span>{children}</span>
-  </li>
-)
-
-const SectionHeading = ({ eyebrow, title, description }) => (
-  <div className="text-center">
-    {eyebrow ? (
-      <div className="flex justify-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-yellow-500 bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 px-3 py-1 text-xs font-medium text-yellow-900 shadow-md ring-1 ring-yellow-500/50">
-          {eyebrow}
-        </span>
-      </div>
-    ) : null}
-    <h2 className="mt-3 text-3xl font-semibold text-gray-900">{title}</h2>
-    {description ? <p className="mx-auto mt-2 max-w-3xl text-gray-700">{description}</p> : null}
-  </div>
-)
+const quickStats = [
+  { icon: FaMapMarkerAlt, label: 'Location', value: 'Louisville & nearby communities' },
+  { icon: FaClock, label: 'Hours', value: 'Mon–Sat • 7 AM – 7 PM' },
+  { icon: FaUsers, label: 'Approach', value: 'Family-centered support' },
+  { icon: FaShieldAlt, label: 'Team', value: 'Licensed, trained professionals' },
+]
 
 function Card({ title, icon, children, className = '' }) {
   return (
@@ -141,11 +119,10 @@ export default function AboutPage() {
 
         {/* QUICK FACTS (compact) */}
         <section className="mt-8">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            <Stat icon={<FaMapMarkerAlt />} text="Louisville & nearby communities" />
-            <Stat icon={<FaClock />} text="Mon–Sat • 7 AM–7 PM" />
-            <Stat icon={<FaUsers />} text="Family‑centered approach" />
-            <Stat icon={<FaShieldAlt />} text="Licensed, trained team" />
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {quickStats.map((stat) => (
+              <InfoStat key={stat.label} {...stat} />
+            ))}
           </div>
         </section>
 

@@ -9,7 +9,9 @@ const Footer = () => {
         {/* Newsletter */}
         <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
           <div>
-            <h2 className="text-center text-white text-2xl font-bold lg:text-left">Get the latest news!</h2>
+            <h2 className="text-center text-2xl font-bold text-white lg:text-left">
+              Get the latest news!
+            </h2>
             <p className="mt-4 text-sm text-gray-400">
               Subscribe to stay informed about updates, services, and upcoming events.
             </p>

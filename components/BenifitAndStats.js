@@ -1,13 +1,18 @@
 import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import CountUp from 'react-countup'
-import { RectangleGroupIcon, FaceSmileIcon, CreditCardIcon, HomeIcon } from '@heroicons/react/24/outline'
-import { MdFaceRetouchingNatural } from "react-icons/md";
-import { TbPigMoney } from "react-icons/tb";
+import {
+  RectangleGroupIcon,
+  FaceSmileIcon,
+  CreditCardIcon,
+  HomeIcon,
+} from '@heroicons/react/24/outline'
+import { MdFaceRetouchingNatural } from 'react-icons/md'
+import { TbPigMoney } from 'react-icons/tb'
 
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper'
 import getScrollAnimation from '../utils/getScrollAnimation'
-import InsightCard from './Util/InsightCard'
+import InsightCard from './misc/InsightCard'
 
 const BenefitStatsSection = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
@@ -22,22 +27,17 @@ const BenefitStatsSection = () => {
           typeof value === 'number' ? <CountUp end={value} suffix={suffix} duration={1.8} /> : value
         }
         description={children}
-        className="text-center bg-[url('/assets/background-card.jpg')] bg-cover bg-center bg-no-repeat bg-white/60 bg-blend-lighten"
+        className="bg-white/60 bg-[url('/assets/background-card.jpg')] bg-cover bg-center bg-no-repeat text-center bg-blend-lighten"
       />
     </motion.div>
   )
 
   return (
-    <div
-      className="mx-auto max-w-screen-xl items-center px-6 pb-12 sm:px-8 lg:px-16"
-      id="benefits"
-    >
+    <div className="mx-auto max-w-screen-xl items-center px-6 pb-12 sm:px-8 lg:px-16" id="benefits">
       {/* Section header */}
       <ScrollAnimationWrapper>
         <motion.div variants={scrollAnimation} className="mx-auto mb-8 max-w-3xl text-center">
-          <h2 className="text-3xl sm:text-5xl">
-            Our Care Can Make A Difference
-          </h2>
+          <h2 className="text-3xl sm:text-5xl">Our Care Can Make A Difference</h2>
           <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-black-500">
             Research-backed outcomes families care about
           </p>

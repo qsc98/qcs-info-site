@@ -20,7 +20,7 @@ export default function Home() {
         <BenefitStatsSection />
         <section
           id="services"
-          className="relative section-shell mx-auto max-w-screen-xl overflow-hidden rounded-3xl px-4 py-12 sm:px-6 lg:px-10 lg:py-16"
+          className="section-shell relative mx-auto max-w-screen-xl overflow-hidden rounded-3xl px-4 py-12 sm:px-6 lg:px-10 lg:py-16"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-30"
