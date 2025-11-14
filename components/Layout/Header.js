@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link as LinkScroll } from 'react-scroll'
 import Image from 'next/image'
-import Logo from '../../public/assets/Logo.png'
+import Logo from '../../public/assets/quality-adhc-logo.svg'
 import NotificationBar from './NotificationBar'
 import MobileFloatingNav from './MobileNavBar'
 import Link from 'next/link'
