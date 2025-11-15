@@ -7,6 +7,7 @@ import {
   MdRestaurantMenu,
   MdLocalTaxi,
   MdHealthAndSafety,
+  MdWork,
 } from 'react-icons/md'
 import { HiOutlineMail } from 'react-icons/hi'
 import { Link as LinkScroll } from 'react-scroll'
@@ -104,6 +105,12 @@ const MobileFloatingNav = ({ activeLink, setActiveLink, scrollOffset = 0 }) => {
               <FaUsers className="h-5 w-5" />
             </div>
             <span className="mt-1">About</span>
+          </Link>
+          <Link href="/careers" className="flex flex-col items-center text-xs text-gray-600 transition hover:text-green-500">
+            <div className="rounded-full bg-white p-2 shadow-md">
+              <MdWork className="h-5 w-5" />
+            </div>
+            <span className="mt-1">Careers</span>
           </Link>
 
           <LinkScroll

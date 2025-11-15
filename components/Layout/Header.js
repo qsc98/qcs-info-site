@@ -147,6 +147,12 @@ const Header = () => {
             >
               About
             </Link>
+            <Link
+              href="/careers"
+              className="animation-hover relative mx-2 inline-block px-4 py-2 text-black-500 transition hover:text-green-500"
+            >
+              Careers
+            </Link>
             <LinkScroll
               activeClass="active"
               to="contact"
