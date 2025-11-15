@@ -26,7 +26,7 @@ const Footer = () => {
                 type="email"
                 id="UserEmail"
                 placeholder="you@example.com"
-                className="w-full bg-transparent text-white-500 placeholder-gray-400 focus:outline-none sm:text-sm"
+                className="w-full bg-transparent text-white-500 placeholder:text-gray-400 focus:outline-none sm:text-sm"
               />
               <button className="mt-2 w-full shrink-0 rounded-lg bg-green-500 px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-white-500 transition hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 sm:mt-0 sm:w-auto">
                 Sign Up

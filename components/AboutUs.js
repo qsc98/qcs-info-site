@@ -1,12 +1,12 @@
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React, { useMemo } from 'react'
-import { motion } from 'framer-motion'
+import { FaArrowRight } from 'react-icons/fa'
 import getScrollAnimation from '../utils/getScrollAnimation'
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper'
-import AboutImage from '../public/assets/aboutus.jpg'
-import { FaArrowRight } from 'react-icons/fa'
 import PrimaryCta from './misc/PrimaryCta'
 import SectionEyebrow from './misc/SectionEyebrow'
+import AboutImage from '../public/assets/aboutus.jpg'
 
 const AboutUs = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
@@ -46,7 +46,7 @@ const AboutUs = () => {
                 alt="About our caregiving team"
                 width={384}
                 height={384}
-                className="h-full w-full rounded-lg object-cover"
+                className="size-full rounded-lg object-cover"
                 priority
               />
             </motion.div>
@@ -77,7 +77,7 @@ const AboutUs = () => {
                 className="mt-6 w-full justify-center sm:w-full"
               >
                 Meet Our Team
-                <FaArrowRight className="h-4 w-4" />
+                <FaArrowRight className="size-4" />
               </PrimaryCta>
             </motion.div>
           </ScrollAnimationWrapper>

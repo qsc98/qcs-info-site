@@ -1,15 +1,15 @@
-import ServiceOfferings from '../components/ServicesSection/ServiceOfferings.js'
+import AboutUs from '../components/AboutUs'
+import BenefitStatsSection from '../components/BenifitAndStats.js'
+import ContactUs from '../components/ContactUs'
 import Hero from '../components/Hero'
 import Layout from '../components/Layout/Layout'
+import PaymentLocationsSection from '../components/PaymentLocations.js'
 import SeoHead from '../components/SeoHead'
 import AdultDayCareService from '../components/ServicesSection/AdultDayCareService.js'
-import NutritiousMeals from '../components/ServicesSection/NutritiousMeals.js'
 import InHomeCare from '../components/ServicesSection/InHomeCareService.js'
 import MedicalTransportation from '../components/ServicesSection/MedicalTransportation.js'
-import AboutUs from '../components/AboutUs'
-import ContactUs from '../components/ContactUs'
-import BenefitStatsSection from '../components/BenifitAndStats.js'
-import PaymentLocationsSection from '../components/PaymentLocations.js'
+import NutritiousMeals from '../components/ServicesSection/NutritiousMeals.js'
+import ServiceOfferings from '../components/ServicesSection/ServiceOfferings.js'
 
 export default function Home() {
   return (

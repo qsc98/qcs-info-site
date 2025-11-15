@@ -1,5 +1,7 @@
+import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { FaUsers } from 'react-icons/fa'
+import { HiOutlineMail } from 'react-icons/hi'
 import {
   MdLocalHospital,
   MdOutlineDashboardCustomize,
@@ -9,9 +11,7 @@ import {
   MdHealthAndSafety,
   MdWork,
 } from 'react-icons/md'
-import { HiOutlineMail } from 'react-icons/hi'
 import { Link as LinkScroll } from 'react-scroll'
-import Link from 'next/link'
 
 const MobileFloatingNav = ({ activeLink, setActiveLink, scrollOffset = 0 }) => {
   const [servicesOpen, setServicesOpen] = useState(false)
@@ -27,8 +27,8 @@ const MobileFloatingNav = ({ activeLink, setActiveLink, scrollOffset = 0 }) => {
     const Icon = item.icon
     const content = (
       <div className="group flex items-center justify-between gap-4 rounded-3xl border border-[#d2ebe4] bg-gradient-to-r from-white/95 via-white/90 to-[#f2fbf8] px-4 py-3 text-sm font-semibold text-[#0b3b3e] shadow-[0_15px_35px_-28px_rgba(10,64,60,0.7)] transition hover:-translate-y-0.5 hover:border-[#0b3b3e]/20">
-        <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-[#0a1e38]/30 bg-[#0a1e38] text-white shadow-[0_10px_25px_-18px_rgba(10,30,56,0.9)]">
-          {Icon ? <Icon className="h-5 w-5" /> : <span className="h-1 w-1 rounded-full bg-white" />}
+        <span className="flex size-10 flex-none items-center justify-center rounded-full border border-[#0a1e38]/30 bg-[#0a1e38] text-white shadow-[0_10px_25px_-18px_rgba(10,30,56,0.9)]">
+          {Icon ? <Icon className="size-5" /> : <span className="size-1 rounded-full bg-white" />}
         </span>
         <span className="flex-1 text-right">{item.label}</span>
       </div>
@@ -79,9 +79,9 @@ const MobileFloatingNav = ({ activeLink, setActiveLink, scrollOffset = 0 }) => {
   return (
     <nav
       ref={navRef}
-      className="fixed bottom-6 left-1/2 z-50 w-[92vw] max-w-md -translate-x-1/2 transform lg:hidden"
+      className="fixed bottom-6 left-1/2 z-50 w-[92vw] max-w-md -translate-x-1/2 lg:hidden"
     >
-      <div className="rounded-[42px] border border-white/70 bg-white/90 px-4 py-4 shadow-[0_25px_55px_-30px_rgba(15,34,71,0.65)] backdrop-blur">
+      <div className="rounded-[42px] border border-white/70 bg-white/90 p-4 shadow-[0_25px_55px_-30px_rgba(15,34,71,0.65)] backdrop-blur">
         <div className="flex items-center justify-around space-x-6">
           <button
             onClick={() => setServicesOpen((open) => !open)}
@@ -91,7 +91,7 @@ const MobileFloatingNav = ({ activeLink, setActiveLink, scrollOffset = 0 }) => {
             }
           >
             <div className="rounded-full bg-white p-2 shadow-md">
-              <MdLocalHospital className="h-5 w-5" />
+              <MdLocalHospital className="size-5" />
             </div>
             <span className="mt-1">Services</span>
           </button>
@@ -102,13 +102,13 @@ const MobileFloatingNav = ({ activeLink, setActiveLink, scrollOffset = 0 }) => {
             onClick={() => setActiveLink('about')}
           >
             <div className="rounded-full bg-white p-2 shadow-md">
-              <FaUsers className="h-5 w-5" />
+              <FaUsers className="size-5" />
             </div>
             <span className="mt-1">About</span>
           </Link>
           <Link href="/careers" className="flex flex-col items-center text-xs text-gray-600 transition hover:text-green-500">
             <div className="rounded-full bg-white p-2 shadow-md">
-              <MdWork className="h-5 w-5" />
+              <MdWork className="size-5" />
             </div>
             <span className="mt-1">Careers</span>
           </Link>
@@ -126,7 +126,7 @@ const MobileFloatingNav = ({ activeLink, setActiveLink, scrollOffset = 0 }) => {
             }
           >
             <div className="rounded-full bg-white p-2 shadow-md">
-              <HiOutlineMail className="h-5 w-5 text-black" />
+              <HiOutlineMail className="size-5 text-black" />
             </div>
             <span className="mt-1">Contact</span>
           </LinkScroll>
@@ -137,7 +137,7 @@ const MobileFloatingNav = ({ activeLink, setActiveLink, scrollOffset = 0 }) => {
           }`}
         >
           <div className="relative overflow-hidden rounded-[30px] border border-[#cfeee7] bg-white/90 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]">
-            <div className="pointer-events-none absolute inset-0 bg-[url('/assets/honeycomb-background.jpg')] bg-[length:170%] bg-center opacity-[0.15]" />
+            <div className="pointer-events-none absolute inset-0 bg-[url('/assets/honeycomb-background.jpg')] bg-[length:170%] bg-center opacity-15" />
             <div className="relative flex items-center justify-between text-[0.58rem] font-semibold uppercase tracking-[0.28em] text-[#0d4346]">
               <span>Service Navigator</span>
               <button

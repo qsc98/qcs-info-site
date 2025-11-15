@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react'
 import { motion } from 'framer-motion'
-import ScrollAnimationWrapper from '../Layout/ScrollAnimationWrapper'
+import React, { useMemo } from 'react'
 import getScrollAnimation from '../../utils/getScrollAnimation'
 import FAQList from '../FaqList'
+import ScrollAnimationWrapper from '../Layout/ScrollAnimationWrapper'
 import PrimaryCta from '../misc/PrimaryCta'
 
 const MedicalTransportation = () => {
@@ -47,7 +47,7 @@ const MedicalTransportation = () => {
             </h3>
             <p className="text-md flex-1 leading-relaxed text-black-500">
               We offer dependable, non-emergency transportation tailored to individuals with
-              mobility or health-related needs. Whether it's routine doctor visits, outpatient
+              mobility or health-related needs. Whether it&apos;s routine doctor visits, outpatient
               therapy, pharmacy pickups, or adult day center transportation, our drivers ensure
               punctual, safe, and courteous service. All vehicles are wheelchair accessible and
               operated by professionals trained to assist passengers with care and dignity.

@@ -5,7 +5,7 @@ export default function InfoStat({ icon: Icon, label, value, className = '' }) {
     >
       <div className="flex items-center gap-3">
         {Icon ? (
-          <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-navy/20 bg-navy text-white">
+          <span className="inline-flex size-11 items-center justify-center rounded-full border border-navy/20 bg-navy text-white">
             <Icon />
           </span>
         ) : null}

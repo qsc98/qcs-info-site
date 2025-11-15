@@ -11,7 +11,7 @@ export default function FaqSection({
   return (
     <section id={id} className={className}>
       <SectionHeading eyebrow={eyebrow} title={title} description={description} />
-      <div className="section-shell mt-10 bg-white/90 px-2 py-2 sm:px-4">
+      <div className="section-shell mt-10 bg-white/90 p-2 sm:px-4">
         <div className="divide-y divide-slate-100">
           {items.map((item, idx) => (
             <details key={item.q ?? idx} className="group">

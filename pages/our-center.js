@@ -1,3 +1,4 @@
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import {
   FaHeart,
   FaShieldAlt,
@@ -13,14 +14,13 @@ import {
   FaUserNurse,
 } from 'react-icons/fa'
 import Footer from '../components/Layout/Footer'
-import GallerySection from '../components/OurCenterGallery'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+import FaqSection from '../components/misc/FaqSection'
+import InfoStat from '../components/misc/InfoStat'
+import PageBackButton from '../components/misc/PageBackButton'
 import PrimaryCta from '../components/misc/PrimaryCta'
 import SectionEyebrow from '../components/misc/SectionEyebrow'
 import SectionHeading from '../components/misc/SectionHeading'
-import InfoStat from '../components/misc/InfoStat'
-import FaqSection from '../components/misc/FaqSection'
-import PageBackButton from '../components/misc/PageBackButton'
+import GallerySection from '../components/OurCenterGallery'
 
 const heroHighlights = [
   { icon: FaUserNurse, label: 'Licensed nurses & CNAs on-site' },
@@ -216,7 +216,7 @@ const OurCenter = () => {
                   className="group relative overflow-hidden rounded-3xl border border-white/50 bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat shadow-[0_24px_40px_-32px_rgba(15,34,71,0.6)]"
                 >
                   <div className="h-full rounded-[28px] bg-white/50 p-6 backdrop-blur-[2px] transition group-hover:-translate-y-1">
-                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-navy text-white shadow-[0_12px_24px_rgba(15,34,71,0.25)]">
+                    <div className="mb-4 inline-flex size-12 items-center justify-center rounded-2xl bg-navy text-white shadow-[0_12px_24px_rgba(15,34,71,0.25)]">
                       <Icon className="text-xl" />
                     </div>
                     <h3 className="font-jakarta text-xl font-semibold text-navy">{title}</h3>
@@ -243,7 +243,7 @@ const OurCenter = () => {
                 {scheduleBlocks.map((block) => (
                   <div
                     key={block.title}
-                    className="rounded-2xl border border-white/60 bg-white/90 p-6 shadow-[0_10px_24px_rgba(15,34,71,0.08)] shadow-sm"
+                    className="rounded-2xl border border-white/60 bg-white/90 p-6 shadow-[0_10px_24px_rgba(15,34,71,0.08)]"
                   >
                     <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#116768]">
                       <FaClock aria-hidden />
@@ -289,7 +289,7 @@ const OurCenter = () => {
                   key={text}
                   className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-white p-4 shadow-[0_8px_20px_rgba(15,34,71,0.06)]"
                 >
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-navy text-white">
+                  <span className="inline-flex size-10 items-center justify-center rounded-full bg-navy text-white">
                     <Icon />
                   </span>
                   <p className="text-slate-700">{text}</p>
@@ -303,7 +303,7 @@ const OurCenter = () => {
             className="section-shell relative overflow-hidden px-6 py-10 sm:px-12"
           >
             <div className="pointer-events-none absolute inset-0 opacity-50">
-              <div className="h-full w-full bg-[url('/assets/background-2.jpg')] bg-cover bg-center bg-no-repeat" />
+              <div className="size-full bg-[url('/assets/background-2.jpg')] bg-cover bg-center bg-no-repeat" />
             </div>
             <div className="relative">
               <SectionHeading eyebrow="Visit Us" title="Plan Your Tour or Drop-In" />
@@ -311,7 +311,7 @@ const OurCenter = () => {
                 <div className="space-y-6">
                   <div className="rounded-2xl border border-white/70 bg-white/80 p-5 shadow-sm">
                     <div className="flex items-center gap-3">
-                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-navy text-white">
+                      <span className="inline-flex size-10 items-center justify-center rounded-full bg-navy text-white">
                         <FaMedkit />
                       </span>
                       <div>

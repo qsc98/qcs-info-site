@@ -1,13 +1,6 @@
 // pages/adult-day-care.js
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import React from 'react'
-import Footer from '../components/Layout/Footer'
-import PrimaryCta from '../components/misc/PrimaryCta'
-import SectionEyebrow from '../components/misc/SectionEyebrow'
-import SectionHeading from '../components/misc/SectionHeading'
-import Bullet from '../components/misc/Bullet'
-import InfoStat from '../components/misc/InfoStat'
-import FaqSection from '../components/misc/FaqSection'
-import PageBackButton from '../components/misc/PageBackButton'
 import {
   FaUserFriends,
   FaHeartbeat,
@@ -21,7 +14,14 @@ import {
   FaFileInvoiceDollar,
   FaMedkit,
 } from 'react-icons/fa'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+import Footer from '../components/Layout/Footer'
+import Bullet from '../components/misc/Bullet'
+import FaqSection from '../components/misc/FaqSection'
+import InfoStat from '../components/misc/InfoStat'
+import PageBackButton from '../components/misc/PageBackButton'
+import PrimaryCta from '../components/misc/PrimaryCta'
+import SectionEyebrow from '../components/misc/SectionEyebrow'
+import SectionHeading from '../components/misc/SectionHeading'
 
 const quickStats = [
   { icon: FaClock, label: 'Hours', value: 'Mon–Sat • 7 AM – 7 PM' },
@@ -60,13 +60,13 @@ const faqItems = [
 function Card({ title, icon, children, className = '' }) {
   return (
     <article
-      className={`group relative overflow-hidden rounded-3xl border border-white/25 bg-[url('/assets/background-card.jpg')] bg-cover bg-center bg-no-repeat p-[1px] ${className}`}
+      className={`group relative overflow-hidden rounded-3xl border border-white/25 bg-[url('/assets/background-card.jpg')] bg-cover bg-center bg-no-repeat p-px ${className}`}
     >
       <div className="h-full rounded-[28px] bg-white/85 p-6 shadow-[0_20px_35px_-28px_rgba(15,34,71,0.65)] backdrop-blur-sm transition group-hover:-translate-y-1">
         {title || icon ? (
           <div className="mb-4 flex items-center gap-3">
             {icon ? (
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-navy text-white shadow-[0_12px_24px_rgba(15,34,71,0.25)]">
+              <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-navy text-white shadow-[0_12px_24px_rgba(15,34,71,0.25)]">
                 {icon}
               </span>
             ) : null}
@@ -90,7 +90,7 @@ export default function AdultDayCarePage() {
         </div>
 
         <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
-          <section className="section-shell relative overflow-hidden px-6 py-6 sm:px-12">
+          <section className="section-shell relative overflow-hidden p-6 sm:px-12">
             <div
               className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-40"
               style={{ backgroundImage: "url('/assets/background.jpg')" }}
@@ -183,7 +183,7 @@ export default function AdultDayCarePage() {
                   </div>
                 </Card>
               </div>
-              <div className="rounded-3xl border border-white/30 bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat p-[1px]">
+              <div className="rounded-3xl border border-white/30 bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat p-px">
                 <div className="rounded-[28px] bg-white/90 p-6 shadow-[0_18px_35px_-28px_rgba(15,34,71,0.6)] backdrop-blur-sm">
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#116768]">
                     Who It Supports
@@ -379,7 +379,7 @@ export default function AdultDayCarePage() {
           <section id="costs" className="scroll-mt-28">
             <div className="section-shell relative overflow-hidden px-4 py-10 sm:px-8">
               <div className="pointer-events-none absolute inset-0 opacity-30">
-                <div className="h-full w-full bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat" />
+                <div className="size-full bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat" />
               </div>
               <div className="relative">
                 <SectionHeading
@@ -452,7 +452,7 @@ export default function AdultDayCarePage() {
           <section>
             <div className="section-shell relative overflow-hidden px-6 py-10 sm:px-12">
               <div className="pointer-events-none absolute inset-0 opacity-35">
-                <div className="h-full w-full bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat" />
+                <div className="size-full bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat" />
               </div>
               <div className="relative flex flex-col items-start justify-between gap-5 text-left md:flex-row md:items-center">
                 <div>

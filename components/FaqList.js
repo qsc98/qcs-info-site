@@ -1,6 +1,6 @@
 // components/FAQList.js
-import { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
+import { useState } from 'react'
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,7 +13,7 @@ const FAQItem = ({ question, answer }) => {
       >
         <span className="text-black-800 font-medium">{question}</span>
         <ChevronDownIcon
-          className={`h-5 w-5 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+          className={`size-5 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
         />
       </button>
       {isOpen && <div className="px-4 pb-4 text-sm text-black-600">{answer}</div>}

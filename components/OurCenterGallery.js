@@ -1,6 +1,6 @@
 // components/GallerySection.jsx
-import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import React, { useEffect, useRef, useState } from 'react'
 
 /**
  * Premium Gallery Slider (fixed first/last clicks)
@@ -137,7 +137,7 @@ export default function GallerySection({
           {slides.map((img, idx) => (
             <div
               key={idx}
-              className="relative aspect-[4/3] w-[80%] min-w-[80%] snap-center overflow-hidden rounded-[18px] shadow sm:w-[55%] sm:min-w-[55%] lg:w-[40%] lg:min-w-[40%]"
+              className="relative aspect-[4/3] w-4/5 min-w-[80%] snap-center overflow-hidden rounded-[18px] shadow sm:w-[55%] sm:min-w-[55%] lg:w-2/5 lg:min-w-[40%]"
               aria-roledescription="slide"
               aria-label={`${idx + 1} of ${slides.length}`}
             >

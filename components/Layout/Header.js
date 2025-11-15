@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { Link as LinkScroll } from 'react-scroll'
 import Image from 'next/image'
-import NotificationBar from './NotificationBar'
-import MobileFloatingNav from './MobileNavBar'
 import Link from 'next/link'
+import React, { useState, useEffect, useRef } from 'react'
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
+import { Link as LinkScroll } from 'react-scroll'
+import MobileFloatingNav from './MobileNavBar'
+import NotificationBar from './NotificationBar'
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null)
@@ -67,7 +67,7 @@ const Header = () => {
               >
                 Services
                 <svg
-                  className={`h-3 w-3 transition ${servicesOpen ? 'rotate-180' : ''}`}
+                  className={`size-3 transition ${servicesOpen ? 'rotate-180' : ''}`}
                   viewBox="0 0 10 6"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -147,12 +147,6 @@ const Header = () => {
             >
               About
             </Link>
-            <Link
-              href="/careers"
-              className="animation-hover relative mx-2 inline-block px-4 py-2 text-black-500 transition hover:text-green-500"
-            >
-              Careers
-            </Link>
             <LinkScroll
               activeClass="active"
               to="contact"
@@ -172,6 +166,12 @@ const Header = () => {
             >
               Contact
             </LinkScroll>
+            <Link
+              href="/careers"
+              className="animation-hover relative mx-2 inline-block px-4 py-2 text-black-500 transition hover:text-green-500"
+            >
+              Careers
+            </Link>
           </ul>
           <div className="flex items-center justify-end gap-4">
             <a
@@ -180,7 +180,7 @@ const Header = () => {
               rel="noopener noreferrer"
               aria-label="Facebook"
             >
-              <FaFacebookF className="h-5 w-5 text-[#1877F2] transition-transform duration-200 hover:scale-110" />
+              <FaFacebookF className="size-5 text-[#1877F2] transition-transform duration-200 hover:scale-110" />
             </a>
             <a
               href="https://instagram.com"
@@ -188,7 +188,7 @@ const Header = () => {
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <FaInstagram className="h-5 w-5 text-[#E1306C] transition-transform duration-200 hover:scale-110" />
+              <FaInstagram className="size-5 text-[#E1306C] transition-transform duration-200 hover:scale-110" />
             </a>
             <a
               href="https://linkedin.com"
@@ -196,7 +196,7 @@ const Header = () => {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
-              <FaLinkedinIn className="h-5 w-5 text-[#0A66C2] transition-transform duration-200 hover:scale-110" />
+              <FaLinkedinIn className="size-5 text-[#0A66C2] transition-transform duration-200 hover:scale-110" />
             </a>
           </div>
         </nav>

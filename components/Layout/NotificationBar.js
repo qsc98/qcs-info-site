@@ -11,7 +11,7 @@ const NotificationBar = () => {
         <div className="mx-auto flex w-full max-w-screen-xl items-center justify-between gap-6">
           {/* Left: Address */}
           <div className="flex flex-1 items-center gap-2 text-white/80">
-            <MapPinIcon className="h-4 w-4" />
+            <MapPinIcon className="size-4" />
             <span>811 Mt Holly Rd, Fairdale, KY 40118</span>
           </div>
 

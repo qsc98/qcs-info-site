@@ -1,11 +1,5 @@
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import Image from 'next/image'
-import Footer from '../components/Layout/Footer'
-import SectionHeading from '../components/misc/SectionHeading'
-import Bullet from '../components/misc/Bullet'
-import InfoStat from '../components/misc/InfoStat'
-import PrimaryCta from '../components/misc/PrimaryCta'
-import SectionEyebrow from '../components/misc/SectionEyebrow'
-import PageBackButton from '../components/misc/PageBackButton'
 import {
   FaHandshake,
   FaUsers,
@@ -14,7 +8,13 @@ import {
   FaClock,
   FaClipboardList,
 } from 'react-icons/fa'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+import Footer from '../components/Layout/Footer'
+import Bullet from '../components/misc/Bullet'
+import InfoStat from '../components/misc/InfoStat'
+import PageBackButton from '../components/misc/PageBackButton'
+import PrimaryCta from '../components/misc/PrimaryCta'
+import SectionEyebrow from '../components/misc/SectionEyebrow'
+import SectionHeading from '../components/misc/SectionHeading'
 
 const quickStats = [
   { icon: FaMapMarkerAlt, label: 'Location', value: 'Louisville & nearby communities' },
@@ -26,13 +26,13 @@ const quickStats = [
 function Card({ title, icon, children, className = '', innerClassName = '' }) {
   return (
     <article
-      className={`group relative overflow-hidden rounded-3xl border border-white/25 bg-[url('/assets/background-card.jpg')] bg-cover p-[1px] ${className}`}
+      className={`group relative overflow-hidden rounded-3xl border border-white/25 bg-[url('/assets/background-card.jpg')] bg-cover p-px ${className}`}
     >
       <div className={`h-full rounded-[28px] bg-white/40 p-6 shadow-[0_20px_35px_-28px_rgba(15,34,71,0.65)] transition group-hover:-translate-y-1 ${innerClassName}`}>
         {(title || icon) && (
           <div className="mb-4 flex items-center gap-3">
             {icon ? (
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-navy text-white shadow-[0_12px_24px_rgba(15,34,71,0.25)]">
+              <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-navy text-white shadow-[0_12px_24px_rgba(15,34,71,0.25)]">
                 {icon}
               </span>
             ) : null}
@@ -58,7 +58,7 @@ export default function AboutPage() {
 
         <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
           {/* HERO */}
-          <section className="section-shell relative overflow-hidden px-6 py-6 sm:px-12">
+          <section className="section-shell relative overflow-hidden p-6 sm:px-12">
             <div
               className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-40"
               style={{ backgroundImage: "url('/assets/background.jpg')" }}
@@ -163,7 +163,7 @@ export default function AboutPage() {
           </section>
 
         {/* TEAM SNAPSHOT */}
-        <section id="team" className="section-shell relative overflow-hidden mt-14 px-6 py-10 sm:px-12">
+        <section id="team" className="section-shell relative mt-14 overflow-hidden px-6 py-10 sm:px-12">
           <div
             className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-50"
             style={{ backgroundImage: "url('/assets/honeycomb-background.jpg')" }}
@@ -238,7 +238,7 @@ export default function AboutPage() {
           {/* FINAL CTA */}
           <section className="section-shell relative overflow-hidden px-6 py-10 sm:px-12">
             <div className="pointer-events-none absolute inset-0 opacity-35">
-              <div className="h-full w-full bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat" />
+              <div className="size-full bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat" />
             </div>
             <div className="relative flex flex-col items-start justify-between gap-5 text-left md:flex-row md:items-center">
               <div>

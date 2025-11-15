@@ -1,9 +1,9 @@
-import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper'
-import getScrollAnimation from '../utils/getScrollAnimation'
 import { motion } from 'framer-motion'
 import { useMemo } from 'react'
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 import ContactForm from './ContactForm'
+import getScrollAnimation from '../utils/getScrollAnimation'
+import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper'
 import SectionEyebrow from './misc/SectionEyebrow'
 
 const ContactSection = () => {
@@ -59,13 +59,13 @@ const ContactSection = () => {
               <p className="mt-1 text-sm text-black-500">Stay updated & connect with us.</p>
               <div className="mt-3 flex justify-center gap-4">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                  <FaFacebookF className="h-5 w-5 text-[#1877F2] transition-transform duration-200 hover:scale-110" />
+                  <FaFacebookF className="size-5 text-[#1877F2] transition-transform duration-200 hover:scale-110" />
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                  <FaInstagram className="h-5 w-5 text-[#E1306C] transition-transform duration-200 hover:scale-110" />
+                  <FaInstagram className="size-5 text-[#E1306C] transition-transform duration-200 hover:scale-110" />
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedinIn className="h-5 w-5 text-[#0A66C2] transition-transform duration-200 hover:scale-110" />
+                  <FaLinkedinIn className="size-5 text-[#0A66C2] transition-transform duration-200 hover:scale-110" />
                 </a>
               </div>
             </div>
@@ -73,14 +73,12 @@ const ContactSection = () => {
         </ScrollAnimationWrapper>
 
         {/* Contact Form Centered */}
-        <ScrollAnimationWrapper>
-          <motion.div variants={scrollAnimation} className="mx-auto max-w-lg">
+          <div className="mx-auto max-w-lg">
             <div className="rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl">
               <h3 className="mb-6 text-center text-2xl font-bold">Contact Us</h3>
               <ContactForm />
             </div>
-          </motion.div>
-        </ScrollAnimationWrapper>
+          </div>
       </div>
     </section>
   )

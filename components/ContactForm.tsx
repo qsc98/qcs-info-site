@@ -1,8 +1,8 @@
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
 import { FaUser, FaEnvelope, FaPhone, FaCommentDots } from 'react-icons/fa'
+import { z } from 'zod'
 
 const schema = z.object({
   firstName: z.string().min(1, 'First name is required'),
@@ -173,7 +173,7 @@ const ContactForm = () => {
         <input
           type="checkbox"
           {...register('consent')}
-          className="mt-1 h-4 w-4 rounded border-slate-300 text-[#116768] focus:ring-[#116768]"
+          className="mt-1 size-4 rounded border-slate-300 text-[#116768] focus:ring-[#116768]"
         />
         <span>
           I agree to be contacted by QCS about services and understand this form is not for

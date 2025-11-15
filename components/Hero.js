@@ -1,10 +1,10 @@
-import { useMemo } from 'react'
-import Image from 'next/image'
+import { UserGroupIcon, HomeModernIcon, SparklesIcon, TruckIcon } from '@heroicons/react/24/outline'
+import PhoneIcon from '@heroicons/react/24/solid/PhoneIcon'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { useMemo } from 'react'
 import getScrollAnimation from '../utils/getScrollAnimation'
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper'
-import PhoneIcon from '@heroicons/react/24/solid/PhoneIcon'
-import { UserGroupIcon, HomeModernIcon, SparklesIcon, TruckIcon } from '@heroicons/react/24/outline'
 import PrimaryCta from './misc/PrimaryCta'
 
 const highlights = [
@@ -65,7 +65,7 @@ const Hero = () => {
                 <PrimaryCta href="/our-center" className="justify-center">
                   Learn about our center
                   <svg
-                    className="ml-2 h-5 w-5"
+                    className="ml-2 size-5"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -85,14 +85,14 @@ const Hero = () => {
                   aria-label="Call our center"
                 >
                   Call our center
-                  <PhoneIcon className="ml-2 h-5 w-5" />
+                  <PhoneIcon className="ml-2 size-5" />
                 </PrimaryCta>
               </div>
 
               <div className="mt-12 flex items-center gap-2 text-xs text-slate-500 sm:gap-3">
                 <span>Medicaid & private pay accepted • Services offered</span>
                 <span
-                  className="group relative flex h-4 w-4 items-center justify-center rounded-full bg-[#116768] text-[10px] font-bold text-white"
+                  className="group relative flex size-4 items-center justify-center rounded-full bg-[#116768] text-[10px] font-bold text-white"
                   aria-label="Coverage and services info"
                 >
                   i
@@ -105,7 +105,7 @@ const Hero = () => {
             </div>
 
             <div className="order-1 flex w-full sm:order-2">
-              <motion.div className="h-full w-full" variants={scrollAnimation}>
+              <motion.div className="size-full" variants={scrollAnimation}>
                 <Image
                   src="/assets/main_hero_section.svg"
                   alt="Seniors enjoying"
@@ -125,7 +125,7 @@ const Hero = () => {
                 variants={scrollAnimation}
                 className="flex items-center gap-4 rounded-lg border border-slate-100 bg-white p-5 shadow-[0_12px_24px_rgba(15,34,71,0.05)]"
               >
-                <Icon className="h-20 w-20 text-navy" />
+                <Icon className="size-20 text-navy" />
                 <div>
                   <p className="text-lg font-semibold text-navy">{title}</p>
                   <p className="text-sm text-slate-600">{description}</p>

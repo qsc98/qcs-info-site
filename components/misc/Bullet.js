@@ -8,7 +8,7 @@ export default function Bullet({
 }) {
   return (
     <li className={`flex items-start gap-2 text-slate-700 ${className}`}>
-      <FaCheckCircle className={`mt-0.5 h-4 w-4 flex-none text-[#116768] ${iconClassName}`} />
+      <FaCheckCircle className={`mt-0.5 size-4 flex-none text-[#116768] ${iconClassName}`} />
       <span className={textClassName}>{children}</span>
     </li>
   )

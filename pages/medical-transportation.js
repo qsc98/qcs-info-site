@@ -1,12 +1,5 @@
 // pages/medical-transportation.js
-import Footer from '../components/Layout/Footer'
-import SectionEyebrow from '../components/misc/SectionEyebrow'
-import SectionHeading from '../components/misc/SectionHeading'
-import PrimaryCta from '../components/misc/PrimaryCta'
-import Bullet from '../components/misc/Bullet'
-import InfoStat from '../components/misc/InfoStat'
-import FaqSection from '../components/misc/FaqSection'
-import PageBackButton from '../components/misc/PageBackButton'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import {
   FaWheelchair,
   FaShieldAlt,
@@ -19,7 +12,14 @@ import {
   FaClipboardList,
   FaThermometerHalf,
 } from 'react-icons/fa'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+import Footer from '../components/Layout/Footer'
+import Bullet from '../components/misc/Bullet'
+import FaqSection from '../components/misc/FaqSection'
+import InfoStat from '../components/misc/InfoStat'
+import PageBackButton from '../components/misc/PageBackButton'
+import PrimaryCta from '../components/misc/PrimaryCta'
+import SectionEyebrow from '../components/misc/SectionEyebrow'
+import SectionHeading from '../components/misc/SectionHeading'
 
 const quickStats = [
   { icon: FaClock, label: 'Advance Notice', value: 'Book 24 hours ahead' },
@@ -58,13 +58,13 @@ const faqItems = [
 function Card({ title, icon, children, className = '' }) {
   return (
     <article
-      className={`group relative overflow-hidden rounded-3xl border border-white/25 bg-[url('/assets/background-card.jpg')] bg-cover bg-center bg-no-repeat p-[1px] ${className}`}
+      className={`group relative overflow-hidden rounded-3xl border border-white/25 bg-[url('/assets/background-card.jpg')] bg-cover bg-center bg-no-repeat p-px ${className}`}
     >
       <div className="h-full rounded-[28px] bg-white/85 p-6 shadow-[0_20px_35px_-28px_rgba(15,34,71,0.65)] backdrop-blur-sm transition group-hover:-translate-y-1">
         {title || icon ? (
           <div className="mb-4 flex items-center gap-3">
             {icon ? (
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-navy text-white shadow-[0_12px_24px_rgba(15,34,71,0.25)]">
+              <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-navy text-white shadow-[0_12px_24px_rgba(15,34,71,0.25)]">
                 {icon}
               </span>
             ) : null}
@@ -87,7 +87,7 @@ export default function MedicalTransportationPage() {
         </div>
 
         <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
-          <section className="section-shell relative overflow-hidden px-6 py-6 sm:px-12">
+          <section className="section-shell relative overflow-hidden p-6 sm:px-12">
             <div
               className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-40"
               style={{ backgroundImage: "url('/assets/background.jpg')" }}
@@ -223,7 +223,7 @@ export default function MedicalTransportationPage() {
                   />
                 </div>
                 <div className="relative">
-                  <div className="absolute left-6 right-6 top-6 hidden h-0.5 bg-slate-200 md:block lg:left-12 lg:right-12" />
+                  <div className="absolute inset-x-6 top-6 hidden h-0.5 bg-slate-200 md:block lg:inset-x-12" />
                   <ol className="grid grid-cols-1 gap-6 md:grid-cols-3">
                     {[
                       {
@@ -247,7 +247,7 @@ export default function MedicalTransportationPage() {
                     ].map(({ step, title, icon, copy }) => (
                       <li key={step} className="relative">
                         <div className="flex items-start gap-4 md:flex-col md:items-center">
-                          <div className="relative z-10 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#116768] shadow ring-2 ring-[#116768]/30">
+                          <div className="relative z-10 inline-flex size-12 items-center justify-center rounded-full bg-white text-[#116768] shadow ring-2 ring-[#116768]/30">
                             <span className="text-base font-bold">{step}</span>
                           </div>
                           <div className="text-left md:mt-3 md:text-center">
@@ -265,7 +265,7 @@ export default function MedicalTransportationPage() {
                 <div className="mt-10 flex justify-center">
                   <div className="w-full max-w-3xl rounded-3xl border border-white/30 bg-white/85 p-6 shadow-[0_18px_35px_-30px_rgba(15,34,71,0.5)] backdrop-blur">
                     <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-                      <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-[#116768]/10 text-[#116768]">
+                      <div className="flex size-16 shrink-0 items-center justify-center rounded-full bg-[#116768]/10 text-[#116768]">
                         <FaClipboardList className="text-2xl" />
                       </div>
                       <div className="flex-1">
@@ -293,7 +293,7 @@ export default function MedicalTransportationPage() {
 
           <section className="section-shell relative overflow-hidden px-6 py-10 sm:px-12">
             <div className="pointer-events-none absolute inset-0 opacity-35">
-              <div className="h-full w-full bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat" />
+              <div className="size-full bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat" />
             </div>
             <div className="relative flex flex-col items-start justify-between gap-5 text-left md:flex-row md:items-center">
               <div>

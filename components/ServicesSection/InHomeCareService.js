@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react'
 import { motion } from 'framer-motion'
-import ScrollAnimationWrapper from '../Layout/ScrollAnimationWrapper'
+import React, { useMemo } from 'react'
 import getScrollAnimation from '../../utils/getScrollAnimation'
 import FAQList from '../FaqList'
+import ScrollAnimationWrapper from '../Layout/ScrollAnimationWrapper'
 import PrimaryCta from '../misc/PrimaryCta'
 
 const InHomeCare = () => {
