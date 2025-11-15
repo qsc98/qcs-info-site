@@ -1,6 +1,4 @@
-import { useRouter } from 'next/router'
 import {
-  FaArrowLeft,
   FaHeart,
   FaShieldAlt,
   FaUtensils,
@@ -22,6 +20,7 @@ import SectionEyebrow from '../components/misc/SectionEyebrow'
 import SectionHeading from '../components/misc/SectionHeading'
 import InfoStat from '../components/misc/InfoStat'
 import FaqSection from '../components/misc/FaqSection'
+import PageBackButton from '../components/misc/PageBackButton'
 
 const heroHighlights = [
   { icon: FaUserNurse, label: 'Licensed nurses & CNAs on-site' },
@@ -146,18 +145,12 @@ const faqItems = [
 ]
 
 const OurCenter = () => {
-  const router = useRouter()
 
   return (
     <>
       <div className="mx-auto mb-24 mt-6 max-w-screen-xl px-4 sm:px-6 lg:px-10">
         <div className="sticky top-4 z-50 mb-6 flex justify-start">
-          <button
-            onClick={() => router.push('/')}
-            className="inline-flex items-center gap-2 rounded-xl bg-white/90 px-4 py-2 text-sm font-semibold text-navy shadow-lg shadow-[rgba(17,103,104,0.08)] ring-1 ring-slate-100 backdrop-blur transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#116768]/50"
-          >
-            <FaArrowLeft aria-hidden /> Back to Main Page
-          </button>
+          <PageBackButton href="/" />
         </div>
 
         <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">

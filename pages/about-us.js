@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Footer from '../components/Layout/Footer'
 import SectionHeading from '../components/misc/SectionHeading'
@@ -6,20 +5,14 @@ import Bullet from '../components/misc/Bullet'
 import InfoStat from '../components/misc/InfoStat'
 import PrimaryCta from '../components/misc/PrimaryCta'
 import SectionEyebrow from '../components/misc/SectionEyebrow'
+import PageBackButton from '../components/misc/PageBackButton'
 import {
-  FaArrowLeft,
   FaHandshake,
-  FaHeart,
   FaUsers,
   FaShieldAlt,
   FaMapMarkerAlt,
   FaClock,
-  FaHandsHelping,
-  FaChurch,
   FaClipboardList,
-  FaLaptopCode,
-  FaUserMd,
-  FaLightbulb,
 } from 'react-icons/fa'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
@@ -54,20 +47,13 @@ function Card({ title, icon, children, className = '', innerClassName = '' }) {
 
 /* ---------- Page ---------- */
 export default function AboutPage() {
-  const router = useRouter()
-  const sectionId = router.query.from || 'about'
 
   return (
     <>
       <div className="mx-auto mb-24 mt-6 max-w-screen-xl px-4 sm:px-6 lg:px-10">
         {/* Back button */}
         <div className="sticky top-4 z-50 flex justify-start">
-          <button
-            onClick={() => router.push(`/#${sectionId}`)}
-            className="inline-flex items-center gap-2 rounded-xl bg-white/80 px-4 py-2 text-sm font-semibold text-gray-900 shadow-lg ring-1 ring-gray-200 backdrop-blur transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-400"
-          >
-            <FaArrowLeft /> Back to Home
-          </button>
+          <PageBackButton href="/" className="bg-white/80 text-gray-900 ring-gray-200 focus:ring-emerald-400" />
         </div>
 
         <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">

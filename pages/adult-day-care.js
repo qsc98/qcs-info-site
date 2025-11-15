@@ -1,6 +1,5 @@
 // pages/adult-day-care.js
 import React from 'react'
-import { useRouter } from 'next/router'
 import Footer from '../components/Layout/Footer'
 import PrimaryCta from '../components/misc/PrimaryCta'
 import SectionEyebrow from '../components/misc/SectionEyebrow'
@@ -8,8 +7,8 @@ import SectionHeading from '../components/misc/SectionHeading'
 import Bullet from '../components/misc/Bullet'
 import InfoStat from '../components/misc/InfoStat'
 import FaqSection from '../components/misc/FaqSection'
+import PageBackButton from '../components/misc/PageBackButton'
 import {
-  FaArrowLeft,
   FaUserFriends,
   FaHeartbeat,
   FaUtensils,
@@ -82,19 +81,12 @@ function Card({ title, icon, children, className = '' }) {
 
 /* ---------- Page ---------- */
 export default function AdultDayCarePage() {
-  const router = useRouter()
-  const sectionId = router.query.from || 'adult-day-care'
 
   return (
     <>
       <div className="mx-auto mb-24 mt-6 max-w-screen-xl px-4 sm:px-6 lg:px-10">
         <div className="sticky top-4 z-50 flex justify-start">
-          <button
-            onClick={() => router.push(`/#${sectionId}`)}
-            className="inline-flex items-center gap-2 rounded-xl bg-white/90 px-4 py-2 text-sm font-semibold text-navy shadow-lg shadow-[rgba(17,103,104,0.08)] ring-1 ring-slate-100 backdrop-blur transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#116768]/50"
-          >
-            <FaArrowLeft /> Services Overview
-          </button>
+          <PageBackButton href="/" />
         </div>
 
         <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
