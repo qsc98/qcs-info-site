@@ -1,6 +1,6 @@
 // components/GallerySection.jsx
-import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import React, { useEffect, useRef, useState } from 'react'
 
 /**
  * Premium Gallery Slider (fixed first/last clicks)
@@ -16,6 +16,8 @@ import Image from 'next/image'
 export default function GallerySection({
   title = 'Take a Look Inside',
   description = 'Bright, accessible spaces designed for comfort and community. We’re adding new photos as we complete finishing touches—come see it in person!',
+  hideHeading = false,
+  className = '',
   slides = [
     { alt: 'Center exterior', src: '/assets/Image-placeholder.png' },
     { alt: 'Open activity room', src: '/assets/Image-placeholder.png' },
@@ -109,9 +111,13 @@ export default function GallerySection({
   }
 
   return (
-    <section className="mt-20" aria-label="Gallery">
-      <h2 className="mb-6 text-center text-3xl font-semibold text-gray-900">{title}</h2>
-      <p className="mx-auto mb-10 max-w-3xl text-center text-gray-700">{description}</p>
+    <section className={`mt-20 ${className}`.trim()} aria-label="Gallery">
+      {!hideHeading ? (
+        <>
+          <h2 className="mb-6 text-center text-3xl font-semibold text-gray-900">{title}</h2>
+          <p className="mx-auto mb-10 max-w-3xl text-center text-gray-700">{description}</p>
+        </>
+      ) : null}
 
       <div
         className="relative overflow-hidden"
@@ -131,7 +137,7 @@ export default function GallerySection({
           {slides.map((img, idx) => (
             <div
               key={idx}
-              className="relative aspect-[4/3] w-[80%] min-w-[80%] snap-center overflow-hidden rounded-[18px] shadow sm:w-[55%] sm:min-w-[55%] lg:w-[40%] lg:min-w-[40%]"
+              className="relative aspect-[4/3] w-4/5 min-w-[80%] snap-center overflow-hidden rounded-[18px] shadow sm:w-[55%] sm:min-w-[55%] lg:w-2/5 lg:min-w-[40%]"
               aria-roledescription="slide"
               aria-label={`${idx + 1} of ${slides.length}`}
             >

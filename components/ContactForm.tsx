@@ -1,8 +1,8 @@
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
 import { FaUser, FaEnvelope, FaPhone, FaCommentDots } from 'react-icons/fa'
+import { z } from 'zod'
 
 const schema = z.object({
   firstName: z.string().min(1, 'First name is required'),
@@ -11,14 +11,8 @@ const schema = z.object({
   phone: z.string().optional(),
   service: z.enum(['adhc', 'transportation', 'inHome', 'notSure']).optional().or(z.literal('')),
   bestTime: z.enum(['morning', 'afternoon', 'evening']).optional().or(z.literal('')),
-  message: z
-    .string()
-    .max(1000, 'Message is too long')
-    .optional()
-    .or(z.literal('')),
-  consent: z
-    .boolean()
-    .refine((val) => val === true, { message: 'Consent is required' }),
+  message: z.string().max(1000, 'Message is too long').optional().or(z.literal('')),
+  consent: z.boolean().refine((val) => val === true, { message: 'Consent is required' }),
 })
 
 type FormData = z.infer<typeof schema>
@@ -60,18 +54,32 @@ const ContactForm = () => {
           <label className="text-sm font-medium text-slate-700">First Name</label>
           <div className="mt-1 flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2">
             <FaUser className="text-slate-400" />
-            <input type="text" placeholder="First Name" {...register('firstName')} className="w-full border-0 focus:outline-none" />
+            <input
+              type="text"
+              placeholder="First Name"
+              {...register('firstName')}
+              className="w-full border-0 focus:outline-none"
+            />
           </div>
-          {errors.firstName && <p className="mt-1 text-xs text-red-500">{errors.firstName.message}</p>}
+          {errors.firstName && (
+            <p className="mt-1 text-xs text-red-500">{errors.firstName.message}</p>
+          )}
         </div>
 
         <div>
           <label className="text-sm font-medium text-slate-700">Last Name</label>
           <div className="mt-1 flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2">
             <FaUser className="text-slate-400" />
-            <input type="text" placeholder="Last Name" {...register('lastName')} className="w-full border-0 focus:outline-none" />
+            <input
+              type="text"
+              placeholder="Last Name"
+              {...register('lastName')}
+              className="w-full border-0 focus:outline-none"
+            />
           </div>
-          {errors.lastName && <p className="mt-1 text-xs text-red-500">{errors.lastName.message}</p>}
+          {errors.lastName && (
+            <p className="mt-1 text-xs text-red-500">{errors.lastName.message}</p>
+          )}
         </div>
       </div>
 
@@ -80,7 +88,12 @@ const ContactForm = () => {
         <label className="text-sm font-medium text-slate-700">Email</label>
         <div className="mt-1 flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2">
           <FaEnvelope className="text-slate-400" />
-          <input type="email" placeholder="Email" {...register('email')} className="w-full border-0 focus:outline-none" />
+          <input
+            type="email"
+            placeholder="Email"
+            {...register('email')}
+            className="w-full border-0 focus:outline-none"
+          />
         </div>
         {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>}
       </div>
@@ -90,7 +103,12 @@ const ContactForm = () => {
         <label className="text-sm font-medium text-slate-700">Phone (optional)</label>
         <div className="mt-1 flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2">
           <FaPhone className="text-slate-400" />
-          <input type="tel" placeholder="Phone" {...register('phone')} className="w-full border-0 focus:outline-none" />
+          <input
+            type="tel"
+            placeholder="Phone"
+            {...register('phone')}
+            className="w-full border-0 focus:outline-none"
+          />
         </div>
       </div>
 
@@ -104,7 +122,10 @@ const ContactForm = () => {
             { label: 'In-Home Care', value: 'inHome' },
             { label: 'Not sure yet', value: 'notSure' },
           ].map((option) => (
-            <label key={option.value} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm">
+            <label
+              key={option.value}
+              className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm"
+            >
               <input type="radio" value={option.value} {...register('service')} className="radio" />
               {option.label}
             </label>
@@ -121,7 +142,10 @@ const ContactForm = () => {
             { label: 'Afternoon', value: 'afternoon' },
             { label: 'Evening', value: 'evening' },
           ].map((slot) => (
-            <label key={slot.value} className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1">
+            <label
+              key={slot.value}
+              className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1"
+            >
               <input type="radio" value={slot.value} {...register('bestTime')} className="radio" />
               {slot.label}
             </label>
@@ -149,10 +173,11 @@ const ContactForm = () => {
         <input
           type="checkbox"
           {...register('consent')}
-          className="mt-1 h-4 w-4 rounded border-slate-300 text-[#116768] focus:ring-[#116768]"
+          className="mt-1 size-4 rounded border-slate-300 text-[#116768] focus:ring-[#116768]"
         />
         <span>
-          I agree to be contacted by QCS about services and understand this form is not for emergency or medical advice.
+          I agree to be contacted by QCS about services and understand this form is not for
+          emergency or medical advice.
         </span>
       </label>
       {errors.consent && <p className="text-xs text-red-500">{errors.consent.message}</p>}
@@ -171,8 +196,12 @@ const ContactForm = () => {
 
       {submitted && (
         <div className="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
-          Thanks—your request is in. We’ll call you within 1–2 business days (usually sooner). Need help now?
-          Call <a href="tel:+1502XXXXXXX" className="font-semibold underline">(502) XXX-XXXX</a>.
+          Thanks—your request is in. We’ll call you within 1–2 business days (usually sooner). Need
+          help now? Call{' '}
+          <a href="tel:+1502XXXXXXX" className="font-semibold underline">
+            (502) XXX-XXXX
+          </a>
+          .
         </div>
       )}
     </form>

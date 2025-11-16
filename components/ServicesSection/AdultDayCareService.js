@@ -1,9 +1,9 @@
 // components/AdultDayCareService.js
-import React, { useMemo } from 'react'
 import { motion } from 'framer-motion'
-import ScrollAnimationWrapper from '../Layout/ScrollAnimationWrapper'
+import React, { useMemo } from 'react'
 import getScrollAnimation from '../../utils/getScrollAnimation'
 import FAQList from '../FaqList'
+import ScrollAnimationWrapper from '../Layout/ScrollAnimationWrapper'
 import PrimaryCta from '../misc/PrimaryCta'
 
 const AdultDayCareService = () => {
@@ -33,14 +33,16 @@ const AdultDayCareService = () => {
   ]
 
   return (
-    <div id="adult-day-care" className="mx-auto max-w-screen-xl px-6 pb-12 sm:px-8 lg:px-16">
+    <div id="adult-day-care" className="mx-auto max-w-screen-xl px-6 sm:px-8 sm:pb-12 lg:px-16">
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         <ScrollAnimationWrapper>
           <motion.div
             variants={scrollAnimation}
             className="flex h-full flex-col rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl"
           >
-            <h3 className="mb-3 flex items-center gap-2 text-2xl font-bold">Adult Day Care Services</h3>
+            <h3 className="mb-3 flex items-center gap-2 text-2xl font-bold">
+              Adult Day Care Services
+            </h3>
             <p className="text-md flex-1 leading-relaxed text-black-500">
               Our adult day care program is designed to support older adults in a safe, structured,
               and enriching environment during daytime hours. We provide supervised care with
@@ -52,7 +54,7 @@ const AdultDayCareService = () => {
 
             <PrimaryCta
               href="/adult-day-care?from=adult-day-care"
-              className="mt-6 w-full justify-center bg-[#4c6d8f] hover:bg-[#3f5d7b] focus:ring-[#4c6d8f]/50 sm:w-auto"
+              className="mt-6 w-full justify-center sm:w-auto"
             >
               Learn About Day Care
             </PrimaryCta>

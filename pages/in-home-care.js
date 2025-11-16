@@ -1,427 +1,451 @@
-import { useRouter } from 'next/router'
-import Image from 'next/image'
-import Footer from '../components/Layout/Footer'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import {
-  FaArrowLeft,
-  FaCheckCircle,
   FaShieldAlt,
   FaHeartbeat,
   FaClock,
   FaMapMarkerAlt,
-  FaBed,
   FaHandsHelping,
   FaSyringe,
   FaBroom,
   FaClipboardList,
   FaUserShield,
-  FaCarSide,
   FaPhoneAlt,
   FaFileInvoiceDollar,
 } from 'react-icons/fa'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+import Footer from '../components/Layout/Footer'
+import Bullet from '../components/misc/Bullet'
+import FaqSection from '../components/misc/FaqSection'
+import InfoStat from '../components/misc/InfoStat'
+import PageBackButton from '../components/misc/PageBackButton'
+import PrimaryCta from '../components/misc/PrimaryCta'
+import SectionEyebrow from '../components/misc/SectionEyebrow'
+import SectionHeading from '../components/misc/SectionHeading'
 
-/* ---------- UI Atoms (shared look/feel) ---------- */
-const Stat = ({ icon, text }) => (
-  <div className="flex items-center gap-3 rounded-xl bg-white/80 px-3 py-2 shadow-sm ring-1 ring-gray-100">
-    <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200">
-      {icon}
-    </span>
-    <span className="text-sm text-gray-700">{text}</span>
-  </div>
-)
+const quickStats = [
+  { icon: FaClock, label: 'Hours', value: 'Hourly • Overnight • 24/7' },
+  { icon: FaMapMarkerAlt, label: 'Coverage', value: 'Louisville metro & nearby' },
+  { icon: FaUserShield, label: 'Care Team', value: 'Trained, vetted caregivers' },
+  { icon: FaHeartbeat, label: 'Care Plans', value: 'Personalized to every home' },
+]
 
-const Bullet = ({ children }) => (
-  <li className="flex items-start gap-2 text-gray-700">
-    <FaCheckCircle className="mt-0.5 h-4 w-4 flex-none text-emerald-600" />
-    <span>{children}</span>
-  </li>
-)
-
-const SectionHeading = ({ eyebrow, title, description }) => (
-  <div className="text-center">
-    {eyebrow ? (
-      <div className="flex justify-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-yellow-500 bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 px-3 py-1 text-xs font-medium text-yellow-900 shadow-md ring-1 ring-yellow-500/50">
-          {eyebrow}
-        </span>
-      </div>
-    ) : null}
-    <h2 className="mt-3 text-3xl font-semibold text-gray-900">{title}</h2>
-    {description ? <p className="mx-auto mt-2 max-w-3xl text-gray-700">{description}</p> : null}
-  </div>
-)
+const faqItems = [
+  {
+    q: 'Who can receive in-home care?',
+    a: 'Adults who want to remain at home but benefit from assistance with personal care, routines, mobility, or companionship.',
+  },
+  {
+    q: 'Do I have to commit to a long contract?',
+    a: 'No. We offer flexible scheduling and can scale hours up or down based on your family’s needs.',
+  },
+  {
+    q: 'Can caregivers help with medications?',
+    a: 'Caregivers provide reminders, documentation, and coordination per your care plan. Skilled nursing tasks can be scheduled separately if needed.',
+  },
+  {
+    q: 'Do you cover nights or weekends?',
+    a: 'Yes. We provide hourly, overnight, and live-in coverage, including weekends and holidays.',
+  },
+  {
+    q: 'Is transportation included?',
+    a: 'Caregivers can accompany clients on errands or appointments. We’ll clarify transportation options in your plan.',
+  },
+  {
+    q: 'How do you ensure safety?',
+    a: 'Background checks, ongoing training, insured care teams, and regular supervision keep every visit accountable.',
+  },
+]
 
 function Card({ title, icon, children, className = '' }) {
   return (
-    <div
-      className={`rounded-2xl bg-white/80 p-6 shadow-[0_14px_40px_-20px_rgba(16,185,129,0.35)] ring-1 ring-emerald-900/5 backdrop-blur ${className}`}
+    <article
+      className={`group relative overflow-hidden rounded-3xl border border-white/25 bg-[url('/assets/background-card.jpg')] bg-cover bg-center bg-no-repeat p-px ${className}`}
     >
-      {title || icon ? (
-        <div className="mb-4 flex items-center gap-3">
-          {icon ? (
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200">
-              {icon}
-            </span>
-          ) : null}
-          {title ? <h3 className="text-lg font-semibold text-gray-900">{title}</h3> : null}
-        </div>
-      ) : null}
-      {children}
-    </div>
+      <div className="h-full rounded-[28px] bg-white/85 p-6 shadow-[0_20px_35px_-28px_rgba(15,34,71,0.65)] backdrop-blur-sm transition group-hover:-translate-y-1">
+        {title || icon ? (
+          <div className="mb-4 flex items-center gap-3">
+            {icon ? (
+              <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-navy text-white shadow-[0_12px_24px_rgba(15,34,71,0.25)]">
+                {icon}
+              </span>
+            ) : null}
+            {title ? <h3 className="text-lg font-semibold text-navy">{title}</h3> : null}
+          </div>
+        ) : null}
+        {children}
+      </div>
+    </article>
   )
 }
 
-/* ---------- Page ---------- */
 export default function InHomeCarePage() {
-  const router = useRouter()
-  const sectionId = router.query.from || 'in-home-care'
 
   return (
     <>
-      {/* Ambient gradient background */}
-      <div className="pointer-events-none fixed inset-0 -z-10 opacity-60">
-        <div className="absolute -top-36 left-1/2 h-80 w-[36rem] -translate-x-1/2 rounded-full bg-gradient-to-br from-emerald-200 via-emerald-100 to-transparent blur-3xl" />
-        <div className="absolute -bottom-36 right-1/2 h-80 w-[32rem] translate-x-1/3 rounded-full bg-gradient-to-tr from-amber-100 via-white to-transparent blur-3xl" />
-      </div>
-
-      <div className="mx-auto mb-24 mt-6 max-w-screen-xl px-4 sm:px-6 lg:px-10">
-        {/* Back button */}
+      <div>
+        <div className="mx-auto mb-24 mt-6 max-w-screen-xl px-4 sm:px-6 lg:px-10">
         <div className="sticky top-4 z-50 flex justify-start">
-          <button
-            onClick={() => router.push(`/#${sectionId}`)}
-            className="inline-flex items-center gap-2 rounded-xl bg-white/80 px-4 py-2 text-sm font-semibold text-gray-900 shadow-lg ring-1 ring-gray-200 backdrop-blur transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-400"
-          >
-            <FaArrowLeft /> Services Overview
-          </button>
+          <PageBackButton href="/" />
         </div>
 
-        {/* HERO */}
-        <section className="mt-6 grid items-center gap-8 rounded-3xl bg-gradient-to-b from-emerald-50 to-white p-6 shadow-sm sm:grid-cols-2 sm:p-10">
-          {/* Text column */}
-          <div>
-            <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight text-gray-900 sm:text-left sm:text-5xl">
-              In‑Home Care
-            </h1>
-            <p className="mt-4 max-w-xl text-center text-gray-700 sm:text-left">
-              Age in place with dignity. Our trained, vetted caregivers provide personal care,
-              mobility support, light housekeeping, medication reminders, and meaningful
-              companionship—so life at home stays safe, comfortable, and connected.
-            </p>
+          <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
+            <section className="section-shell relative overflow-hidden p-6 sm:px-12">
+              <div
+                className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-40"
+                style={{ backgroundImage: "url('/assets/background.jpg')" }}
+                aria-hidden="true"
+              />
+              <div className="relative grid items-start gap-10 sm:grid-cols-[1.1fr,0.9fr]">
+                <div className="text-center sm:text-left">
+                  <SectionEyebrow className="mb-12">In-Home Care</SectionEyebrow>
+                  <h1 className="font-jakarta text-4xl font-extrabold leading-tight text-navy sm:text-5xl">
+                    Care That Meets You Where You Live
+                  </h1>
+                  <p className="mt-12 text-base text-slate-600 sm:text-lg">
+                    Age in place with dignity. Our trained, vetted caregivers provide personal care,
+                    mobility support, light housekeeping, medication reminders, and meaningful
+                    companionship—so life at home stays safe, comfortable, and connected.
+                  </p>
 
-            {/* Trust Strip */}
-            <div className="mt-8 grid grid-cols-1 gap-4 rounded-2xl bg-white/80 p-4 shadow-sm ring-1 ring-gray-100 sm:grid-cols-3">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200">
-                  <FaUserShield className="text-lg" />
-                </span>
-                <span className="text-sm font-medium text-gray-800">Certified Caregivers</span>
+                  <div className="mt-6 block sm:hidden">
+                    <div className="relative aspect-[3/3] w-full overflow-hidden rounded-3xl bg-white/30 backdrop-blur">
+                      <DotLottieReact
+                        src="/assets/HomeCare.lottie"
+                        autoplay
+                        style={{ opacity: 0.85 }}
+                      />
+                      <div className="pointer-events-none absolute inset-0 rounded-3xl border border-white/40" />
+                    </div>
+                  </div>
+
+                  <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-start">
+                    <PrimaryCta href="#plans" className="w-full justify-center sm:w-auto">
+                      Explore Care Plans
+                    </PrimaryCta>
+                    <PrimaryCta href="#faq" className="w-full justify-center sm:w-auto">
+                      Read FAQs
+                    </PrimaryCta>
+                  </div>
+                </div>
+
+                <div className="relative hidden aspect-[3/3] w-full overflow-hidden rounded-3xl bg-white/30 backdrop-blur sm:block">
+                  <DotLottieReact
+                    src="/assets/HomeCare.lottie"
+                    autoplay
+                    style={{ opacity: 0.85 }}
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-3xl border border-white/40" />
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-amber-50 text-amber-700 ring-1 ring-amber-200">
-                  <FaClipboardList className="text-lg" />
-                </span>
-                <span className="text-sm font-medium text-gray-800">Custom care plans</span>
+              <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {quickStats.map((stat) => (
+                  <InfoStat key={stat.label} {...stat} />
+                ))}
               </div>
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sky-50 text-sky-700 ring-1 ring-sky-200">
-                  <FaCarSide className="text-lg" />
-                </span>
-                <span className="text-sm font-medium text-gray-800">Flexible scheduling</span>
+            </section>
+
+            <section>
+              <SectionHeading
+                eyebrow="Personalized Support"
+                title="What We Offer & Who It’s For"
+                description="Personalized care that balances independence and support."
+              />
+              <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <Card title="Personal Care & ADLs" icon={<FaHandsHelping />}>
+                    <ul className="space-y-2">
+                      <Bullet>Bathing, grooming, and dressing</Bullet>
+                      <Bullet>Toileting & continence care</Bullet>
+                      <Bullet>Safe transfers & mobility support</Bullet>
+                    </ul>
+                  </Card>
+                  <Card title="Wellness Support" icon={<FaSyringe />}>
+                    <ul className="space-y-2">
+                      <Bullet>Medication reminders & documentation</Bullet>
+                      <Bullet>Vitals/symptom check-ins as requested</Bullet>
+                      <Bullet>Coordination with family & providers</Bullet>
+                    </ul>
+                  </Card>
+                  <Card title="Home Help" icon={<FaBroom />}>
+                    <ul className="space-y-2">
+                      <Bullet>Light housekeeping & laundry</Bullet>
+                      <Bullet>Meal prep & grocery assistance</Bullet>
+                      <Bullet>Errands & appointment escorts</Bullet>
+                    </ul>
+                  </Card>
+                  <Card title="Companionship" icon={<FaHeartbeat />}>
+                    <ul className="space-y-2">
+                      <Bullet>Engaging conversation & games</Bullet>
+                      <Bullet>Shared hobbies & memory support</Bullet>
+                      <Bullet>Emotional encouragement</Bullet>
+                    </ul>
+                  </Card>
+                </div>
+                <div className="space-y-6 rounded-3xl border border-white/25 bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat p-px">
+                  <div className="rounded-[28px] bg-white/90 p-6 text-left shadow-[0_18px_35px_-28px_rgba(15,34,71,0.6)] backdrop-blur-sm">
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#116768]">
+                      Who It Benefits
+                    </p>
+                    <h3 className="mt-2 font-jakarta text-2xl font-semibold text-navy">
+                      Designed for:
+                    </h3>
+                    <div className="mt-6 space-y-4">
+                      {[
+                        {
+                          title: 'Aging in Place',
+                          desc: 'Adults who want to stay at home with confidence and dignity.',
+                        },
+                        {
+                          title: 'Mobility & ADL Support',
+                          desc: 'Individuals needing help with movement, transfers, or personal care.',
+                        },
+                        {
+                          title: 'Chronic & Cognitive Care',
+                          desc: 'Loved ones managing memory loss, chronic illnesses, or recovery routines.',
+                        },
+                        {
+                          title: 'Family Caregivers',
+                          desc: 'Families balancing work, travel, or respite who need trusted backup.',
+                        },
+                      ].map(({ title, desc }) => (
+                        <div
+                          key={title}
+                          className="rounded-2xl bg-white/70 p-4 shadow-[0_10px_25px_-22px_rgba(15,34,71,0.7)]"
+                        >
+                          <p className="text-sm font-semibold text-navy">{title}</p>
+                          <p className="text-sm text-slate-600">{desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section className="section-shell relative overflow-hidden px-6 py-1 sm:px-12">
+              <div
+                className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-50"
+                style={{ backgroundImage: "url('/assets/honeycomb-background.jpg')" }}
+                aria-hidden="true"
+              />
+              <div className="relative my-12 space-y-10">
+                <SectionHeading
+                  eyebrow="Why Families Choose Us"
+                  title="Why Families Choose Us"
+                  description="Dependable benefits and a predictable rhythm in every visit."
+                />
+                <div className="grid gap-8 lg:grid-cols-2">
+                  <div className="space-y-6">
+                    {[
+                      {
+                        title: 'Trusted Relationships',
+                        body: 'One-on-one caregivers who get to know routines, preferences, and family expectations.',
+                        icon: <FaUserShield />,
+                      },
+                      {
+                        title: 'Holistic Wellness',
+                        body: 'Medication reminders, nutrition support, mobility work, and conversation keep loved ones engaged.',
+                        icon: <FaHeartbeat />,
+                      },
+                      {
+                        title: 'Family Peace of Mind',
+                        body: 'Clear notes after each visit plus on-call supervision mean you always know how the day went.',
+                        icon: <FaHandsHelping />,
+                      },
+                    ].map(({ title, body, icon }) => (
+                      <div
+                        key={title}
+                        className="flex w-full items-start gap-4 rounded-2xl border border-white/20 bg-white/80 p-5 shadow-[0_15px_30px_-25px_rgba(15,34,71,0.65)]"
+                      >
+                        <span className="inline-flex size-11 flex-none items-center justify-center rounded-full bg-navy text-white">
+                          {icon}
+                        </span>
+                        <div>
+                          <h3 className="font-jakarta text-lg font-semibold text-navy">{title}</h3>
+                          <p className="mt-1 text-slate-600">{body}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="section-shell relative overflow-hidden bg-white/90 p-6">
+                    <div className="relative space-y-6">
+                      <div className="space-y-1 text-left">
+                        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#116768]">
+                          Daily Rhythm
+                        </p>
+                        <h3 className="font-jakarta text-2xl font-semibold text-navy">
+                          What a Visit Includes
+                        </h3>
+                        <p className="text-sm text-slate-600">
+                          Each visit is tailored, but most follow this easy cadence.
+                        </p>
+                      </div>
+                      <ol className="space-y-4">
+                        {[
+                          {
+                            title: 'Arrival & Check-In',
+                            desc: 'Greetings, comfort check, review priorities with family or care log.',
+                          },
+                          {
+                            title: 'Care Blocks',
+                            desc: 'Personal care, meals, movement, light housekeeping, errands, and companionship.',
+                          },
+                          {
+                            title: 'Wrap & Notes',
+                            desc: 'Tidy-up, medication reminders, departure support, and a brief update.',
+                          },
+                        ].map(({ title, desc }, idx) => (
+                          <li key={title} className="flex items-start gap-3">
+                            <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-navy text-xs font-semibold text-white">
+                              {idx + 1}
+                            </span>
+                            <div>
+                              <p className="font-semibold text-navy">{title}</p>
+                              <p className="text-sm text-slate-600">{desc}</p>
+                            </div>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <SectionHeading
+                eyebrow="Safety, Training & Oversight"
+                title="Safety, Training & Oversight"
+                description="Licensed care, trusted staff, transparent communication."
+              />
+              <div className="mx-auto mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <Card title="Vetted Care Team" icon={<FaUserShield />}>
+                  <ul className="space-y-2 text-sm text-slate-700">
+                    <Bullet>Background checks + reference verification</Bullet>
+                    <Bullet>CPR/First Aid & dementia-aware training</Bullet>
+                    <Bullet>Insured, supervised caregivers</Bullet>
+                  </ul>
+                </Card>
+                <Card title="Ongoing Training" icon={<FaClipboardList />}>
+                  <ul className="space-y-2 text-sm text-slate-700">
+                    <Bullet>Annual competencies & refreshers</Bullet>
+                    <Bullet>Care plan reviews with families</Bullet>
+                    <Bullet>Shadow shifts for new assignments</Bullet>
+                  </ul>
+                </Card>
+                <Card title="Home Safety Practices" icon={<FaShieldAlt />}>
+                  <ul className="space-y-2 text-sm text-slate-700">
+                    <Bullet>Sanitation, infection-control routines</Bullet>
+                    <Bullet>Fall-prevention walk-throughs</Bullet>
+                    <Bullet>Emergency procedures + escalation paths</Bullet>
+                  </ul>
+                </Card>
+                <Card title="Transparent Oversight" icon={<FaPhoneAlt />}>
+                  <ul className="space-y-2 text-sm text-slate-700">
+                    <Bullet>Visit summaries + optional daily notes</Bullet>
+                    <Bullet>On-call supervisor support 24/7</Bullet>
+                    <Bullet>Care coordination with providers</Bullet>
+                  </ul>
+                </Card>
+              </div>
+            </section>
+
+            <section id="plans" className="scroll-mt-24 py-10">
+              <div className="section-shell relative overflow-hidden px-4 py-10 sm:px-8">
+                <div className="pointer-events-none absolute inset-0 opacity-50">
+                  <div className="size-full bg-[url('/assets/background-2.jpg')] bg-cover bg-center bg-no-repeat" />
+                </div>
+                <div className="relative">
+                  <SectionHeading
+                    eyebrow="Transparent & Supportive"
+                    title="Plans & Funding Options"
+                    description="Flexible scheduling with help navigating insurance and waiver options."
+                  />
+                  <div className="mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-[2fr,1fr]">
+                    <div className="overflow-hidden rounded-3xl border border-white/40 bg-white/85 shadow-[0_18px_35px_-28px_rgba(15,34,71,0.6)] backdrop-blur-sm">
+                      <table className="w-full text-left text-sm text-slate-700">
+                        <thead className="bg-slate-50 text-navy">
+                          <tr>
+                            <th className="px-5 py-3 font-semibold">Plan</th>
+                            <th className="px-5 py-3 font-semibold">Details</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-100">
+                          {[
+                            ['Hourly Visits', 'Minimum 3-4 hour blocks with flexible frequency.'],
+                            [
+                              'Overnight Support',
+                              'Evening through morning coverage for safety & rest.',
+                            ],
+                            ['24/7 Live-In', 'Rotating caregivers for continuous support at home.'],
+                            [
+                              'Medicaid Waivers',
+                              'We’ll check eligibility and guide documentation for in-home services.',
+                            ],
+                            [
+                              'Long-Term Care Insurance',
+                              'Many policies reimburse homemaker/personal care — we assist with claims.',
+                            ],
+                            [
+                              'Veterans Programs',
+                              'Aid & Attendance or Homemaker/Home Health options for eligible veterans/spouses.',
+                            ],
+                          ].map(([plan, detail]) => (
+                            <tr key={plan} className="align-top">
+                              <td className="px-5 py-3 font-semibold text-navy">{plan}</td>
+                              <td className="px-5 py-3">{detail}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="rounded-3xl border border-white/40 bg-white/90 p-6 shadow-[0_18px_35px_-28px_rgba(15,34,71,0.6)] backdrop-blur-sm">
+                      <h3 className="inline-flex items-center gap-2 text-lg font-semibold text-navy">
+                        <FaFileInvoiceDollar /> How We Support
+                      </h3>
+                      <ul className="mt-4 space-y-2">
+                        <Bullet>Review needs and build a transparent estimate</Bullet>
+                        <Bullet>Coordinate assessments and paperwork</Bullet>
+                        <Bullet>Assist with insurance/waiver claims</Bullet>
+                        <Bullet>Adjust schedules as needs evolve</Bullet>
+                      </ul>
+                      <p className="mt-4 text-xs text-slate-500">
+                        Availability varies by policy and location — we’ll guide you through it.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <FaqSection id="faq" className="mb-24 mt-16" items={faqItems} />
+
+          <section>
+            <div className="section-shell relative overflow-hidden px-6 py-10 sm:px-12">
+              <div className="pointer-events-none absolute inset-0 opacity-35">
+                <div className="size-full bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat" />
+              </div>
+              <div className="relative flex flex-col items-start justify-between gap-5 text-left md:flex-row md:items-center">
+                <div>
+                  <h3 className="text-xl font-semibold text-navy">
+                    Ready to meet your caregiver team?
+                  </h3>
+                  <p className="mt-1 text-slate-600">
+                    Schedule a home visit or call us to start a custom plan.
+                  </p>
+                </div>
+                <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+                  <PrimaryCta href="tel:+1502XXXXXXX" className="w-full justify-center sm:w-auto">
+                    Call Us
+                  </PrimaryCta>
+                  <PrimaryCta href="#contact" className="w-full justify-center sm:w-auto">
+                    Contact Our Team
+                  </PrimaryCta>
+                </div>
               </div>
             </div>
-
-            {/* CTAs */}
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-start">
-              <a
-                href="#plans"
-                className="inline-flex w-full items-center justify-center rounded-xl bg-emerald-700 px-6 py-3 text-white shadow-lg ring-1 ring-emerald-600/60 transition hover:-translate-y-0.5 hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-400 sm:w-auto"
-              >
-                Explore Care Plans
-              </a>
-              <a
-                href="#faq"
-                className="inline-flex w-full items-center justify-center rounded-xl border border-gray-200 bg-white px-6 py-3 text-gray-800 shadow-sm transition hover:-translate-y-0.5 hover:border-gray-300 sm:w-auto"
-              >
-                Read FAQs
-              </a>
-            </div>
-          </div>
-
-          {/* Image column */}
-          <div className="relative aspect-[3/3] w-full overflow-hidden rounded-2xl shadow-xl">
-            <DotLottieReact src="/assets/HomeCare.lottie" autoplay />
-          </div>
-        </section>
-
-        {/* QUICK FACTS */}
-        <section className="mt-8">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            <Stat icon={<FaClock />} text="Hourly • Overnight • 24/7" />
-            <Stat icon={<FaMapMarkerAlt />} text="Louisville metro & nearby" />
-            <Stat icon={<FaShieldAlt />} text="Caregivers vetted & trained" />
-            <Stat icon={<FaHeartbeat />} text="Care plans tailored to needs" />
-          </div>
-        </section>
-
-        {/* WHAT WE OFFER */}
-        <section className="mt-14">
-          <SectionHeading
-            eyebrow="Personalized Support"
-            title="What We Offer at Home"
-            description="Hands-on help with daily living, health-aware routines, and a clean, safe environment—delivered with dignity and respect."
-          />
-          <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <Card title="Personal Care & ADLs" icon={<FaHandsHelping />}>
-              <ul className="space-y-2">
-                <Bullet>Bathing, grooming, and dressing</Bullet>
-                <Bullet>Toileting & continence support</Bullet>
-                <Bullet>Safe transfers & mobility assistance</Bullet>
-              </ul>
-            </Card>
-            <Card title="Wellness Support" icon={<FaSyringe />}>
-              <ul className="space-y-2">
-                <Bullet>Medication reminders & tracking</Bullet>
-                <Bullet>Vitals/symptom check-ins as requested</Bullet>
-                <Bullet>Coordination with family & providers</Bullet>
-              </ul>
-            </Card>
-            <Card title="Home Help" icon={<FaBroom />}>
-              <ul className="space-y-2">
-                <Bullet>Light housekeeping & laundry</Bullet>
-                <Bullet>Meal prep & grocery support</Bullet>
-                <Bullet>Errands & appointment escorts</Bullet>
-              </ul>
-            </Card>
-            <Card title="Companionship" icon={<FaHeartbeat />}>
-              <ul className="space-y-2">
-                <Bullet>Engaging conversation</Bullet>
-                <Bullet>Shared activities & hobbies</Bullet>
-                <Bullet>Emotional support & presence</Bullet>
-              </ul>
-            </Card>
-          </div>
-        </section>
-
-        {/* FLEXIBLE SCHEDULING */}
-        <section id="plans" className="mt-14 scroll-mt-28">
-          <SectionHeading
-            title="Flexible Scheduling Options"
-            description="Choose the support that fits: a few hours a week, overnight relief, or continuous 24/7 care. We’ll build around your routines and budget."
-          />
-          <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-3">
-            <Card title="Hourly Visits" icon={<FaClock />}>
-              Ideal for morning/evening routines, meals, or transportation blocks.
-            </Card>
-            <Card title="Overnight & Live‑In" icon={<FaBed />}>
-              Nighttime supervision, repositioning, toileting, and safety monitoring.
-            </Card>
-            <Card title="Respite Coverage" icon={<FaHandsHelping />}>
-              Temporary relief so primary caregivers can rest and recharge.
-            </Card>
-          </div>
-        </section>
-
-        {/* SAFETY & QUALITY */}
-        <section className="mt-14">
-          <SectionHeading
-            eyebrow="Your Home, Your Peace of Mind"
-            title="Safety, Training & Oversight"
-            description="Clear standards guide every visit. From background checks to care notes, we keep you informed and in control."
-          />
-          <div className="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-2xl bg-white/80 p-6 shadow-sm ring-1 ring-gray-100">
-              <div className="mb-3 inline-flex items-center gap-2 text-gray-900">
-                <FaUserShield className="text-emerald-600" />
-                <span className="font-semibold">Vetted Caregivers</span>
-              </div>
-              <ul className="space-y-2 text-sm text-gray-700">
-                <Bullet>Background checks & references</Bullet>
-                <Bullet>Skills verification & onboarding</Bullet>
-                <Bullet>Ongoing supervision & feedback</Bullet>
-              </ul>
-            </div>
-
-            <div className="rounded-2xl bg-white/80 p-6 shadow-sm ring-1 ring-gray-100">
-              <div className="mb-3 inline-flex items-center gap-2 text-gray-900">
-                <FaClipboardList className="text-emerald-600" />
-                <span className="font-semibold">Care Plans</span>
-              </div>
-              <ul className="space-y-2 text-sm text-gray-700">
-                <Bullet>Customized tasks & schedules</Bullet>
-                <Bullet>Clear goals & preferences</Bullet>
-                <Bullet>Visit notes & family updates</Bullet>
-              </ul>
-            </div>
-
-            <div className="rounded-2xl bg-white/80 p-6 shadow-sm ring-1 ring-gray-100">
-              <div className="mb-3 inline-flex items-center gap-2 text-gray-900">
-                <FaShieldAlt className="text-emerald-600" />
-                <span className="font-semibold">Home Safety</span>
-              </div>
-              <ul className="space-y-2 text-sm text-gray-700">
-                <Bullet>Fall‑prevention minded routines</Bullet>
-                <Bullet>Safe transfers & equipment use</Bullet>
-                <Bullet>Emergency procedures & escalation</Bullet>
-              </ul>
-            </div>
-
-            <div className="rounded-2xl bg-white/80 p-6 shadow-sm ring-1 ring-gray-100">
-              <div className="mb-3 inline-flex items-center gap-2 text-gray-900">
-                <FaHeartbeat className="text-emerald-600" />
-                <span className="font-semibold">Dignity & Respect</span>
-              </div>
-              <ul className="space-y-2 text-sm text-gray-700">
-                <Bullet>Privacy, consent, and choice</Bullet>
-                <Bullet>Culture‑aware, person‑first care</Bullet>
-                <Bullet>Kindness & companionship</Bullet>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* COSTS & FUNDING */}
-        <section id="costs" className="mt-14 scroll-mt-28">
-          <div className="text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-yellow-500 bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 px-3 py-1 text-xs font-medium text-yellow-900 shadow-md ring-1 ring-yellow-500/50">
-              Transparent & Supportive
-            </span>
-            <h2 className="mt-3 text-3xl font-semibold text-gray-900">Costs & Funding Options</h2>
-            <p className="mx-auto mt-2 max-w-3xl text-gray-700">
-              We’ll provide a clear estimate based on hours and tasks, then help you explore
-              programs that may offset out‑of‑pocket costs.
-            </p>
-          </div>
-
-          <div className="mx-auto mt-6 grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-3">
-            {/* Methods */}
-            <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white/70 lg:col-span-2">
-              <table className="w-full text-left text-sm">
-                <thead className="bg-emerald-50/70 text-gray-900">
-                  <tr>
-                    <th className="px-4 py-3 font-semibold">Method</th>
-                    <th className="px-4 py-3 font-semibold">Details</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100">
-                  {[
-                    ['Private Pay', 'Hourly and live‑in rates with flexible scheduling.'],
-                    [
-                      'Medicaid Waivers',
-                      'Availability varies; we’ll help check eligibility and paperwork.',
-                    ],
-                    [
-                      'Long‑Term Care Insurance',
-                      'Many LTC policies reimburse in‑home care; we assist with claims.',
-                    ],
-                    [
-                      'VA Benefits',
-                      'Some programs subsidize in‑home support for eligible veterans/spouses.',
-                    ],
-                    [
-                      'Local Grants/Programs',
-                      'When available, we’ll connect you to community assistance.',
-                    ],
-                  ].map(([m, d]) => (
-                    <tr key={m} className="align-top">
-                      <td className="px-4 py-3 font-medium text-gray-900">{m}</td>
-                      <td className="px-4 py-3 text-gray-700">{d}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {/* How we help */}
-            <div className="rounded-2xl border border-emerald-200 bg-emerald-50/40 p-5">
-              <h3 className="inline-flex items-center gap-2 text-lg font-semibold text-emerald-900">
-                <FaFileInvoiceDollar className="text-emerald-700" /> How We Help
-              </h3>
-              <ul className="mt-3 space-y-2">
-                <Bullet>Review needs & schedule for a clear estimate</Bullet>
-                <Bullet>Verify Medicaid waiver, VA, or LTC eligibility</Bullet>
-                <Bullet>Provide supporting letters/invoices & assist with claims</Bullet>
-                <Bullet>Confirm a start date once funding is in place</Bullet>
-              </ul>
-              <p className="mt-3 text-xs text-emerald-900/70">
-                Note: Program eligibility and coverage vary by policy and location.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="mt-16" id="faq">
-          <SectionHeading title="Frequently Asked Questions" />
-          <div className="mx-auto mt-6 max-w-6xl overflow-hidden rounded-2xl border border-amber-200/60 bg-white shadow-[0_10px_30px_-18px_rgba(245,158,11,0.35)]">
-            <div className="grid grid-cols-1 divide-y divide-amber-200/60 md:grid-cols-2 md:divide-x md:divide-y-0">
-              {[
-                {
-                  q: 'How do you match a caregiver to our needs?',
-                  a: 'We review your care plan, preferences, language/culture needs, and schedule—then match skills and personality. We adjust quickly if it’s not a fit.',
-                },
-                {
-                  q: 'Can you help with mobility and transfers?',
-                  a: 'Yes. Our team is trained in safe transfers, ambulation, and fall‑prevention minded routines.',
-                },
-                {
-                  q: 'Do you provide medication administration?',
-                  a: 'We provide reminders and tracking per policy. If administration is needed, we’ll discuss options during your assessment.',
-                },
-                {
-                  q: 'What areas do you serve?',
-                  a: 'We cover Louisville metro and nearby communities. We’ll confirm your address and scheduling windows during intake.',
-                },
-                {
-                  q: 'Are caregivers insured and supervised?',
-                  a: 'Yes—caregivers are insured, supervised, and receive ongoing training. We maintain visit notes and can share updates with family.',
-                },
-                {
-                  q: 'How quickly can services start?',
-                  a: 'Often within days of the assessment and finalized schedule—timing varies by hours requested.',
-                },
-              ].map((item, idx) => (
-                <details key={idx} className="group open:bg-amber-50/40">
-                  <summary className="flex cursor-pointer list-none items-center justify-between px-6 py-5 text-left">
-                    <span className="font-medium text-gray-900">{item.q}</span>
-                    <span className="ml-4 rounded-full bg-amber-100 px-3 py-1 text-xs text-amber-800 group-open:hidden">
-                      Show
-                    </span>
-                    <span className="ml-4 hidden rounded-full bg-amber-100 px-3 py-1 text-xs text-amber-800 group-open:inline">
-                      Hide
-                    </span>
-                  </summary>
-                  <div className="px-6 pb-6 text-gray-700">{item.a}</div>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FINAL CTA */}
-        <section className="mt-14 rounded-[28px] bg-gradient-to-r from-emerald-700 to-emerald-600 p-6 text-white shadow-[0_20px_50px_-25px_rgba(16,185,129,0.5)] ring-1 ring-emerald-600/60">
-          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-            <div>
-              <h3 className="text-xl font-semibold">Let’s build your care plan</h3>
-              <p className="text-white/90">
-                Tell us your needs—hours, tasks, budget—and we’ll propose options.
-              </p>
-            </div>
-            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-              <a
-                href="tel:+1-000-000-0000"
-                className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow md:min-w-[130px]"
-              >
-                <FaPhoneAlt className="mr-2" /> Call Now
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-xl border border-white/80 bg-transparent px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-gray-900 md:min-w-[130px]"
-              >
-                Contact Us
-              </a>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
 
       <Footer />

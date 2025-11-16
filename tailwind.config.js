@@ -20,9 +20,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'jakarta': ['Plus Jakarta Sans', 'sans-serif'],
-        'inter': ['Inter', 'sans-serif'],
-        'rubik': ['Rubik', 'sans-serif'],
+        jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        rubik: ['Rubik', 'sans-serif'],
       },
       colors: {
         transparent: 'transparent',
@@ -58,11 +58,11 @@ module.exports = {
         navy: {
           DEFAULT: '#1a4566', // For h1, h2, h3
         },
-        deepnavy:{
+        deepnavy: {
           DEFAULT: '#143b58ff', // For nav bar
         },
         darkneutral: {
-          DEFAULT: '#0A3D35', 
+          DEFAULT: '#0A3D35',
         },
         neutraltext: {
           DEFAULT: '#0F172A',
@@ -109,7 +109,7 @@ module.exports = {
           4: 'hsl(var(--chart-4))',
           5: 'hsl(var(--chart-5))',
         },
-  },
+      },
 
       borderRadius: {
         lg: 'var(--radius)',

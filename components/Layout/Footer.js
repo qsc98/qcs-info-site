@@ -9,7 +9,9 @@ const Footer = () => {
         {/* Newsletter */}
         <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
           <div>
-            <h2 className="text-center text-white text-2xl font-bold lg:text-left">Get the latest news!</h2>
+            <h2 className="text-center text-2xl font-bold text-white lg:text-left">
+              Get the latest news!
+            </h2>
             <p className="mt-4 text-sm text-gray-400">
               Subscribe to stay informed about updates, services, and upcoming events.
             </p>
@@ -24,7 +26,7 @@ const Footer = () => {
                 type="email"
                 id="UserEmail"
                 placeholder="you@example.com"
-                className="w-full bg-transparent text-white-500 placeholder-gray-400 focus:outline-none sm:text-sm"
+                className="w-full bg-transparent text-white-500 placeholder:text-gray-400 focus:outline-none sm:text-sm"
               />
               <button className="mt-2 w-full shrink-0 rounded-lg bg-green-500 px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-white-500 transition hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 sm:mt-0 sm:w-auto">
                 Sign Up

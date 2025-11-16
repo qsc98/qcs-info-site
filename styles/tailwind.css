@@ -7,16 +7,16 @@ html {
   font-family: 'Inter', sans-serif;
 }
 h1 {
-  @apply font-jakarta font-bold text-navy leading-[1.15];
+  @apply font-jakarta font-bold leading-[1.15] text-navy;
 }
 h2 {
-  @apply font-jakarta font-bold text-navy leading-[1.2];
+  @apply font-jakarta font-bold leading-[1.2] text-navy;
 }
 h3 {
-  @apply font-jakarta font-bold text-navy leading-[1.25];
+  @apply font-jakarta font-bold leading-[1.25] text-navy;
 }
 p {
-  @apply font-inter font-normal text-neutraltext leading-[1.6];
+  @apply font-inter font-normal leading-[1.6] text-neutraltext;
 }
 .animation-hover:after {
   background: none repeat scroll 0 0 transparent;
