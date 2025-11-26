@@ -96,7 +96,7 @@ const Hero = () => {
                   aria-label="Coverage and services info"
                 >
                   i
-                  <span className="invisible absolute bottom-full left-1/2 z-10 w-full -translate-x-1/2 rounded-md bg-slate-900 px-3 py-2 text-center text-[11px] text-white opacity-0 transition group-hover:visible group-hover:opacity-100">
+                  <span className="invisible absolute bottom-full left-1/2 z-10 mb-2 w-64 -translate-x-1/2 rounded-xl border border-slate-100 bg-white p-4 text-center text-[11px] text-navy shadow-xl opacity-0 transition group-hover:visible group-hover:opacity-100">
                     Coverage eligibility and service availability can change. Please call ahead to
                     confirm Medicaid/private pay acceptance and specific offerings.
                   </span>
