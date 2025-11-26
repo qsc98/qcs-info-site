@@ -52,7 +52,7 @@ const Header = () => {
         <nav className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-3 sm:px-8 sm:py-4 lg:px-16">
           <div className="flex items-center">
             <Link href="/" aria-label="Go to homepage">
-              <Image src="/assets/logo.png" alt="Logo" width={75} height={75} priority />
+              <Image src="/assets/Logo-Transparent.png" alt="Logo" width={75} height={75} priority />
             </Link>
           </div>
           <ul className="hidden items-center justify-center text-black-500 lg:flex lg:flex-1">

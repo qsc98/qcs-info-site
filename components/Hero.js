@@ -48,12 +48,12 @@ const Hero = () => {
             variants={scrollAnimation}
           >
             <div className="order-2 max-w-full text-center sm:order-1 sm:text-left">
-              <h1 className="font-jakarta text-3xl font-extrabold leading-tight sm:text-5xl">
+              <h1 className="bg-gradient-to-r from-navy to-[#116768] bg-clip-text font-jakarta text-3xl font-extrabold leading-tight text-transparent sm:text-5xl">
                 <span className="block">
-                  <span>Quality You Can Trust</span>.
+                  <span>Quality You Can Trust.</span>
                 </span>
-                <span className="mt-2 block">
-                  <span>Care You Deserve</span>.
+                <span className="block">
+                  <span>Care You Deserve.</span>
                 </span>
               </h1>
 
@@ -106,7 +106,7 @@ const Hero = () => {
             </div>
 
             <div className="order-1 flex w-full sm:order-2">
-              <motion.div className="size-full" variants={scrollAnimation}>
+              <motion.div className="size-full animate-float" variants={scrollAnimation}>
                 <Image
                   src="/assets/main_hero_section.svg"
                   alt="Seniors enjoying"
@@ -119,22 +119,25 @@ const Hero = () => {
           </motion.div>
         </ScrollAnimationWrapper>
 
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {highlights.map(({ title, description, Icon }) => (
-            <ScrollAnimationWrapper key={title}>
-              <motion.div
-                variants={scrollAnimation}
-                className="flex items-center gap-4 rounded-lg border border-slate-100 bg-white p-5 shadow-[0_12px_24px_rgba(15,34,71,0.05)]"
+        <ScrollAnimationWrapper>
+          <motion.div
+            className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4"
+            variants={scrollAnimation}
+          >
+            {highlights.map(({ title, description, Icon }) => (
+              <div
+                key={title}
+                className="flex items-center gap-4 rounded-xl border border-slate-50 bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
               >
                 <Icon className="size-20 text-navy" />
                 <div>
                   <p className="text-lg font-semibold text-navy">{title}</p>
                   <p className="text-sm text-slate-600">{description}</p>
                 </div>
-              </motion.div>
-            </ScrollAnimationWrapper>
-          ))}
-        </div>
+              </div>
+            ))}
+          </motion.div>
+        </ScrollAnimationWrapper>
       </div>
     </div>
   )

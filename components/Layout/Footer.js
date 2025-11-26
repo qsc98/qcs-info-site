@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
-import Logo from '../../public/assets/Logo-Transparent.png'
+import Logo from '../../public/assets/Logo-Circle.png'
 
 const Footer = () => {
   return (
