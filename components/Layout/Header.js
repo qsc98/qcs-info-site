@@ -45,8 +45,8 @@ const Header = () => {
       <header
         ref={headerRef}
         className={
-          'fixed z-30 w-full bg-white-500 transition-all ' +
-          (scrollActive ? ' top-0 pt-0 shadow-md' : ' top-[2.25rem] lg:top-[2.5rem]')
+          'fixed z-30 w-full transition-all ' +
+          (scrollActive ? ' top-0 pt-0 bg-white shadow-md' : ' top-[2.25rem] bg-transparent lg:top-[2.5rem]')
         }
       >
         <nav className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-3 sm:px-8 sm:py-4 lg:px-16">
@@ -59,11 +59,10 @@ const Header = () => {
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setServicesOpen((open) => !open)}
-                className={`animation-hover relative mx-2 inline-flex items-center gap-2 px-4 py-2 font-medium transition ${
-                  servicesOpen || activeLink === 'services'
-                    ? ' animation-active text-green-500'
-                    : ' text-black-500 hover:text-green-500'
-                }`}
+                className={`animation-hover relative mx-2 inline-flex items-center gap-2 px-4 py-2 font-medium transition ${servicesOpen || activeLink === 'services'
+                  ? ' animation-active text-green-500'
+                  : ' text-black-500 hover:text-green-500'
+                  }`}
               >
                 Services
                 <svg
@@ -103,37 +102,41 @@ const Header = () => {
                     <li>
                       <Link
                         href={{ pathname: '/adult-day-care' }}
-                        className="block rounded-xl px-3 py-2 text-slate-700 transition hover:bg-slate-50"
+                        className="flex items-center justify-between rounded-xl px-3 py-2 text-slate-700 transition hover:bg-slate-50"
                         onClick={() => setServicesOpen(false)}
                       >
                         Adult Day Care
+                        <span className="text-xs text-slate-400">↗</span>
                       </Link>
                     </li>
                     <li>
                       <Link
                         href={{ pathname: '/nutritious-meals' }}
-                        className="block rounded-xl px-3 py-2 text-slate-700 transition hover:bg-slate-50"
+                        className="flex items-center justify-between rounded-xl px-3 py-2 text-slate-700 transition hover:bg-slate-50"
                         onClick={() => setServicesOpen(false)}
                       >
                         Nutritious Meals
+                        <span className="text-xs text-slate-400">↗</span>
                       </Link>
                     </li>
                     <li>
                       <Link
                         href={{ pathname: '/medical-transportation' }}
-                        className="block rounded-xl px-3 py-2 text-slate-700 transition hover:bg-slate-50"
+                        className="flex items-center justify-between rounded-xl px-3 py-2 text-slate-700 transition hover:bg-slate-50"
                         onClick={() => setServicesOpen(false)}
                       >
                         Medical Transportation
+                        <span className="text-xs text-slate-400">↗</span>
                       </Link>
                     </li>
                     <li>
                       <Link
                         href={{ pathname: '/in-home-care' }}
-                        className="block rounded-xl px-3 py-2 text-slate-700 transition hover:bg-slate-50"
+                        className="flex items-center justify-between rounded-xl px-3 py-2 text-slate-700 transition hover:bg-slate-50"
                         onClick={() => setServicesOpen(false)}
                       >
                         In-Home Care
+                        <span className="text-xs text-slate-400">↗</span>
                       </Link>
                     </li>
                   </ul>

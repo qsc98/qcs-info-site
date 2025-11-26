@@ -34,16 +34,17 @@ const Hero = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
 
   return (
-    <div className="section-shell lg:pt-18 relative mx-auto max-w-screen-xl overflow-hidden rounded-3xl px-4 pb-16 pt-8 sm:px-8 sm:pb-20 sm:pt-16 lg:pb-24 xl:px-16">
+    <div className="relative w-full overflow-hidden pb-16 pt-24 sm:pb-20 sm:pt-36 lg:pb-24 lg:pt-40">
       <div
         className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-40"
         style={{ backgroundImage: "url('/assets/background.jpg')" }}
         aria-hidden="true"
       />
-      <div className="relative">
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-white" />
+      <div className="relative mx-auto max-w-screen-xl px-4 sm:px-8 xl:px-16">
         <ScrollAnimationWrapper>
           <motion.div
-            className="grid grid-cols-1 gap-4 py-6 sm:grid-cols-2 sm:gap-8"
+            className="grid grid-cols-1 gap-4 py-6 sm:grid-cols-2 sm:gap-20 lg:gap-32"
             variants={scrollAnimation}
           >
             <div className="order-2 max-w-full text-center sm:order-1 sm:text-left">
@@ -118,7 +119,7 @@ const Hero = () => {
           </motion.div>
         </ScrollAnimationWrapper>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {highlights.map(({ title, description, Icon }) => (
             <ScrollAnimationWrapper key={title}>
               <motion.div
