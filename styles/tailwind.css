@@ -6,18 +6,23 @@
 html {
   font-family: 'Inter', sans-serif;
 }
+
 h1 {
-  @apply font-jakarta font-bold leading-[1.15] text-navy;
+  @apply font-jakarta font-bold leading-[1.15] bg-gradient-to-r from-navy to-[#116768] bg-clip-text text-transparent;
 }
+
 h2 {
-  @apply font-jakarta font-bold leading-[1.2] text-navy;
+  @apply font-jakarta font-bold leading-[1.2] bg-gradient-to-r from-navy to-[#116768] bg-clip-text text-transparent;
 }
+
 h3 {
-  @apply font-jakarta font-bold leading-[1.25] text-navy;
+  @apply font-jakarta font-bold leading-[1.25] bg-gradient-to-r from-navy to-[#116768] bg-clip-text text-transparent;
 }
+
 p {
   @apply font-inter font-normal leading-[1.6] text-neutraltext;
 }
+
 .animation-hover:after {
   background: none repeat scroll 0 0 transparent;
   content: '';
@@ -27,16 +32,20 @@ p {
     left 0.3s ease 0s;
   @apply absolute bottom-0 left-1/2 block w-0 bg-green-500;
 }
+
 .animation-active:after {
   @apply left-0 w-full;
 }
+
 .animation-hover:hover:after {
   @apply left-0 w-full;
 }
 
 li.custom-list:before {
-  content: '\2022'; /* bullet point, for screen readers */
-  text-indent: -9999999px; /* move the bullet point out of sight */
+  content: '\2022';
+  /* bullet point, for screen readers */
+  text-indent: -9999999px;
+  /* move the bullet point out of sight */
 
   width: 0.4em;
   height: 1em;
@@ -48,24 +57,29 @@ li.custom-list:before {
   top: -0.35em;
   @apply absolute block;
 }
+
 li.circle-check:before {
   background-image: url('/assets/Icon/checklist.svg');
   left: -0.7em;
   top: -0.4em;
 }
+
 li.check:before {
   left: -0.5em;
   background-image: url('/assets/Icon/jam_check.svg');
   top: -0.5em;
   font-size: 400%;
 }
+
 /* Slideshow */
 .slick-dots li {
   @apply inline-block;
 }
+
 .slick-dots span {
   @apply bg-gray-500;
 }
+
 .slick-dots .slick-active span {
   @apply w-12 rounded-l-full rounded-r-full bg-orange-500;
 }
@@ -74,6 +88,12 @@ li.check:before {
 @tailwind utilities;
 /* purgecss start ignore */
 /* purgecss end ignore */
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-navy to-[#116768] bg-clip-text text-transparent;
+  }
+}
 
 @layer components {
   .section-shell {
@@ -135,6 +155,7 @@ li.check:before {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -167,10 +188,12 @@ li.check:before {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
+
 /* main {
   overflow-x: hidden;
 } */

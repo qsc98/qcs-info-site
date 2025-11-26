@@ -55,7 +55,7 @@ const AboutUs = () => {
           {/* Right: Text + Premium CTA */}
           <ScrollAnimationWrapper>
             <motion.div variants={scrollAnimation} className="text-center sm:text-left">
-              <h2 className="font-jakarta text-3xl font-bold leading-[1.2] text-navy sm:text-5xl">
+              <h2 className="font-jakarta text-3xl font-bold leading-[1.2] sm:text-5xl">
                 Rooted in Care,
                 <br /> Built for Community
               </h2>

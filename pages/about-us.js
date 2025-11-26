@@ -67,7 +67,7 @@ export default function AboutPage() {
             <div className="relative grid gap-10 sm:grid-cols-[1.1fr,0.9fr]">
               <div className="text-center sm:text-left">
                 <SectionEyebrow className="mb-12">About Us</SectionEyebrow>
-                <h1 className="font-jakarta text-4xl font-extrabold leading-tight text-navy sm:text-5xl">
+                <h1 className="font-jakarta text-4xl font-extrabold leading-tight sm:text-5xl">
                   Rooted in Care, Built for Community
                 </h1>
                 <p className="mt-12 text-base text-slate-600 sm:text-lg">
@@ -105,8 +105,8 @@ export default function AboutPage() {
                 description="Empowering adults to live safely, socially, and independently."
               />
               <Card>
-                  Our mission is rooted in the belief that every person deserves respect, meaningful engagement, and the opportunity to thrive within their own community.
-                  We co-create individualized care experiences that honor culture, promote wellness, and keep families in the loop.
+                Our mission is rooted in the belief that every person deserves respect, meaningful engagement, and the opportunity to thrive within their own community.
+                We co-create individualized care experiences that honor culture, promote wellness, and keep families in the loop.
               </Card>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <Card
@@ -162,78 +162,78 @@ export default function AboutPage() {
             </div>
           </section>
 
-        {/* TEAM SNAPSHOT */}
-        <section id="team" className="section-shell relative mt-14 overflow-hidden px-6 py-10 sm:px-12">
-          <div
-            className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-50"
-            style={{ backgroundImage: "url('/assets/honeycomb-background.jpg')" }}
-            aria-hidden="true"
-          />
-          <div className="relative">
-          <SectionHeading
-            eyebrow="People Who Care"
-            title="Meet the Team"
-            description="A peek at the leadership and frontline caregivers who make each day feel personal."
-          />
-          <div className="mx-auto mt-6 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((n) => (
-              <div
-                key={n}
-                className="rounded-[28px] border border-slate-100 bg-white/95 p-6 text-center shadow-[0_15px_35px_-25px_rgba(15,34,71,0.35)]"
-              >
-                <div className="relative mx-auto flex h-48 w-full max-w-[260px] items-center justify-center rounded-3xl border border-dashed border-slate-300 bg-slate-50">
-                  <div className="text-slate-400">
-                    <svg width="64" height="64" fill="none" viewBox="0 0 64 64" className="mx-auto">
-                      <rect x="8" y="16" width="48" height="32" rx="6" stroke="currentColor" strokeWidth="2" />
-                      <circle cx="32" cy="32" r="10" stroke="currentColor" strokeWidth="2" />
-                      <rect x="24" y="12" width="16" height="6" rx="2" stroke="currentColor" strokeWidth="2" />
-                    </svg>
-                    <p className="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-                      Image Coming Soon
-                    </p>
+          {/* TEAM SNAPSHOT */}
+          <section id="team" className="section-shell relative mt-14 overflow-hidden px-6 py-10 sm:px-12">
+            <div
+              className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-50"
+              style={{ backgroundImage: "url('/assets/honeycomb-background.jpg')" }}
+              aria-hidden="true"
+            />
+            <div className="relative">
+              <SectionHeading
+                eyebrow="People Who Care"
+                title="Meet the Team"
+                description="A peek at the leadership and frontline caregivers who make each day feel personal."
+              />
+              <div className="mx-auto mt-6 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {[1, 2, 3].map((n) => (
+                  <div
+                    key={n}
+                    className="rounded-[28px] border border-slate-100 bg-white/95 p-6 text-center shadow-[0_15px_35px_-25px_rgba(15,34,71,0.35)]"
+                  >
+                    <div className="relative mx-auto flex h-48 w-full max-w-[260px] items-center justify-center rounded-3xl border border-dashed border-slate-300 bg-slate-50">
+                      <div className="text-slate-400">
+                        <svg width="64" height="64" fill="none" viewBox="0 0 64 64" className="mx-auto">
+                          <rect x="8" y="16" width="48" height="32" rx="6" stroke="currentColor" strokeWidth="2" />
+                          <circle cx="32" cy="32" r="10" stroke="currentColor" strokeWidth="2" />
+                          <rect x="24" y="12" width="16" height="6" rx="2" stroke="currentColor" strokeWidth="2" />
+                        </svg>
+                        <p className="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+                          Image Coming Soon
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mt-4 text-left">
+                      <p className="text-lg font-semibold text-navy">Team Member {n}</p>
+                      <p className="text-sm text-slate-600">Role • Credentials</p>
+                    </div>
                   </div>
-                </div>
-                <div className="mt-4 text-left">
-                  <p className="text-lg font-semibold text-navy">Team Member {n}</p>
-                  <p className="text-sm text-slate-600">Role • Credentials</p>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-sm text-slate-600">
-            Interested in joining or partnering? Reach out — we’re growing a team that reflects the communities we serve.
-          </p>
-          </div>
-        </section>
+              <p className="mx-auto mt-4 max-w-3xl text-center text-sm text-slate-600">
+                Interested in joining or partnering? Reach out — we’re growing a team that reflects the communities we serve.
+              </p>
+            </div>
+          </section>
 
-        {/* EXPERIENCE + LEADERSHIP */}
-        <section className="mt-14">
-          <SectionHeading
-            eyebrow="Clarity • Safety • Follow-through"
-            title="How Leadership Supports Every Family"
-            description="Clinical oversight & clear routines ensure you always know who’s caring for your loved one."
-          />
-          <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 gap-6 lg:grid-cols-2">
-            <Card title="What Families Experience">
-              <ul className="space-y-2">
-                <Bullet>Personalized care plans co-created with your family</Bullet>
-                <Bullet>Consistent caregivers whenever possible</Bullet>
-                <Bullet>Visit notes and optional text/phone updates</Bullet>
-                <Bullet>Safe transfers and home-safety-minded routines</Bullet>
-                <Bullet>Dedicated point of contact and simple feedback loop</Bullet>
-              </ul>
-            </Card>
-            <Card title="Clinical + Operations Team" icon={<FaClipboardList />}>
-              <ul className="space-y-2">
-                <Bullet>RN-led oversight, medication and vitals protocols</Bullet>
-                <Bullet>Care dashboards, real-time family updates, secure notes</Bullet>
-                <Bullet>Background-checked, trained, supervised caregivers</Bullet>
-                <Bullet>Backup coverage and hygiene protocols</Bullet>
-                <Bullet>Care conferences with families and providers</Bullet>
-              </ul>
-            </Card>
-          </div>
-        </section>
+          {/* EXPERIENCE + LEADERSHIP */}
+          <section className="mt-14">
+            <SectionHeading
+              eyebrow="Clarity • Safety • Follow-through"
+              title="How Leadership Supports Every Family"
+              description="Clinical oversight & clear routines ensure you always know who’s caring for your loved one."
+            />
+            <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 gap-6 lg:grid-cols-2">
+              <Card title="What Families Experience">
+                <ul className="space-y-2">
+                  <Bullet>Personalized care plans co-created with your family</Bullet>
+                  <Bullet>Consistent caregivers whenever possible</Bullet>
+                  <Bullet>Visit notes and optional text/phone updates</Bullet>
+                  <Bullet>Safe transfers and home-safety-minded routines</Bullet>
+                  <Bullet>Dedicated point of contact and simple feedback loop</Bullet>
+                </ul>
+              </Card>
+              <Card title="Clinical + Operations Team" icon={<FaClipboardList />}>
+                <ul className="space-y-2">
+                  <Bullet>RN-led oversight, medication and vitals protocols</Bullet>
+                  <Bullet>Care dashboards, real-time family updates, secure notes</Bullet>
+                  <Bullet>Background-checked, trained, supervised caregivers</Bullet>
+                  <Bullet>Backup coverage and hygiene protocols</Bullet>
+                  <Bullet>Care conferences with families and providers</Bullet>
+                </ul>
+              </Card>
+            </div>
+          </section>
 
           {/* FINAL CTA */}
           <section className="section-shell relative overflow-hidden px-6 py-10 sm:px-12">

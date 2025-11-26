@@ -48,18 +48,17 @@ const Hero = () => {
             variants={scrollAnimation}
           >
             <div className="order-2 max-w-full text-center sm:order-1 sm:text-left">
-              <h1 className="bg-gradient-to-r from-navy to-[#116768] bg-clip-text font-jakarta text-3xl font-extrabold leading-tight text-transparent sm:text-5xl">
+              <h1 className="font-jakarta text-3xl font-extrabold leading-tight sm:text-5xl">
                 <span className="block">
                   <span>Quality You Can Trust.</span>
                 </span>
-                <span className="block">
+                <span className="block mt-2">
                   <span>Care You Deserve.</span>
                 </span>
               </h1>
 
               <p className="mt-8 max-w-xl font-inter text-base leading-relaxed text-slate-700 sm:text-lg">
-                From daytime care and engaging activities to nutritious meals and safe
-                transportation — we’re here to support you every step of the way.
+                We provide top-notch care services tailored to your needs. Our team of dedicated professionals is here to ensure you receive the best support possible.
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:gap-6">
