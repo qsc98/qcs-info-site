@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <SeoHead title="Quality Senior Care" />
-      <Layout>
+      <Layout noTopPadding={true}>
         <Hero />
         <BenefitStatsSection />
         <section
