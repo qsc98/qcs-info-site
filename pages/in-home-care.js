@@ -12,11 +12,10 @@ import {
   FaPhoneAlt,
   FaFileInvoiceDollar,
 } from 'react-icons/fa'
-import Footer from '../components/Layout/Footer'
+import Layout from '../components/Layout/Layout'
 import Bullet from '../components/misc/Bullet'
 import FaqSection from '../components/misc/FaqSection'
 import InfoStat from '../components/misc/InfoStat'
-import PageBackButton from '../components/misc/PageBackButton'
 import PrimaryCta from '../components/misc/PrimaryCta'
 import SectionEyebrow from '../components/misc/SectionEyebrow'
 import SectionHeading from '../components/misc/SectionHeading'
@@ -80,13 +79,9 @@ function Card({ title, icon, children, className = '' }) {
 export default function InHomeCarePage() {
 
   return (
-    <>
+    <Layout>
       <div>
         <div className="mx-auto mb-24 mt-6 max-w-screen-xl px-4 sm:px-6 lg:px-10">
-        <div className="sticky top-4 z-50 flex justify-start">
-          <PageBackButton href="/" />
-        </div>
-
           <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
             <section className="section-shell relative overflow-hidden p-6 sm:px-12">
               <div
@@ -447,8 +442,6 @@ export default function InHomeCarePage() {
           </section>
         </div>
       </div>
-
-      <Footer />
-    </>
+    </Layout>
   )
 }

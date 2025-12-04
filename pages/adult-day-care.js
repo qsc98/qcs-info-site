@@ -14,11 +14,10 @@ import {
   FaFileInvoiceDollar,
   FaMedkit,
 } from 'react-icons/fa'
-import Footer from '../components/Layout/Footer'
+import Layout from '../components/Layout/Layout'
 import Bullet from '../components/misc/Bullet'
 import FaqSection from '../components/misc/FaqSection'
 import InfoStat from '../components/misc/InfoStat'
-import PageBackButton from '../components/misc/PageBackButton'
 import PrimaryCta from '../components/misc/PrimaryCta'
 import SectionEyebrow from '../components/misc/SectionEyebrow'
 import SectionHeading from '../components/misc/SectionHeading'
@@ -83,12 +82,8 @@ function Card({ title, icon, children, className = '' }) {
 export default function AdultDayCarePage() {
 
   return (
-    <>
+    <Layout>
       <div className="mx-auto mb-24 mt-6 max-w-screen-xl px-4 sm:px-6 lg:px-10">
-        <div className="sticky top-4 z-50 flex justify-start">
-          <PageBackButton href="/" />
-        </div>
-
         <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
           <section className="section-shell relative overflow-hidden p-6 sm:px-12">
             <div
@@ -211,7 +206,7 @@ export default function AdultDayCarePage() {
               </div>
             </div>
           </section>
-          
+
           <section id="day-flow" className="section-shell relative overflow-hidden px-6 py-10 sm:px-12">
             <div
               className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-50"
@@ -219,87 +214,87 @@ export default function AdultDayCarePage() {
               aria-hidden="true"
             />
             <div className="relative p-6 sm:p-10">
-            <SectionHeading
-              eyebrow="Daily Flow + Programs"
-              title="How Each Day Runs & What We Provide"
-              description="See the rhythm your loved one can count on plus the core services wrapped into every visit."
-            />
-            <div className="mx-auto mt-10 space-y-12">
-              <div className="rounded-3xl border border-white/30 bg-white/80 p-6 shadow-[0_20px_45px_-32px_rgba(15,34,71,0.5)] backdrop-blur">
-                <div className="flex flex-wrap items-center justify-between gap-4">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#116768]">
-                      Daily Rhythm
+              <SectionHeading
+                eyebrow="Daily Flow + Programs"
+                title="How Each Day Runs & What We Provide"
+                description="See the rhythm your loved one can count on plus the core services wrapped into every visit."
+              />
+              <div className="mx-auto mt-10 space-y-12">
+                <div className="rounded-3xl border border-white/30 bg-white/80 p-6 shadow-[0_20px_45px_-32px_rgba(15,34,71,0.5)] backdrop-blur">
+                  <div className="flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#116768]">
+                        Daily Rhythm
+                      </p>
+                      <h3 className="mt-2 font-jakarta text-2xl font-semibold text-navy">
+                        Structured, predictable blocks
+                      </h3>
+                    </div>
+                    <p className="max-w-xl text-sm text-slate-600">
+                      Smooth transitions from arrival to wind-down keep participants grounded while you
+                      stay updated.
                     </p>
-                    <h3 className="mt-2 font-jakarta text-2xl font-semibold text-navy">
-                      Structured, predictable blocks
-                    </h3>
                   </div>
-                  <p className="max-w-xl text-sm text-slate-600">
-                    Smooth transitions from arrival to wind-down keep participants grounded while you
-                    stay updated.
-                  </p>
+                  <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
+                    <Card title="7:00–9:00 AM • Arrival">
+                      Warm welcome, light breakfast, and social time to start the day gently.
+                    </Card>
+                    <Card title="9:00 AM–2:00 PM • Programs">
+                      Group activities, cognitive games, music/art, chair fitness, and lunch.
+                    </Card>
+                    <Card title="2:00–7:00 PM • Wind‑Down">
+                      Quiet time, music, and assisted departures — with notes for families.
+                    </Card>
+                  </div>
                 </div>
-                <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
-                  <Card title="7:00–9:00 AM • Arrival">
-                    Warm welcome, light breakfast, and social time to start the day gently.
-                  </Card>
-                  <Card title="9:00 AM–2:00 PM • Programs">
-                    Group activities, cognitive games, music/art, chair fitness, and lunch.
-                  </Card>
-                  <Card title="2:00–7:00 PM • Wind‑Down">
-                    Quiet time, music, and assisted departures — with notes for families.
-                  </Card>
-                </div>
-              </div>
 
-              <div>
-                <div className="flex flex-wrap items-center justify-between gap-4">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#116768]">
-                      Programs & Supports
+                <div>
+                  <div className="flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#116768]">
+                        Programs & Supports
+                      </p>
+                      <h3 className="mt-2 font-jakarta text-2xl font-semibold text-navy">
+                        Everything included in the day
+                      </h3>
+                    </div>
+                    <p className="max-w-xl text-sm text-slate-600">
+                      Social connection, wellness monitoring, nourishing meals, and transportation
+                      support are all coordinated by the same care team.
                     </p>
-                    <h3 className="mt-2 font-jakarta text-2xl font-semibold text-navy">
-                      Everything included in the day
-                    </h3>
                   </div>
-                  <p className="max-w-xl text-sm text-slate-600">
-                    Social connection, wellness monitoring, nourishing meals, and transportation
-                    support are all coordinated by the same care team.
-                  </p>
-                </div>
-                <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
-                  <Card title="Social & Cognitive" icon={<FaUserFriends />}>
-                    <ul className="space-y-2">
-                      <Bullet>Arts & crafts, music, and group games</Bullet>
-                      <Bullet>Conversation circles and reminiscence</Bullet>
-                      <Bullet>Memory support activities</Bullet>
-                    </ul>
-                  </Card>
-                  <Card title="Wellness & Care" icon={<FaHeartbeat />}>
-                    <ul className="space-y-2">
-                      <Bullet>Light exercise & mobility assistance</Bullet>
-                      <Bullet>Medication reminders (per policy) & wellness checks</Bullet>
-                      <Bullet>Comfortable, monitored spaces</Bullet>
-                    </ul>
-                  </Card>
-                  <Card title="Nutritious Meals" icon={<FaUtensils />}>
-                    <ul className="space-y-2">
-                      <Bullet>Wholesome breakfasts, lunches, and snacks</Bullet>
-                      <Bullet>Special dietary accommodations upon request</Bullet>
-                      <Bullet>Balanced menus reviewed for nutritional value</Bullet>
-                    </ul>
-                  </Card>
-                  <Card icon={<FaWheelchair />} title="Door-to-Door Convenience">
-                    <p className="text-gray-700">
-                      We offer wheelchair-accessible, round-trip transportation for eligible clients
-                      within our service area — operated by friendly, trained drivers. Ask us about
-                      routes and timing.
-                    </p>
-                  </Card>
+                  <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
+                    <Card title="Social & Cognitive" icon={<FaUserFriends />}>
+                      <ul className="space-y-2">
+                        <Bullet>Arts & crafts, music, and group games</Bullet>
+                        <Bullet>Conversation circles and reminiscence</Bullet>
+                        <Bullet>Memory support activities</Bullet>
+                      </ul>
+                    </Card>
+                    <Card title="Wellness & Care" icon={<FaHeartbeat />}>
+                      <ul className="space-y-2">
+                        <Bullet>Light exercise & mobility assistance</Bullet>
+                        <Bullet>Medication reminders (per policy) & wellness checks</Bullet>
+                        <Bullet>Comfortable, monitored spaces</Bullet>
+                      </ul>
+                    </Card>
+                    <Card title="Nutritious Meals" icon={<FaUtensils />}>
+                      <ul className="space-y-2">
+                        <Bullet>Wholesome breakfasts, lunches, and snacks</Bullet>
+                        <Bullet>Special dietary accommodations upon request</Bullet>
+                        <Bullet>Balanced menus reviewed for nutritional value</Bullet>
+                      </ul>
+                    </Card>
+                    <Card icon={<FaWheelchair />} title="Door-to-Door Convenience">
+                      <p className="text-gray-700">
+                        We offer wheelchair-accessible, round-trip transportation for eligible clients
+                        within our service area — operated by friendly, trained drivers. Ask us about
+                        routes and timing.
+                      </p>
+                    </Card>
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
           </section>
 
@@ -443,11 +438,11 @@ export default function AdultDayCarePage() {
             </div>
           </section>
 
-        <FaqSection
-          id="faq"
-          items={faqItems}
-          description="Quick answers to the topics families ask about most often."
-        />
+          <FaqSection
+            id="faq"
+            items={faqItems}
+            description="Quick answers to the topics families ask about most often."
+          />
 
           <section>
             <div className="section-shell relative overflow-hidden px-6 py-10 sm:px-12">
@@ -474,8 +469,6 @@ export default function AdultDayCarePage() {
           </section>
         </div>
       </div>
-
-      <Footer />
-    </>
+    </Layout>
   )
 }

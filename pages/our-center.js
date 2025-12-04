@@ -13,10 +13,9 @@ import {
   FaMedkit,
   FaUserNurse,
 } from 'react-icons/fa'
-import Footer from '../components/Layout/Footer'
+import Layout from '../components/Layout/Layout'
 import FaqSection from '../components/misc/FaqSection'
 import InfoStat from '../components/misc/InfoStat'
-import PageBackButton from '../components/misc/PageBackButton'
 import PrimaryCta from '../components/misc/PrimaryCta'
 import SectionEyebrow from '../components/misc/SectionEyebrow'
 import SectionHeading from '../components/misc/SectionHeading'
@@ -147,12 +146,8 @@ const faqItems = [
 const OurCenter = () => {
 
   return (
-    <>
+    <Layout>
       <div className="mx-auto mb-24 mt-6 max-w-screen-xl px-4 sm:px-6 lg:px-10">
-        <div className="sticky top-4 z-50 mb-6 flex justify-start">
-          <PageBackButton href="/" />
-        </div>
-
         <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
           <section className="section-shell relative overflow-hidden px-6 py-10 sm:px-12">
             <div
@@ -368,9 +363,7 @@ const OurCenter = () => {
           />
         </div>
       </div>
-
-      <Footer />
-    </>
+    </Layout>
   )
 }
 

@@ -150,25 +150,18 @@ const Header = () => {
             >
               About
             </Link>
-            <LinkScroll
-              activeClass="active"
-              to="contact"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              offset={-scrollOffset}
-              onSetActive={() => {
-                setActiveLink('contact')
-              }}
+            <Link
+              href="/contact"
               className={
-                'animation-hover relative mx-2 inline-block cursor-pointer px-4 py-2' +
+                'animation-hover relative mx-2 inline-block px-4 py-2 transition ' +
                 (activeLink === 'contact'
                   ? ' animation-active text-green-500'
                   : ' text-black-500 hover:text-green-500')
               }
+              onClick={() => setActiveLink('contact')}
             >
               Contact
-            </LinkScroll>
+            </Link>
             <Link
               href="/careers"
               className="animation-hover relative mx-2 inline-block px-4 py-2 text-black-500 transition hover:text-green-500"
