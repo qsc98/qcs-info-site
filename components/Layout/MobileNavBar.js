@@ -113,28 +113,23 @@ const MobileFloatingNav = ({ activeLink, setActiveLink, scrollOffset = 0 }) => {
             <span className="mt-1">Careers</span>
           </Link>
 
-          <LinkScroll
-            to="contact"
-            spy={true}
-            smooth={true}
-            duration={500}
-            offset={-scrollOffset}
-            onSetActive={() => setActiveLink('contact')}
+          <Link
+            href="/contact"
             className={
-              'flex cursor-pointer flex-col items-center text-xs ' +
+              'flex flex-col items-center text-xs transition ' +
               (activeLink === 'contact' ? 'text-green-500' : 'text-gray-600')
             }
+            onClick={() => setActiveLink('contact')}
           >
             <div className="rounded-full bg-white p-2 shadow-md">
               <HiOutlineMail className="size-5 text-black" />
             </div>
             <span className="mt-1">Contact</span>
-          </LinkScroll>
+          </Link>
         </div>
         <div
-          className={`overflow-hidden transition-all duration-500 ${
-            servicesOpen ? 'mt-4 max-h-[520px] opacity-100' : 'max-h-0 opacity-0'
-          }`}
+          className={`overflow-hidden transition-all duration-500 ${servicesOpen ? 'mt-4 max-h-[520px] opacity-100' : 'max-h-0 opacity-0'
+            }`}
         >
           <div className="relative overflow-hidden rounded-[30px] border border-[#cfeee7] bg-white/90 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]">
             <div className="pointer-events-none absolute inset-0 bg-[url('/assets/honeycomb-background.jpg')] bg-[length:170%] bg-center opacity-15" />

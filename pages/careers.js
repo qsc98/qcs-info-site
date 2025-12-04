@@ -1,9 +1,8 @@
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import { FaLaptopMedical, FaHandsHelping, FaChalkboardTeacher, FaCalendarCheck } from 'react-icons/fa'
-import Footer from '../components/Layout/Footer'
+import Layout from '../components/Layout/Layout'
 import Bullet from '../components/misc/Bullet'
 import FaqSection from '../components/misc/FaqSection'
-import PageBackButton from '../components/misc/PageBackButton'
 import PrimaryCta from '../components/misc/PrimaryCta'
 import SectionEyebrow from '../components/misc/SectionEyebrow'
 import SectionHeading from '../components/misc/SectionHeading'
@@ -74,12 +73,8 @@ function GlassCard({ title, children }) {
 
 export default function CareersPage() {
   return (
-    <>
+    <Layout>
       <div className="mx-auto mb-24 mt-6 max-w-screen-xl px-4 sm:px-6 lg:px-10">
-        <div className="sticky top-4 z-50 flex justify-start">
-          <PageBackButton href="/" />
-        </div>
-
         <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
           <div className="rounded-3xl border border-amber-200 bg-gradient-to-r from-amber-50 via-white to-amber-50 px-6 py-4 text-sm text-amber-800 shadow-[0_20px_45px_-32px_rgba(217,119,6,0.35)]">
             <span className="font-semibold uppercase tracking-[0.3em]">Coming Soon· </span>
@@ -94,7 +89,7 @@ export default function CareersPage() {
               <div className="text-center sm:text-left">
                 <SectionEyebrow className="mb-12">Careers</SectionEyebrow>
                 <h1 className="font-jakarta text-4xl font-extrabold leading-tight text-navy sm:text-5xl">
-                  Build a Career <br/>Rooted in Dignity
+                  Build a Career <br />Rooted in Dignity
                 </h1>
                 <p className="mt-10 text-base text-slate-600 sm:text-lg">
                   Join clinicians, engagement guides, and operations teammates who believe adult day care can
@@ -200,7 +195,6 @@ export default function CareersPage() {
           </section>
         </div>
       </div>
-      <Footer />
-    </>
+    </Layout>
   )
 }

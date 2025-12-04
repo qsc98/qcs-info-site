@@ -8,10 +8,9 @@ import {
   FaClock,
   FaClipboardList,
 } from 'react-icons/fa'
-import Footer from '../components/Layout/Footer'
+import Layout from '../components/Layout/Layout'
 import Bullet from '../components/misc/Bullet'
 import InfoStat from '../components/misc/InfoStat'
-import PageBackButton from '../components/misc/PageBackButton'
 import PrimaryCta from '../components/misc/PrimaryCta'
 import SectionEyebrow from '../components/misc/SectionEyebrow'
 import SectionHeading from '../components/misc/SectionHeading'
@@ -49,13 +48,8 @@ function Card({ title, icon, children, className = '', innerClassName = '' }) {
 export default function AboutPage() {
 
   return (
-    <>
+    <Layout>
       <div className="mx-auto mb-24 mt-6 max-w-screen-xl px-4 sm:px-6 lg:px-10">
-        {/* Back button */}
-        <div className="sticky top-4 z-50 flex justify-start">
-          <PageBackButton href="/" className="bg-white/80 text-gray-900 ring-gray-200 focus:ring-emerald-400" />
-        </div>
-
         <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
           {/* HERO */}
           <section className="section-shell relative overflow-hidden p-6 sm:px-12">
@@ -68,7 +62,7 @@ export default function AboutPage() {
               <div className="text-center sm:text-left">
                 <SectionEyebrow className="mb-12">About Us</SectionEyebrow>
                 <h1 className="font-jakarta text-4xl font-extrabold leading-tight sm:text-5xl">
-                  Rooted in Care, Built for Community
+                  Rooted in Care, <br />Built for Community
                 </h1>
                 <p className="mt-12 text-base text-slate-600 sm:text-lg">
                   We’re a caring team of caregivers, technologists, and community advocates providing meaningful, trustworthy support for adults and seniors in Louisville.
@@ -257,8 +251,6 @@ export default function AboutPage() {
           </section>
         </div>
       </div>
-
-      <Footer />
-    </>
+    </Layout>
   )
 }
