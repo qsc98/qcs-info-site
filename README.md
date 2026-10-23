@@ -1,6 +1,6 @@
 # Quality Senior Care — website
 
-Marketing site for an Adult Day Health Care center in Fairdale, KY. Built with **Next.js 16 (App Router, static export)**, **React 19** and **Tailwind CSS 4**, deployed to **Netlify** from the `out/` folder.
+Marketing site for Quality Senior Health Care (New Hope ADHC LLC), an Adult Day Health Care center in Fairdale, KY. Built with **Next.js 16 (App Router, static export)**, **React 19** and **Tailwind CSS 4**, deployed to **Netlify** from the `out/` folder.
 
 ## Business facts live in one place
 

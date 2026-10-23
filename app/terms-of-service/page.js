@@ -17,7 +17,7 @@ export default function TermsPage() {
 
       <div className="mt-10 text-lg [&_h2]:mt-10 [&_h2]:text-2xl [&_p]:mt-4 [&_ul]:mt-4 [&_ul]:list-disc [&_ul]:pl-6">
         <p>
-          By using this website you agree to these terms. The site is operated by {siteConfig.legalName}, {fullAddress}.
+          By using this website you agree to these terms. The site is operated by {siteConfig.legalName}, doing business as {siteConfig.name}, {fullAddress}.
         </p>
 
         <h2>Informational purpose</h2>

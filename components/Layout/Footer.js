@@ -71,7 +71,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-600 pt-6 text-center text-sm text-gray-500 sm:flex sm:justify-between">
           <span>
-            &copy; {new Date().getFullYear()} {siteConfig.legalName}. All rights reserved.
+            &copy; {new Date().getFullYear()} {siteConfig.legalName}, d/b/a {siteConfig.name}. All rights reserved.
           </span>
           <ul className="mt-4 flex flex-wrap justify-center gap-4 sm:mt-0 sm:justify-end">
             <li><Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>

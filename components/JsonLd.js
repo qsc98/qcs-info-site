@@ -9,6 +9,7 @@ export default function JsonLd() {
     '@id': `${c.url}/#business`,
     name: c.name,
     legalName: c.legalName,
+    alternateName: c.alternateNames,
     description: c.description,
     url: c.url,
     image: `${c.url}/icons/icon-512.png`,

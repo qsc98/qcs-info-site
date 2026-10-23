@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
 
       <div className="prose prose-slate mt-10 max-w-none text-lg [&_h2]:mt-10 [&_h2]:text-2xl [&_p]:mt-4 [&_ul]:mt-4 [&_ul]:list-disc [&_ul]:pl-6">
         <p>
-          {siteConfig.legalName} (“we”, “us”) operates this website to describe our {siteConfig.descriptor} services at {fullAddress}. This policy explains what information the website collects and how we use it.
+          {siteConfig.legalName}, doing business as {siteConfig.name} (“we”, “us”), operates this website to describe our {siteConfig.descriptor} services at {fullAddress}. This policy explains what information the website collects and how we use it.
         </p>
 
         <h2>What we collect</h2>

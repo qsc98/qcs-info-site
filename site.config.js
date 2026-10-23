@@ -5,10 +5,12 @@
  * else needs editing.
  */
 const siteConfig = {
-  // Public-facing name used in titles, schema and copy. Confirm against the
-  // legal/DBA name before launch; change it here only.
-  name: 'Quality Senior Care',
-  legalName: 'Quality Senior Care',
+  // Public-facing name (registered DBA) used in titles, schema and copy.
+  name: 'Quality Senior Health Care',
+  // Other registered DBA(s); used in schema alternateName.
+  alternateNames: ['Quality ADHC'],
+  // Registered entity: Kentucky Secretary of State org #1366926.
+  legalName: 'New Hope ADHC LLC',
   descriptor: 'Adult Day Health Care',
   url: 'https://qualityseniorcare.org',
   description:
