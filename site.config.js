@@ -1,18 +1,18 @@
 /**
  * Single source of truth for business facts and launch state.
- * Every component reads from here. At launch, change `launch.status`,
- * fill in `contact.phone` and `hours`, and nothing else needs editing.
+ * Every component reads from here. At launch, set `launch.status` to 'open',
+ * fill in `contact.phone` / `contact.phoneDisplay` and `hours`, and nothing
+ * else needs editing.
  */
 const siteConfig = {
   // Public-facing name used in titles, schema and copy. Confirm against the
   // legal/DBA name before launch; change it here only.
   name: 'Quality Senior Care',
   legalName: 'Quality Senior Care',
-  descriptor: 'Adult Day Health Care', // what we are, in plain words
-  shortName: 'QSC',
+  descriptor: 'Adult Day Health Care',
   url: 'https://qualityseniorcare.org',
   description:
-    'Adult Day Health Care center in Fairdale, Kentucky, serving Louisville-area families with daytime care, nutritious meals, transportation and in-home support.',
+    'Licensed Adult Day Health Care center in Fairdale, Kentucky, serving Louisville-area families with daytime care, nutritious meals, transportation and in-home support.',
 
   address: {
     street: '811 Mt Holly Rd',
@@ -20,7 +20,6 @@ const siteConfig = {
     region: 'KY',
     postalCode: '40118',
     country: 'US',
-    // Approximate coordinates for the address (used in LocalBusiness schema).
     latitude: 38.1011,
     longitude: -85.7678,
     mapsEmbedUrl:
@@ -29,36 +28,54 @@ const siteConfig = {
   serviceArea: ['Fairdale', 'Louisville', 'Jefferson County, KY'],
 
   contact: {
-    phone: null, // e.g. '+15025551234' once operational
+    phone: null, // E.164, e.g. '+15025551234', once operational
     phoneDisplay: null, // e.g. '(502) 555-1234'
     email: 'admin@qualityseniorcare.org',
     careersEmail: 'admin@qualityseniorcare.org',
   },
 
-  // null until operational. Shape when set: [{ days: 'Monday–Saturday', open: '7:00 AM', close: '7:00 PM' }]
+  // null until operational. When set:
+  // [{ days: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], label: 'Mon–Sat', opens: '07:00', closes: '19:00', opensDisplay: '7 AM', closesDisplay: '7 PM' }]
   hours: null,
   hoursNote: 'Hours will be announced when we open.',
 
-  // Social profiles: only real URLs here. Empty object = no icons rendered.
+  // Only real profile URLs here, e.g. { facebook: 'https://facebook.com/...' }.
+  // Empty = no social icons rendered anywhere.
   social: {},
 
   launch: {
-    // 'pre-launch' | 'open'
-    status: 'pre-launch',
-    licensed: true, // state ADHC licensure received
+    status: 'pre-launch', // 'pre-launch' | 'open'
+    licensed: true,
     medicaid: 'enrolling', // 'enrolling' | 'enrolled'
-    // Free-text status line shown site-wide while pre-launch.
-    statusLine: 'Licensed by the Commonwealth of Kentucky. Opening soon — Medicaid provider enrollment in progress.',
-    waitlist: true, // show the "notify me when we open" form
+    statusShort: 'Opening soon',
+    statusLine:
+      'Licensed by the Commonwealth of Kentucky. Opening soon — Medicaid provider enrollment in progress.',
+    waitlist: true,
   },
 
   payment: {
     accepted: ['Private pay', 'Long-term care insurance', 'Veterans benefits'],
-    pending: ['Kentucky Medicaid (enrollment in progress)'],
+    pending: ['Kentucky Medicaid (provider enrollment in progress)'],
   },
 }
 
 export const isOpen = siteConfig.launch.status === 'open'
+
 export const fullAddress = `${siteConfig.address.street}, ${siteConfig.address.city}, ${siteConfig.address.region} ${siteConfig.address.postalCode}`
+
+export function hoursSummary() {
+  if (!siteConfig.hours) return 'To be announced'
+  return siteConfig.hours
+    .map((h) => `${h.label} • ${h.opensDisplay} – ${h.closesDisplay}`)
+    .join('; ')
+}
+
+export function paymentLine() {
+  const accepted = siteConfig.payment.accepted.join(', ')
+  const pending = siteConfig.payment.pending.length
+    ? ` • ${siteConfig.payment.pending.join(', ')}`
+    : ''
+  return `${accepted} accepted${pending}`
+}
 
 export default siteConfig

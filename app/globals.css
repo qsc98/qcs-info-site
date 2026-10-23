@@ -1,0 +1,159 @@
+@import 'tailwindcss';
+
+@theme {
+  --shadow-*: initial;
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-none: none;
+
+  /* Loaded via next/font in app/layout.js */
+  --font-jakarta: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-inter: var(--font-inter-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --color-black-500: #4f5665;
+  --color-black-600: #0b132a;
+  --color-black-700: #1c2541;
+  --color-black: #000000;
+
+  --color-white-300: #f8f8f8;
+  --color-white-500: #ffffff;
+  --color-white: #ffffff;
+
+  --color-orange-100: #ffecec;
+  --color-orange-500: #f53855;
+
+  --color-green-500: #0b3d2e;
+  --color-green-600: #1a7a4d;
+
+  --color-gray-100: #eeeff2;
+  --color-gray-400: #afb5c0;
+  --color-gray-500: #dddddd;
+
+  --color-navy: #1a4566;
+  --color-teal: #116768;
+  --color-deepnavy: #143b58;
+  --color-darkneutral: #0a3d35;
+  --color-neutraltext: #0f172a;
+
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-primary: #0f172a;
+  --color-primary-foreground: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: #0f172a;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+/* Tailwind v4 defaults borders to currentcolor; keep v3 behaviour. */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  html {
+    font-family: var(--font-inter);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-jakarta font-bold bg-linear-to-r from-navy to-teal bg-clip-text text-transparent;
+  }
+  h1 {
+    line-height: 1.15;
+  }
+  h2 {
+    line-height: 1.2;
+  }
+  h3 {
+    line-height: 1.25;
+  }
+
+  p {
+    @apply font-inter font-normal leading-[1.6] text-neutraltext;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility text-gradient {
+  @apply bg-linear-to-r from-navy to-teal bg-clip-text text-transparent;
+}
+
+@utility section-shell {
+  position: relative;
+  z-index: 0;
+  border-radius: 2rem;
+  border: 1px solid rgba(15, 34, 71, 0.05);
+  background: #f8fafc;
+  box-shadow: 0 18px 36px -32px rgba(15, 34, 71, 0.35);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: calc(2rem - 1px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+    box-shadow: inset 0 1px 4px rgba(15, 34, 71, 0.03);
+    z-index: -1;
+  }
+}
+
+@layer components {
+  .animation-hover:after {
+    background: transparent;
+    content: '';
+    height: 2px;
+    transition:
+      width 0.3s ease 0s,
+      left 0.3s ease 0s;
+    @apply absolute bottom-0 left-1/2 block w-0 bg-green-500;
+  }
+  .animation-active:after,
+  .animation-hover:hover:after {
+    @apply left-0 w-full;
+  }
+}

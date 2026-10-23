@@ -1,209 +1,123 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState, useEffect, useRef } from 'react'
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
-import { Link as LinkScroll } from 'react-scroll'
+import { usePathname } from 'next/navigation'
+import { useEffect, useRef, useState } from 'react'
 import MobileFloatingNav from './MobileNavBar'
+import { primaryLinks, serviceLinks } from './navLinks'
 import NotificationBar from './NotificationBar'
+import SocialLinks from './SocialLinks'
+import siteConfig from '../../site.config'
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState(null)
+  const pathname = usePathname()
   const [scrollActive, setScrollActive] = useState(false)
-  const [scrollOffset, setScrollOffset] = useState(0)
-  const [servicesOpen, setServicesOpen] = useState(false)
+  const [openPath, setOpenPath] = useState(null)
+  const servicesOpen = openPath === pathname
+  const setServicesOpen = (next) => setOpenPath(next ? pathname : null)
   const dropdownRef = useRef(null)
-  const headerRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => setScrollActive(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   useEffect(() => {
-    const updateOffset = () => {
-      const headerHeight = headerRef.current ? headerRef.current.offsetHeight : 0
-      setScrollOffset(headerHeight + 16)
+    if (!servicesOpen) return
+    const onPointer = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) setOpenPath(null)
     }
-    updateOffset()
-    window.addEventListener('resize', updateOffset)
-    return () => window.removeEventListener('resize', updateOffset)
-  }, [])
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setServicesOpen(false)
-      }
+    const onKey = (event) => {
+      if (event.key === 'Escape') setOpenPath(null)
     }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
+    document.addEventListener('mousedown', onPointer)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onPointer)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [servicesOpen])
+
+  const servicesActive = serviceLinks.some((l) => l.href === pathname)
+  const linkClass = (active) =>
+    'animation-hover relative mx-1 inline-flex items-center rounded-lg px-4 py-2 text-base font-medium transition focus:outline-hidden focus-visible:ring-2 focus-visible:ring-teal/60 ' +
+    (active ? 'animation-active text-green-500' : 'text-black-500 hover:text-green-500')
 
   return (
-    <>
-      <NotificationBar />
-      <header
-        ref={headerRef}
-        className={
-          'fixed z-30 w-full transition-all ' +
-          (scrollActive ? ' top-0 pt-0 bg-white shadow-md' : ' top-[2.25rem] bg-transparent lg:top-[2.5rem]')
-        }
-      >
-        <nav className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-3 sm:px-8 sm:py-4 lg:px-16">
-          <div className="flex items-center">
-            <Link href="/" aria-label="Go to homepage">
-              <Image src="/assets/Logo-Transparent.png" alt="Logo" width={75} height={75} priority />
-            </Link>
-          </div>
-          <ul className="hidden items-center justify-center text-black-500 lg:flex lg:flex-1">
-            <div className="relative" ref={dropdownRef}>
+    <div className="fixed top-0 z-30 w-full">
+      <div className={scrollActive ? 'hidden' : ''}>
+        <NotificationBar />
+      </div>
+      <header className={'w-full transition-all ' + (scrollActive ? 'bg-white shadow-md' : 'bg-transparent')}>
+        <nav
+          aria-label="Main"
+          className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 sm:px-8 sm:py-4 lg:px-16"
+        >
+          <Link
+            href="/"
+            aria-label={`${siteConfig.name} home`}
+            className="rounded-lg focus:outline-hidden focus-visible:ring-2 focus-visible:ring-teal/60"
+          >
+            <Image src="/assets/Logo-Transparent.png" alt="" width={75} height={75} priority />
+          </Link>
+
+          <ul className="hidden items-center justify-center lg:flex lg:flex-1">
+            <li className="relative" ref={dropdownRef}>
               <button
-                onClick={() => setServicesOpen((open) => !open)}
-                className={`animation-hover relative mx-2 inline-flex items-center gap-2 px-4 py-2 font-medium transition ${servicesOpen || activeLink === 'services'
-                  ? ' animation-active text-green-500'
-                  : ' text-black-500 hover:text-green-500'
-                  }`}
+                type="button"
+                aria-expanded={servicesOpen}
+                aria-controls="services-menu"
+                onClick={() => setServicesOpen(!servicesOpen)}
+                className={linkClass(servicesOpen || servicesActive) + ' gap-2'}
               >
                 Services
                 <svg
                   className={`size-3 transition ${servicesOpen ? 'rotate-180' : ''}`}
                   viewBox="0 0 10 6"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
-                  <path
-                    d="M1 1L5 5L9 1"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
               {servicesOpen ? (
-                <div className="absolute left-0 z-50 mt-2 w-60 rounded-2xl border border-white/40 bg-white/95 p-4 shadow-[0_20px_45px_-25px_rgba(15,34,71,0.35)]">
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#116768]">
-                    Explore Services
-                  </p>
-                  <ul className="mt-3 space-y-2 text-sm">
-                    <li>
-                      <LinkScroll
-                        to="services"
-                        smooth
-                        duration={600}
-                        offset={-scrollOffset}
-                        onClick={() => setServicesOpen(false)}
-                        className="flex cursor-pointer items-center justify-between rounded-xl px-3 py-2 text-slate-700 transition hover:bg-slate-50"
-                      >
-                        Services Overview
-                        <span className="text-xs text-slate-400">↓</span>
-                      </LinkScroll>
-                    </li>
-                    <li>
-                      <Link
-                        href={{ pathname: '/adult-day-care' }}
-                        className="flex items-center justify-between rounded-xl px-3 py-2 text-slate-700 transition hover:bg-slate-50"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        Adult Day Care
-                        <span className="text-xs text-slate-400">↗</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href={{ pathname: '/nutritious-meals' }}
-                        className="flex items-center justify-between rounded-xl px-3 py-2 text-slate-700 transition hover:bg-slate-50"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        Nutritious Meals
-                        <span className="text-xs text-slate-400">↗</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href={{ pathname: '/medical-transportation' }}
-                        className="flex items-center justify-between rounded-xl px-3 py-2 text-slate-700 transition hover:bg-slate-50"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        Medical Transportation
-                        <span className="text-xs text-slate-400">↗</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href={{ pathname: '/in-home-care' }}
-                        className="flex items-center justify-between rounded-xl px-3 py-2 text-slate-700 transition hover:bg-slate-50"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        In-Home Care
-                        <span className="text-xs text-slate-400">↗</span>
-                      </Link>
-                    </li>
+                <div
+                  id="services-menu"
+                  className="absolute left-0 z-50 mt-2 w-64 rounded-2xl border border-white/40 bg-white/95 p-3 shadow-[0_20px_45px_-25px_rgba(15,34,71,0.35)] backdrop-blur-sm"
+                >
+                  <ul className="space-y-1 text-base">
+                    {serviceLinks.map((item) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          className="block rounded-xl px-3 py-2.5 text-slate-700 transition hover:bg-slate-50 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-teal/60"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               ) : null}
-            </div>
-            <Link
-              href="/about-us"
-              className="animation-hover relative mx-2 inline-block px-4 py-2 text-black-500 transition hover:text-green-500"
-              onClick={() => setActiveLink('about')}
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className={
-                'animation-hover relative mx-2 inline-block px-4 py-2 transition ' +
-                (activeLink === 'contact'
-                  ? ' animation-active text-green-500'
-                  : ' text-black-500 hover:text-green-500')
-              }
-              onClick={() => setActiveLink('contact')}
-            >
-              Contact
-            </Link>
-            <Link
-              href="/careers"
-              className="animation-hover relative mx-2 inline-block px-4 py-2 text-black-500 transition hover:text-green-500"
-            >
-              Careers
-            </Link>
+            </li>
+            {primaryLinks.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className={linkClass(pathname === item.href)}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
-          <div className="flex items-center justify-end gap-4">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <FaFacebookF className="size-5 text-[#1877F2] transition-transform duration-200 hover:scale-110" />
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <FaInstagram className="size-5 text-[#E1306C] transition-transform duration-200 hover:scale-110" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedinIn className="size-5 text-[#0A66C2] transition-transform duration-200 hover:scale-110" />
-            </a>
-          </div>
+
+          <SocialLinks className="hidden lg:flex" />
         </nav>
       </header>
 
-      <MobileFloatingNav
-        activeLink={activeLink}
-        setActiveLink={setActiveLink}
-        scrollOffset={scrollOffset}
-      />
-    </>
+      <MobileFloatingNav />
+    </div>
   )
 }
 

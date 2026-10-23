@@ -1,3 +1,5 @@
+'use client'
+
 // components/PaymentLocationsSection.js
 
 import {
@@ -9,9 +11,10 @@ import {
   BeakerIcon,
 } from '@heroicons/react/24/outline'
 
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import React, { useSyncExternalStore } from 'react'
 import { IoNutritionOutline } from 'react-icons/io5'
+import siteConfig, { hoursSummary, paymentLine } from '../site.config'
 
 const container = {
   hidden: { opacity: 0 },
@@ -85,8 +88,8 @@ const PaymentLocationsSection = () => {
           nearby areas.
         </PaymentCard>
 
-        <PaymentCard icon={ClockIcon} title="Convenient Hours" hoverable={hoverable}>
-          Open Monday–Saturday, 7 AM – 7 PM to fit your family&apos;s schedule.
+        <PaymentCard icon={ClockIcon} title="Hours" hoverable={hoverable}>
+          {siteConfig.hours ? `Open ${hoursSummary()} to fit your family’s schedule.` : siteConfig.hoursNote}
         </PaymentCard>
 
         <PaymentCard icon={UserIcon} title="Compassionate Staff" hoverable={hoverable}>
@@ -101,9 +104,8 @@ const PaymentLocationsSection = () => {
           Each client receives a care plan tailored to their needs and personality.
         </PaymentCard>
 
-        <PaymentCard icon={CurrencyDollarIcon} title="Flexible Payment Options" hoverable={hoverable}>
-          We accept <strong>Medicaid</strong>, <strong>Private Pay</strong>, and{' '}
-          <strong>Veteran Benefits</strong>.
+        <PaymentCard icon={CurrencyDollarIcon} title="Payment Options" hoverable={hoverable}>
+          {paymentLine()}.
         </PaymentCard>
 
         <PaymentCard icon={IoNutritionOutline} title="Nutritious Meals" hoverable={hoverable}>

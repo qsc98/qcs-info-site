@@ -1,4 +1,6 @@
-import { motion } from 'framer-motion'
+'use client'
+
+import { motion } from 'motion/react'
 import Image from 'next/image'
 import React, { useMemo } from 'react'
 import getScrollAnimation from '../../utils/getScrollAnimation'
@@ -9,7 +11,7 @@ const ServiceOfferings = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
 
   return (
-    <div className="mx-auto max-w-screen-xl items-center px-6 py-10 sm:px-8 lg:px-16">
+    <div className="mx-auto max-w-(--breakpoint-xl) items-center px-6 py-10 sm:px-8 lg:px-16">
       <ScrollAnimationWrapper>
         <motion.div variants={scrollAnimation} className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>Services</SectionEyebrow>

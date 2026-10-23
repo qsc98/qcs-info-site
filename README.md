@@ -1,27 +1,34 @@
-# ADHC Website – Static Site
+# Quality Senior Care — website
 
-This is the marketing and informational site for our Adult Day Health Care (ADHC) services, built with **Next.js**, **Tailwind CSS** and **DaisyUI**. It is deployed statically on **Netlify**, powered by GitHub's automatic CI/CD workflow.
+Marketing site for an Adult Day Health Care center in Fairdale, KY. Built with **Next.js 16 (App Router, static export)**, **React 19** and **Tailwind CSS 4**, deployed to **Netlify** from the `out/` folder.
 
-## Tech Stack
+## Business facts live in one place
 
-- **Next.js 13**
-- **Tailwind CSS** – Utility-first responsive styling
-- **Framer Motion** – Scroll and page animations
-- **Netlify** – Static site hosting with GitHub integration
+`site.config.js` holds the name, address, phone, email, hours, payment sources, social links and the launch state. Components read from it; nothing is hard-coded in pages. Before launch:
 
-## Installation
+1. Set `launch.status` to `'open'`.
+2. Fill in `contact.phone`, `contact.phoneDisplay` and `hours`.
+3. Add real `social` URLs if you want icons.
 
-```
-git clone https://github.com/qsc98/qcs-info-site.git
-cd adhc-site
+While `launch.status` is `'pre-launch'`, phone CTAs route to the waitlist, the contact form is replaced by the waitlist form, and hours read "To be announced".
+
+## Develop
+
+```bash
 npm install
+npm run dev        # http://localhost:3000
+npm run lint
+npm run build      # writes the static site to out/
+npx serve out      # preview the export
 ```
 
-## Local Development
+Node 20.9+ is required.
 
-`npm run dev` - Runs the development server at http://localhost:3000
+## Structure
 
-Before pushing changes, verify the build & your changes:
+- `app/` — routes (`page.js` per folder), `layout.js`, metadata routes (`sitemap.js`, `robots.js`, `manifest.js`, `opengraph-image.js`, icons), `globals.css` (Tailwind theme tokens).
+- `components/` — layout (header, mobile nav, footer), page sections, shared UI in `misc/`.
+- `lib/seo.js` — per-page metadata helper and the route list for the sitemap.
+- `public/assets/` — images and Lottie animations.
 
-- npm run export
-- npx serve out
+Forms post to Netlify Forms; they are detected from the static HTML at deploy time.

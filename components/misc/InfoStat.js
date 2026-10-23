@@ -1,7 +1,7 @@
 export default function InfoStat({ icon: Icon, label, value, className = '' }) {
   return (
     <div
-      className={`rounded-2xl border border-white/80 bg-white/80 p-4 text-left shadow-[0_10px_25px_rgba(15,34,71,0.08)] backdrop-blur ${className}`}
+      className={`rounded-2xl border border-white/80 bg-white/80 p-4 text-left shadow-[0_10px_25px_rgba(15,34,71,0.08)] backdrop-blur-sm ${className}`}
     >
       <div className="flex items-center gap-3">
         {Icon ? (

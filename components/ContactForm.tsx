@@ -1,8 +1,12 @@
+'use client'
+
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { FaUser, FaEnvelope, FaPhone, FaCommentDots } from 'react-icons/fa'
 import { z } from 'zod'
+import siteConfig, { isOpen } from '../site.config'
+import WaitlistForm from './WaitlistForm'
 
 const schema = z.object({
   firstName: z.string().min(1, 'First name is required'),
@@ -18,6 +22,11 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>
 
 const ContactForm = () => {
+  if (!isOpen) return <WaitlistForm />
+  return <LaunchedContactForm />
+}
+
+const LaunchedContactForm = () => {
   const [submitted, setSubmitted] = useState(false)
 
   const {
@@ -58,7 +67,7 @@ const ContactForm = () => {
               type="text"
               placeholder="First Name"
               {...register('firstName')}
-              className="w-full border-0 focus:outline-none"
+              className="w-full border-0 focus:outline-hidden"
             />
           </div>
           {errors.firstName && (
@@ -74,7 +83,7 @@ const ContactForm = () => {
               type="text"
               placeholder="Last Name"
               {...register('lastName')}
-              className="w-full border-0 focus:outline-none"
+              className="w-full border-0 focus:outline-hidden"
             />
           </div>
           {errors.lastName && (
@@ -92,7 +101,7 @@ const ContactForm = () => {
             type="email"
             placeholder="Email"
             {...register('email')}
-            className="w-full border-0 focus:outline-none"
+            className="w-full border-0 focus:outline-hidden"
           />
         </div>
         {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>}
@@ -107,7 +116,7 @@ const ContactForm = () => {
             type="tel"
             placeholder="Phone"
             {...register('phone')}
-            className="w-full border-0 focus:outline-none"
+            className="w-full border-0 focus:outline-hidden"
           />
         </div>
       </div>
@@ -160,7 +169,7 @@ const ContactForm = () => {
           <FaCommentDots className="mt-1 text-slate-400" />
           <textarea
             {...register('message')}
-            className="w-full grow border-0 focus:outline-none"
+            className="w-full grow border-0 focus:outline-hidden"
             rows={4}
             placeholder="Share any details you’d like"
           />
@@ -189,7 +198,7 @@ const ContactForm = () => {
       {/* Submit Button */}
       <button
         type="submit"
-        className="w-full rounded-xl bg-[#116768] px-6 py-3 font-semibold text-white shadow-[0_8px_20px_rgba(17,103,104,0.3)] transition hover:bg-[#0d5556] focus:outline-none focus:ring-2 focus:ring-[#116768]/50"
+        className="w-full rounded-xl bg-[#116768] px-6 py-3 font-semibold text-white shadow-[0_8px_20px_rgba(17,103,104,0.3)] transition hover:bg-[#0d5556] focus:outline-hidden focus:ring-2 focus:ring-[#116768]/50"
       >
         Send Message
       </button>
@@ -198,9 +207,7 @@ const ContactForm = () => {
         <div className="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
           Thanks—your request is in. We’ll call you within 1–2 business days (usually sooner). Need
           help now? Call{' '}
-          <a href="tel:+1502XXXXXXX" className="font-semibold underline">
-            (502) XXX-XXXX
-          </a>
+          <a href={`tel:${siteConfig.contact.phone}`} className="font-semibold underline">{siteConfig.contact.phoneDisplay}</a>
           .
         </div>
       )}

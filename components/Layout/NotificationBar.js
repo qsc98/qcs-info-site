@@ -1,36 +1,34 @@
-// components/NotificationBar.js
 import MapPinIcon from '@heroicons/react/24/solid/MapPinIcon'
+import siteConfig, { fullAddress } from '../../site.config'
+
+const barClasses = 'w-full bg-linear-to-r from-[#0a1a2f] via-[#0f2b45] to-[#0a1a2f] text-white'
 
 const NotificationBar = () => {
   return (
-    <>
-      <div className="flex w-full items-center justify-center bg-gradient-to-r from-[#0a1a2f] via-[#0f2b45] to-[#0a1a2f] px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-white lg:hidden">
-        Quality Adult Day Health Care
+    <div className={barClasses}>
+      {/* Mobile: name + short status, single line */}
+      <div className="flex items-center justify-between gap-3 px-4 py-2 text-sm lg:hidden">
+        <span className="truncate font-semibold">{siteConfig.name}</span>
+        <span className="shrink-0 rounded-full bg-white/15 px-2.5 py-0.5 text-xs font-semibold tracking-wide uppercase">
+          {siteConfig.launch.statusShort}
+        </span>
       </div>
-      <div className="hidden w-full bg-gradient-to-r from-[#0a1a2f] via-[#0f2b45] to-[#0a1a2f] px-4 py-2 text-sm text-white lg:flex">
-        <div className="mx-auto flex w-full max-w-screen-xl items-center justify-between gap-6">
-          {/* Left: Address */}
-          <div className="flex flex-1 items-center gap-2 text-white/80">
-            <MapPinIcon className="size-4" />
-            <span>811 Mt Holly Rd, Fairdale, KY 40118</span>
-          </div>
-
-          {/* Center: Brand name */}
-          <div className="flex flex-1 items-center justify-center text-center">
-            <span className="flex items-center gap-3 whitespace-nowrap text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-white/80">
-              <span className="hidden h-px w-10 bg-white/30 sm:block" aria-hidden="true" />
-              Quality Adult Day Health Care
-              <span className="hidden h-px w-10 bg-white/30 sm:block" aria-hidden="true" />
-            </span>
-          </div>
-
-          {/* Right: Opening notice */}
-          <div className="flex flex-1 items-center justify-end gap-3 text-white/80">
-            <span>Opening soon—pending state licensure.</span>
-          </div>
+      {/* Desktop: address | name | status line */}
+      <div className="mx-auto hidden w-full max-w-7xl items-center justify-between gap-6 px-4 py-2 text-sm lg:flex">
+        <div className="flex flex-1 items-center gap-2 text-white/90">
+          <MapPinIcon className="size-4" aria-hidden="true" />
+          <span>{fullAddress}</span>
+        </div>
+        <div className="flex flex-1 items-center justify-center text-center">
+          <span className="text-xs font-semibold tracking-[0.3em] whitespace-nowrap text-white/90 uppercase">
+            {siteConfig.name} • {siteConfig.descriptor}
+          </span>
+        </div>
+        <div className="flex flex-1 items-center justify-end text-right text-white/90">
+          <span>{siteConfig.launch.statusLine}</span>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

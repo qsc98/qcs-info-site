@@ -1,5 +1,7 @@
+'use client'
+
 // components/NutritiousMeals.js
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import React, { useMemo } from 'react'
 import getScrollAnimation from '../../utils/getScrollAnimation'
 import FAQList from '../FaqList'
@@ -32,7 +34,7 @@ const NutritiousMeals = () => {
   ]
 
   return (
-    <div id="nutritious-meals" className="mx-auto max-w-screen-xl px-6 sm:px-8 sm:py-12 lg:px-16">
+    <div id="nutritious-meals" className="mx-auto max-w-(--breakpoint-xl) px-6 sm:px-8 sm:py-12 lg:px-16">
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         <ScrollAnimationWrapper>
           <motion.div
@@ -50,7 +52,7 @@ const NutritiousMeals = () => {
             </p>
 
             <PrimaryCta
-              href="/nutritious-meals?from=nutritious-meals"
+              href="/nutritious-meals"
               className="mt-6 w-full justify-center sm:w-auto"
             >
               See What We Offer

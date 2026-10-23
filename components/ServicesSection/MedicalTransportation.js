@@ -1,4 +1,6 @@
-import { motion } from 'framer-motion'
+'use client'
+
+import { motion } from 'motion/react'
 import React, { useMemo } from 'react'
 import getScrollAnimation from '../../utils/getScrollAnimation'
 import FAQList from '../FaqList'
@@ -34,7 +36,7 @@ const MedicalTransportation = () => {
   return (
     <div
       id="medical-transportation"
-      className="mx-auto max-w-screen-xl px-6 sm:px-8 sm:py-12 lg:px-16"
+      className="mx-auto max-w-(--breakpoint-xl) px-6 sm:px-8 sm:py-12 lg:px-16"
     >
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         <ScrollAnimationWrapper>
@@ -54,7 +56,7 @@ const MedicalTransportation = () => {
             </p>
 
             <PrimaryCta
-              href="/medical-transportation?from=medical-transportation"
+              href="/medical-transportation"
               className="mt-6 w-full justify-center sm:w-auto"
             >
               View Transport Services

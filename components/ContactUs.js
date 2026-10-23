@@ -1,7 +1,9 @@
-import { motion } from 'framer-motion'
+'use client'
+
+import { motion } from 'motion/react'
 import { useMemo } from 'react'
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 import ContactForm from './ContactForm'
+import siteConfig, { fullAddress, isOpen } from '../site.config'
 import getScrollAnimation from '../utils/getScrollAnimation'
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper'
 import SectionEyebrow from './misc/SectionEyebrow'
@@ -19,7 +21,7 @@ const ContactSection = () => {
         style={{ backgroundImage: "url('/assets/honeycomb-background.jpg')" }}
         aria-hidden="true"
       />
-      <div className="relative mx-auto max-w-screen-xl">
+      <div className="relative mx-auto max-w-(--breakpoint-xl)">
         {/* Heading */}
         <ScrollAnimationWrapper>
           <motion.div variants={scrollAnimation} className="mx-auto mb-12 max-w-2xl text-center">
@@ -39,35 +41,22 @@ const ContactSection = () => {
           >
             <div className="rounded-xl bg-white p-6 text-center shadow-lg">
               <p className="text-lg font-semibold">Email</p>
-              <p className="mt-1 text-sm text-black-500">Need help? Drop us an email.</p>
+              <p className="mt-1 text-base text-black-500">Questions? Email us anytime.</p>
               <a
-                href="mailto:admin@qualityseniorcare.org"
+                href={`mailto:${siteConfig.contact.email}`}
                 className="mt-2 block text-sm font-medium text-green-600 underline underline-offset-4 hover:text-green-700"
-              >
-                admin@qualityseniorcare.org
-              </a>
+              >{siteConfig.contact.email}</a>
             </div>
 
             <div className="rounded-xl bg-white p-6 text-center shadow-lg">
               <p className="text-lg font-semibold">Visit us</p>
-              <p className="mt-1 text-sm text-black-500">Come by our office anytime.</p>
-              <span className="mt-2 block text-sm">811 Mt Holly Rd, Fairdale, KY 40118</span>
+              <p className="mt-1 text-base text-black-500">Tours available once we open.</p>
+              <span className="mt-2 block text-base">{fullAddress}</span>
             </div>
 
             <div className="rounded-xl bg-white p-6 text-center shadow-lg">
-              <p className="text-lg font-semibold">Social Media</p>
-              <p className="mt-1 text-sm text-black-500">Stay updated & connect with us.</p>
-              <div className="mt-3 flex justify-center gap-4">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                  <FaFacebookF className="size-5 text-[#1877F2] transition-transform duration-200 hover:scale-110" />
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                  <FaInstagram className="size-5 text-[#E1306C] transition-transform duration-200 hover:scale-110" />
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedinIn className="size-5 text-[#0A66C2] transition-transform duration-200 hover:scale-110" />
-                </a>
-              </div>
+              <p className="text-lg font-semibold">Status</p>
+              <p className="mt-1 text-base text-black-500">{siteConfig.launch.statusLine}</p>
             </div>
           </motion.div>
         </ScrollAnimationWrapper>
@@ -75,7 +64,7 @@ const ContactSection = () => {
         {/* Contact Form Centered */}
           <div className="mx-auto max-w-lg">
             <div className="rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl">
-              <h3 className="mb-6 text-center text-2xl font-bold">Contact Us</h3>
+              <h3 className="mb-6 text-center text-2xl font-bold">{isOpen ? 'Contact Us' : 'Join the Waitlist'}</h3>
               <ContactForm />
             </div>
           </div>

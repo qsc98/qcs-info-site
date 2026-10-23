@@ -1,5 +1,7 @@
+'use client'
+
 // components/AdultDayCareService.js
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import React, { useMemo } from 'react'
 import getScrollAnimation from '../../utils/getScrollAnimation'
 import FAQList from '../FaqList'
@@ -33,7 +35,7 @@ const AdultDayCareService = () => {
   ]
 
   return (
-    <div id="adult-day-care" className="mx-auto max-w-screen-xl px-6 sm:px-8 sm:pb-12 lg:px-16">
+    <div id="adult-day-care" className="mx-auto max-w-(--breakpoint-xl) px-6 sm:px-8 sm:pb-12 lg:px-16">
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         <ScrollAnimationWrapper>
           <motion.div
@@ -53,7 +55,7 @@ const AdultDayCareService = () => {
             </p>
 
             <PrimaryCta
-              href="/adult-day-care?from=adult-day-care"
+              href="/adult-day-care"
               className="mt-6 w-full justify-center sm:w-auto"
             >
               Learn About Day Care

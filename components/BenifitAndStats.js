@@ -1,10 +1,12 @@
+'use client'
+
 import {
   RectangleGroupIcon,
   FaceSmileIcon,
   CreditCardIcon,
   HomeIcon,
 } from '@heroicons/react/24/outline'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { useMemo } from 'react'
 import CountUp from 'react-countup'
 import { MdFaceRetouchingNatural } from 'react-icons/md'
@@ -31,7 +33,7 @@ const BenefitStatsSection = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
 
   return (
-    <div className="mx-auto max-w-screen-xl items-center px-6 pb-12 sm:px-8 lg:px-16" id="benefits">
+    <div className="mx-auto max-w-(--breakpoint-xl) items-center px-6 pb-12 sm:px-8 lg:px-16" id="benefits">
       {/* Section header */}
       <ScrollAnimationWrapper>
         <motion.div variants={scrollAnimation} className="mx-auto mb-8 max-w-3xl text-center">

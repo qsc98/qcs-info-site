@@ -1,6 +1,9 @@
+'use client'
+
 // components/GallerySection.jsx
+import { useReducedMotion } from 'motion/react'
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 /**
  * Premium Gallery Slider (fixed first/last clicks)
@@ -29,12 +32,14 @@ export default function GallerySection({
   autoplayMs = 4000,
 }) {
   const [active, setActive] = useState(0)
+  const reduceMotion = useReducedMotion()
+  const [playing, setPlaying] = useState(true)
   const trackRef = useRef(null)
   const pauseRef = useRef(false)
   const timerRef = useRef(null)
 
   /** Center a given slide index precisely (handles first/last correctly) */
-  const centerSlide = (index, smooth = true) => {
+  const centerSlide = useCallback((index, smooth = true) => {
     const track = trackRef.current
     if (!track) return
     const clamped = Math.max(0, Math.min(index, slides.length - 1))
@@ -42,7 +47,7 @@ export default function GallerySection({
     if (!slide) return
     const left = slide.offsetLeft - (track.clientWidth - slide.clientWidth) / 2
     track.scrollTo({ left, behavior: smooth ? 'smooth' : 'auto' })
-  }
+  }, [slides.length])
 
   /** Public goto helper used by buttons/bars */
   const goTo = (index, smooth = true) => {
@@ -86,19 +91,19 @@ export default function GallerySection({
     const onResize = () => centerSlide(active, false)
     window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
-  }, [active])
+  }, [active, centerSlide])
 
   /** Autoplay: advance one slide; wrap to 0 after last */
   useEffect(() => {
     const tick = () => {
-      if (pauseRef.current) return
+      if (pauseRef.current || !playing || reduceMotion) return
       const next = active + 1 <= slides.length - 1 ? active + 1 : 0
       centerSlide(next)
     }
     clearInterval(timerRef.current)
     timerRef.current = setInterval(tick, autoplayMs)
     return () => clearInterval(timerRef.current)
-  }, [active, slides.length, autoplayMs])
+  }, [active, slides.length, autoplayMs, playing, reduceMotion, centerSlide])
 
   const onKeyDown = (e) => {
     if (e.key === 'ArrowRight') {
@@ -131,13 +136,16 @@ export default function GallerySection({
         {/* Track */}
         <div
           ref={trackRef}
-          className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth rounded-[22px] bg-white/60 p-3 ring-1 ring-gray-100 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth rounded-[22px] bg-white/60 p-3 ring-1 ring-gray-100 [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden"
+          role="group"
           aria-roledescription="carousel"
+          aria-label="Photos of our center"
         >
           {slides.map((img, idx) => (
             <div
               key={idx}
-              className="relative aspect-[4/3] w-4/5 min-w-[80%] snap-center overflow-hidden rounded-[18px] shadow sm:w-[55%] sm:min-w-[55%] lg:w-2/5 lg:min-w-[40%]"
+              className="relative aspect-4/3 w-4/5 min-w-[80%] snap-center overflow-hidden rounded-[18px] shadow sm:w-[55%] sm:min-w-[55%] lg:w-2/5 lg:min-w-[40%]"
+              role="group"
               aria-roledescription="slide"
               aria-label={`${idx + 1} of ${slides.length}`}
             >
@@ -155,8 +163,8 @@ export default function GallerySection({
         </div>
 
         {/* Edge gradients */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-10 rounded-l-[22px] bg-gradient-to-r from-white to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-10 rounded-r-[22px] bg-gradient-to-l from-white to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-10 rounded-l-[22px] bg-linear-to-r from-white to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-10 rounded-r-[22px] bg-linear-to-l from-white to-transparent" />
 
         {/* Controls + Modern progress bars */}
         <div className="mt-4 flex select-none items-center gap-2">
@@ -178,7 +186,7 @@ export default function GallerySection({
                 type="button"
                 aria-label={`Go to slide ${i + 1}`}
                 onClick={() => goTo(i)}
-                className="relative h-1 flex-1 cursor-pointer overflow-hidden rounded-full bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                className="relative h-6 flex-1 cursor-pointer overflow-hidden rounded-full bg-gray-200 before:absolute before:inset-y-0 before:inset-x-0 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-emerald-400"
               >
                 <span
                   className={`absolute left-0 top-0 h-full bg-emerald-500 transition-all duration-500 ${
@@ -188,6 +196,16 @@ export default function GallerySection({
               </button>
             ))}
           </div>
+
+          <button
+            type="button"
+            aria-pressed={!playing}
+            onClick={() => setPlaying((p) => !p)}
+            className="inline-flex rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-800 shadow-xs transition hover:border-gray-300"
+          >
+            {playing ? 'Pause' : 'Play'}
+          </button>
+
 
           {/* Next */}
           <button

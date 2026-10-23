@@ -1,3 +1,5 @@
+'use client'
+
 // components/FAQList.js
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import { useState } from 'react'
@@ -9,9 +11,9 @@ const FAQItem = ({ question, answer }) => {
     <div className="rounded-lg border border-gray-200">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between p-4 text-left focus:outline-none"
+        className="flex w-full items-center justify-between p-4 text-left focus:outline-hidden focus-visible:ring-2 focus-visible:ring-teal/60"
       >
-        <span className="text-black-800 font-medium">{question}</span>
+        <span className="font-medium text-black-700">{question}</span>
         <ChevronDownIcon
           className={`size-5 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
         />

@@ -1,8 +1,11 @@
+'use client'
+
 import { UserGroupIcon, HomeModernIcon, SparklesIcon, TruckIcon } from '@heroicons/react/24/outline'
 import PhoneIcon from '@heroicons/react/24/solid/PhoneIcon'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import Image from 'next/image'
 import { useMemo } from 'react'
+import { paymentLine } from '../site.config'
 import getScrollAnimation from '../utils/getScrollAnimation'
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper'
 import PrimaryCta from './misc/PrimaryCta'
@@ -34,15 +37,15 @@ const Hero = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
 
   return (
-    <div className="relative w-full overflow-hidden pb-16 pt-24 sm:pb-20 sm:pt-36 lg:pb-24 lg:pt-40">
+    <div className="relative w-full overflow-hidden pb-16 pt-40 sm:pb-20 sm:pt-44 lg:pb-24 lg:pt-40">
       <div
         className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-40"
         style={{ backgroundImage: "url('/assets/background.jpg')" }}
         aria-hidden="true"
       />
-      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-white" />
-      <div className="relative mx-auto max-w-screen-xl px-4 sm:px-8 xl:px-16">
-        <ScrollAnimationWrapper>
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-linear-to-b from-transparent to-white" />
+      <div className="relative mx-auto max-w-(--breakpoint-xl) px-4 sm:px-8 xl:px-16">
+        <ScrollAnimationWrapper eager>
           <motion.div
             className="grid grid-cols-1 gap-4 py-6 sm:grid-cols-2 sm:gap-20 lg:gap-32"
             variants={scrollAnimation}
@@ -89,26 +92,14 @@ const Hero = () => {
                 </PrimaryCta>
               </div>
 
-              <div className="mt-12 flex items-center gap-2 text-xs text-slate-500 sm:gap-3">
-                <span>Medicaid & private pay accepted • Services offered</span>
-                <span
-                  className="group relative flex size-4 items-center justify-center rounded-full bg-[#116768] text-[10px] font-bold text-white"
-                  aria-label="Coverage and services info"
-                >
-                  i
-                  <span className="invisible absolute bottom-full left-1/2 z-10 mb-2 w-64 -translate-x-1/2 rounded-xl border border-slate-100 bg-white p-4 text-center text-[11px] text-navy shadow-xl opacity-0 transition group-hover:visible group-hover:opacity-100">
-                    Coverage eligibility and service availability can change. Please call ahead to
-                    confirm Medicaid/private pay acceptance and specific offerings.
-                  </span>
-                </span>
-              </div>
+              <p className="mt-10 text-base text-slate-600">{paymentLine()}</p>
             </div>
 
             <div className="order-1 flex w-full sm:order-2">
               <motion.div className="size-full animate-float" variants={scrollAnimation}>
                 <Image
                   src="/assets/main_hero_section.svg"
-                  alt="Seniors enjoying"
+                  alt="Illustration of older adults enjoying activities together at a day center"
                   quality={100}
                   width={612}
                   height={383}

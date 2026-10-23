@@ -1,4 +1,6 @@
-import { motion } from 'framer-motion'
+'use client'
+
+import { motion } from 'motion/react'
 import Image from 'next/image'
 import React, { useMemo } from 'react'
 import { FaArrowRight } from 'react-icons/fa'
@@ -13,7 +15,7 @@ const AboutUs = () => {
 
   return (
     <div
-      className="section-shell relative mx-auto max-w-screen-xl overflow-hidden rounded-3xl px-6 py-16 sm:px-8 lg:px-16"
+      className="section-shell relative mx-auto max-w-(--breakpoint-xl) overflow-hidden rounded-3xl px-6 py-16 sm:px-8 lg:px-16"
       id="about"
       style={{
         backgroundImage: "url('/assets/background-3.jpg')",
