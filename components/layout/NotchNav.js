@@ -34,7 +34,7 @@ export default function NotchNav({ ref, links, inert, menuOpen, onOpenMenu }) {
           >
             <ul className="hidden gap-[26px] lg:flex">
               {links.map((link) => (
-                <li key={link.id}>
+                <li key={link.href}>
                   <SmartLink
                     href={link.href}
                     className="block rounded py-2.5 text-[16px] font-semibold text-white focus-ring-inverse hover:text-mint-strong"

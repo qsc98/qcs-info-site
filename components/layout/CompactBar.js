@@ -35,7 +35,7 @@ export default function CompactBar({
         <nav aria-label="Main" className="flex items-center gap-1.5 lg:gap-8">
           <ul className="hidden gap-[26px] lg:flex">
             {links.map((link) => (
-              <li key={link.id}>
+              <li key={link.href}>
                 <SmartLink
                   href={link.href}
                   className="block rounded py-2.5 text-[16px] font-semibold text-navy focus-ring hover:text-teal"

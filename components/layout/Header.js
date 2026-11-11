@@ -6,7 +6,7 @@ import CompactBar from '@/components/layout/CompactBar'
 import MenuSheet from '@/components/layout/MenuSheet'
 import NotchNav from '@/components/layout/NotchNav'
 import useInView from '@/hooks/useInView'
-import { sectionHref, sectionLinks } from '@/lib/navigation'
+import { navLinks, sectionHref } from '@/lib/navigation'
 
 /**
  * Site header (design/README.md §3.1). On the home page the notch nav sits
@@ -36,7 +36,10 @@ export default function Header() {
     return () => delete document.documentElement.dataset.menu
   }, [menuOpen])
 
-  const links = sectionLinks.map((link) => ({ ...link, href: sectionHref(link.id, isHome) }))
+  const links = navLinks.map(({ label, id, href }) => ({
+    label,
+    href: href ?? sectionHref(id, isHome),
+  }))
   // The waitlist form is in the footer, so it is on every page.
   const waitlistHref = '#waitlist'
 

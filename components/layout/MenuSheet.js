@@ -11,7 +11,7 @@ import useModalBehavior from '@/hooks/useModalBehavior'
 import { companyLinks, serviceLinks } from '@/lib/navigation'
 import siteConfig, { locality } from '@/site.config'
 
-// "Our center" is already a section link at the top of the sheet.
+// "Our center" is already among the header links at the top of the sheet.
 const moreLinks = companyLinks.filter((link) => link.href !== '/our-center')
 
 const rowClass = 'flex min-h-12 items-center rounded-lg font-semibold focus-ring'
@@ -77,7 +77,7 @@ export default function MenuSheet({ open, onClose, links, waitlistHref }) {
           <nav aria-label="Menu" className="flex flex-1 flex-col px-5 pb-6">
             <ul className="border-b border-line pb-2">
               {links.map((link) => (
-                <li key={link.id}>
+                <li key={link.href}>
                   <SmartLink
                     href={link.href}
                     onClick={onClose}
