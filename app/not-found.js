@@ -9,7 +9,7 @@ export const metadata = { title: 'Page not found' }
 export default function NotFound() {
   return (
     <>
-      <Section spacing="none" className="px-5 pt-[110px] md:px-10 md:pt-[150px]">
+      <Section spacing="none" className="px-5 pt-[90px] md:px-10 md:pt-[120px]">
         <div className="flex max-w-[640px] flex-col gap-4">
           <Eyebrow>Page not found</Eyebrow>
           <h1 className="type-h1 text-navy">We can’t find that page</h1>
