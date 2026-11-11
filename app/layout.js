@@ -1,4 +1,4 @@
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
+import { Nunito_Sans, Outfit } from 'next/font/google'
 import './globals.css'
 import JsonLd from '../components/JsonLd'
 import Footer from '../components/Layout/Footer'
@@ -6,10 +6,17 @@ import Header from '../components/Layout/Header'
 import { defaultTitle } from '../lib/seo'
 import siteConfig from '../site.config'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter-sans', display: 'swap' })
-const jakarta = Plus_Jakarta_Sans({
+// Display: headings, card titles, numbers, wordmark. Body: everything else.
+const outfit = Outfit({
   subsets: ['latin'],
-  variable: '--font-plus-jakarta',
+  weight: ['500', '600', '700'],
+  variable: '--font-outfit',
+  display: 'swap',
+})
+const nunitoSans = Nunito_Sans({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-nunito-sans',
   display: 'swap',
 })
 
@@ -39,7 +46,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${nunitoSans.variable}`}>
       <body>
         <a
           href="#main"

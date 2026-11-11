@@ -10,9 +10,20 @@
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow-none: none;
 
-  /* Loaded via next/font in app/layout.js */
-  --font-jakarta: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
-  --font-inter: var(--font-inter-sans), ui-sans-serif, system-ui, sans-serif;
+  /* Design shadows (design/tokens.json → shadow) */
+  --shadow-float-image: 0 14px 30px rgba(15, 34, 71, 0.25);
+  --shadow-float-light: 0 18px 40px rgba(15, 34, 71, 0.16);
+  --shadow-card-light: 0 14px 30px rgba(15, 34, 71, 0.2);
+  --shadow-bar: 0 12px 30px rgba(15, 34, 71, 0.18);
+  --shadow-avatar: 0 14px 30px rgba(15, 34, 71, 0.15);
+  --shadow-peek: 0 -10px 30px rgba(15, 34, 71, 0.12);
+
+  /* Loaded via next/font in app/layout.js (Outfit + Nunito Sans). */
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-nunito-sans), ui-sans-serif, system-ui, sans-serif;
+  /* Legacy names still used by the not-yet-redesigned inner pages. */
+  --font-jakarta: var(--font-display);
+  --font-inter: var(--font-body);
 
   --color-black-500: #4f5665;
   --color-black-600: #0b132a;
@@ -33,8 +44,26 @@
   --color-gray-400: #afb5c0;
   --color-gray-500: #dddddd;
 
+  /* Design colors (design/tokens.json → color) */
   --color-navy: #1a4566;
   --color-teal: #116768;
+  --color-teal-hover: #0d5556;
+  --color-mint: #e8f3f1;
+  --color-mint-strong: #9fd8cf;
+  --color-mint-mid: #5fb3a5;
+  --color-grey: #f7f8f5;
+  --color-line: #e3ebe8;
+  --color-line-ui: #d5dde6;
+  --color-text: #1f2937;
+  --color-text-muted: #475569;
+  --color-text-faint: #64748b;
+  --color-on-navy-muted: #c9d7e3;
+  --color-on-navy-faint: #9fb0c0;
+  --color-on-teal-muted: #d8efeb;
+  --color-on-image-text: #e6edf3;
+  --color-amber: #f5b544;
+  --color-amber-status: #ffd27a;
+  --color-amber-status-on-light: #b7791f;
   --color-deepnavy: #143b58;
   --color-darkneutral: #0a3d35;
   --color-neutraltext: #0f172a;
@@ -52,6 +81,16 @@
   --radius-lg: 0.5rem;
   --radius-md: calc(0.5rem - 2px);
   --radius-sm: calc(0.5rem - 4px);
+
+  /* Design radii (design/tokens.json → radius) */
+  --radius-panel: 32px;
+  --radius-panel-mobile: 24px;
+  --radius-panel-mobile-small: 22px;
+  --radius-card: 24px;
+  --radius-card-small: 18px;
+  --radius-chip: 16px;
+  --radius-icon-tile: 12px;
+  --radius-pill: 999px;
 
   --animate-float: float 6s ease-in-out infinite;
 
@@ -77,8 +116,10 @@
   }
 
   html {
-    font-family: var(--font-inter);
+    font-family: var(--font-body);
     scroll-behavior: smooth;
+    /* Keeps anchor targets clear of the fixed compact header. */
+    scroll-padding-top: 72px;
   }
 
   body {
