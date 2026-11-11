@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main
           id="main"
-          className="flex flex-col gap-y-16 pb-32 sm:gap-y-20 lg:gap-y-28 lg:pb-0"
+          className="flex flex-col gap-y-16 sm:gap-y-20 lg:gap-y-28"
         >
           {children}
         </main>
