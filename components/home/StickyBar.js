@@ -6,7 +6,7 @@ import cx from '@/lib/cx'
 
 /**
  * §3.9 Phone-only bar with the two main actions. It steps aside while the
- * waitlist section is on screen and while the header's menu sheet is open
+ * footer's waitlist form is on screen and while the header's menu sheet is open
  * (the header sets <html data-menu="open">).
  */
 export default function StickyBar() {

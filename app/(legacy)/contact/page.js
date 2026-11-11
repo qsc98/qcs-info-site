@@ -107,7 +107,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="h-full" id="waitlist">
+          <div className="h-full" id="contact-form">
             <div className="h-full rounded-2xl border border-slate-100 bg-white p-8 shadow-xl lg:p-12">
               <h2 className="mb-2 text-2xl font-bold text-navy">
                 {isOpen ? 'Send us a message' : 'Be the first to know when we open'}

@@ -2,7 +2,6 @@ import Hero from '@/components/home/Hero'
 import Services from '@/components/home/Services'
 import Stats from '@/components/home/Stats'
 import StickyBar from '@/components/home/StickyBar'
-import Waitlist from '@/components/home/Waitlist'
 import Who from '@/components/home/Who'
 import WhyAndCenter from '@/components/home/WhyAndCenter'
 
@@ -14,7 +13,6 @@ export default function Home() {
       <Stats />
       <Who />
       <WhyAndCenter />
-      <Waitlist />
       <StickyBar />
     </>
   )

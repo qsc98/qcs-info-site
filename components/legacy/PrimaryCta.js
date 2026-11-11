@@ -17,7 +17,7 @@ export default function PrimaryCta({ href = '#', children, className = '', varia
     if (siteConfig.contact.phone) {
       target = `tel:${siteConfig.contact.phone}`
     } else {
-      target = isOpen ? '/contact' : '/contact#waitlist'
+      target = isOpen ? '/contact' : '#waitlist'
       label = isOpen ? 'Contact us' : 'Join the waitlist'
     }
   }

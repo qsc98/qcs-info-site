@@ -37,7 +37,8 @@ export default function Header() {
   }, [menuOpen])
 
   const links = sectionLinks.map((link) => ({ ...link, href: sectionHref(link.id, isHome) }))
-  const waitlistHref = sectionHref('waitlist', isHome)
+  // The waitlist form is in the footer, so it is on every page.
+  const waitlistHref = '#waitlist'
 
   return (
     <header>

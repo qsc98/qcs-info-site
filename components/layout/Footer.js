@@ -15,7 +15,10 @@ const columns = [
   { title: 'Legal', links: legalLinks },
 ]
 
-/** Footer 1 (design/README.md §3.8). Every business fact comes from site.config. */
+/**
+ * Footer 1 (design/README.md §3.8), with the waitlist moved to its top (see
+ * "Changes after sign-off" there). Every business fact comes from site.config.
+ */
 export default function Footer() {
   const showWaitlist = launch.waitlist && !isOpen
   const notes = statusNotes()
@@ -24,6 +27,28 @@ export default function Footer() {
     <footer className="bg-navy text-white">
       {/* The 110px phone bottom padding clears the home sticky bar. */}
       <div className="mx-auto flex max-w-page flex-col gap-6 px-5 pt-9 pb-[110px] md:gap-9 md:px-10 md:pt-14 md:pb-7">
+        {showWaitlist ? (
+          // The site's one conversion. Every "join the waitlist" link targets #waitlist.
+          <section
+            id="waitlist"
+            aria-labelledby="waitlist-title"
+            className="flex flex-wrap items-center gap-4 rounded-card-md border border-white/14 bg-white/8 p-4 md:gap-8 md:p-7"
+          >
+            <div className="flex flex-[1_1_320px] flex-col gap-1.5">
+              <h2 id="waitlist-title" className="type-card-title">
+                Be first to know
+              </h2>
+              <p className="text-[15px] leading-normal text-on-navy-muted">
+                One email with the opening date, hours and how to enroll. No health information,
+                please.
+              </p>
+            </div>
+            <div className="flex-[1_1_380px]">
+              <WaitlistForm />
+            </div>
+          </section>
+        ) : null}
+
         <div className="flex flex-wrap justify-between gap-6 md:gap-12">
           <div className="flex flex-[1_1_300px] flex-col gap-3.5">
             <Link
@@ -92,17 +117,6 @@ export default function Footer() {
             ))}
           </nav>
         </div>
-
-        {showWaitlist ? (
-          <div className="flex flex-wrap items-center gap-3.5 rounded-card-md border border-white/14 bg-white/8 p-4 md:px-[22px] md:py-[18px]">
-            <h2 className="flex-[1_1_260px] font-display text-[17px] font-semibold">
-              Get the one opening email
-            </h2>
-            <div className="flex-[1_1_320px]">
-              <WaitlistForm layout="strip" />
-            </div>
-          </div>
-        ) : null}
 
         <div className="flex flex-wrap justify-between gap-x-6 gap-y-2 border-t border-white/14 pt-[18px] text-[13px] text-on-navy-faint">
           <span>
