@@ -42,8 +42,8 @@ export default function WhyAndCenter() {
           All of it happens in one bright, step-free building on Mt Holly Road, minutes from South
           Louisville, with a kitchen that cooks on site and vans that load at the door. Come see it.
         </p>
-        <ButtonLink href="#waitlist" className="self-start">
-          Request a tour at opening
+        <ButtonLink href="/about-us" className="self-start">
+          More about us
         </ButtonLink>
       </Reveal>
 
