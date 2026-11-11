@@ -10,6 +10,10 @@ const variants = {
   primary: { fill: 'bg-navy text-white hover:bg-teal', ring: 'focus-ring' },
   accent: { fill: 'bg-teal text-white hover:bg-teal-hover', ring: 'focus-ring' },
   subtle: { fill: 'bg-grey text-navy hover:bg-mint', ring: 'focus-ring' },
+  secondary: {
+    fill: 'bg-white text-navy ring-1 ring-line ring-inset hover:bg-grey',
+    ring: 'focus-ring',
+  },
   inverse: { fill: 'bg-white text-navy hover:bg-mint', ring: 'focus-ring-inverse' },
   'outline-inverse': {
     fill: 'font-semibold text-white ring-2 ring-white/70 ring-inset hover:bg-white/10',

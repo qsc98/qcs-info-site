@@ -70,6 +70,9 @@ export const fullAddress = `${siteConfig.address.street}, ${siteConfig.address.c
 
 export const locality = `${siteConfig.address.city}, ${siteConfig.address.region}`
 
+/** Opens the address in Google Maps; a link, so nothing loads until clicked. */
+export const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`
+
 /** Licensing and Medicaid status as short phrases, e.g. for the legal bar. */
 export function statusNotes() {
   const { licensed, medicaid } = siteConfig.launch
@@ -77,6 +80,18 @@ export function statusNotes() {
     licensed && 'Licensed by the Commonwealth of Kentucky',
     medicaid === 'enrolling' && 'Medicaid provider enrollment in progress',
   ].filter(Boolean)
+}
+
+/** What a page should say about Medicaid waivers right now. */
+export function medicaidNote() {
+  return siteConfig.launch.medicaid === 'enrolled'
+    ? 'We are a Kentucky Medicaid provider and will help check waiver eligibility and paperwork.'
+    : 'Kentucky Medicaid provider enrollment is in progress. Once enrolled, we will help check waiver eligibility and paperwork.'
+}
+
+/** Hours for a sentence or chip: "Hours: to be announced" until set. */
+export function hoursLabel() {
+  return siteConfig.hours ? hoursSummary() : 'to be announced'
 }
 
 export function hoursSummary() {

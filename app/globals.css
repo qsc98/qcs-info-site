@@ -104,6 +104,18 @@
   }
 }
 
+/* Inner-page <h1>: the page title in a light hero panel. */
+@utility type-h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  @variant md {
+    font-size: 52px;
+  }
+}
+
 @utility type-h2 {
   font-family: var(--font-display);
   font-weight: 600;
@@ -169,6 +181,29 @@
  * the call site (hidden, w-full, font-semibold…) overrides them.
  */
 @layer components {
+  /* Long-form text (privacy policy, terms). */
+  .prose {
+    @apply type-body text-text-muted;
+    & > * + * {
+      margin-top: 1em;
+    }
+    & h2 {
+      @apply mt-10 type-title-sm text-navy;
+    }
+    & ul {
+      @apply list-disc pl-6;
+    }
+    & li + li {
+      margin-top: 0.5em;
+    }
+    & strong {
+      @apply font-semibold text-text;
+    }
+    & a {
+      @apply text-teal underline hover:text-teal-hover;
+    }
+  }
+
   .btn {
     @apply inline-flex items-center justify-center rounded-pill text-center font-bold transition-colors disabled:opacity-60;
   }

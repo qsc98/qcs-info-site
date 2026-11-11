@@ -4,7 +4,7 @@ import { ButtonLink } from '@/components/ui/Button'
 import Float from '@/components/ui/Float'
 import Icon from '@/components/ui/Icon'
 import Reveal from '@/components/ui/Reveal'
-import services from '@/lib/services'
+import services from '@/content/services'
 import siteConfig, { locality } from '@/site.config'
 
 const mosaic = [
