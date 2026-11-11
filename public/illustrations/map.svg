@@ -1,42 +1,48 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <!--
+    Composition is kept inside x 260-940, y 90-440: the part every crop shows
+    (a square on desktop keeps x 225-975, 4:3 keeps x 100-1100) and above the
+    address card that covers the bottom of the frame (most on phones).
+  -->
   <rect width="1200" height="750" fill="#eef3f1"/>
-  <!-- parks -->
-  <rect x="40" y="60" width="300" height="220" rx="28" fill="#cfe8e2"/>
-  <rect x="880" y="460" width="280" height="240" rx="28" fill="#cfe8e2"/>
-  <!-- blocks -->
+  <g transform="translate(0 -50)">
+  <!-- blocks and parks -->
   <g fill="#ffffff">
-    <rect x="400" y="60" width="220" height="150" rx="14"/>
-    <rect x="680" y="60" width="180" height="150" rx="14"/>
-    <rect x="40" y="340" width="300" height="140" rx="14"/>
-    <rect x="400" y="270" width="220" height="200" rx="14"/>
-    <rect x="680" y="270" width="180" height="200" rx="14"/>
-    <rect x="40" y="540" width="300" height="160" rx="14"/>
-    <rect x="400" y="530" width="220" height="170" rx="14"/>
-    <rect x="680" y="530" width="180" height="170" rx="14"/>
-    <rect x="920" y="60" width="240" height="150" rx="14"/>
-    <rect x="920" y="270" width="240" height="140" rx="14"/>
+    <rect x="30" y="30" width="270" height="180" rx="16" fill="#cfe8e2"/>
+    <rect x="360" y="30" width="480" height="180" rx="16"/>
+    <rect x="900" y="30" width="270" height="180" rx="16"/>
+    <rect x="30" y="270" width="270" height="220" rx="16"/>
+    <rect x="900" y="270" width="270" height="220" rx="16"/>
+    <rect x="30" y="550" width="270" height="250" rx="16"/>
+    <rect x="360" y="550" width="480" height="250" rx="16"/>
+    <rect x="900" y="550" width="270" height="250" rx="16" fill="#cfe8e2"/>
   </g>
-  <!-- roads -->
-  <g stroke="#d9e2de" stroke-width="40" stroke-linecap="round" fill="none">
-    <path d="M370 0 L 370 750"/>
-    <path d="M650 0 L 650 750"/>
-    <path d="M890 0 L 890 750"/>
-    <path d="M0 240 L 1200 240"/>
-    <path d="M0 500 L 1200 500"/>
+  <!-- the center's block, outlined -->
+  <rect x="360" y="270" width="480" height="220" rx="16" fill="#ffffff" stroke="#9fd8cf" stroke-width="6"/>
+  <!-- side streets -->
+  <g stroke="#d9e2de" stroke-width="40" fill="none">
+    <path d="M330 0 V 800"/>
+    <path d="M870 0 V 800"/>
+    <path d="M0 520 H 1200"/>
   </g>
   <!-- Mt Holly Rd -->
-  <path d="M0 240 L 1200 240" stroke="#9fd8cf" stroke-width="40" stroke-linecap="round" fill="none"/>
-  <path d="M0 240 L 1200 240" stroke="#ffffff" stroke-width="4" stroke-dasharray="26 22" fill="none"/>
-  <!-- road label -->
-  <rect x="860" y="190" width="300" height="38" rx="19" fill="#ffffff"/>
-  <text x="1010" y="216" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#116768">Mt Holly Rd</text>
-  <!-- center building -->
-  <rect x="470" y="300" width="100" height="90" rx="10" fill="#1a4566"/>
-  <!-- pin -->
-  <g transform="translate(520 300)">
-    <circle cx="0" cy="18" r="22" fill="#1a4566" opacity="0.18"/>
-    <path d="M0 -120 C -50 -120 -80 -82 -80 -40 C -80 10 0 20 0 20 C 0 20 80 10 80 -40 C 80 -82 50 -120 0 -120 Z" fill="#116768"/>
-    <circle cx="0" cy="-46" r="30" fill="#ffffff"/>
-    <circle cx="0" cy="-46" r="14" fill="#116768"/>
+  <path d="M0 240 H 1200" stroke="#9fd8cf" stroke-width="44" fill="none"/>
+  <path d="M0 240 H 1200" stroke="#ffffff" stroke-width="4" stroke-dasharray="26 22" fill="none"/>
+  <rect x="680" y="219" width="196" height="42" rx="21" fill="#ffffff" stroke="#9fd8cf" stroke-width="3"/>
+  <text x="778" y="249" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="0.3" fill="#116768">Mt Holly Rd</text>
+  <!-- the center: navy building with a teal roof band and a step-free door -->
+  <g>
+    <rect x="520" y="318" width="160" height="112" rx="12" fill="#1a4566"/>
+    <rect x="520" y="318" width="160" height="22" rx="10" fill="#116768"/>
+    <rect x="538" y="354" width="34" height="26" rx="5" fill="#cfe8e2"/>
+    <rect x="628" y="354" width="34" height="26" rx="5" fill="#cfe8e2"/>
+    <rect x="585" y="386" width="30" height="44" rx="5" fill="#9fd8cf"/>
+    <rect x="566" y="428" width="68" height="8" rx="4" fill="#d6cfc0"/>
+  </g>
+  <!-- pin: a teardrop whose tip marks the building -->
+  <ellipse cx="600" cy="324" rx="24" ry="7" fill="#1a4566" opacity="0.25"/>
+  <path d="M600 322 C 584 292 540 262 540 200 A 60 60 0 1 1 660 200 C 660 262 616 292 600 322 Z" fill="#116768" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="600" cy="200" r="34" fill="#ffffff"/>
+  <path transform="translate(573.6 175) scale(2.2)" d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="#116768"/>
   </g>
 </svg>
