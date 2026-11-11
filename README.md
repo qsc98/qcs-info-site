@@ -33,19 +33,24 @@ Node 20.9+ is required.
 
 ```
 app/
-  layout.js, page.js    root shell (fonts, header, footer) and the home page
-  (legacy)/             pages not redesigned yet; the route group keeps their URLs
-  globals.css           design tokens, type roles, focus rings, .btn
-  legacy.css            the old styles, scoped to .legacy
+  layout.js             root shell: fonts, header, footer (with the waitlist), JSON-LD
+  page.js               home page
+  <route>/page.js       one folder per page; service pages are three lines over a template
+  globals.css           design tokens, type roles, focus rings, .btn, .prose
 components/
-  ui/                   primitives: Button, Section, SectionTitle, Eyebrow, Icon, IconTile, Logo, Reveal, Float
+  ui/                   primitives: Button, Section, Panel, SectionIntro, SectionTitle, Eyebrow,
+                        Chip, CheckList, NumberedList, FeatureCard, CardGrid, Icon, IconTile,
+                        Logo, Reveal, Float
+  sections/             page sections shared across pages: PageHero, Faq, PayingForCare,
+                        OtherServices, CenterMap, LegalPage
+  services/             ServicePage (the service template) and ServiceCard
+  home/                 home-only sections, in page order
   layout/               Header (NotchNav, CompactBar, MenuSheet), Footer, Wordmark
-  home/                 home page sections, in page order
-  forms/                NetlifyForm and the waitlist form
+  forms/                NetlifyForm, WaitlistForm, ContactForm (shown once open)
   seo/                  JSON-LD
-  legacy/               components only the (legacy) pages use
+content/services/       the four services (index.js) and each service page's copy
 hooks/                  useInView, useModalBehavior, useMotionAllowed, useHydrated
-lib/                    navigation, services (the four, in order), seo, cx
+lib/                    navigation, seo, cx
 public/illustrations/   the design's illustrations (no photos of people)
 ```
 
@@ -53,16 +58,17 @@ public/illustrations/   the design's illustrations (no photos of people)
 
 - **Imports** use the `@/` root alias; only same-folder imports are relative.
 - **Files:** lowercase folders, PascalCase component files, one exported component per file. A small helper component used by only one file can live in that file.
-- **Styling** comes from the tokens and type roles in `app/globals.css` (`type-h2`, `type-body`, `rounded-panel`, `shadow-float-light`, `max-w-page`…). Arbitrary values are for one-off sizes taken from the spec, not for colors. Pass `hidden`, `w-full` and similar to `ButtonLink` via `className`; its base styles are in the components layer so utilities win.
+- **Pages** are compositions of `components/sections` and `components/ui`. Copy that belongs to one page lives in that page (or in `content/` when a template renders it).
+- **Styling** comes from the tokens and type roles in `app/globals.css` (`type-h1`, `type-h2`, `type-body`, `rounded-panel`, `shadow-float-light`, `max-w-page`…). Arbitrary values are for one-off sizes taken from the spec, not for colors. Pass `hidden`, `w-full` and similar to `ButtonLink` via `className`; its base styles are in the components layer so utilities win. Do not override a utility a component already sets (`Section` padding, `max-w-page`): without a class merger the winner depends on stylesheet order. Add a prop or variant instead.
 - **Focus:** every interactive element gets `focus-ring`, or `focus-ring-inverse` on navy, teal or image surfaces.
-- **Business facts** (name, address, email, hours, launch state) are read from `site.config.js`, never typed into components.
+- **Business facts** (names, address, email, hours, launch and Medicaid state) are read from `site.config.js`, never typed into components. Until opening there is no phone number, no hours and no rates on the site.
 - **Motion** goes through `Reveal` and `Float`. The server HTML is always the final, visible state, and nothing animates under reduced motion.
 - **Forms** render through `NetlifyForm`, which adds data-netlify, the hidden form-name and the honeypot. Forms that share a name must use the same field names.
 
-## Redesigning an inner page
+## Adding a service page
 
-1. Move its folder out of `app/(legacy)/` (the URL does not change).
-2. Build it from `components/ui` and the tokens; drop its `components/legacy` imports.
-3. When `app/(legacy)/` is empty, delete it with `app/legacy.css` and `components/legacy/`.
+1. Add the service to `content/services/index.js` (it then appears on the home page, header menu and footer).
+2. Add its copy as `content/services/<slug>.js`, following an existing one; `highlights` and `paying` are optional.
+3. Add `app/<slug>/page.js` rendering `ServicePage`, and the route to `lib/seo.js`.
 
 Forms post to Netlify Forms; they are detected from the static HTML at deploy time.
