@@ -19,6 +19,7 @@ export default function Services() {
     <Section id="services" className="flex flex-col gap-4 md:gap-8">
       <Reveal>
         <SectionIntro
+          wide
           eyebrow="Services"
           title={
             <>
