@@ -325,3 +325,13 @@ Slot aspect ratios to keep if any image is replaced: hero 16:9 (desktop), card i
 - **To change a section:** edit its fragment under `final/sections/`, then paste the same change into both full pages (or regenerate the full page by concatenating `00` + the fragments inside the page shell of the existing full file). Keep the fragments and full pages identical.
 - **To build in Next.js (branch `revamp/foundation`):** tokens from §2 into `app/globals.css` `@theme`; Outfit + Nunito Sans via `next/font/google`; copy `assets/*.svg` to `public/illustrations/`; one component per section in §3 order; copy from §3 (names/address/email/legal from `site.config.js`); behaviour from §3.1, §3.5, §3.7, §3.9 and §5.
 - **Inner pages** (services, about, center, careers, contact, legal) are not designed yet. They should reuse: the compact sticky header state (no notch outside the home hero, or a shorter hero panel with the notch), the section H2 pattern with a teal accent phrase, the card and chip styles, the waitlist panel, and Footer 1.
+
+---
+
+## 7. Changes after sign-off
+
+Approved by the owner on 2026-11-11. The final HTML and fragments above still show the design as signed off; the build follows this section where they differ.
+
+- **Waitlist:** the separate "Be first to know" section (§3.7) is gone. The footer's waitlist strip (§3.8) moves to the top of the footer and takes that section's title and text: "Be first to know" / "One email with the opening date, hours and how to enroll. No health information, please." It carries the `#waitlist` anchor, so every waitlist link on every page scrolls to it, and the mobile sticky bar steps aside while it is on screen. Its input and button are 44px tall (§5).
+- **Header name:** the notch, compact bar and menu read "Quality Senior Care" (`shortName` in `site.config.js`). The footer, legal bar, page titles and structured data keep "Quality Senior Health Care".
+- **Illustrations:** `journey.svg` adds a "MT HOLLY RD" street sign at the curb and the center's mailbox (811, flag up); `van.svg` adds the same street sign behind the van, so phones see it in the hero mosaic.
