@@ -1,6 +1,7 @@
 import Brand from '@/components/layout/Brand'
 import { heroFrame } from '@/components/layout/heroFrame'
 import MenuButton from '@/components/layout/MenuButton'
+import ServicesMenu from '@/components/layout/ServicesMenu'
 import { ButtonLink } from '@/components/ui/Button'
 import SmartLink from '@/components/ui/SmartLink'
 
@@ -35,12 +36,16 @@ export default function NotchNav({ ref, links, inert, menuOpen, onOpenMenu }) {
             <ul className="hidden gap-[26px] lg:flex">
               {links.map((link) => (
                 <li key={link.href}>
-                  <SmartLink
-                    href={link.href}
-                    className="block rounded py-2.5 text-[16px] font-semibold text-white focus-ring-inverse hover:text-mint-strong"
-                  >
-                    {link.label}
-                  </SmartLink>
+                  {link.menu ? (
+                    <ServicesMenu overviewHref={link.href} tone="inverse" />
+                  ) : (
+                    <SmartLink
+                      href={link.href}
+                      className="block rounded py-2.5 text-[16px] font-semibold text-white focus-ring-inverse hover:text-mint-strong"
+                    >
+                      {link.label}
+                    </SmartLink>
+                  )}
                 </li>
               ))}
             </ul>

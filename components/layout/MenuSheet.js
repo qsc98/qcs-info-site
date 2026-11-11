@@ -8,11 +8,11 @@ import { ButtonLink } from '@/components/ui/Button'
 import Icon from '@/components/ui/Icon'
 import SmartLink from '@/components/ui/SmartLink'
 import useModalBehavior from '@/hooks/useModalBehavior'
-import { companyLinks, serviceLinks } from '@/lib/navigation'
+import { companyLinks, navLinks, serviceLinks } from '@/lib/navigation'
 import siteConfig, { locality } from '@/site.config'
 
-// "Our center" is already among the header links at the top of the sheet.
-const moreLinks = companyLinks.filter((link) => link.href !== '/our-center')
+// Pages already among the header links at the top of the sheet are not repeated.
+const moreLinks = companyLinks.filter((link) => !navLinks.some((nav) => nav.href === link.href))
 
 const rowClass = 'flex min-h-12 items-center rounded-lg font-semibold focus-ring'
 

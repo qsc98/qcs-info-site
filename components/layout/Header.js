@@ -36,8 +36,9 @@ export default function Header() {
     return () => delete document.documentElement.dataset.menu
   }, [menuOpen])
 
-  const links = navLinks.map(({ label, id, href }) => ({
+  const links = navLinks.map(({ label, id, href, menu }) => ({
     label,
+    menu,
     href: href ?? sectionHref(id, isHome),
   }))
   // The waitlist form is in the footer, so it is on every page.

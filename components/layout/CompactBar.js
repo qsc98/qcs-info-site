@@ -1,5 +1,6 @@
 import Brand from '@/components/layout/Brand'
 import MenuButton from '@/components/layout/MenuButton'
+import ServicesMenu from '@/components/layout/ServicesMenu'
 import { ButtonLink } from '@/components/ui/Button'
 import SmartLink from '@/components/ui/SmartLink'
 import cx from '@/lib/cx'
@@ -36,12 +37,16 @@ export default function CompactBar({
           <ul className="hidden gap-[26px] lg:flex">
             {links.map((link) => (
               <li key={link.href}>
-                <SmartLink
-                  href={link.href}
-                  className="block rounded py-2.5 text-[16px] font-semibold text-navy focus-ring hover:text-teal"
-                >
-                  {link.label}
-                </SmartLink>
+                {link.menu ? (
+                  <ServicesMenu overviewHref={link.href} />
+                ) : (
+                  <SmartLink
+                    href={link.href}
+                    className="block rounded py-2.5 text-[16px] font-semibold text-navy focus-ring hover:text-teal"
+                  >
+                    {link.label}
+                  </SmartLink>
+                )}
               </li>
             ))}
           </ul>
