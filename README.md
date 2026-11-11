@@ -38,14 +38,15 @@ app/
   <route>/page.js       one folder per page; service pages are three lines over a template
   globals.css           design tokens, type roles, focus rings, .btn, .prose
 components/
-  ui/                   primitives: Button, Section, Panel, SectionIntro, SectionTitle, Eyebrow,
-                        Chip, CheckList, NumberedList, FeatureCard, CardGrid, Icon, IconTile,
-                        Logo, Reveal, Float
+  ui/                   primitives: Button, SmartLink, Section, Panel, SectionIntro, SectionTitle,
+                        Eyebrow, Chip, CheckList, NumberedList, FeatureCard, CardGrid, Icon,
+                        IconTile, Logo, Reveal, Float (timings in motionPresets)
   sections/             page sections shared across pages: PageHero, Faq, PayingForCare,
                         OtherServices, CenterMap, LegalPage
   services/             ServicePage (the service template) and ServiceCard
   home/                 home-only sections, in page order
-  layout/               Header (NotchNav, CompactBar, MenuSheet), Footer, Wordmark
+  layout/               Header (NotchNav, CompactBar, MenuButton, MenuSheet, Brand, heroFrame),
+                        Footer (SocialLinks), Wordmark
   forms/                NetlifyForm, WaitlistForm, ContactForm (shown once open)
   seo/                  JSON-LD
 content/services/       the four services (index.js) and each service page's copy
