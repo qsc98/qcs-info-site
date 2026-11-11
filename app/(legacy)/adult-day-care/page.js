@@ -24,7 +24,8 @@ import { hoursSummary } from '@/site.config'
 
 export const metadata = pageMetadata({
   title: 'Adult Day Care Program',
-  description: 'Safe, structured daytime care for older adults in Fairdale, KY: activities, meals, wellness checks, transportation and caregiver respite.',
+  description:
+    'Safe, structured daytime care for older adults in Fairdale, KY: activities, meals, wellness checks, transportation and caregiver respite.',
   path: '/adult-day-care',
 })
 
@@ -86,10 +87,9 @@ function Card({ title, icon, children, className = '' }) {
 
 /* ---------- Page ---------- */
 export default function AdultDayCarePage() {
-
   return (
     <div className="pt-32 sm:pt-36">
-      <div className="mx-auto mb-24 mt-6 max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto mt-6 mb-24 max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-10">
         <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
           <section className="section-shell relative overflow-hidden p-6 sm:px-12">
             <div
@@ -100,7 +100,7 @@ export default function AdultDayCarePage() {
             <div className="relative grid items-start gap-10 sm:grid-cols-[1.1fr_0.9fr]">
               <div className="text-center sm:text-left">
                 <SectionEyebrow className="mb-12">Adult Day Care</SectionEyebrow>
-                <h1 className="font-jakarta text-4xl font-extrabold leading-tight text-navy sm:text-5xl">
+                <h1 className="font-jakarta text-4xl leading-tight font-extrabold text-navy sm:text-5xl">
                   Safe, Structured Days with Heart
                 </h1>
                 <p className="mt-12 text-base text-slate-600 sm:text-lg">
@@ -178,14 +178,15 @@ export default function AdultDayCarePage() {
                   <div className="mt-4 rounded-2xl border border-slate-100 bg-white/70 p-4 text-sm text-slate-700">
                     <p className="font-semibold text-navy">What to expect</p>
                     <p className="mt-2">
-                      Hours will be announced before opening, with flexible schedules (partial or full days) and transportation options for eligible participants.
+                      Hours will be announced before opening, with flexible schedules (partial or
+                      full days) and transportation options for eligible participants.
                     </p>
                   </div>
                 </Card>
               </div>
               <div className="rounded-3xl border border-white/30 bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat p-px">
                 <div className="rounded-[28px] bg-white/90 p-6 shadow-[0_18px_35px_-28px_rgba(15,34,71,0.6)] backdrop-blur-xs">
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#116768]">
+                  <p className="text-xs font-semibold tracking-[0.3em] text-[#116768] uppercase">
                     Who It Supports
                   </p>
                   <h3 className="mt-2 font-jakarta text-2xl font-semibold text-navy">
@@ -212,7 +213,10 @@ export default function AdultDayCarePage() {
             </div>
           </section>
 
-          <section id="day-flow" className="section-shell relative overflow-hidden px-6 py-10 sm:px-12">
+          <section
+            id="day-flow"
+            className="section-shell relative overflow-hidden px-6 py-10 sm:px-12"
+          >
             <div
               className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-50"
               style={{ backgroundImage: "url('/assets/honeycomb-background.jpg')" }}
@@ -228,7 +232,7 @@ export default function AdultDayCarePage() {
                 <div className="rounded-3xl border border-white/30 bg-white/80 p-6 shadow-[0_20px_45px_-32px_rgba(15,34,71,0.5)] backdrop-blur-sm">
                   <div className="flex flex-wrap items-center justify-between gap-4">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#116768]">
+                      <p className="text-xs font-semibold tracking-[0.35em] text-[#116768] uppercase">
                         Daily Rhythm
                       </p>
                       <h3 className="mt-2 font-jakarta text-2xl font-semibold text-navy">
@@ -236,8 +240,8 @@ export default function AdultDayCarePage() {
                       </h3>
                     </div>
                     <p className="max-w-xl text-sm text-slate-600">
-                      Smooth transitions from arrival to wind-down keep participants grounded while you
-                      stay updated.
+                      Smooth transitions from arrival to wind-down keep participants grounded while
+                      you stay updated.
                     </p>
                   </div>
                   <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
@@ -256,7 +260,7 @@ export default function AdultDayCarePage() {
                 <div>
                   <div className="flex flex-wrap items-center justify-between gap-4">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#116768]">
+                      <p className="text-xs font-semibold tracking-[0.35em] text-[#116768] uppercase">
                         Programs & Supports
                       </p>
                       <h3 className="mt-2 font-jakarta text-2xl font-semibold text-navy">
@@ -292,9 +296,9 @@ export default function AdultDayCarePage() {
                     </Card>
                     <Card icon={<FaWheelchair />} title="Door-to-Door Convenience">
                       <p className="text-gray-700">
-                        We offer wheelchair-accessible, round-trip transportation for eligible clients
-                        within our service area — operated by friendly, trained drivers. Ask us about
-                        routes and timing.
+                        We offer wheelchair-accessible, round-trip transportation for eligible
+                        clients within our service area — operated by friendly, trained drivers. Ask
+                        us about routes and timing.
                       </p>
                     </Card>
                   </div>
@@ -331,8 +335,6 @@ export default function AdultDayCarePage() {
               </div>
             </div>
           </section>
-
-
 
           <section>
             <SectionHeading

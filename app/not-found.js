@@ -16,10 +16,23 @@ export default function NotFound() {
         <PrimaryCta href="/contact">Contact us</PrimaryCta>
       </div>
       <p className="mt-10 text-sm text-slate-500">
-        Looking for a service? <Link href="/adult-day-care" className="underline">Adult Day Care</Link>,{' '}
-        <Link href="/medical-transportation" className="underline">Transportation</Link>,{' '}
-        <Link href="/nutritious-meals" className="underline">Meals</Link> or{' '}
-        <Link href="/in-home-care" className="underline">In-Home Care</Link>.
+        Looking for a service?{' '}
+        <Link href="/adult-day-care" className="underline">
+          Adult Day Care
+        </Link>
+        ,{' '}
+        <Link href="/medical-transportation" className="underline">
+          Transportation
+        </Link>
+        ,{' '}
+        <Link href="/nutritious-meals" className="underline">
+          Meals
+        </Link>{' '}
+        or{' '}
+        <Link href="/in-home-care" className="underline">
+          In-Home Care
+        </Link>
+        .
       </p>
     </div>
   )

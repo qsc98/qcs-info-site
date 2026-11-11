@@ -24,7 +24,8 @@ import { hoursSummary, paymentLine } from '@/site.config'
 
 export const metadata = pageMetadata({
   title: 'Our Center: Location, Hours & Tours',
-  description: 'Visit our Adult Day Health Care center at 811 Mt Holly Rd, Fairdale, KY. Accessibility, a sample day, amenities and how to plan a tour.',
+  description:
+    'Visit our Adult Day Health Care center at 811 Mt Holly Rd, Fairdale, KY. Accessibility, a sample day, amenities and how to plan a tour.',
   path: '/our-center',
 })
 
@@ -151,10 +152,9 @@ const faqItems = [
 ]
 
 const OurCenter = () => {
-
   return (
     <div className="pt-32 sm:pt-36">
-      <div className="mx-auto mb-24 mt-6 max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto mt-6 mb-24 max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-10">
         <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
           <section className="section-shell relative overflow-hidden px-6 py-10 sm:px-12">
             <div
@@ -165,7 +165,7 @@ const OurCenter = () => {
             <div className="relative grid items-start gap-10 sm:grid-cols-[1.05fr_0.95fr]">
               <div className="text-center sm:text-left">
                 <SectionEyebrow className="mb-6">Inside Our Center</SectionEyebrow>
-                <h1 className="mt-6 font-jakarta text-3xl font-extrabold leading-tight text-navy sm:text-5xl">
+                <h1 className="mt-6 font-jakarta text-3xl leading-tight font-extrabold text-navy sm:text-5xl">
                   Warmth, Safety, and Joy—All Under One Roof
                 </h1>
                 <p className="mt-12 text-base text-slate-600 sm:text-lg">
@@ -193,9 +193,7 @@ const OurCenter = () => {
                   </PrimaryCta>
                 </div>
 
-                <p className="mt-6 text-sm text-slate-500">
-                  {paymentLine()}
-                </p>
+                <p className="mt-6 text-sm text-slate-500">{paymentLine()}</p>
               </div>
 
               <div className="relative hidden aspect-3/3 w-full overflow-hidden rounded-3xl sm:block">
@@ -262,7 +260,7 @@ const OurCenter = () => {
                   <h2 className="font-jakarta text-3xl font-semibold text-navy sm:text-4xl">
                     Peek Our Center
                   </h2>
-                  <p className="mx-auto mt-4 max-w-3xl text-xs font-semibold uppercase tracking-[0.2em] text-black-500">
+                  <p className="mx-auto mt-4 max-w-3xl text-xs font-semibold tracking-[0.2em] text-black-500 uppercase">
                     Cozy space, calming colors, and flexible rooms for every part of the day.
                   </p>
                 </div>

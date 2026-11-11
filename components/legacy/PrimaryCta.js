@@ -22,7 +22,8 @@ export default function PrimaryCta({ href = '#', children, className = '', varia
     }
   }
 
-  const isInternal = typeof target === 'string' && target.startsWith('/') && !target.startsWith('//')
+  const isInternal =
+    typeof target === 'string' && target.startsWith('/') && !target.startsWith('//')
 
   if (isInternal) {
     return (

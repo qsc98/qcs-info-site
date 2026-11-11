@@ -45,7 +45,12 @@ export default function LottieFigure({
       aria-hidden={label ? undefined : true}
     >
       {visible ? (
-        <DotLottieReact src={src} loop={loop} autoplay={autoplay && !reduceMotion} className="size-full" />
+        <DotLottieReact
+          src={src}
+          loop={loop}
+          autoplay={autoplay && !reduceMotion}
+          className="size-full"
+        />
       ) : null}
     </div>
   )

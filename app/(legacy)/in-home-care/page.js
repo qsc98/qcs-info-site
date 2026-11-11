@@ -22,7 +22,8 @@ import { pageMetadata } from '@/lib/seo'
 
 export const metadata = pageMetadata({
   title: 'In-Home Care',
-  description: 'Personal care, companionship, light housekeeping and medication reminders at home across Louisville and Fairdale, KY.',
+  description:
+    'Personal care, companionship, light housekeeping and medication reminders at home across Louisville and Fairdale, KY.',
   path: '/in-home-care',
 })
 
@@ -83,11 +84,10 @@ function Card({ title, icon, children, className = '' }) {
 }
 
 export default function InHomeCarePage() {
-
   return (
     <div className="pt-32 sm:pt-36">
       <div>
-        <div className="mx-auto mb-24 mt-6 max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-10">
+        <div className="mx-auto mt-6 mb-24 max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-10">
           <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
             <section className="section-shell relative overflow-hidden p-6 sm:px-12">
               <div
@@ -98,7 +98,7 @@ export default function InHomeCarePage() {
               <div className="relative grid items-start gap-10 sm:grid-cols-[1.1fr_0.9fr]">
                 <div className="text-center sm:text-left">
                   <SectionEyebrow className="mb-12">In-Home Care</SectionEyebrow>
-                  <h1 className="font-jakarta text-4xl font-extrabold leading-tight text-navy sm:text-5xl">
+                  <h1 className="font-jakarta text-4xl leading-tight font-extrabold text-navy sm:text-5xl">
                     Care That Meets You Where You Live
                   </h1>
                   <p className="mt-12 text-base text-slate-600 sm:text-lg">
@@ -129,11 +129,7 @@ export default function InHomeCarePage() {
                 </div>
 
                 <div className="relative hidden aspect-3/3 w-full overflow-hidden rounded-3xl bg-white/30 backdrop-blur-sm sm:block">
-                  <LottieFigure
-                    src="/assets/HomeCare.lottie"
-                    autoplay
-                    style={{ opacity: 0.85 }}
-                  />
+                  <LottieFigure src="/assets/HomeCare.lottie" autoplay style={{ opacity: 0.85 }} />
                   <div className="pointer-events-none absolute inset-0 rounded-3xl border border-white/40" />
                 </div>
               </div>
@@ -183,7 +179,7 @@ export default function InHomeCarePage() {
                 </div>
                 <div className="space-y-6 rounded-3xl border border-white/25 bg-[url('/assets/background-card-2.jpg')] bg-cover bg-center bg-no-repeat p-px">
                   <div className="rounded-[28px] bg-white/90 p-6 text-left shadow-[0_18px_35px_-28px_rgba(15,34,71,0.6)] backdrop-blur-xs">
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#116768]">
+                    <p className="text-xs font-semibold tracking-[0.3em] text-[#116768] uppercase">
                       Who It Benefits
                     </p>
                     <h3 className="mt-2 font-jakarta text-2xl font-semibold text-navy">
@@ -271,7 +267,7 @@ export default function InHomeCarePage() {
                   <div className="section-shell relative overflow-hidden bg-white/90 p-6">
                     <div className="relative space-y-6">
                       <div className="space-y-1 text-left">
-                        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#116768]">
+                        <p className="text-xs font-semibold tracking-[0.3em] text-[#116768] uppercase">
                           Daily Rhythm
                         </p>
                         <h3 className="font-jakarta text-2xl font-semibold text-navy">
@@ -419,7 +415,7 @@ export default function InHomeCarePage() {
             </section>
           </div>
 
-          <FaqSection id="faq" className="mb-24 mt-16" items={faqItems} />
+          <FaqSection id="faq" className="mt-16 mb-24" items={faqItems} />
 
           <section>
             <div className="section-shell relative overflow-hidden px-6 py-10 sm:px-12">

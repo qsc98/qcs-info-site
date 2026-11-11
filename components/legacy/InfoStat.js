@@ -10,7 +10,7 @@ export default function InfoStat({ icon: Icon, label, value, className = '' }) {
           </span>
         ) : null}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</p>
+          <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase">{label}</p>
           <p className="font-jakarta text-base text-navy">{value}</p>
         </div>
       </div>

@@ -198,7 +198,7 @@ const LaunchedContactForm = () => {
       {/* Submit Button */}
       <button
         type="submit"
-        className="w-full rounded-xl bg-[#116768] px-6 py-3 font-semibold text-white shadow-[0_8px_20px_rgba(17,103,104,0.3)] transition hover:bg-[#0d5556] focus:outline-hidden focus:ring-2 focus:ring-[#116768]/50"
+        className="w-full rounded-xl bg-[#116768] px-6 py-3 font-semibold text-white shadow-[0_8px_20px_rgba(17,103,104,0.3)] transition hover:bg-[#0d5556] focus:ring-2 focus:ring-[#116768]/50 focus:outline-hidden"
       >
         Send Message
       </button>
@@ -207,7 +207,9 @@ const LaunchedContactForm = () => {
         <div className="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
           Thanks—your request is in. We’ll call you within 1–2 business days (usually sooner). Need
           help now? Call{' '}
-          <a href={`tel:${siteConfig.contact.phone}`} className="font-semibold underline">{siteConfig.contact.phoneDisplay}</a>
+          <a href={`tel:${siteConfig.contact.phone}`} className="font-semibold underline">
+            {siteConfig.contact.phoneDisplay}
+          </a>
           .
         </div>
       )}

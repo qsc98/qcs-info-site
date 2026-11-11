@@ -24,7 +24,8 @@ import { pageMetadata } from '@/lib/seo'
 
 export const metadata = pageMetadata({
   title: 'Nutritious Meals',
-  description: 'Nutritionist-guided breakfast, lunch and snacks with diabetic, low-sodium, vegetarian and allergy-aware options.',
+  description:
+    'Nutritionist-guided breakfast, lunch and snacks with diabetic, low-sodium, vegetarian and allergy-aware options.',
   path: '/nutritious-meals',
 })
 
@@ -85,10 +86,9 @@ function Card({ title, icon, children, className = '' }) {
 }
 
 export default function NutritiousMealsPage() {
-
   return (
     <div className="pt-32 sm:pt-36">
-      <div className="mx-auto mb-24 mt-6 max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto mt-6 mb-24 max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-10">
         <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
           <section className="section-shell relative overflow-hidden p-6 sm:px-12">
             <div
@@ -99,19 +99,24 @@ export default function NutritiousMealsPage() {
             <div className="relative grid items-start gap-10 sm:grid-cols-[1.1fr_0.9fr]">
               <div className="text-center sm:text-left">
                 <SectionEyebrow className="mb-12">Nutritious Meals</SectionEyebrow>
-                <h1 className="font-jakarta text-4xl font-extrabold leading-tight text-navy sm:text-5xl">
+                <h1 className="font-jakarta text-4xl leading-tight font-extrabold text-navy sm:text-5xl">
                   Daily Meals with Clinical Care in Mind
                 </h1>
                 <p className="mt-12 text-base text-slate-600 sm:text-lg">
-                  Our meal program delivers balanced, flavorful, and health-conscious meals tailored for seniors
-                  and individuals with medical needs. We serve daily breakfast, lunch, and snacks—with accommodations
-                  for diabetic, low-sodium, vegetarian, and allergy-sensitive diets. Menus are developed with licensed
-                  nutritionists to ensure great taste and nutritional value.
+                  Our meal program delivers balanced, flavorful, and health-conscious meals tailored
+                  for seniors and individuals with medical needs. We serve daily breakfast, lunch,
+                  and snacks—with accommodations for diabetic, low-sodium, vegetarian, and
+                  allergy-sensitive diets. Menus are developed with licensed nutritionists to ensure
+                  great taste and nutritional value.
                 </p>
 
                 <div className="mt-6 block sm:hidden">
                   <div className="relative aspect-3/3 w-full overflow-hidden rounded-3xl bg-white/30 backdrop-blur-sm">
-                    <LottieFigure src="/assets/Nutrition.lottie" autoplay style={{ opacity: 0.85 }} />
+                    <LottieFigure
+                      src="/assets/Nutrition.lottie"
+                      autoplay
+                      style={{ opacity: 0.85 }}
+                    />
                     <div className="pointer-events-none absolute inset-0 rounded-3xl border border-white/40" />
                   </div>
                 </div>
@@ -161,8 +166,8 @@ export default function NutritiousMealsPage() {
               </Card>
               <Card className="md:col-span-2" title="Quality & Freshness" icon={<FaAppleAlt />}>
                 <p className="text-slate-700">
-                  We use fresh produce, lean proteins, and whole-grain options upon request—prepared to balance taste,
-                  nutrition, and individual needs.
+                  We use fresh produce, lean proteins, and whole-grain options upon request—prepared
+                  to balance taste, nutrition, and individual needs.
                 </p>
               </Card>
             </div>
@@ -184,13 +189,16 @@ export default function NutritiousMealsPage() {
                 <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
                   <div className="space-y-6">
                     <Card title="Nutritionist-Guided" icon={<FaClipboardList />}>
-                      Menus planned in consultation with licensed nutritionists for balanced macros and micronutrients.
+                      Menus planned in consultation with licensed nutritionists for balanced macros
+                      and micronutrients.
                     </Card>
                     <Card title="Responsible Vendors" icon={<FaTruck />}>
-                      We partner with trusted suppliers and verify labels & allergens for peace of mind.
+                      We partner with trusted suppliers and verify labels & allergens for peace of
+                      mind.
                     </Card>
                     <Card title="Sustainable Mindset" icon={<FaSeedling />}>
-                      Seasonally influenced menus; we aim to reduce waste and encourage smart portions.
+                      Seasonally influenced menus; we aim to reduce waste and encourage smart
+                      portions.
                     </Card>
                   </div>
                   <div className="rounded-[32px] border border-white/30 bg-white/85 p-6 shadow-[0_20px_45px_-30px_rgba(15,34,71,0.5)] backdrop-blur-sm">
@@ -225,8 +233,8 @@ export default function NutritiousMealsPage() {
                       </Card>
                     </div>
                     <p className="mt-6 text-center text-sm text-slate-600">
-                      Have questions about our protocols or a specific dietary need? We’ll walk you through the full checklist
-                      during your tour.
+                      Have questions about our protocols or a specific dietary need? We’ll walk you
+                      through the full checklist during your tour.
                     </p>
                   </div>
                 </div>
@@ -261,7 +269,6 @@ export default function NutritiousMealsPage() {
             </div>
           </section>
 
-
           <section id="costs" className="scroll-mt-28">
             <div className="section-shell relative overflow-hidden px-4 py-10 sm:px-8">
               <div className="pointer-events-none absolute inset-0 opacity-30">
@@ -279,10 +286,22 @@ export default function NutritiousMealsPage() {
                       <tbody>
                         {[
                           ['Private Pay', 'Daily or monthly meal charges with clear invoices.'],
-                          ['Day Program Bundles', 'Meals included with adult day care attendance for many plans.'],
-                          ['Medicaid Waivers', 'Kentucky Medicaid provider enrollment is in progress. Once enrolled, we’ll help check waiver eligibility and documentation.'],
-                          ['Long-Term Care Insurance', 'Some policies reimburse meals with adult day services.'],
-                          ['Local Programs/Grants', 'When available, we’ll help connect you to assistance.'],
+                          [
+                            'Day Program Bundles',
+                            'Meals included with adult day care attendance for many plans.',
+                          ],
+                          [
+                            'Medicaid Waivers',
+                            'Kentucky Medicaid provider enrollment is in progress. Once enrolled, we’ll help check waiver eligibility and documentation.',
+                          ],
+                          [
+                            'Long-Term Care Insurance',
+                            'Some policies reimburse meals with adult day services.',
+                          ],
+                          [
+                            'Local Programs/Grants',
+                            'When available, we’ll help connect you to assistance.',
+                          ],
                         ].map(([method, detail]) => (
                           <tr key={method} className="align-top">
                             <td className="px-5 py-3 font-semibold text-navy">{method}</td>
@@ -324,7 +343,8 @@ export default function NutritiousMealsPage() {
               <div>
                 <h3 className="text-xl font-semibold text-navy">Ready to taste the difference?</h3>
                 <p className="mt-1 text-slate-600">
-                  Schedule a tasting or tour and we’ll show you how meals fit seamlessly into your loved one’s day.
+                  Schedule a tasting or tour and we’ll show you how meals fit seamlessly into your
+                  loved one’s day.
                 </p>
               </div>
               <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">

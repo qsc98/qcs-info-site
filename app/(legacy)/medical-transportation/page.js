@@ -21,7 +21,8 @@ import { pageMetadata } from '@/lib/seo'
 
 export const metadata = pageMetadata({
   title: 'Medical Transportation',
-  description: 'Wheelchair-accessible, door-to-door rides to medical appointments and our day center in the Louisville, KY area.',
+  description:
+    'Wheelchair-accessible, door-to-door rides to medical appointments and our day center in the Louisville, KY area.',
   path: '/medical-transportation',
 })
 
@@ -82,10 +83,9 @@ function Card({ title, icon, children, className = '' }) {
 }
 
 export default function MedicalTransportationPage() {
-
   return (
     <div className="pt-32 sm:pt-36">
-      <div className="mx-auto mb-24 mt-6 max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto mt-6 mb-24 max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-10">
         <div className="mt-6 space-y-16 sm:space-y-20 lg:space-y-24">
           <section className="section-shell relative overflow-hidden p-6 sm:px-12">
             <div
@@ -96,18 +96,22 @@ export default function MedicalTransportationPage() {
             <div className="relative grid items-start gap-10 sm:grid-cols-[1.1fr_0.9fr]">
               <div className="text-center sm:text-left">
                 <SectionEyebrow className="mb-12">Medical Transportation</SectionEyebrow>
-                <h1 className="font-jakarta text-4xl font-extrabold leading-tight text-navy sm:text-5xl">
+                <h1 className="font-jakarta text-4xl leading-tight font-extrabold text-navy sm:text-5xl">
                   Safe, Door-to-Door Rides You Can Trust
                 </h1>
                 <p className="mt-12 text-base text-slate-600 sm:text-lg">
-                  Safe, on-time rides for healthcare visits and essential errands. Our wheelchair-accessible vehicles
-                  and trained drivers get you there comfortably—with assistance from curb-to-curb or door-through-door
-                  based on your needs.
+                  Safe, on-time rides for healthcare visits and essential errands. Our
+                  wheelchair-accessible vehicles and trained drivers get you there comfortably—with
+                  assistance from curb-to-curb or door-through-door based on your needs.
                 </p>
 
                 <div className="mt-6 block sm:hidden">
                   <div className="relative aspect-3/3 w-full overflow-hidden rounded-3xl bg-white/30 backdrop-blur-sm">
-                    <LottieFigure src="/assets/Transportation.lottie" autoplay style={{ opacity: 0.85 }} />
+                    <LottieFigure
+                      src="/assets/Transportation.lottie"
+                      autoplay
+                      style={{ opacity: 0.85 }}
+                    />
                     <div className="pointer-events-none absolute inset-0 rounded-3xl border border-white/40" />
                   </div>
                 </div>
@@ -123,7 +127,11 @@ export default function MedicalTransportationPage() {
               </div>
 
               <div className="relative hidden aspect-3/3 w-full overflow-hidden rounded-3xl bg-white/30 backdrop-blur-sm sm:block">
-                <LottieFigure src="/assets/Transportation.lottie" autoplay style={{ opacity: 0.85 }} />
+                <LottieFigure
+                  src="/assets/Transportation.lottie"
+                  autoplay
+                  style={{ opacity: 0.85 }}
+                />
                 <div className="pointer-events-none absolute inset-0 rounded-3xl border border-white/40" />
               </div>
             </div>
@@ -186,7 +194,10 @@ export default function MedicalTransportationPage() {
             </div>
           </section>
 
-          <section id="coverage" className="section-shell relative overflow-hidden px-6 py-10 sm:px-12">
+          <section
+            id="coverage"
+            className="section-shell relative overflow-hidden px-6 py-10 sm:px-12"
+          >
             <div
               className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-40"
               style={{ backgroundImage: "url('/assets/background-2.jpg')" }}
@@ -247,7 +258,7 @@ export default function MedicalTransportationPage() {
                     ].map(({ step, title, icon, copy }) => (
                       <li key={step} className="relative">
                         <div className="flex items-start gap-4 md:flex-col md:items-center">
-                          <div className="relative z-10 inline-flex size-12 items-center justify-center rounded-full bg-white text-[#116768] shadow ring-2 ring-[#116768]/30">
+                          <div className="shadow relative z-10 inline-flex size-12 items-center justify-center rounded-full bg-white text-[#116768] ring-2 ring-[#116768]/30">
                             <span className="text-base font-bold">{step}</span>
                           </div>
                           <div className="text-left md:mt-3 md:text-center">
@@ -271,16 +282,21 @@ export default function MedicalTransportationPage() {
                       <div className="flex-1">
                         <h4 className="text-lg font-semibold text-navy">What to Have Ready</h4>
                         <ul className="mt-3 space-y-2 text-slate-700">
-                          <Bullet>Pickup & drop-off addresses with entrance details if needed</Bullet>
+                          <Bullet>
+                            Pickup & drop-off addresses with entrance details if needed
+                          </Bullet>
                           <Bullet>Appointment time & contact at destination</Bullet>
-                          <Bullet>Mobility/assistance needs (wheelchair, walker, door-through-door help)</Bullet>
+                          <Bullet>
+                            Mobility/assistance needs (wheelchair, walker, door-through-door help)
+                          </Bullet>
                           <Bullet>Name of companion if riding along</Bullet>
                         </ul>
                         <div className="mt-5 border-t border-slate-200 pt-4">
                           <h5 className="font-medium text-navy">Special Requests</h5>
                           <p className="mt-1 text-sm text-slate-600">
-                            Prefer a driver who speaks your language or one you’ve ridden with before? Need cultural or
-                            faith-based accommodations? Let us know—we’ll do our best to honor them.
+                            Prefer a driver who speaks your language or one you’ve ridden with
+                            before? Need cultural or faith-based accommodations? Let us know—we’ll
+                            do our best to honor them.
                           </p>
                         </div>
                       </div>
@@ -297,9 +313,12 @@ export default function MedicalTransportationPage() {
             </div>
             <div className="relative flex flex-col items-start justify-between gap-5 text-left md:flex-row md:items-center">
               <div>
-                <h3 className="text-xl font-semibold text-navy">Need a ride to your appointment?</h3>
+                <h3 className="text-xl font-semibold text-navy">
+                  Need a ride to your appointment?
+                </h3>
                 <p className="mt-1 text-slate-600">
-                  Book in advance and we’ll handle the rest—safely, on time, and with updates along the way.
+                  Book in advance and we’ll handle the rest—safely, on time, and with updates along
+                  the way.
                 </p>
               </div>
               <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">

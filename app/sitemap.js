@@ -9,6 +9,7 @@ export default function sitemap() {
     url: `${siteConfig.url}${path === '/' ? '' : path}`,
     lastModified,
     changeFrequency: path === '/' ? 'weekly' : 'monthly',
-    priority: path === '/' ? 1 : path.startsWith('/privacy') || path.startsWith('/terms') ? 0.2 : 0.7,
+    priority:
+      path === '/' ? 1 : path.startsWith('/privacy') || path.startsWith('/terms') ? 0.2 : 0.7,
   }))
 }

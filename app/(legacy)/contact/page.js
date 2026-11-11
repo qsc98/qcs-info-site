@@ -1,4 +1,9 @@
-import { HiOutlineClock, HiOutlineLocationMarker, HiOutlineMail, HiOutlinePhone } from 'react-icons/hi'
+import {
+  HiOutlineClock,
+  HiOutlineLocationMarker,
+  HiOutlineMail,
+  HiOutlinePhone,
+} from 'react-icons/hi'
 import SocialLinks from '@/components/layout/SocialLinks'
 import ContactForm from '@/components/legacy/ContactForm'
 import LottieFigure from '@/components/legacy/LottieFigure'
@@ -53,7 +58,9 @@ export default function Contact() {
 
               <div className="space-y-6">
                 <InfoRow Icon={HiOutlineMail} title="Email us">
-                  <p className="text-base text-slate-600">For general questions and partnership inquiries.</p>
+                  <p className="text-base text-slate-600">
+                    For general questions and partnership inquiries.
+                  </p>
                   <a
                     href={`mailto:${siteConfig.contact.email}`}
                     className="mt-1 block text-base font-medium text-green-600 underline underline-offset-4 hover:text-green-700"
@@ -64,13 +71,19 @@ export default function Contact() {
 
                 <InfoRow Icon={HiOutlineLocationMarker} title="Visit us">
                   <p className="text-base text-slate-600">
-                    {isOpen ? 'Tours available by appointment.' : 'Tours will be available once we open.'}
+                    {isOpen
+                      ? 'Tours available by appointment.'
+                      : 'Tours will be available once we open.'}
                   </p>
-                  <address className="mt-1 text-base font-medium text-slate-800 not-italic">{fullAddress}</address>
+                  <address className="mt-1 text-base font-medium text-slate-800 not-italic">
+                    {fullAddress}
+                  </address>
                 </InfoRow>
 
                 <InfoRow Icon={HiOutlineClock} title="Hours">
-                  <p className="text-base text-slate-600">{siteConfig.hours ? hoursSummary() : siteConfig.hoursNote}</p>
+                  <p className="text-base text-slate-600">
+                    {siteConfig.hours ? hoursSummary() : siteConfig.hoursNote}
+                  </p>
                 </InfoRow>
 
                 <InfoRow Icon={HiOutlinePhone} title="Call us">
@@ -83,8 +96,8 @@ export default function Contact() {
                     </a>
                   ) : (
                     <p className="text-base text-slate-600">
-                      Our phone line opens with the center. Join the waitlist and we’ll send the number
-                      with our opening announcement.
+                      Our phone line opens with the center. Join the waitlist and we’ll send the
+                      number with our opening announcement.
                     </p>
                   )}
                 </InfoRow>

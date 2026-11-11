@@ -39,15 +39,18 @@ export default function GallerySection({
   const timerRef = useRef(null)
 
   /** Center a given slide index precisely (handles first/last correctly) */
-  const centerSlide = useCallback((index, smooth = true) => {
-    const track = trackRef.current
-    if (!track) return
-    const clamped = Math.max(0, Math.min(index, slides.length - 1))
-    const slide = track.children[clamped]
-    if (!slide) return
-    const left = slide.offsetLeft - (track.clientWidth - slide.clientWidth) / 2
-    track.scrollTo({ left, behavior: smooth ? 'smooth' : 'auto' })
-  }, [slides.length])
+  const centerSlide = useCallback(
+    (index, smooth = true) => {
+      const track = trackRef.current
+      if (!track) return
+      const clamped = Math.max(0, Math.min(index, slides.length - 1))
+      const slide = track.children[clamped]
+      if (!slide) return
+      const left = slide.offsetLeft - (track.clientWidth - slide.clientWidth) / 2
+      track.scrollTo({ left, behavior: smooth ? 'smooth' : 'auto' })
+    },
+    [slides.length]
+  )
 
   /** Public goto helper used by buttons/bars */
   const goTo = (index, smooth = true) => {
@@ -136,7 +139,7 @@ export default function GallerySection({
         {/* Track */}
         <div
           ref={trackRef}
-          className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth rounded-[22px] bg-white/60 p-3 ring-1 ring-gray-100 [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden"
+          className="flex snap-x snap-mandatory scrollbar-none gap-4 overflow-x-auto scroll-smooth rounded-[22px] bg-white/60 p-3 ring-1 ring-gray-100 [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           role="group"
           aria-roledescription="carousel"
           aria-label="Photos of our center"
@@ -144,7 +147,7 @@ export default function GallerySection({
           {slides.map((img, idx) => (
             <div
               key={idx}
-              className="relative aspect-4/3 w-4/5 min-w-[80%] snap-center overflow-hidden rounded-[18px] shadow sm:w-[55%] sm:min-w-[55%] lg:w-2/5 lg:min-w-[40%]"
+              className="shadow relative aspect-4/3 w-4/5 min-w-[80%] snap-center overflow-hidden rounded-[18px] sm:w-[55%] sm:min-w-[55%] lg:w-2/5 lg:min-w-[40%]"
               role="group"
               aria-roledescription="slide"
               aria-label={`${idx + 1} of ${slides.length}`}
@@ -167,7 +170,7 @@ export default function GallerySection({
         <div className="pointer-events-none absolute inset-y-0 right-0 w-10 rounded-r-[22px] bg-linear-to-l from-white to-transparent" />
 
         {/* Controls + Modern progress bars */}
-        <div className="mt-4 flex select-none items-center gap-2">
+        <div className="mt-4 flex items-center gap-2 select-none">
           {/* Prev */}
           <button
             type="button"
@@ -186,10 +189,10 @@ export default function GallerySection({
                 type="button"
                 aria-label={`Go to slide ${i + 1}`}
                 onClick={() => goTo(i)}
-                className="relative h-6 flex-1 cursor-pointer overflow-hidden rounded-full bg-gray-200 before:absolute before:inset-y-0 before:inset-x-0 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-emerald-400"
+                className="relative h-6 flex-1 cursor-pointer overflow-hidden rounded-full bg-gray-200 before:absolute before:inset-x-0 before:inset-y-0 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-emerald-400"
               >
                 <span
-                  className={`absolute left-0 top-0 h-full bg-emerald-500 transition-all duration-500 ${
+                  className={`absolute top-0 left-0 h-full bg-emerald-500 transition-all duration-500 ${
                     i === active ? 'w-full' : 'w-0'
                   }`}
                 />
@@ -205,7 +208,6 @@ export default function GallerySection({
           >
             {playing ? 'Pause' : 'Play'}
           </button>
-
 
           {/* Next */}
           <button

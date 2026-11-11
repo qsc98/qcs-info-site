@@ -17,10 +17,10 @@ export default function FaqSection({
             <details key={item.q ?? idx} className="group">
               <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-5">
                 <span className="font-semibold text-navy">{item.q}</span>
-                <span className="ml-4 rounded-full border border-slate-200 px-3 py-1 text-xs uppercase tracking-wider text-slate-500 group-open:hidden">
+                <span className="ml-4 rounded-full border border-slate-200 px-3 py-1 text-xs tracking-wider text-slate-500 uppercase group-open:hidden">
                   Show
                 </span>
-                <span className="ml-4 hidden rounded-full border border-[#116768]/30 bg-[#e3f2ef] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#116768] group-open:inline">
+                <span className="ml-4 hidden rounded-full border border-[#116768]/30 bg-[#e3f2ef] px-3 py-1 text-xs font-semibold tracking-wider text-[#116768] uppercase group-open:inline">
                   Hide
                 </span>
               </summary>
