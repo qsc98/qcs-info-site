@@ -60,6 +60,7 @@ export default function MenuSheet({ open, onClose, links, waitlistHref }) {
         >
           <div className="flex items-center justify-between gap-3 px-5 pt-3 pb-2">
             <Wordmark
+              name={siteConfig.shortName}
               breakClassName=""
               className="font-display text-[15px] leading-[1.1] font-bold text-navy"
             />

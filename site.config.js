@@ -7,6 +7,9 @@
 const siteConfig = {
   // Public-facing name (registered DBA) used in titles, schema and copy.
   name: 'Quality Senior Health Care',
+  // Short brand shown in the header. Titles, schema, the footer and the
+  // legal line keep `name`.
+  shortName: 'Quality Senior Care',
   // Other registered DBA(s); used in schema alternateName.
   alternateNames: ['Quality ADHC'],
   // Registered entity: Kentucky Secretary of State org #1366926.

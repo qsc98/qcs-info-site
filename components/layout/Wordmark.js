@@ -1,21 +1,19 @@
 import siteConfig from '@/site.config'
 
-const words = siteConfig.name.split(' ')
-const half = Math.ceil(words.length / 2)
-const firstLine = words.slice(0, half).join(' ')
-const secondLine = words.slice(half).join(' ')
-
 /**
- * The business name from config. With `breakClassName` it breaks over two
- * lines; the class goes on the <br>, so `lg:hidden` keeps it on one line on
- * desktop.
+ * A business name from config (the full `name` by default). With
+ * `breakClassName` it breaks over two lines, the longer half second
+ * ("Quality / Senior Care"); the class goes on the <br>, so `lg:hidden`
+ * keeps it on one line on desktop.
  */
-export default function Wordmark({ breakClassName, className }) {
-  if (breakClassName === undefined) return <span className={className}>{siteConfig.name}</span>
+export default function Wordmark({ name = siteConfig.name, breakClassName, className }) {
+  if (breakClassName === undefined) return <span className={className}>{name}</span>
+  const words = name.split(' ')
+  const half = Math.floor(words.length / 2)
   return (
     <span className={className}>
-      {firstLine} <br className={breakClassName} />
-      {secondLine}
+      {words.slice(0, half).join(' ')} <br className={breakClassName} />
+      {words.slice(half).join(' ')}
     </span>
   )
 }
