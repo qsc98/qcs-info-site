@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og'
-import siteConfig from '../site.config'
+import siteConfig from '@/site.config'
 
 export const dynamic = 'force-static'
 export const alt = `${siteConfig.name} — ${siteConfig.descriptor} in ${siteConfig.address.city}, ${siteConfig.address.region}`

@@ -1,50 +1,16 @@
 @import 'tailwindcss';
+@import './legacy.css';
+
+/*
+ * Design system for the redesign. Values come from design/README.md §2 and
+ * mirror design/tokens.json; change them there first.
+ */
 
 @theme {
-  --shadow-*: initial;
-  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-none: none;
-
-  /* Design shadows (design/tokens.json → shadow) */
-  --shadow-float-image: 0 14px 30px rgba(15, 34, 71, 0.25);
-  --shadow-float-light: 0 18px 40px rgba(15, 34, 71, 0.16);
-  --shadow-card-light: 0 14px 30px rgba(15, 34, 71, 0.2);
-  --shadow-bar: 0 12px 30px rgba(15, 34, 71, 0.18);
-  --shadow-avatar: 0 14px 30px rgba(15, 34, 71, 0.15);
-  --shadow-peek: 0 -10px 30px rgba(15, 34, 71, 0.12);
-
-  /* Loaded via next/font in app/layout.js (Outfit + Nunito Sans). */
+  /* Loaded with next/font in app/layout.js. */
   --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-nunito-sans), ui-sans-serif, system-ui, sans-serif;
-  /* Legacy names still used by the not-yet-redesigned inner pages. */
-  --font-jakarta: var(--font-display);
-  --font-inter: var(--font-body);
 
-  --color-black-500: #4f5665;
-  --color-black-600: #0b132a;
-  --color-black-700: #1c2541;
-  --color-black: #000000;
-
-  --color-white-300: #f8f8f8;
-  --color-white-500: #ffffff;
-  --color-white: #ffffff;
-
-  --color-orange-100: #ffecec;
-  --color-orange-500: #f53855;
-
-  --color-green-500: #0b3d2e;
-  --color-green-600: #1a7a4d;
-
-  --color-gray-100: #eeeff2;
-  --color-gray-400: #afb5c0;
-  --color-gray-500: #dddddd;
-
-  /* Design colors (design/tokens.json → color) */
   --color-navy: #1a4566;
   --color-teal: #116768;
   --color-teal-hover: #0d5556;
@@ -52,6 +18,7 @@
   --color-mint-strong: #9fd8cf;
   --color-mint-mid: #5fb3a5;
   --color-grey: #f7f8f5;
+  /* tokens.json "border"; named line so it reads well as border-line. */
   --color-line: #e3ebe8;
   --color-line-ui: #d5dde6;
   --color-text: #1f2937;
@@ -64,55 +31,34 @@
   --color-amber: #f5b544;
   --color-amber-status: #ffd27a;
   --color-amber-status-on-light: #b7791f;
-  --color-deepnavy: #143b58;
-  --color-darkneutral: #0a3d35;
-  --color-neutraltext: #0f172a;
 
-  --color-background: #ffffff;
-  --color-foreground: #0f172a;
-  --color-primary: #0f172a;
-  --color-primary-foreground: #f8fafc;
-  --color-border: #e2e8f0;
-  --color-input: #e2e8f0;
-  --color-ring: #0f172a;
-  --color-muted: #f1f5f9;
-  --color-muted-foreground: #64748b;
+  --container-page: 80rem;
 
-  --radius-lg: 0.5rem;
-  --radius-md: calc(0.5rem - 2px);
-  --radius-sm: calc(0.5rem - 4px);
-
-  /* Design radii (design/tokens.json → radius) */
   --radius-panel: 32px;
   --radius-panel-mobile: 24px;
   --radius-panel-mobile-small: 22px;
+  --radius-block: 28px;
   --radius-card: 24px;
+  --radius-card-md: 20px;
   --radius-card-small: 18px;
   --radius-chip: 16px;
+  --radius-thumb: 14px;
   --radius-icon-tile: 12px;
   --radius-pill: 999px;
 
-  --animate-float: float 6s ease-in-out infinite;
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
+  --shadow-float-image: 0 14px 30px rgba(15, 34, 71, 0.25);
+  --shadow-float-light: 0 18px 40px rgba(15, 34, 71, 0.16);
+  --shadow-card-light: 0 14px 30px rgba(15, 34, 71, 0.2);
+  --shadow-bar: 0 12px 30px rgba(15, 34, 71, 0.18);
+  --shadow-avatar: 0 14px 30px rgba(15, 34, 71, 0.15);
+  --shadow-peek: 0 -10px 30px rgba(15, 34, 71, 0.12);
 }
 
-/* Tailwind v4 defaults borders to currentcolor; keep v3 behaviour. */
 @layer base {
   *,
   ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+  ::before {
+    border-color: var(--color-line);
   }
 
   html {
@@ -123,26 +69,9 @@
   }
 
   body {
-    @apply bg-background text-foreground;
-  }
-
-  h1,
-  h2,
-  h3 {
-    @apply font-jakarta font-bold bg-linear-to-r from-navy to-teal bg-clip-text text-transparent;
-  }
-  h1 {
-    line-height: 1.15;
-  }
-  h2 {
-    line-height: 1.2;
-  }
-  h3 {
-    line-height: 1.25;
-  }
-
-  p {
-    @apply font-inter font-normal leading-[1.6] text-neutraltext;
+    background: var(--color-white);
+    color: var(--color-text);
+    line-height: normal;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -159,42 +88,115 @@
   }
 }
 
-@utility text-gradient {
-  @apply bg-linear-to-r from-navy to-teal bg-clip-text text-transparent;
-}
-
-@utility section-shell {
-  position: relative;
-  z-index: 0;
-  border-radius: 2rem;
-  border: 1px solid rgba(15, 34, 71, 0.05);
-  background: #f8fafc;
-  box-shadow: 0 18px 36px -32px rgba(15, 34, 71, 0.35);
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 1px;
-    border-radius: calc(2rem - 1px);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    pointer-events: none;
-    box-shadow: inset 0 1px 4px rgba(15, 34, 71, 0.03);
-    z-index: -1;
+/*
+ * Type roles (design/README.md §2.2). Each carries its phone and desktop
+ * size; color stays with the component because it depends on the surface.
+ */
+@utility type-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  @variant md {
+    font-size: 62px;
   }
 }
 
+@utility type-h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  @variant md {
+    font-size: 46px;
+  }
+}
+
+@utility type-panel-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  @variant md {
+    font-size: 44px;
+  }
+}
+
+@utility type-eyebrow {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  @variant md {
+    font-size: 14px;
+  }
+}
+
+@utility type-card-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  @variant md {
+    font-size: 22px;
+  }
+}
+
+@utility type-title-sm {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  @variant md {
+    font-size: 20px;
+  }
+}
+
+@utility type-body {
+  font-size: 16px;
+  line-height: 1.55;
+  @variant md {
+    font-size: 17px;
+  }
+}
+
+@utility type-lead {
+  font-size: 16px;
+  line-height: 1.5;
+  @variant md {
+    font-size: 19px;
+  }
+}
+
+@utility type-card-line {
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/*
+ * Component base classes live in the components layer so any utility at
+ * the call site (hidden, w-full, font-semibold…) overrides them.
+ */
 @layer components {
-  .animation-hover:after {
-    background: transparent;
-    content: '';
-    height: 2px;
-    transition:
-      width 0.3s ease 0s,
-      left 0.3s ease 0s;
-    @apply absolute bottom-0 left-1/2 block w-0 bg-green-500;
+  .btn {
+    @apply inline-flex items-center justify-center rounded-pill text-center font-bold transition-colors disabled:opacity-60;
   }
-  .animation-active:after,
-  .animation-hover:hover:after {
-    @apply left-0 w-full;
+}
+
+/* Keyboard focus. `-inverse` is for dark, teal and image surfaces. */
+@utility focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 2px;
+  }
+}
+
+@utility focus-ring-inverse {
+  &:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 2px;
   }
 }

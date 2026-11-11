@@ -65,6 +65,17 @@ export const isOpen = siteConfig.launch.status === 'open'
 
 export const fullAddress = `${siteConfig.address.street}, ${siteConfig.address.city}, ${siteConfig.address.region} ${siteConfig.address.postalCode}`
 
+export const locality = `${siteConfig.address.city}, ${siteConfig.address.region}`
+
+/** Licensing and Medicaid status as short phrases, e.g. for the legal bar. */
+export function statusNotes() {
+  const { licensed, medicaid } = siteConfig.launch
+  return [
+    licensed && 'Licensed by the Commonwealth of Kentucky',
+    medicaid === 'enrolling' && 'Medicaid provider enrollment in progress',
+  ].filter(Boolean)
+}
+
 export function hoursSummary() {
   if (!siteConfig.hours) return 'To be announced'
   return siteConfig.hours

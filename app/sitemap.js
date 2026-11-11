@@ -1,5 +1,5 @@
-import { routes } from '../lib/seo'
-import siteConfig from '../site.config'
+import { routes } from '@/lib/seo'
+import siteConfig from '@/site.config'
 
 export const dynamic = 'force-static'
 

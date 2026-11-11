@@ -1,16 +1,14 @@
-import Hero from '../components/Home/Hero'
-import Services from '../components/Home/Services'
-import Stats from '../components/Home/Stats'
-import StickyBar from '../components/Home/StickyBar'
-import Waitlist from '../components/Home/Waitlist'
-import Who from '../components/Home/Who'
-import WhyAndCenter from '../components/Home/WhyAndCenter'
+import Hero from '@/components/home/Hero'
+import Services from '@/components/home/Services'
+import Stats from '@/components/home/Stats'
+import StickyBar from '@/components/home/StickyBar'
+import Waitlist from '@/components/home/Waitlist'
+import Who from '@/components/home/Who'
+import WhyAndCenter from '@/components/home/WhyAndCenter'
 
-// One wrapper so the layout's <main> gap does not space the home sections;
-// each section carries its own padding from the design.
 export default function Home() {
   return (
-    <div className="flex flex-col leading-[normal]">
+    <>
       <Hero />
       <Services />
       <Stats />
@@ -18,6 +16,6 @@ export default function Home() {
       <WhyAndCenter />
       <Waitlist />
       <StickyBar />
-    </div>
+    </>
   )
 }

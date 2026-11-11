@@ -20,19 +20,49 @@ While `launch.status` is `'pre-launch'`, phone CTAs route to the waitlist, the c
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000
-npm run lint
-npm run build      # writes the static site to out/
-npx serve out      # preview the export
+npm run dev           # http://localhost:3000
+npm run lint          # ESLint (CI runs lint:ci, zero warnings)
+npm run format        # Prettier, including Tailwind class order (CI runs format:check)
+npm run build         # writes the static site to out/
+npx serve out         # preview the export
 ```
 
 Node 20.9+ is required.
 
 ## Structure
 
-- `app/` — routes (`page.js` per folder), `layout.js`, metadata routes (`sitemap.js`, `robots.js`, `manifest.js`, `opengraph-image.js`, icons), `globals.css` (Tailwind theme tokens).
-- `components/` — layout (header, mobile nav, footer), page sections, shared UI in `misc/`.
-- `lib/seo.js` — per-page metadata helper and the route list for the sitemap.
-- `public/assets/` — images and Lottie animations.
+```
+app/
+  layout.js, page.js    root shell (fonts, header, footer) and the home page
+  (legacy)/             pages not redesigned yet; the route group keeps their URLs
+  globals.css           design tokens, type roles, focus rings, .btn
+  legacy.css            the old styles, scoped to .legacy
+components/
+  ui/                   primitives: Button, Section, SectionTitle, Eyebrow, Icon, IconTile, Logo, Reveal, Float
+  layout/               Header (NotchNav, CompactBar, MenuSheet), Footer, Wordmark
+  home/                 home page sections, in page order
+  forms/                NetlifyForm and the waitlist form
+  seo/                  JSON-LD
+  legacy/               components only the (legacy) pages use
+hooks/                  useInView, useModalBehavior, useMotionAllowed, useHydrated
+lib/                    navigation, services (the four, in order), seo, cx
+public/illustrations/   the design's illustrations (no photos of people)
+```
+
+## Conventions
+
+- **Imports** use the `@/` root alias; only same-folder imports are relative.
+- **Files:** lowercase folders, PascalCase component files, one exported component per file. A small helper component used by only one file can live in that file.
+- **Styling** comes from the tokens and type roles in `app/globals.css` (`type-h2`, `type-body`, `rounded-panel`, `shadow-float-light`, `max-w-page`…). Arbitrary values are for one-off sizes taken from the spec, not for colors. Pass `hidden`, `w-full` and similar to `ButtonLink` via `className`; its base styles are in the components layer so utilities win.
+- **Focus:** every interactive element gets `focus-ring`, or `focus-ring-inverse` on navy, teal or image surfaces.
+- **Business facts** (name, address, email, hours, launch state) are read from `site.config.js`, never typed into components.
+- **Motion** goes through `Reveal` and `Float`. The server HTML is always the final, visible state, and nothing animates under reduced motion.
+- **Forms** render through `NetlifyForm`, which adds data-netlify, the hidden form-name and the honeypot. Forms that share a name must use the same field names.
+
+## Redesigning an inner page
+
+1. Move its folder out of `app/(legacy)/` (the URL does not change).
+2. Build it from `components/ui` and the tokens; drop its `components/legacy` imports.
+3. When `app/(legacy)/` is empty, delete it with `app/legacy.css` and `components/legacy/`.
 
 Forms post to Netlify Forms; they are detected from the static HTML at deploy time.

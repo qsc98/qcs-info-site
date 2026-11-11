@@ -1,4 +1,4 @@
-import siteConfig from '../site.config'
+import siteConfig from '@/site.config'
 
 export const dynamic = 'force-static'
 

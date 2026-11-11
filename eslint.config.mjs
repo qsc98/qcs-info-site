@@ -17,6 +17,11 @@ const config = [
   ...nextCoreWebVitals,
   ...compat.extends('plugin:import/recommended'),
   {
+    settings: {
+      // `@/` is the project-root alias from jsconfig.json.
+      'import/internal-regex': '^@/',
+      'import/resolver': { typescript: { project: './jsconfig.json' }, node: true },
+    },
     rules: {
       'import/order': [
         'warn',

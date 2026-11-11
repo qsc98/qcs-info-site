@@ -1,0 +1,74 @@
+/*
+ * Styles for the pages that have not moved to the redesign yet. Everything
+ * here is scoped to `.legacy` (app/(legacy)/layout.js and app/not-found.js)
+ * or is a token only those pages use. When the last inner page is
+ * redesigned, delete this file, app/(legacy)/layout.js and components/legacy.
+ */
+
+@theme {
+  /* Tailwind 3 shadow scale the inner pages were designed with. */
+  --shadow-*: initial;
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-none: none;
+
+  --font-jakarta: var(--font-display);
+
+  --color-black-500: #4f5665;
+  --color-green-600: #1a7a4d;
+  --color-gray-100: #eeeff2;
+}
+
+@layer base {
+  .legacy {
+    color: #0f172a;
+    line-height: 1.5;
+  }
+
+  /* Tailwind 4 defaults borders to currentcolor; these pages expect v3. */
+  .legacy *,
+  .legacy ::after,
+  .legacy ::before {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  .legacy :is(h1, h2, h3) {
+    @apply bg-linear-to-r from-navy to-teal bg-clip-text font-jakarta font-bold text-transparent;
+  }
+  .legacy h1 {
+    line-height: 1.15;
+  }
+  .legacy h2 {
+    line-height: 1.2;
+  }
+  .legacy h3 {
+    line-height: 1.25;
+  }
+
+  .legacy p {
+    @apply font-body leading-[1.6] font-normal text-[#0f172a];
+  }
+}
+
+@utility section-shell {
+  position: relative;
+  z-index: 0;
+  border-radius: 2rem;
+  border: 1px solid rgba(15, 34, 71, 0.05);
+  background: #f8fafc;
+  box-shadow: 0 18px 36px -32px rgba(15, 34, 71, 0.35);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: calc(2rem - 1px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+    box-shadow: inset 0 1px 4px rgba(15, 34, 71, 0.03);
+    z-index: -1;
+  }
+}
