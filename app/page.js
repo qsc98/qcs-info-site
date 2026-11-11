@@ -1,46 +1,23 @@
-import AboutUs from '../components/AboutUs'
-import BenefitStatsSection from '../components/BenifitAndStats.js'
-import ContactUs from '../components/ContactUs'
-import Hero from '../components/Hero'
-import PaymentLocationsSection from '../components/PaymentLocations.js'
-import AdultDayCareService from '../components/ServicesSection/AdultDayCareService.js'
-import InHomeCare from '../components/ServicesSection/InHomeCareService.js'
-import MedicalTransportation from '../components/ServicesSection/MedicalTransportation.js'
-import NutritiousMeals from '../components/ServicesSection/NutritiousMeals.js'
-import ServiceOfferings from '../components/ServicesSection/ServiceOfferings.js'
+import Hero from '../components/Home/Hero'
+import Services from '../components/Home/Services'
+import Stats from '../components/Home/Stats'
+import StickyBar from '../components/Home/StickyBar'
+import Waitlist from '../components/Home/Waitlist'
+import Who from '../components/Home/Who'
+import WhyAndCenter from '../components/Home/WhyAndCenter'
 
+// One wrapper so the layout's <main> gap does not space the home sections;
+// each section carries its own padding from the design.
 export default function Home() {
   return (
-    <>
-      <>
-        <Hero />
-        <BenefitStatsSection />
-        <section
-          id="services"
-          className="section-shell relative mx-auto max-w-(--breakpoint-xl) overflow-hidden rounded-3xl px-4 py-12 sm:px-6 lg:px-10 lg:py-16"
-        >
-          <div
-            className="pointer-events-none absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: "url('/assets/background-2.jpg')",
-              backgroundSize: '1000px auto',
-              backgroundRepeat: 'repeat',
-              backgroundPosition: 'top left',
-            }}
-            aria-hidden="true"
-          />
-          <div className="relative space-y-12">
-            <ServiceOfferings />
-            <AdultDayCareService />
-            <NutritiousMeals />
-            <InHomeCare />
-            <MedicalTransportation />
-          </div>
-        </section>
-        <PaymentLocationsSection />
-        <AboutUs />
-        <ContactUs />
-      </>
-    </>
+    <div className="flex flex-col leading-[normal]">
+      <Hero />
+      <Services />
+      <Stats />
+      <Who />
+      <WhyAndCenter />
+      <Waitlist />
+      <StickyBar />
+    </div>
   )
 }
