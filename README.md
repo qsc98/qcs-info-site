@@ -2,6 +2,10 @@
 
 Marketing site for Quality Senior Health Care (New Hope ADHC LLC), an Adult Day Health Care center in Fairdale, KY. Built with **Next.js 16 (App Router, static export)**, **React 19** and **Tailwind CSS 4**, deployed to **Netlify** from the `out/` folder.
 
+## Design reference
+
+The approved home page design lives in [`design/`](design/README.md): the spec (tokens, every section's layout, sizes, copy, behaviour), the page as plain HTML at desktop and mobile widths, per-section fragments, and the illustrations. Read it before building or restyling any page.
+
 ## Business facts live in one place
 
 `site.config.js` holds the name, address, phone, email, hours, payment sources, social links and the launch state. Components read from it; nothing is hard-coded in pages. Before launch:
