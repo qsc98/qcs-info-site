@@ -25,8 +25,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-navy text-white">
-      {/* The 110px phone bottom padding clears the home sticky bar. */}
-      <div className="mx-auto flex max-w-page flex-col gap-6 px-5 pt-9 pb-[110px] md:gap-9 md:px-10 md:pt-14 md:pb-7">
+      {/* On the home page (the only one with #top) the phone bottom padding clears the sticky bar. */}
+      <div className="mx-auto flex max-w-page flex-col gap-6 px-5 pt-9 pb-9 md:gap-9 md:px-10 md:pt-14 md:pb-7 max-md:[body:has(#top)_&]:pb-[110px]">
         {showWaitlist ? (
           // The site's one conversion. Every "join the waitlist" link targets #waitlist.
           <section
