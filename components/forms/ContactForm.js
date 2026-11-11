@@ -10,8 +10,8 @@ const field =
 const label = 'text-[15px] font-semibold text-navy'
 
 /**
- * General enquiries once the center is open (Netlify form `contact`).
- * Name, email, optional phone and a message: no health information.
+ * A short note to the team (Netlify form `contact`): name, email and a
+ * message, no health information. Shown before and after opening.
  */
 export default function ContactForm() {
   const { status, handleSubmit } = useNetlifyForm()
@@ -44,16 +44,11 @@ export default function ContactForm() {
             type="email"
             required
             autoComplete="email"
+            inputMode="email"
             className={field}
           />
         </p>
       </div>
-      <p className="flex flex-col gap-1.5">
-        <label htmlFor={`${id}-phone`} className={label}>
-          Phone <span className="font-normal text-text-faint">(optional)</span>
-        </label>
-        <input id={`${id}-phone`} name="phone" type="tel" autoComplete="tel" className={field} />
-      </p>
       <p className="flex flex-col gap-1.5">
         <label htmlFor={`${id}-message`} className={label}>
           Message
@@ -62,14 +57,14 @@ export default function ContactForm() {
           id={`${id}-message`}
           name="message"
           required
-          rows={5}
+          rows={4}
           maxLength={1000}
           aria-describedby={`${id}-note`}
           className={field}
         />
       </p>
       <p id={`${id}-note`} className="text-[14px] text-text-faint">
-        Please do not include health information. We will collect what we need securely later.
+        Please do not include health information. We reply by email.
       </p>
       {status === 'error' ? (
         <p role="alert" className="font-semibold text-navy">

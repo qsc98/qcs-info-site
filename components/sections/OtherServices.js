@@ -17,6 +17,7 @@ export default function OtherServices({ exclude, title }) {
       <Reveal>
         <SectionIntro
           eyebrow="One team"
+          wide
           title={
             title ?? (
               <>

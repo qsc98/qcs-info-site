@@ -130,7 +130,10 @@ function ServiceCards() {
   )
 }
 
-/** The four services as pills (a 2×2 grid on phones). */
+/**
+ * The four services as pills (a 2×2 grid on phones). Hidden from 1024px,
+ * where the floating service cards already name them.
+ */
 function ServicePills() {
   return (
     <Reveal
@@ -138,7 +141,7 @@ function ServicePills() {
       eager
       delay={0.6}
       aria-label="Our four services"
-      className="mt-1 grid grid-cols-2 gap-2 md:mt-2.5 md:flex md:flex-wrap"
+      className="mt-1 grid grid-cols-2 gap-2 md:mt-2.5 md:flex md:flex-wrap lg:hidden"
     >
       {services.map((service) => (
         <li key={service.key} className="flex">

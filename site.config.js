@@ -27,7 +27,7 @@ const siteConfig = {
     country: 'US',
     latitude: 38.1011,
     longitude: -85.7678,
-    // For the planned live map behind the address card (not rendered yet).
+    // Google Maps "Share > Embed a map" URL, shown on the contact page.
     mapsEmbedUrl:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3154.9570945952433!2d-85.76777598467997!3d38.101059779704754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88690a13eb7b6d61%3A0xa6a2aa35a4d7c4ec!2s811%20Mt%20Holly%20Rd%2C%20Fairdale%2C%20KY%2040118!5e0!3m2!1sen!2sus!4v1629860414313!5m2!1sen!2sus',
   },

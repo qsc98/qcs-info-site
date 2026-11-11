@@ -1,6 +1,5 @@
 import OtherServices from '@/components/sections/OtherServices'
 import PageHero from '@/components/sections/PageHero'
-import { ButtonLink } from '@/components/ui/Button'
 import CardGrid from '@/components/ui/CardGrid'
 import CheckList from '@/components/ui/CheckList'
 import Panel from '@/components/ui/Panel'
@@ -16,6 +15,16 @@ export const metadata = pageMetadata({
   description: `Meet the team behind ${siteConfig.name}, a licensed adult day health care center in ${siteConfig.address.city}, KY serving Louisville-area families.`,
   path: '/about-us',
 })
+
+const heroLinks = [
+  {
+    href: '/our-center',
+    icon: 'house',
+    title: 'Our center',
+    line: 'Rooms, meals and a sample day',
+  },
+  { href: '/careers', icon: 'briefcase', title: 'Careers', line: 'Join a caring local team' },
+]
 
 const pillars = [
   {
@@ -80,15 +89,11 @@ export default function AboutPage() {
           </>
         }
         lead="We are caregivers, technologists and community advocates giving adults in the Louisville area support they can trust, alongside social workers, volunteers and local partners. With faith groups, community centers and families, we keep care personal, familiar and close to home."
-        image="/illustrations/craft.svg"
-        imageAlt="A craft table from above with paint, brushes, yarn and a mug"
+        image="/illustrations/community.svg"
+        imageAlt="A heart-shaped tree with deep roots between a church and our center, with homes on the hill behind"
         facts={['Licensed in Kentucky', `Based in ${siteConfig.address.city}`, 'Family-centered']}
-      >
-        <ButtonLink href="/our-center">See our center</ButtonLink>
-        <ButtonLink href="/careers" variant="secondary">
-          Work with us
-        </ButtonLink>
-      </PageHero>
+        links={heroLinks}
+      />
 
       <Section className="flex flex-col gap-6 md:gap-8">
         <Reveal>
@@ -128,9 +133,13 @@ export default function AboutPage() {
         <Reveal>
           <SectionIntro
             eyebrow="How we work"
+            wide
             title={
               <>
-                Clarity, safety <Accent>and follow-through</Accent>
+                Clarity, safety{' '}
+                <Accent>
+                  and <span className="whitespace-nowrap">follow-through</span>
+                </Accent>
               </>
             }
           >

@@ -1,14 +1,49 @@
 import Image from 'next/image'
 import Chip from '@/components/ui/Chip'
 import Eyebrow from '@/components/ui/Eyebrow'
+import LinkCard from '@/components/ui/LinkCard'
 import Reveal from '@/components/ui/Reveal'
 
 /**
  * Top of every inner page: a light mint panel with the eyebrow, <h1>, lead,
- * actions and quick facts, beside an illustration. The top padding clears
- * the fixed compact header (56px, 64px from 1024px).
+ * actions and quick facts, beside an illustration (`image`) or any other
+ * `media`, such as a map, in the same framed 4:3 slot. `links` (href, icon,
+ * title, line) become white cards overlapping the foot of that frame, in
+ * place of action buttons. The top padding clears the fixed compact header
+ * (56px, 64px from 1024px).
  */
-export default function PageHero({ eyebrow, title, lead, image, imageAlt = '', facts, children }) {
+export default function PageHero({
+  eyebrow,
+  title,
+  lead,
+  image,
+  imageAlt = '',
+  media,
+  facts,
+  links,
+  children,
+}) {
+  const picture =
+    media || image ? (
+      <Reveal
+        eager
+        variant="pop"
+        delay={0.15}
+        className="relative aspect-[4/3] overflow-hidden rounded-block border-[6px] border-white shadow-avatar"
+      >
+        {media ?? (
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            preload
+            sizes="(min-width: 1024px) 520px, 100vw"
+            className="object-cover"
+          />
+        )}
+      </Reveal>
+    ) : null
+
   return (
     <section className="mx-auto w-full max-w-page px-2.5 pt-[66px] md:px-4 md:pt-[72px] lg:pt-20">
       <div className="grid items-center gap-6 rounded-panel-mobile bg-mint p-5 md:gap-10 md:rounded-panel md:p-12 lg:grid-cols-[1.1fr_0.9fr]">
@@ -27,23 +62,23 @@ export default function PageHero({ eyebrow, title, lead, image, imageAlt = '', f
             </ul>
           ) : null}
         </Reveal>
-        {image ? (
-          <Reveal
-            eager
-            variant="pop"
-            delay={0.15}
-            className="relative aspect-[4/3] overflow-hidden rounded-block border-[6px] border-white shadow-avatar"
-          >
-            <Image
-              src={image}
-              alt={imageAlt}
-              fill
-              preload
-              sizes="(min-width: 1024px) 520px, 100vw"
-              className="object-cover"
-            />
-          </Reveal>
-        ) : null}
+        {links?.length ? (
+          <div className="flex flex-col gap-3 lg:pb-10">
+            {picture}
+            <Reveal
+              eager
+              variant="pop"
+              delay={0.35}
+              className="relative z-10 grid gap-3 sm:grid-cols-2 lg:-mt-16 lg:px-3"
+            >
+              {links.map((link) => (
+                <LinkCard key={link.href} {...link} className="shadow-card-light" />
+              ))}
+            </Reveal>
+          </div>
+        ) : (
+          picture
+        )}
       </div>
     </section>
   )

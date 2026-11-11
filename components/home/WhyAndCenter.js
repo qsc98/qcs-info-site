@@ -43,7 +43,7 @@ export default function WhyAndCenter() {
           Louisville, with a kitchen that cooks on site and vans that load at the door. Come see it.
         </p>
         <ButtonLink href="/about-us" className="self-start">
-          More about us
+          Learn More about us
         </ButtonLink>
       </Reveal>
 

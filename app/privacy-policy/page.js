@@ -53,10 +53,11 @@ export default function PrivacyPolicyPage() {
       </p>
       <h2>Third-party services</h2>
       <p>
-        Fonts and images are served from this website; pages do not load content from Google or
-        other third parties. “Get directions” links open Google Maps in a new tab, where Google’s
-        privacy policy applies. Form submissions are processed by Netlify under Netlify’s privacy
-        policy.
+        Fonts and images are served from this website. The contact page shows a Google Maps map of
+        our center, which loads from Google, so Google receives your IP address and browser details
+        when you open that page; Google’s privacy policy applies. Other pages do not load content
+        from Google or other third parties. “Get directions” links open Google Maps in a new tab.
+        Form submissions are processed by Netlify under Netlify’s privacy policy.
       </p>
       <h2>Retention and your choices</h2>
       <p>

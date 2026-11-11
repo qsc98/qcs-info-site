@@ -14,7 +14,7 @@ The approved home page design lives in [`design/`](design/README.md): the spec (
 2. Fill in `contact.phone`, `contact.phoneDisplay` and `hours`.
 3. Add real `social` URLs if you want icons.
 
-While `launch.status` is `'pre-launch'`, phone CTAs route to the waitlist, the contact form is replaced by the waitlist form, and hours read "To be announced".
+While `launch.status` is `'pre-launch'`, phone CTAs route to the waitlist and hours read "To be announced". The contact page's short message form (name, email, message) shows in both states.
 
 ## Develop
 
@@ -39,15 +39,15 @@ app/
   globals.css           design tokens, type roles, focus rings, .btn, .prose
 components/
   ui/                   primitives: Button, SmartLink, Section, Panel, SectionIntro, SectionTitle,
-                        Eyebrow, Chip, CheckList, NumberedList, FeatureCard, CardGrid, Icon,
+                        Eyebrow, Chip, CheckList, NumberedList, FeatureCard, CardGrid, LinkCard, Icon,
                         IconTile, Logo, Reveal, Float (timings in motionPresets)
   sections/             page sections shared across pages: PageHero, Faq, PayingForCare,
-                        OtherServices, CenterMap, LegalPage
+                        OtherServices, CenterMap, MapEmbed, ContactDetails, LegalPage
   services/             ServicePage (the service template) and ServiceCard
   home/                 home-only sections, in page order
   layout/               Header (NotchNav, CompactBar, MenuButton, MenuSheet, Brand, heroFrame),
                         Footer (SocialLinks), Wordmark
-  forms/                NetlifyForm, WaitlistForm, ContactForm (shown once open)
+  forms/                NetlifyForm, WaitlistForm, ContactForm
   seo/                  JSON-LD
 content/services/       the four services (index.js) and each service page's copy
 hooks/                  useInView, useModalBehavior, useMotionAllowed, useHydrated
