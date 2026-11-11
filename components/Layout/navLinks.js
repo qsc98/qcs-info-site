@@ -26,6 +26,3 @@ export const legalLinks = [
   { label: 'Privacy policy', href: '/privacy-policy' },
   { label: 'Terms of service', href: '/terms-of-service' },
 ]
-
-// Kept until the footer moves to companyLinks (next commit).
-export const primaryLinks = companyLinks
