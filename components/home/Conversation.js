@@ -132,7 +132,7 @@ function Reply({ answers }) {
     <div
       className={cx(
         bubble,
-        'flex max-w-[calc(92%+32px)] flex-col gap-3 self-start bg-navy p-4 text-white md:max-w-[calc(78%+44px)] md:px-[22px] md:py-5'
+        'flex flex-col gap-3 self-stretch bg-navy p-4 text-white md:px-[22px] md:py-5'
       )}
     >
       <p className="flex items-center gap-2 text-[13px] font-semibold text-on-navy-muted">
