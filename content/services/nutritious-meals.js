@@ -7,14 +7,14 @@ const nutritiousMeals = {
     path: '/nutritious-meals',
   },
   hero: {
-    title: ['Daily meals with', 'clinical care in mind'],
+    title: ['Daily meals with\n', 'clinical care in mind'],
     lead: 'Balanced, flavorful meals planned for older adults and people with medical needs: breakfast, lunch and snacks every day, with diabetic, low-sodium, vegetarian and allergy-aware options, on menus developed with licensed nutritionists.',
     imageAlt: 'A plated lunch seen from above on a wooden table',
     facts: [
-      'Breakfast, lunch and snacks',
-      'Cooked fresh on site',
-      'Vegetarian and vegan options',
-      'Allergen-aware kitchen',
+      { label: 'Breakfast, lunch and snacks', icon: 'meal' },
+      { label: 'Cooked fresh on site', icon: 'house' },
+      { label: 'Vegetarian and vegan options', icon: 'leaf' },
+      { label: 'Allergen-aware kitchen', icon: 'shield' },
     ],
   },
   included: {

@@ -7,14 +7,14 @@ const medicalTransportation = {
     path: '/medical-transportation',
   },
   hero: {
-    title: ['Door-to-door rides', 'you can trust'],
+    title: ['Door-to-door rides\n', 'you can trust'],
     lead: 'Safe, on-time rides to appointments, to our center and for everyday errands, in wheelchair-accessible vans with trained drivers who help curb-to-curb or door-through-door.',
     imageAlt: 'A teal lift-equipped van with its ramp down on Mt Holly Road',
     facts: [
-      'Book a day ahead',
-      'Louisville metro and nearby',
-      'Lift-equipped vans',
-      'Trained, insured drivers',
+      { label: 'Book a day ahead', icon: 'calendar' },
+      { label: 'Louisville metro and nearby', icon: 'pin' },
+      { label: 'Lift-equipped vans', icon: 'van' },
+      { label: 'Trained, insured drivers', icon: 'shield' },
     ],
   },
   included: {

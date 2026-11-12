@@ -60,7 +60,7 @@ export default function Footer() {
               </span>
               <Wordmark
                 breakClassName=""
-                className="font-display text-[18px] leading-[1.1] font-bold text-white"
+                className="font-brand text-[19px] leading-[1.1] font-semibold text-white"
               />
             </Link>
             <p className="max-w-[340px] text-[15px] leading-[1.55] text-on-navy-muted">

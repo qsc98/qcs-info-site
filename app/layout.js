@@ -1,4 +1,4 @@
-import { Nunito_Sans, Outfit } from 'next/font/google'
+import { Fraunces, Nunito_Sans, Outfit } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
@@ -6,11 +6,18 @@ import JsonLd from '@/components/seo/JsonLd'
 import { defaultTitle } from '@/lib/seo'
 import siteConfig from '@/site.config'
 
-// Display: headings, card titles, numbers, wordmark. Body: everything else.
+// Display: headings, card titles, numbers. Brand: the site name (wordmark).
+// Body: everything else.
 const outfit = Outfit({
   subsets: ['latin'],
   weight: ['500', '600', '700'],
   variable: '--font-outfit',
+  display: 'swap',
+})
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['600'],
+  variable: '--font-fraunces',
   display: 'swap',
 })
 const nunitoSans = Nunito_Sans({
@@ -46,7 +53,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${nunitoSans.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${fraunces.variable} ${nunitoSans.variable}`}>
       <body>
         <a
           href="#main"

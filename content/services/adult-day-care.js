@@ -9,14 +9,16 @@ const adultDayCare = {
     path: '/adult-day-care',
   },
   hero: {
-    title: ['Safe, structured days', 'with heart'],
+    title: ['Safe, structured\ndays', 'with heart'],
     lead: 'Supervised days in a safe, enriching setting: memory games, gentle exercise, conversation and creative activities, with a nurse on site. The person enjoys a full day; the caregiver gets dependable respite.',
-    imageAlt: 'Sunlit activity room with a round table, chairs, plants and a bookshelf',
+    image: '/illustrations/adhc-day.svg',
+    imageAlt:
+      'A clock marking morning, midday and afternoon, ringed by the day: welcome tea, rest, exercise, music, art and lunch',
     facts: [
-      `Hours: ${hoursLabel()}`,
-      'Wheelchair-friendly',
-      'Transportation available',
-      'Licensed, trained team',
+      { label: `Hours: ${hoursLabel()}`, icon: 'clock' },
+      { label: 'Wheelchair-friendly', icon: 'route' },
+      { label: 'Transportation available', icon: 'van' },
+      { label: 'Licensed, trained team', icon: 'shield' },
     ],
   },
   included: {

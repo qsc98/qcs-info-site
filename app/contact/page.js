@@ -28,7 +28,7 @@ export default function ContactPage() {
             </>
           ) : (
             <>
-              Get in touch <Accent>before we open</Accent>
+              Get in <Accent>Touch</Accent>
             </>
           )
         }

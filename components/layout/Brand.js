@@ -11,7 +11,7 @@ export default function Brand({ logoClassName }) {
       <Wordmark
         name={siteConfig.shortName}
         breakClassName="lg:hidden"
-        className="font-display text-[14px] leading-[1.05] font-bold text-navy lg:text-[18px] lg:leading-normal"
+        className="font-brand text-[15px] leading-[1.05] font-semibold text-navy lg:text-[19px] lg:leading-normal"
       />
     </>
   )

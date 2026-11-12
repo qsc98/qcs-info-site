@@ -62,7 +62,7 @@ export default function MenuSheet({ open, onClose, links, waitlistHref }) {
             <Wordmark
               name={siteConfig.shortName}
               breakClassName=""
-              className="font-display text-[15px] leading-[1.1] font-bold text-navy"
+              className="font-brand text-[16px] leading-[1.1] font-semibold text-navy"
             />
             <button
               ref={closeRef}

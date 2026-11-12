@@ -52,7 +52,7 @@ components/
 content/services/       the four services (index.js) and each service page's copy
 hooks/                  useInView, useModalBehavior, useMotionAllowed, useHydrated
 lib/                    navigation, seo, cx
-public/illustrations/   the design's illustrations (no photos of people)
+public/illustrations/   the design's illustrations (flat vector; no photos of people)
 ```
 
 ## Conventions

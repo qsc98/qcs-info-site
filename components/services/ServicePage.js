@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import Faq from '@/components/sections/Faq'
 import OtherServices from '@/components/sections/OtherServices'
 import PageHero from '@/components/sections/PageHero'
@@ -13,11 +14,21 @@ import SectionIntro from '@/components/ui/SectionIntro'
 import { Accent } from '@/components/ui/SectionTitle'
 import services from '@/content/services'
 
-/** A `[lead, accent]` title pair from content, as "lead <Accent>accent</Accent>". */
+/**
+ * A `[lead, accent]` title pair from content, as "lead <Accent>accent</Accent>".
+ * A "\n" in the lead is a forced line break.
+ */
 function accented([lead, accent]) {
+  const lines = lead.split('\n')
   return (
     <>
-      {lead} <Accent>{accent}</Accent>
+      {lines.map((line, i) => (
+        <Fragment key={i}>
+          {i > 0 ? <br /> : null}
+          {line}
+        </Fragment>
+      ))}{' '}
+      <Accent>{accent}</Accent>
     </>
   )
 }
@@ -39,8 +50,9 @@ function CardSection({ id, eyebrow, title, intro, cards, panel = false }) {
 /**
  * The page for one service, from content/services/<page>.js. The summary
  * (number, title, illustration) comes from the service list, so the home
- * page, header and this page never disagree. `highlights` and `paying` are
- * optional: a page only shows sections it has content for.
+ * page, header and this page never disagree; `hero.image` can give the page
+ * a hero picture of its own. `highlights` and `paying` are optional: a page
+ * only shows sections it has content for.
  */
 export default function ServicePage({ page }) {
   const service = services.find((s) => s.key === page.key)
@@ -52,7 +64,7 @@ export default function ServicePage({ page }) {
         eyebrow={`Service ${service.number}`}
         title={accented(hero.title)}
         lead={hero.lead}
-        image={service.image}
+        image={hero.image ?? service.image}
         imageAlt={hero.imageAlt}
         facts={hero.facts}
       >

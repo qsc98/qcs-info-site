@@ -85,7 +85,8 @@ export default function AboutPage() {
         eyebrow="About us"
         title={
           <>
-            Rooted in care, <Accent>built for community</Accent>
+            Rooted in care,
+            <br /> <Accent>built for community</Accent>
           </>
         }
         lead="We are caregivers, technologists and community advocates giving adults in the Louisville area support they can trust, alongside social workers, volunteers and local partners. With faith groups, community centers and families, we keep care personal, familiar and close to home."
