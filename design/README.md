@@ -45,8 +45,9 @@ Also in [tokens.json](tokens.json).
 | mint | `#e8f3f1` | soft panels (stats stage, who-section left panel), icon tiles, selected states |
 | mint-strong | `#9fd8cf` | accent word on navy (hero), stat numbers on navy, icons/links on navy, first avatar circle |
 | mint-mid | `#5fb3a5` | second avatar circle, illustration greens |
-| grey | `#f7f8f5` | alternate section background, chat card, card header strips |
-| border | `#e3ebe8` | card borders, dividers, chip borders |
+| page | `#fcf9f4` | page background (warm ivory), logo tab, compact bar; cards, forms and stat tiles stay white |
+| grey | `#f4efe6` | alternate section background, chat card, card header strips |
+| border | `#ebe4d8` | card borders, dividers, chip borders |
 | text | `#1f2937` | body text on white |
 | text-muted | `#475569` | paragraphs, card lines |
 | text-faint | `#64748b` | captions, footnotes, card sub-lines |
@@ -141,9 +142,9 @@ The logo sits in a **white tab cut into the top-left corner of the hero panel**,
 
 Desktop (`01-nav-notch.html`):
 - Tab: `position:absolute; left:0; top:0; height:68px; background:#fff; padding:0 30px 12px 10px; border-bottom-right-radius:28px; display:flex; align-items:center; gap:12px`. Contains the logo at 44px and the wordmark "Quality Senior Health Care" in Outfit 700 18px navy.
-- Two concave corners, each a 28×28 box: `background: radial-gradient(circle at 100% 100%, transparent 28px, #ffffff 28px)`; one at `left:100%; top:0` of the tab, one at `left:0; top:100%`.
+- Two concave corners, each a 28×28 box: `background: radial-gradient(circle at 100% 100%, transparent 28px, #fcf9f4 28px)`; one at `left:100%; top:0` of the tab, one at `left:0; top:100%`.
 - Right side, `position:absolute; right:28px; top:14px`: links Services · Why us · Who qualifies · Our center in Nunito Sans 600 16px white, gap 26px, 10px vertical padding (44px hit area); then "Join the waitlist" as a white pill, navy 700 15px, padding 12px 20px.
-- The tab's left and top edges align with the hero panel edges, so the page background (white) and the tab merge.
+- The tab's left and top edges align with the hero panel edges, so the page background (warm ivory) and the tab merge.
 
 Mobile: tab height 56px, padding 0 18px 8px 6px, radius 20px, corners 20px; logo 36px; wordmark on two lines, 14px / 1.05. Right side at `right:12px; top:10px`: "Waitlist" white pill (navy 700 14px, 12px 14px) and a 44px white circle with a 20px hamburger (navy stroke 2).
 
@@ -349,4 +350,4 @@ Approved by the owner on 2026-11-11. The final HTML and fragments above still sh
 - **Section intros:** from 1024px a section's eyebrow, title and intro have no width cap, so they stay on one line wherever the section runs full width (below 1024px the measure stays 640px, 720px for intros marked wide). Titles and intros inside half-width columns, and the home page's own text blocks, still wrap where the text is longer than the column.
 - **Wordmark font:** the site name in the header, notch tab, menu sheet and footer is set in **Fraunces** 600 (a soft serif), 1px larger than before (15px/19px in the header, 16px in the menu, 19px in the footer). Headings, card titles and numbers stay in Outfit; body text stays Nunito Sans. The token is `--font-brand` (`font-brand`).
 - **Inner pages:** the design covers the home page only. The other pages (the four services, about, our center, careers, contact, privacy, terms, 404) are built from the same tokens and components rather than from separate designs: a light mint page hero (no notch; the compact bar is always shown), section titles with a teal accent phrase, white cards with mint icon tiles, mint panels for paired lists, and the footer's waitlist. Their copy came from the previous site, edited to the rules in §1 (no hours, rates or phone number before opening; "the person" rather than "your loved one").
-
+- **Page background:** pure white read as clinical, so the page is **warm ivory** `#fcf9f4` (token `page`), chosen by the owner on 2026-11-11 from seven options. The notch tab, its concave corners, the compact bar and the hero's mobile mosaic gaps use the page color so they still merge with it. Grey becomes `#f4efe6` and border `#ebe4d8` to stay in the same warm family. Cards, chips, form fields, stat tiles and menus stay white so they lift off the page. The final HTML above still shows white.

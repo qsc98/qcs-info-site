@@ -86,7 +86,7 @@ export default function Conversation() {
       <p className="flex items-center gap-2.5 pb-1.5">
         <PeopleCircles />
         <span className="text-[14px] font-bold text-navy">{siteConfig.name}</span>
-        <span className="text-[13px] text-text-faint">· a two-minute check</span>
+        <span className="text-[13px] text-text-muted">· a two-minute check</span>
       </p>
 
       {QUESTIONS.map((question, i) => {
