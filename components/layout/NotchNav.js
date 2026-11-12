@@ -5,13 +5,13 @@ import ServicesMenu from '@/components/layout/ServicesMenu'
 import { ButtonLink } from '@/components/ui/Button'
 import SmartLink from '@/components/ui/SmartLink'
 
-// A 20px (28px desktop) square whose white corner, outside a quarter
+// A 20px (28px desktop) square whose page-colored corner, outside a quarter
 // circle, makes the tab look cut into the image (design/README.md §3.1).
 const concaveCorner =
-  'absolute size-5 bg-[radial-gradient(circle_at_100%_100%,transparent_20px,#fff_20px)] lg:size-7 lg:bg-[radial-gradient(circle_at_100%_100%,transparent_28px,#fff_28px)]'
+  'absolute size-5 bg-[radial-gradient(circle_at_100%_100%,transparent_20px,var(--color-page)_20px)] lg:size-7 lg:bg-[radial-gradient(circle_at_100%_100%,transparent_28px,var(--color-page)_28px)]'
 
 /**
- * Home only: the white logo tab carved into the hero's top-left corner,
+ * Home only: the page-colored logo tab carved into the hero's top-left corner,
  * with white links and CTA on the image. Positioned over the hero panel
  * using the same frame (heroFrame), so it scrolls away with it.
  */
@@ -22,7 +22,7 @@ export default function NotchNav({ ref, links, inert, menuOpen, onOpenMenu }) {
         <div ref={ref} inert={inert} className="relative h-14 lg:h-[68px]">
           <a
             href="#top"
-            className="pointer-events-auto absolute top-0 left-0 flex h-14 items-center gap-2 rounded-br-[20px] bg-white pr-[18px] pb-2 pl-1.5 focus-ring lg:h-[68px] lg:gap-3 lg:rounded-br-[28px] lg:pr-[30px] lg:pb-3 lg:pl-2.5"
+            className="pointer-events-auto absolute top-0 left-0 flex h-14 items-center gap-2 rounded-br-[20px] bg-page pr-[18px] pb-2 pl-1.5 focus-ring lg:h-[68px] lg:gap-3 lg:rounded-br-[28px] lg:pr-[30px] lg:pb-3 lg:pl-2.5"
           >
             <Brand logoClassName="lg:size-11" />
             <span aria-hidden="true" className={`${concaveCorner} top-0 left-full`} />

@@ -9,7 +9,7 @@ export default function manifest() {
     description: siteConfig.description,
     start_url: '/',
     display: 'standalone',
-    background_color: '#ffffff',
+    background_color: '#fcf9f4',
     theme_color: '#1a4566',
     icons: [
       { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },

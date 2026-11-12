@@ -18,9 +18,11 @@
   --color-mint: #e8f3f1;
   --color-mint-strong: #9fd8cf;
   --color-mint-mid: #5fb3a5;
-  --color-grey: #f7f8f5;
+  /* Warm ivory page background (owner, 2026-11-11): softer than pure white. */
+  --color-page: #fcf9f4;
+  --color-grey: #f4efe6;
   /* tokens.json "border"; named line so it reads well as border-line. */
-  --color-line: #e3ebe8;
+  --color-line: #ebe4d8;
   --color-line-ui: #d5dde6;
   --color-text: #1f2937;
   --color-text-muted: #475569;
@@ -70,7 +72,7 @@
   }
 
   body {
-    background: var(--color-white);
+    background: var(--color-page);
     color: var(--color-text);
     line-height: normal;
   }

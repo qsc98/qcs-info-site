@@ -41,7 +41,7 @@ export default function Hero() {
         <Reveal
           variant="zoom"
           eager
-          className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-1.5 bg-white lg:hidden"
+          className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-1.5 bg-page lg:hidden"
         >
           {mosaic.map((tile) => (
             <span key={tile.src} className="relative min-h-0">

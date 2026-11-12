@@ -22,7 +22,7 @@ export default function CompactBar({
     <div
       inert={!visible}
       className={cx(
-        'fixed inset-x-0 top-0 z-40 border-b border-line bg-white transition-[translate,visibility] duration-300',
+        'fixed inset-x-0 top-0 z-40 border-b border-line bg-page transition-[translate,visibility] duration-300',
         visible ? 'visible translate-y-0' : 'invisible -translate-y-full'
       )}
     >
