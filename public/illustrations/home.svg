@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#e9f1ee"/>
+  <rect x="0" y="580" width="1200" height="320" fill="#d9c9a8"/>
+  <g opacity="0.3"><rect x="0" y="640" width="1200" height="6" fill="#b89f78"/><rect x="0" y="720" width="1200" height="6" fill="#b89f78"/><rect x="0" y="800" width="1200" height="6" fill="#b89f78"/></g>
+  <rect x="0" y="572" width="1200" height="12" fill="#c9b893"/>
+  <!-- window with curtains -->
+  <rect x="760" y="100" width="330" height="330" rx="14" fill="#1a4566"/>
+  <rect x="774" y="114" width="302" height="302" rx="8" fill="#cfe8e2"/>
+  <circle cx="990" cy="190" r="40" fill="#fff5d6"/>
+  <path d="M774 360 Q 870 290 940 330 T 1076 300 L 1076 416 L 774 416 Z" fill="#b9dfd5"/>
+  <rect x="922" y="114" width="8" height="302" fill="#1a4566"/>
+  <rect x="774" y="262" width="302" height="8" fill="#1a4566"/>
+  <path d="M740 80 Q 760 260 700 450 L 780 450 Q 800 260 790 80 Z" fill="#f5b544"/>
+  <path d="M1110 80 Q 1090 260 1150 450 L 1070 450 Q 1050 260 1060 80 Z" fill="#f5b544"/>
+  <!-- framed landscape -->
+  <rect x="150" y="150" width="200" height="150" rx="10" fill="#ffffff" stroke="#c9b893" stroke-width="8"/>
+  <circle cx="220" cy="210" r="22" fill="#f5b544"/>
+  <path d="M166 290 L 240 220 L 290 260 L 334 230 L 334 290 Z" fill="#116768"/>
+  <!-- rug -->
+  <ellipse cx="560" cy="800" rx="330" ry="70" fill="#9fd8cf" opacity="0.7"/>
+  <!-- armchair -->
+  <rect x="380" y="420" width="300" height="230" rx="40" fill="#116768"/>
+  <rect x="340" y="470" width="80" height="200" rx="30" fill="#0e5556"/>
+  <rect x="640" y="470" width="80" height="200" rx="30" fill="#0e5556"/>
+  <rect x="400" y="560" width="260" height="110" rx="24" fill="#1a7f7c"/>
+  <rect x="380" y="650" width="340" height="30" rx="10" fill="#0e5556"/>
+  <!-- folded blanket on the arm -->
+  <rect x="640" y="440" width="90" height="60" rx="12" fill="#f6f3ec"/>
+  <rect x="640" y="462" width="90" height="6" fill="#e4ded2"/>
+  <rect x="640" y="482" width="90" height="6" fill="#e4ded2"/>
+  <!-- side table -->
+  <rect x="800" y="540" width="200" height="18" rx="6" fill="#8a6f4e"/>
+  <rect x="820" y="558" width="16" height="110" fill="#8a6f4e"/>
+  <rect x="964" y="558" width="16" height="110" fill="#8a6f4e"/>
+  <!-- lamp -->
+  <rect x="895" y="420" width="10" height="120" fill="#1a4566"/>
+  <path d="M840 440 L 960 440 L 940 370 L 860 370 Z" fill="#f6f3ec"/>
+  <!-- tea cup -->
+  <rect x="820" y="500" width="48" height="40" rx="8" fill="#ffffff"/>
+  <path d="M868 510 a 14 14 0 0 1 0 24" stroke="#ffffff" stroke-width="8" fill="none"/>
+  <path d="M836 490 q 6 -14 0 -26 M 852 490 q 6 -14 0 -26" stroke="#c9d7e3" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- pill organizer -->
+  <rect x="900" y="506" width="90" height="34" rx="6" fill="#ffffff"/>
+  <g fill="#9fd8cf"><rect x="906" y="512" width="20" height="22" rx="3"/><rect x="930" y="512" width="20" height="22" rx="3"/><rect x="954" y="512" width="20" height="22" rx="3"/></g>
+  <!-- walker -->
+  <g stroke="#9aa5b1" stroke-width="12" stroke-linecap="round" fill="none">
+    <path d="M150 480 L 150 700 M 250 480 L 250 700"/>
+    <path d="M150 480 L 250 480 M 150 560 L 250 560"/>
+    <path d="M120 700 L 180 700 M 220 700 L 280 700"/>
+  </g>
+  <rect x="140" y="462" width="120" height="22" rx="11" fill="#1a4566"/>
+  <!-- plant -->
+  <rect x="1060" y="520" width="80" height="60" rx="12" fill="#f6f3ec"/>
+  <path d="M1100 520 C 1060 480, 1060 440, 1100 410 C 1140 440, 1140 480, 1100 520 Z" fill="#5fb3a5"/>
+  <path d="M1100 520 C 1050 500, 1030 470, 1040 440 C 1080 450, 1100 490, 1100 520 Z" fill="#116768"/>
+  <path d="M1100 520 C 1150 500, 1170 470, 1160 440 C 1120 450, 1100 490, 1100 520 Z" fill="#116768"/>
+</svg>

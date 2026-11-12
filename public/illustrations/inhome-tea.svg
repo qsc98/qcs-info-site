@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <!-- Tea and a good laugh at home: an older woman in her armchair and her
+       caregiver beside her, cups raised; family photos on the wall, the cat on the rug. -->
+  <rect width="1200" height="900" fill="#eef3f1"/>
+  <rect x="0" y="640" width="1200" height="260" fill="#e4ded2"/>
+  <rect x="0" y="632" width="1200" height="10" fill="#d6cfc0"/>
+
+  <!-- window with sun -->
+  <g>
+    <rect x="70" y="90" width="300" height="320" rx="14" fill="#1a4566"/>
+    <rect x="84" y="104" width="272" height="292" rx="6" fill="#cfe8e2"/>
+    <circle cx="270" cy="190" r="44" fill="#f5b544"/>
+    <path d="M84 340 Q 170 270 240 300 T 356 270 L 356 396 L 84 396 Z" fill="#b9dfd5"/>
+    <rect x="216" y="104" width="8" height="292" fill="#1a4566"/>
+    <rect x="84" y="246" width="272" height="8" fill="#1a4566"/>
+    <rect x="44" y="80" width="40" height="350" rx="14" fill="#f5b544"/>
+    <rect x="356" y="80" width="40" height="350" rx="14" fill="#f5b544"/>
+  </g>
+  <polygon points="84,396 356,396 520,900 0,900" fill="#ffffff" opacity="0.28"/>
+
+  <!-- family photos on the wall -->
+  <g>
+    <rect x="560" y="100" width="130" height="110" rx="8" fill="#ffffff" stroke="#d6cfc0" stroke-width="6"/>
+    <circle cx="605" cy="148" r="16" fill="#c68b59"/><circle cx="645" cy="152" r="14" fill="#f1c9a5"/>
+    <rect x="588" y="166" width="78" height="30" rx="12" fill="#5fb3a5"/>
+    <rect x="720" y="86" width="110" height="130" rx="8" fill="#ffffff" stroke="#d6cfc0" stroke-width="6"/>
+    <path d="M775 140 c -10 -20 -38 -8 -26 13 c 7 10 26 24 26 24 c 0 0 19 -14 26 -24 c 12 -21 -16 -33 -26 -13 z" fill="#116768"/>
+    <rect x="860" y="110" width="120" height="100" rx="8" fill="#ffffff" stroke="#d6cfc0" stroke-width="6"/>
+    <circle cx="920" cy="150" r="18" fill="#8d5a3b"/>
+    <rect x="890" y="170" width="60" height="28" rx="12" fill="#f5b544"/>
+  </g>
+
+  <!-- side table with teapot and biscuits -->
+  <g>
+    <rect x="390" y="520" width="130" height="16" rx="6" fill="#8a6f4e"/>
+    <rect x="400" y="536" width="12" height="130" fill="#8a6f4e"/><rect x="498" y="536" width="12" height="130" fill="#8a6f4e"/>
+    <path d="M410 520 a 40 34 0 0 1 80 0 z" fill="#116768"/>
+    <rect x="440" y="474" width="20" height="10" rx="5" fill="#116768"/>
+    <path d="M490 506 q 22 -8 24 -26" stroke="#116768" stroke-width="8" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- ARMCHAIR -->
+  <g>
+    <rect x="530" y="330" width="260" height="250" rx="40" fill="#116768"/>
+    <rect x="508" y="460" width="70" height="200" rx="26" fill="#116768"/>
+    <rect x="742" y="460" width="70" height="200" rx="26" fill="#116768"/>
+    <rect x="520" y="660" width="14" height="40" fill="#1a4566"/><rect x="786" y="660" width="14" height="40" fill="#1a4566"/>
+  </g>
+
+  <!-- OLDER WOMAN in the armchair -->
+  <g>
+    <!-- body: cardigan -->
+    <path d="M590 600 L 590 470 Q 590 420 660 420 Q 730 420 730 470 L 730 600 Z" fill="#5fb3a5"/>
+    <path d="M660 420 L 645 470 L 660 600 L 675 470 Z" fill="#f6f3ec"/>
+    <!-- blanket over the lap -->
+    <rect x="570" y="560" width="180" height="90" rx="24" fill="#f5b544"/>
+    <rect x="570" y="590" width="180" height="10" fill="#fff5d6" opacity="0.7"/>
+    <!-- arms holding a cup -->
+    <path d="M600 470 Q 590 540 640 548" stroke="#5fb3a5" stroke-width="30" fill="none" stroke-linecap="round"/>
+    <path d="M720 470 Q 730 540 680 548" stroke="#5fb3a5" stroke-width="30" fill="none" stroke-linecap="round"/>
+    <rect x="636" y="510" width="48" height="44" rx="10" fill="#ffffff"/>
+    <rect x="680" y="520" width="16" height="18" rx="8" fill="none" stroke="#ffffff" stroke-width="6"/>
+    <circle cx="640" cy="548" r="12" fill="#f1c9a5"/><circle cx="680" cy="548" r="12" fill="#f1c9a5"/>
+    <!-- neck and head -->
+    <rect x="648" y="390" width="24" height="34" fill="#f1c9a5"/>
+    <circle cx="660" cy="350" r="46" fill="#f1c9a5"/>
+    <!-- silver hair with a bun -->
+    <circle cx="660" cy="292" r="22" fill="#d5dde6"/>
+    <path d="M612 352 Q 606 300 660 298 Q 716 300 708 352 Q 700 322 660 318 Q 622 322 612 352 Z" fill="#d5dde6"/>
+    <!-- glasses, smiling eyes, smile, cheeks -->
+    <circle cx="642" cy="350" r="14" fill="none" stroke="#1a4566" stroke-width="4"/>
+    <circle cx="680" cy="350" r="14" fill="none" stroke="#1a4566" stroke-width="4"/>
+    <path d="M656 350 L 666 350" stroke="#1a4566" stroke-width="4"/>
+    <path d="M635 352 q 7 -8 14 0" stroke="#1a4566" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M673 352 q 7 -8 14 0" stroke="#1a4566" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M644 372 q 16 16 32 0" stroke="#1a4566" stroke-width="4" fill="#ffffff" stroke-linecap="round"/>
+    <circle cx="628" cy="368" r="8" fill="#f39c8f" opacity="0.55"/><circle cx="692" cy="368" r="8" fill="#f39c8f" opacity="0.55"/>
+  </g>
+
+  <!-- CAREGIVER on a chair, turned toward her, cup raised -->
+  <g>
+    <!-- chair -->
+    <rect x="880" y="520" width="170" height="20" rx="8" fill="#1a4566"/>
+    <rect x="890" y="540" width="14" height="150" fill="#1a4566"/><rect x="1026" y="540" width="14" height="150" fill="#1a4566"/>
+    <rect x="1020" y="380" width="22" height="160" rx="10" fill="#1a4566"/>
+    <!-- legs -->
+    <rect x="880" y="510" width="150" height="40" rx="20" fill="#1a4566"/>
+    <rect x="880" y="530" width="34" height="140" rx="16" fill="#1a4566"/>
+    <rect x="930" y="530" width="34" height="140" rx="16" fill="#1a4566"/>
+    <rect x="870" y="660" width="54" height="22" rx="11" fill="#ffffff"/><rect x="920" y="660" width="54" height="22" rx="11" fill="#ffffff"/>
+    <!-- body: teal top with lanyard -->
+    <path d="M900 530 L 900 430 Q 900 384 960 384 Q 1020 384 1020 430 L 1020 530 Z" fill="#116768"/>
+    <path d="M940 388 L 960 440 L 980 388" stroke="#ffffff" stroke-width="5" fill="none"/>
+    <rect x="950" y="440" width="20" height="26" rx="4" fill="#ffffff"/>
+    <!-- arm raising a cup -->
+    <path d="M910 430 Q 860 470 840 430" stroke="#116768" stroke-width="28" fill="none" stroke-linecap="round"/>
+    <rect x="808" y="388" width="44" height="40" rx="10" fill="#f5b544"/>
+    <circle cx="840" cy="428" r="12" fill="#8d5a3b"/>
+    <path d="M1010 430 Q 1030 490 990 510" stroke="#116768" stroke-width="28" fill="none" stroke-linecap="round"/>
+    <circle cx="988" cy="510" r="12" fill="#8d5a3b"/>
+    <!-- neck and head -->
+    <rect x="948" y="354" width="24" height="34" fill="#8d5a3b"/>
+    <circle cx="958" cy="316" r="44" fill="#8d5a3b"/>
+    <!-- curly hair -->
+    <g fill="#2b2420">
+      <circle cx="920" cy="290" r="22"/><circle cx="946" cy="272" r="24"/><circle cx="976" cy="272" r="24"/>
+      <circle cx="1000" cy="292" r="22"/><circle cx="1004" cy="320" r="18"/><circle cx="914" cy="316" r="16"/>
+    </g>
+    <!-- smiling eyes, open smile, cheeks -->
+    <path d="M934 318 q 7 -8 14 0" stroke="#1f2937" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M966 318 q 7 -8 14 0" stroke="#1f2937" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M940 336 q 17 18 34 0 z" fill="#ffffff" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="928" cy="336" r="7" fill="#f39c8f" opacity="0.45"/><circle cx="988" cy="336" r="7" fill="#f39c8f" opacity="0.45"/>
+  </g>
+
+  <!-- little hearts rising between them -->
+  <path d="M790 300 c -8 -16 -30 -6 -21 10 c 5 8 21 19 21 19 c 0 0 16 -11 21 -19 c 9 -16 -13 -26 -21 -10 z" fill="#116768"/>
+  <path d="M838 262 c -6 -12 -22 -5 -15 8 c 4 6 15 14 15 14 c 0 0 11 -8 15 -14 c 7 -13 -9 -20 -15 -8 z" fill="#f5b544"/>
+
+  <!-- rug and the cat -->
+  <ellipse cx="640" cy="790" rx="360" ry="54" fill="#9fd8cf" opacity="0.7"/>
+  <g>
+    <ellipse cx="300" cy="790" rx="90" ry="44" fill="#f5b544"/>
+    <circle cx="372" cy="768" r="34" fill="#f5b544"/>
+    <path d="M350 742 L 356 714 L 372 738 Z M 384 738 L 398 714 L 400 744 Z" fill="#f5b544"/>
+    <path d="M360 772 q 5 -6 10 0 M 378 772 q 5 -6 10 0" stroke="#1a4566" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M214 800 Q 180 770 210 750" stroke="#f5b544" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <path d="M260 770 l 0 30 M 290 764 l 0 34" stroke="#e8a33a" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- plant -->
+  <rect x="1090" y="560" width="80" height="90" rx="12" fill="#c9bfa9"/>
+  <path d="M1130 560 C 1090 510 1090 460 1116 450 C 1140 442 1146 490 1130 560 Z" fill="#116768"/>
+  <path d="M1130 560 C 1170 516 1180 476 1156 466 C 1136 460 1126 504 1130 560 Z" fill="#5fb3a5"/>
+</svg>
