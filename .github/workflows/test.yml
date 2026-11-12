@@ -1,23 +1,20 @@
-name: Pull Request Test
-run-name: ${{ github.actor }} is testing a Pull Request
+name: Build check
+run-name: ${{ github.actor }} is checking a build
 on:
   push:
-    pull_request:
-      branches:
-        - main
+    branches: [main, dev]
+  pull_request:
+    branches: [main]
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16]
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm i --force
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint:ci
+      - run: npm run format:check
       - run: npm run build
-      - run: rm -rf .next

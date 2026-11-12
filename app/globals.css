@@ -1,0 +1,226 @@
+@import 'tailwindcss';
+
+/*
+ * Design system for the redesign. Values come from design/README.md §2 and
+ * mirror design/tokens.json; change them there first.
+ */
+
+@theme {
+  /* Loaded with next/font in app/layout.js. */
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-nunito-sans), ui-sans-serif, system-ui, sans-serif;
+  /* The site name only: header, menu sheet and footer. */
+  --font-brand: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --color-navy: #1a4566;
+  --color-teal: #116768;
+  --color-teal-hover: #0d5556;
+  --color-mint: #e8f3f1;
+  --color-mint-strong: #9fd8cf;
+  --color-mint-mid: #5fb3a5;
+  --color-grey: #f7f8f5;
+  /* tokens.json "border"; named line so it reads well as border-line. */
+  --color-line: #e3ebe8;
+  --color-line-ui: #d5dde6;
+  --color-text: #1f2937;
+  --color-text-muted: #475569;
+  --color-text-faint: #64748b;
+  --color-on-navy-muted: #c9d7e3;
+  --color-on-navy-faint: #9fb0c0;
+  --color-on-teal-muted: #d8efeb;
+  --color-on-image-text: #e6edf3;
+  --color-amber: #f5b544;
+  --color-amber-status: #ffd27a;
+  --color-amber-status-on-light: #b7791f;
+
+  --container-page: 80rem;
+
+  --radius-panel: 32px;
+  --radius-panel-mobile: 24px;
+  --radius-panel-mobile-small: 22px;
+  --radius-block: 28px;
+  --radius-card: 24px;
+  --radius-card-md: 20px;
+  --radius-card-small: 18px;
+  --radius-chip: 16px;
+  --radius-thumb: 14px;
+  --radius-icon-tile: 12px;
+  --radius-pill: 999px;
+
+  --shadow-float-image: 0 14px 30px rgba(15, 34, 71, 0.25);
+  --shadow-float-light: 0 18px 40px rgba(15, 34, 71, 0.16);
+  --shadow-card-light: 0 14px 30px rgba(15, 34, 71, 0.2);
+  --shadow-bar: 0 12px 30px rgba(15, 34, 71, 0.18);
+  --shadow-avatar: 0 14px 30px rgba(15, 34, 71, 0.15);
+  --shadow-peek: 0 -10px 30px rgba(15, 34, 71, 0.12);
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before {
+    border-color: var(--color-line);
+  }
+
+  html {
+    font-family: var(--font-body);
+    scroll-behavior: smooth;
+    /* Keeps anchor targets clear of the fixed compact header. */
+    scroll-padding-top: 72px;
+  }
+
+  body {
+    background: var(--color-white);
+    color: var(--color-text);
+    line-height: normal;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/*
+ * Type roles (design/README.md §2.2). Each carries its phone and desktop
+ * size; color stays with the component because it depends on the surface.
+ */
+@utility type-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  @variant md {
+    font-size: 62px;
+  }
+}
+
+/* Inner-page <h1>: the page title in a light hero panel. */
+@utility type-h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  @variant md {
+    font-size: 52px;
+  }
+}
+
+@utility type-h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  @variant md {
+    font-size: 46px;
+  }
+}
+
+@utility type-eyebrow {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  @variant md {
+    font-size: 14px;
+  }
+}
+
+@utility type-card-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  @variant md {
+    font-size: 22px;
+  }
+}
+
+@utility type-title-sm {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  @variant md {
+    font-size: 20px;
+  }
+}
+
+@utility type-body {
+  font-size: 16px;
+  line-height: 1.55;
+  @variant md {
+    font-size: 17px;
+  }
+}
+
+@utility type-lead {
+  font-size: 16px;
+  line-height: 1.5;
+  @variant md {
+    font-size: 19px;
+  }
+}
+
+@utility type-card-line {
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/*
+ * Component base classes live in the components layer so any utility at
+ * the call site (hidden, w-full, font-semibold…) overrides them.
+ */
+@layer components {
+  /* Long-form text (privacy policy, terms). */
+  .prose {
+    @apply type-body text-text-muted;
+    & > * + * {
+      margin-top: 1em;
+    }
+    & h2 {
+      @apply mt-10 type-title-sm text-navy;
+    }
+    & ul {
+      @apply list-disc pl-6;
+    }
+    & li + li {
+      margin-top: 0.5em;
+    }
+    & strong {
+      @apply font-semibold text-text;
+    }
+    & a {
+      @apply text-teal underline hover:text-teal-hover;
+    }
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-pill text-center font-bold transition-colors disabled:opacity-60;
+  }
+}
+
+/* Keyboard focus. `-inverse` is for dark, teal and image surfaces. */
+@utility focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 2px;
+  }
+}
+
+@utility focus-ring-inverse {
+  &:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 2px;
+  }
+}
