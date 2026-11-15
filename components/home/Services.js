@@ -13,6 +13,7 @@ export default function Services() {
       <Reveal>
         <SectionIntro
           wide
+          align="center"
           eyebrow="Services"
           title={
             <>

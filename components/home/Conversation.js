@@ -2,12 +2,10 @@
 
 import Link from 'next/link'
 import { useId, useState } from 'react'
-import PeopleCircles from '@/components/home/PeopleCircles'
 import { ButtonLink } from '@/components/ui/Button'
 import Icon from '@/components/ui/Icon'
 import services from '@/content/services'
 import cx from '@/lib/cx'
-import siteConfig from '@/site.config'
 
 // Each question names the services that answer it, so a "Yes" can point
 // somewhere useful. Keys are from content/services.
@@ -68,11 +66,10 @@ function suggestionsFor(answers) {
   return services.filter((service) => keys.has(service.key))
 }
 
-const bubble = 'rounded-[18px_18px_18px_4px]'
-
 /**
- * "A two-minute check". Answers are local state only: nothing is sent or
- * stored. Each answer is a toggle button; pressing the chosen one clears it.
+ * The four questions as a checklist card with the team's reply as its footer.
+ * Answers are local state only: nothing is sent or stored. Each answer is a
+ * toggle button; pressing the chosen one clears it.
  */
 export default function Conversation() {
   const [answers, setAnswers] = useState(() => QUESTIONS.map(() => null))
@@ -82,27 +79,25 @@ export default function Conversation() {
     setAnswers((prev) => prev.map((a, i) => (i === index ? (a === value ? null : value) : a)))
 
   return (
-    <div className="flex min-w-0 flex-1 flex-col gap-3 rounded-block bg-grey p-4 md:p-6">
-      <p className="flex items-center gap-2.5 pb-1.5">
-        <PeopleCircles />
-        <span className="text-[14px] font-bold text-navy">{siteConfig.name}</span>
-        <span className="text-[13px] text-text-muted">· a two-minute check</span>
-      </p>
-
+    <div className="flex min-w-0 flex-col overflow-hidden rounded-card border border-line bg-white shadow-[0_18px_40px_rgba(15,34,71,0.08)]">
       {QUESTIONS.map((question, i) => {
         const questionId = `${uid}-q${i}`
         return (
-          <div key={question.text} className="flex flex-col gap-3">
+          <div
+            key={question.text}
+            className="flex flex-col gap-2.5 border-b border-line px-4 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:py-3 sm:pr-3.5 sm:pl-[22px]"
+          >
             <p
               id={questionId}
-              className={cx(
-                bubble,
-                'max-w-[calc(88%+30px)] self-start border border-line bg-white px-3.5 py-3 text-[15px] leading-[1.45] font-medium text-navy md:max-w-[calc(70%+38px)] md:px-[18px] md:py-3.5 md:text-[16px]'
-              )}
+              className="text-[15px] leading-[1.35] font-semibold text-navy md:text-[16px]"
             >
               {question.text}
             </p>
-            <div role="group" aria-labelledby={questionId} className="flex justify-end gap-2">
+            <div
+              role="group"
+              aria-labelledby={questionId}
+              className="flex flex-none gap-2 self-end sm:self-auto"
+            >
               {ANSWERS.map(({ value, label }) => (
                 <AnswerButton
                   key={value}
@@ -129,12 +124,7 @@ function Reply({ answers }) {
   const suggestions = suggestionsFor(answers)
 
   return (
-    <div
-      className={cx(
-        bubble,
-        'flex flex-col gap-3 self-stretch bg-navy p-4 text-white md:px-[22px] md:py-5'
-      )}
-    >
+    <div className="flex flex-col gap-3 bg-navy p-4 text-white md:px-[22px] md:py-5">
       <p className="flex items-center gap-2 text-[13px] font-semibold text-on-navy-muted">
         <span aria-hidden="true" className="flex gap-1">
           {answers.map((answer, i) => (
