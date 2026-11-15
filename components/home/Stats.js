@@ -59,7 +59,7 @@ export default function Stats() {
         <Reveal className="relative mx-auto flex max-w-[520px] flex-col items-center gap-2.5 text-center md:gap-3.5 xl:pt-24 xl:pb-[110px]">
           <span className="relative hidden size-[162px] overflow-hidden rounded-full border-[6px] border-white shadow-avatar xl:block">
             <Image
-              src="/illustrations/craft.svg"
+              src="/photos/community-hands.jpg"
               alt=""
               fill
               sizes="150px"

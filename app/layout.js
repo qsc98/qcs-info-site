@@ -1,4 +1,5 @@
 import { Fraunces, Nunito_Sans, Outfit } from 'next/font/google'
+import AnnouncementBar from '@/components/layout/AnnouncementBar'
 import './globals.css'
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
@@ -61,9 +62,13 @@ export default function RootLayout({ children }) {
         >
           Skip to content
         </a>
-        <Header />
-        <main id="main">{children}</main>
-        <Footer />
+        <AnnouncementBar />
+        {/* The home notch nav is positioned against this wrapper, below the announcement. */}
+        <div className="relative">
+          <Header />
+          <main id="main">{children}</main>
+          <Footer />
+        </div>
         <JsonLd />
       </body>
     </html>

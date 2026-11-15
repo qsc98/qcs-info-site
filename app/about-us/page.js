@@ -92,7 +92,6 @@ export default function AboutPage() {
         lead="We are caregivers, technologists and community advocates giving adults in the Louisville area support they can trust, alongside social workers, volunteers and local partners. With faith groups, community centers and families, we keep care personal, familiar and close to home."
         image="/illustrations/community.svg"
         imageAlt="A heart-shaped tree with deep roots between a church and our center, with homes on the hill behind"
-        facts={['Licensed in Kentucky', `Based in ${siteConfig.address.city}`, 'Family-centered']}
         links={heroLinks}
       />
 

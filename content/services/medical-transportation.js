@@ -9,7 +9,7 @@ const medicalTransportation = {
   hero: {
     title: ['Door-to-door rides\n', 'you can trust'],
     lead: 'Safe, on-time rides to appointments, to our center and for everyday errands, in wheelchair-accessible vans with trained drivers who help curb-to-curb or door-through-door.',
-    imageAlt: 'A teal lift-equipped van with its ramp down on Mt Holly Road',
+    imageAlt: 'A driver walks an older man with a cane from his front door to the van',
     facts: [
       { label: 'Book a day ahead', icon: 'calendar' },
       { label: 'Louisville metro and nearby', icon: 'pin' },

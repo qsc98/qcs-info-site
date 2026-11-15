@@ -8,7 +8,8 @@ import cx from '@/lib/cx'
 /**
  * The fixed white header bar: always on inner pages, and on the home page
  * once the notch has scrolled away. Hidden bars are inert and invisible so
- * only one Main nav is ever reachable.
+ * only one Main nav is ever reachable. It sits below the announcement bar
+ * until that scrolls away (AnnouncementBar sets the offset).
  */
 export default function CompactBar({
   visible,
@@ -22,7 +23,7 @@ export default function CompactBar({
     <div
       inert={!visible}
       className={cx(
-        'fixed inset-x-0 top-0 z-40 border-b border-line bg-page transition-[translate,visibility] duration-300',
+        'fixed inset-x-0 top-[var(--announcement-offset,0px)] z-40 border-b border-line bg-page transition-[translate,visibility] duration-300',
         visible ? 'visible translate-y-0' : 'invisible -translate-y-full'
       )}
     >

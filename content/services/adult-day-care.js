@@ -11,9 +11,7 @@ const adultDayCare = {
   hero: {
     title: ['Safe, structured\ndays', 'with heart'],
     lead: 'Supervised days in a safe, enriching setting: memory games, gentle exercise, conversation and creative activities, with a nurse on site. The person enjoys a full day; the caregiver gets dependable respite.',
-    image: '/illustrations/adhc-day.svg',
-    imageAlt:
-      'A clock marking morning, midday and afternoon, ringed by the day: welcome tea, rest, exercise, music, art and lunch',
+    imageAlt: 'Three older adults laughing together over a game of cards',
     facts: [
       { label: `Hours: ${hoursLabel()}`, icon: 'clock' },
       { label: 'Wheelchair-friendly', icon: 'route' },

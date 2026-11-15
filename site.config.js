@@ -25,8 +25,8 @@ const siteConfig = {
     region: 'KY',
     postalCode: '40118',
     country: 'US',
-    latitude: 38.1011,
-    longitude: -85.7678,
+    latitude: 38.10176,
+    longitude: -85.75079,
     // Google Maps "Share > Embed a map" URL, shown on the contact page.
     mapsEmbedUrl:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3154.9570945952433!2d-85.76777598467997!3d38.101059779704754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88690a13eb7b6d61%3A0xa6a2aa35a4d7c4ec!2s811%20Mt%20Holly%20Rd%2C%20Fairdale%2C%20KY%2040118!5e0!3m2!1sen!2sus!4v1629860414313!5m2!1sen!2sus',
@@ -57,6 +57,15 @@ const siteConfig = {
     statusLine:
       'Licensed by the Commonwealth of Kentucky. Opening soon — Medicaid provider enrollment in progress.',
     waitlist: true,
+  },
+
+  // The thin bar above the header on every page. Set to null to hide it.
+  // Phones show the badges and link only; `text` joins them from 768px.
+  announcement: {
+    badges: ['Opening soon', 'Now hiring'],
+    text: 'Nurses, caregivers and community outreach staff in Fairdale.',
+    linkLabel: 'See open roles',
+    href: '/careers#roles',
   },
 
   payment: {

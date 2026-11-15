@@ -207,7 +207,7 @@ export default function OurCenterPage() {
 
       <Section id="visit" className="flex flex-wrap items-center gap-8 md:gap-14">
         <Reveal className="min-w-0 flex-[1_1_440px]">
-          <CenterMap footer={isOpen ? 'Tours by appointment →' : 'Tours begin when we open →'} />
+          <CenterMap />
         </Reveal>
         <Reveal delay={0.1} className="flex min-w-0 flex-[1_1_400px] flex-col gap-5">
           <SectionIntro

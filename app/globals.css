@@ -6,6 +6,14 @@
  */
 
 @theme {
+  /* The hero ribbon: two identical tracks, so -50% loops seamlessly. */
+  --animate-marquee: marquee 60s linear infinite;
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
   /* Loaded with next/font in app/layout.js. */
   --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-nunito-sans), ui-sans-serif, system-ui, sans-serif;
