@@ -9,9 +9,7 @@ const inHomeCare = {
   hero: {
     title: ['Care that meets you\n', 'where you live'],
     lead: 'Stay at home with dignity. Trained, vetted caregivers help with personal care, mobility, light housekeeping and medication reminders, and bring real company, so life at home stays safe, comfortable and connected.',
-    image: '/illustrations/inhome-tea.svg',
-    imageAlt:
-      'An older woman laughing in her armchair, sharing tea with her caregiver at home, with family photos on the wall and the cat on the rug',
+    imageAlt: 'A caregiver and an older man look through his photo album together over tea at home',
     facts: [
       { label: 'Hourly to overnight', icon: 'clock' },
       { label: 'Louisville metro and nearby', icon: 'pin' },

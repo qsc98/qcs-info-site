@@ -16,7 +16,7 @@ const { careersEmail } = siteConfig.contact
 
 export const metadata = pageMetadata({
   title: 'Careers',
-  description: `Join our adult day health care team in ${siteConfig.address.city}, KY: nursing, engagement and transportation roles with paid training.`,
+  description: `Join our adult day health care team in ${siteConfig.address.city}, KY: nurse, caregiver and community outreach roles with paid training.`,
   path: '/careers',
 })
 
@@ -40,23 +40,31 @@ const benefits = [
 
 const roles = [
   {
-    icon: 'heart',
-    title: 'Adult day health nurse',
+    icon: 'clipboard',
+    title: 'Nurse',
     items: [
       'Licensed RN or LPN',
-      'Charting and medication oversight',
-      'Daily family communication',
+      'Wellness checks and medication oversight',
+      'Daily notes and family updates',
     ],
   },
   {
-    icon: 'sparkle',
-    title: 'Engagement guide',
-    items: ['Lead memory care groups', 'Plan outings and arts', 'Support daily routines'],
+    icon: 'heart',
+    title: 'Caregiver',
+    items: [
+      'Personal care with dignity, at our center and in homes',
+      'Company, activities and help at mealtimes',
+      'CNA or home health aide experience welcome',
+    ],
   },
   {
-    icon: 'van',
-    title: 'Transportation specialist',
-    items: ['Commercial license preferred', 'Door-to-door help', 'A safety-first habit'],
+    icon: 'people',
+    title: 'Community outreach',
+    items: [
+      'Meet families and answer their questions',
+      'Build ties with doctors, churches and senior groups',
+      'Represent us at local events',
+    ],
   },
 ]
 
@@ -111,7 +119,7 @@ export default function CareersPage() {
             Build a career <Accent>rooted in dignity</Accent>
           </>
         }
-        lead="Join clinicians, engagement guides and operations teammates who believe adult day care can feel like a second home. We hire people who value compassion, structure and new ideas."
+        lead="Join nurses, caregivers and community outreach teammates who believe adult day care can feel like a second home. We hire people who value compassion, structure and new ideas."
         image="/illustrations/journey.svg"
         imageAlt="A home, a van on the road, a meal and our center: the four parts of the work"
         facts={[
