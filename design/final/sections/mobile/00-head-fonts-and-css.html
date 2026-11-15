@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+body{margin:0;background:#ffffff}
+a{color:#116768}a:hover{color:#0d5556}
+@keyframes pf-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pf-pop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+@keyframes pf-zoom{from{transform:scale(1.04)}to{transform:none}}
+.pf-up{animation:pf-up .9s ease-out both}
+.pf-pop{animation:pf-pop .6s cubic-bezier(.2,.8,.2,1) both}
+.pf-zoom{animation:pf-zoom 2.4s ease-out both}
+@media (prefers-reduced-motion:reduce){.pf-up,.pf-pop,.pf-zoom{animation:none}}
+
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tk{animation:tk 28s linear infinite}
+@keyframes fl{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-10px) rotate(var(--r,0deg))}}
+.fl{animation:fl 5s ease-in-out infinite}
+.st{animation:pf-pop .7s cubic-bezier(.2,.8,.2,1) both}
+@media (prefers-reduced-motion:reduce){.tk,.fl,.st{animation:none}}
+</style>

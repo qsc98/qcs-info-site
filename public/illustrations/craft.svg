@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#d9c9a8"/>
+  <g opacity="0.35">
+    <rect x="0" y="90" width="1200" height="8" fill="#c2ae88"/>
+    <rect x="0" y="300" width="1200" height="8" fill="#c2ae88"/>
+    <rect x="0" y="510" width="1200" height="8" fill="#c2ae88"/>
+    <rect x="0" y="720" width="1200" height="8" fill="#c2ae88"/>
+  </g>
+  <!-- craft paper sheet -->
+  <g transform="rotate(-6 520 460)">
+    <rect x="260" y="200" width="520" height="520" rx="14" fill="#ffffff"/>
+    <rect x="300" y="250" width="440" height="430" rx="10" fill="#f6f3ec"/>
+    <!-- painted sun + hills -->
+    <circle cx="640" cy="350" r="60" fill="#f5b544"/>
+    <path d="M300 600 Q 420 470 540 560 T 740 520 L 740 680 L 300 680 Z" fill="#9fd8cf"/>
+    <path d="M300 640 Q 460 560 620 630 T 740 600 L 740 680 L 300 680 Z" fill="#116768"/>
+  </g>
+  <!-- paint cups -->
+  <g>
+    <circle cx="930" cy="250" r="70" fill="#ffffff"/>
+    <circle cx="930" cy="250" r="54" fill="#1a4566"/>
+    <circle cx="1060" cy="330" r="60" fill="#ffffff"/>
+    <circle cx="1060" cy="330" r="46" fill="#f5b544"/>
+    <circle cx="960" cy="420" r="58" fill="#ffffff"/>
+    <circle cx="960" cy="420" r="44" fill="#116768"/>
+  </g>
+  <!-- brushes -->
+  <g transform="rotate(32 980 620)">
+    <rect x="780" y="604" width="330" height="26" rx="13" fill="#e8dcc2"/>
+    <rect x="1090" y="598" width="50" height="38" rx="8" fill="#9aa5b1"/>
+    <path d="M1136 600 L 1200 610 L 1200 626 L 1136 636 Z" fill="#1a4566"/>
+  </g>
+  <g transform="rotate(18 940 720)">
+    <rect x="760" y="706" width="300" height="24" rx="12" fill="#e8dcc2"/>
+    <rect x="1040" y="700" width="46" height="36" rx="8" fill="#9aa5b1"/>
+    <path d="M1082 702 L 1140 712 L 1140 726 L 1082 736 Z" fill="#f5b544"/>
+  </g>
+  <!-- yarn ball + knitting needles -->
+  <g>
+    <circle cx="170" cy="700" r="92" fill="#9fd8cf"/>
+    <path d="M100 660 Q 170 640 240 690 M 90 710 Q 170 690 250 730 M 110 750 Q 180 740 240 770" stroke="#5fb3a5" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <rect x="120" y="560" width="14" height="240" rx="7" fill="#1a4566" transform="rotate(-30 127 680)"/>
+    <rect x="200" y="560" width="14" height="240" rx="7" fill="#1a4566" transform="rotate(-20 207 680)"/>
+  </g>
+  <!-- mug -->
+  <g>
+    <rect x="120" y="160" width="140" height="150" rx="22" fill="#ffffff"/>
+    <rect x="136" y="176" width="108" height="30" rx="10" fill="#c9d7e3"/>
+    <path d="M260 200 a 40 40 0 0 1 0 80" stroke="#ffffff" stroke-width="22" fill="none"/>
+  </g>
+</svg>

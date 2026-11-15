@@ -12,11 +12,16 @@ const compat = new FlatCompat({
 
 const config = [
   {
-    ignores: ['.next/**', 'out/**', 'node_modules/**'],
+    ignores: ['.next/**', 'out/**', 'node_modules/**', 'next-env.d.ts'],
   },
   ...nextCoreWebVitals,
-  ...compat.extends('plugin:import/recommended', 'plugin:tailwindcss/recommended'),
+  ...compat.extends('plugin:import/recommended'),
   {
+    settings: {
+      // `@/` is the project-root alias from jsconfig.json.
+      'import/internal-regex': '^@/',
+      'import/resolver': { typescript: { project: './jsconfig.json' }, node: true },
+    },
     rules: {
       'import/order': [
         'warn',

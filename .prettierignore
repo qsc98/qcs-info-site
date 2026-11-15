@@ -1,3 +1,6 @@
 .next
 node_modules
 out
+# Approved design reference: kept byte-identical to what was signed off.
+design
+AUDIT.md
